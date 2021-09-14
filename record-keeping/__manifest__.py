@@ -34,7 +34,7 @@ Record Keeping
     'category': 'Administration',
     'license': 'AGPL-3',
     'website': 'https://vertel.se',
-    'author': 'han.wong@vertel.se',
+    'author': 'Vertel AB',
     'depends': [],
     'data': [
         # 'security/ir.model.access.csv',
