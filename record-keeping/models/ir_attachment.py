@@ -25,3 +25,4 @@ class IrAttachment(models.Model):
     )
     receiver_id = fields.Many2one('res.partner')
     sender_id = fields.Many2one('res.partner')
+    

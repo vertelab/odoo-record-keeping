@@ -35,10 +35,10 @@ Record Keeping
     'license': 'AGPL-3',
     'website': 'https://vertel.se',
     'author': 'Vertel AB',
-    'depends': [],
+    'depends': ['attachment_notebook',],
     'data': [
         # 'security/ir.model.access.csv',
-        'views/ir_attachment_views.xml',
+        'views/ir_attachment_view.xml',
     ],
     'demo': [
         # 'data/repair_demo.xml'

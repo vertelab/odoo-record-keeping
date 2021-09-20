@@ -65,7 +65,7 @@
     <record id="view_attachment_form" model="ir.ui.view">
         <field name="name">view.attachment.form</field>
         <field name="model">ir.attachment</field>
-        <field name="inherit_id" ref="base.view_attachment_form"/>
+        <field name="inherit_id" ref="attachment_notebook.view_attachment_form"/>
         <field name="priority" eval="10"/>
         <field name="arch" type="xml">
             <field name="type" position="before">
@@ -74,6 +74,20 @@
                 <field name="is_secret"/>
                 <field name="is_official_document"/>
             </field>
+            <page name="indexed_content" position="replace">
+                <page name="meta_information" string="Meta Information">
+                    <group>
+                        <group>
+                            <field name="create_date" widget="date"/>
+                            <field name="create_uid"/>
+                        </group>
+                        <group class="text-nowrap">
+                            <field name="__last_update" widget="date"/>
+                            <field name="write_uid"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
         </field>
     </record>
 
