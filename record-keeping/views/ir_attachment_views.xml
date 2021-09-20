@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_official_document_search" model="ir.ui.view">
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_search" />
+        <field name="arch" type="xml">
+            <search position="attributes">
+                <string>"Official Document"</string>
+            </search>
+            <field name="name" position="replace">
+                <field name="name" filter_domain="[('name','ilike',self)]" string="Official Document"/>
+            </field>
+            <field name="create_date" position="replace">
+                <field name="create_date" filter_domain="[('create_date','&gt;=',self)]" />
+            </field>
+        </field>
+    </record>
+
+    <record id="action_attachment" model="ir.actions.act_window">
+        <field name="name">Record Keeping</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ir.attachment</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="view_official_document_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                    Create a new official document
+            </p>
+            <p>
+                    Also you will find here all the related official documents and download it by clicking on any individual official document.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_attachment_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="mail.view_document_file_kanban"/>
+        <field name="act_window_id" ref="action_attachment"/>
+    </record>
+
+    <record id="view_attachment_tree" model="ir.ui.view">
+        <field name="name">view.attachment.tree</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_tree"/>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="sender_id"/>
+                <field name="receiver_id"/>
+                <field name="is_secret"/>
+                <field name="is_official_document"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_attachment_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_attachment_tree"/>
+        <field name="act_window_id" ref="action_attachment"/>
+    </record>
+
+    <record id="view_attachment_form" model="ir.ui.view">
+        <field name="name">view.attachment.form</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_form"/>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <field name="type" position="before">
+                <field name="sender_id"/>
+                <field name="receiver_id"/>
+                <field name="is_secret"/>
+                <field name="is_official_document"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_attachment_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_attachment_form"/>
+        <field name="act_window_id" ref="action_attachment"/>
+    </record>
+
+    <!-- groups="base.group_user,base.group_partner_manager" -->
+    <menuitem name="Record Keeping" id="menu_record_keeping" sequence="4" />
+
+    <menuitem id="record_keeping_menu_1" name="Menu 1" action="action_attachment" parent="menu_record_keeping" sequence="2"/>
+
+    <menuitem id="record_keeping_menu_configuration" action="action_attachment" name="Configuration" parent="menu_record_keeping" sequence="2" />
+
+
+
+</odoo>

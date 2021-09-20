@@ -38,7 +38,7 @@ Record Keeping
     'depends': [],
     'data': [
         # 'security/ir.model.access.csv',
-        'views/repair_views.xml',
+        'views/ir_attachment_views.xml',
     ],
     'demo': [
         # 'data/repair_demo.xml'
