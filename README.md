@@ -13,5 +13,3 @@ Authors
 Contributors
 ------------
 * Han Wong <han.wong@vertel.se>
-
-# odootools for Ubuntu 20.04
