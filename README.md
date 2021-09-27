@@ -5,7 +5,7 @@ Install Law Section to make it mandatory to choose a law if you mark the attachm
 
 Since Law Section is a new model, you need to give proper groups to users in order to create and modify Law Section records
 
-# Credits
+## Credits
 Authors
 -------
 * Vertel AB
@@ -13,5 +13,3 @@ Authors
 Contributors
 ------------
 * Han Wong <han.wong@vertel.se>
-
-# odootools for Ubuntu 20.04
