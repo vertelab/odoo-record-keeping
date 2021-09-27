@@ -20,23 +20,26 @@
 ##############################################################################
 
 {
-    'name': 'Record Keeping',
-    'summary': 'Record Keeping for Odoo',
+    'name': 'Record Keeping Law Section',
+    'summary': 'Adds Law section to Record Keeping',
     'description': """
-Record Keeping
-==============
+Record Keeping Law Section
+==========================
 
 ------------------------------------------------------
-    * Display attachments in notebook view
-    * Mark as classified
+    * Link an official document to a secrecy provision
 """,
     'version': '14.0.1',
     'category': 'Administration',
     'license': 'AGPL-3',
     'website': 'https://vertel.se',
     'author': 'Vertel AB',
-    'depends': ['attachment_notebook', 'project'],
-    'data': ['views/ir_attachment_views.xml'],
+    'depends': ['record-keeping',],
+    'data': [
+        'security/rk_law_section_security.xml',
+        'security/ir.model.access.csv',
+        'views/rk_law_section_views.xml',
+    ],
     'demo': [],
     'application': True,
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_view_rk_law_section" model="ir.actions.act_window">
+        <field name="name">Law Section</field>
+        <field name="res_model">rk.law.section</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new law section</p>
+        </field>
+    </record>
+
+    <menuitem action="action_view_rk_law_section" id="menu_rk_law_section" parent="record-keeping.menu_record_keeping" />
+
+    <!-- <record id="open_view_rk_law_section_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">kanban</field>
+        <field name="act_window_id" ref="action_view_rk_law_section"/>
+    </record> -->
+
+    <record id="rk_law_section_form" model="ir.ui.view">
+        <field name="name">rk.law.section.form</field>
+        <field name="model">rk.law.section</field>
+        <field name="arch" type="xml">
+            <form string="Law Section">
+                <field name="active" invisible="1" />
+                <header>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}" />
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="url" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_attachment_form" model="ir.ui.view">
+        <field name="name">view.attachment.form</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="record-keeping.view_attachment_form" />
+        <field name="arch" type="xml">
+            <field name="is_secret" position="after">
+                <field name="law_section_ids" attrs="{'invisible': [('is_secret', '=', False)]}" widget="many2many_tags" />
+            </field>
+        </field>
+    </record>
+
+</odoo>

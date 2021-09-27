@@ -1,5 +1,8 @@
+from datetime import datetime
 from odoo import _, api, fields, models
 import logging
+
+from werkzeug.exceptions import default_exceptions
 
 _logger = logging.getLogger(__name__)
 
@@ -9,20 +12,41 @@ class IrAttachment(models.Model):
 
     active = fields.Boolean(
         default=True,
-        string='Archived',
-        help='Uncheck this to archive the document. It will not be displayed.',
+        help='True if the document is visible. ',
+        string='Active',
+    )
+    drawn_up_date = fields.Date(
+        default=datetime.now().date(),
+        help='The date when the document is ready to be used or sent',
+        string='Received',
     )
     is_secret = fields.Boolean(
         default=False,
-        string='Is subject to secrecy',
-        help='Check this if document contains information that is subject to'
-             'secrecy. Combine with proper law section.'
+        help='Check this option if it can be assumed that information contained '
+             'in this document should not be disclosed on grounds of secrecy.',
+        string='Secrecy marker',
     )
     is_official_document = fields.Boolean(
         default=False,
-        string='Is official document',
-        help='Check this if the document is official.'
+        help='Check this option if this document is an official document',
+        string='Official document',
     )
-    receiver_id = fields.Many2one('res.partner')
-    sender_id = fields.Many2one('res.partner')
-    
+    received_date = fields.Date(
+        default=datetime.now().date(),
+        help='The date when the document has been received by a competent person.',
+        string='Received',
+    )
+    receiver_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Receiver',
+    )
+    sender_id = fields.Many2one(
+        comodel_name='res.partner',
+        help='A partner designated as sender',
+        string='Sender',
+    )
+    task_id = fields.Many2one(
+        comodel_name='project.task',
+        help='The task which this document is connected to',
+        string='Task number',
+    )
