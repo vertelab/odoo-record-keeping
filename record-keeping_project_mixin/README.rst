@@ -1,0 +1,57 @@
+====================
+Record-keeping Mixin
+====================
+
+
+.. |badge1| image:: https://i.ibb.co/GCHLfR5/vertel-small.jpg
+    :target: https://vertel.se/
+    :alt: Vertel AB
+.. |badge2| image:: https://i.ibb.co/TBK0T8S/agpl3-small.jpg
+    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+    :alt: License: AGPL-3
+
+
+|badge2|
+
+This module extends Project and Project Task with record-keeping fields and Mail Message features in Project. 
+
+**Table of contents**
+
+.. contents::
+   :local:
+
+Usage
+=====
+
+To use this module, you need to:
+
+* Have rights to access Project and Project Tasks.
+* Create or edit a Project or Project Task, Record-keeping will be a notebook tab in form view
+
+Bug Tracker
+===========
+
+We don't handle bug tracking at the moment.
+
+Do not contact contributors directly about support or help with technical issues.
+
+Credits
+=======
+
+Authors
+~~~~~~~
+
+* Vertel AB
+
+Contributors
+~~~~~~~~~~~~
+
+* Han Wong <han.wong@vertel.se>
+* Anders Wallenquist <anders.wallenquist@vertel.se>
+
+Maintainers
+~~~~~~~~~~~
+
+This module is maintained by Vertel AB.
+
+|badge1|
