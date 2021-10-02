@@ -11,9 +11,9 @@ This repo holds all addons related to record-keeping.
 Available addons
 ----------------
 addon
----
-[record-keeping](record-keeping/)
-[record-keeping_law_section](record-keeping_law_section/)
+--- |
+[record-keeping](record-keeping/) |
+[record-keeping_law_section](record-keeping_law_section/) |
 
 [//]: # (end addons)
 
