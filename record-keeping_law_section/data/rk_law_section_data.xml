@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="law_section_1"
+            model="law.section">
+            <field name="name">Offentlighets- och sekretesslag (2009:400), 31 Kapitlet 12§</field>
+            <field name="description">Sekretess gäller för uppgift som avser provning, bestämning av egenskaper eller myckenhet, värdering, vetenskaplig, teknisk, ekonomisk eller statistisk undersökning eller annat sådant uppdrag som myndigheten utför för en enskilds räkning, om det måste antas att uppdraget har lämnats under förutsättning att uppgiften inte röjs.
+    Sekretessen gäller inte om intresset av allmän kännedom om förhållande som rör människors hälsa har sådan vikt att uppgiften bör lämnas ut. Sekretessen gäller dock för uppgift från uppdragsverksamhet inom universitet och högskolor.
+    För uppgift i en allmän handling gäller sekretessen i högst tjugo år. Hos universitet och högskolor gäller sekretessen dock i högst tio år. Hos Patent- och registreringsverket gäller sekretessen i högst femtio år.</field>
+            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K31</field>
+        </record>
+    </data>
+</odoo>
