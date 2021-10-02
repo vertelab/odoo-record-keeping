@@ -19,7 +19,7 @@ addon
 
 ## Credits
 
-### Authors
+### Author
 
 * Vertel AB
 
