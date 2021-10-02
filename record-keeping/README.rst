@@ -2,6 +2,7 @@
 Record-keeping
 ==============
 
+
 .. |badge1| image:: https://i.ibb.co/GCHLfR5/vertel-small.jpg
     :target: https://vertel.se/
     :alt: Vertel AB
@@ -49,9 +50,4 @@ Contributors
 Maintainers
 ~~~~~~~~~~~
 
-This module is maintained by Vertel AB.
-
-.. image:: https://i.ibb.co/GCHLfR5/vertel-small.jpg
-   :alt: Vertel AB
-   :target: https://vertel.se
-
+This module is maintained by |badge1|.
