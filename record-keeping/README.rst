@@ -11,7 +11,7 @@ Record-keeping
     :alt: License: AGPL-3
 
 
-|badge1||badge2|
+|badge1| |badge2|
 
 This module adds record-keeping features in attachments.
 
@@ -54,4 +54,4 @@ Maintainers
 ~~~~~~~~~~~
 
 This module is maintained by Vertel AB.
-
+|badge1|
