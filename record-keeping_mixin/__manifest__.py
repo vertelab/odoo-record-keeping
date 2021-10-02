@@ -23,7 +23,7 @@
     'name': 'Record-keeping Mixin',
     'summary': 'Record-keeping Mixin for Odoo',
     'description': """
-This module adds record-keeping features to any class that inherits it
+This module extends a model with record-keeping fields to any model that inherits it.
 """,
     'version': '14.0.1',
     'category': 'Administration',
