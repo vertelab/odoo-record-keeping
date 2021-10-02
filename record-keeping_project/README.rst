@@ -1,6 +1,6 @@
-============================
-Record-keeping Project Mixin
-============================
+======================
+Record-keeping Project
+======================
 
 
 .. |badge1| image:: https://i.ibb.co/Bc4qsYT/vertel.jpg
