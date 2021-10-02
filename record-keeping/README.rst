@@ -55,4 +55,3 @@ Maintainers
 
 This module is maintained by Vertel AB.
 
-|badge1|
