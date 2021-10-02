@@ -48,7 +48,7 @@ Contributors
 ~~~~~~~~~~~~
 
 * Han Wong <han.wong@vertel.se>
-* Anders Wallenquies <anders.wallenquist@vertel.se>
+* Anders Wallenquist <anders.wallenquist@vertel.se>
 
 Maintainers
 ~~~~~~~~~~~
