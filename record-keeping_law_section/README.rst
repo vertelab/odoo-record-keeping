@@ -1,6 +1,6 @@
-==============
-Record-keeping
-==============
+==========================
+Record-keeping Law Section
+==========================
 
 
 .. |badge1| image:: https://i.ibb.co/GCHLfR5/vertel-small.jpg
@@ -11,9 +11,9 @@ Record-keeping
     :alt: License: AGPL-3
 
 
-|badge2|
+|badge1| |badge2|
 
-This module adds record-keeping features in attachments.
+This module adds Law Section in Record-keeping. It will be mandatory to select a Law Section record when checking the secrecy marker in an attachment
 
 **Table of contents**
 
@@ -25,9 +25,9 @@ Usage
 
 To use this module, you need to:
 
-* Have rights to access attachments in general.
-* Go to **Record-keeping** and all attachments will be visible
-* Create or edit an attachment with record-keeping data.
+* Have Manager rights to access Law Section. This can be achieved in Settings by admin.
+* Go to **Record-keeping > Law Section** and all Law Section records will be visible
+* Create or edit Law Section record to fit your needs when you mark an attachment with secrecy marker.
 
 Bug Tracker
 ===========

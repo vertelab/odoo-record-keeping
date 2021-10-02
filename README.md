@@ -1,15 +1,29 @@
-# odoo-record-keeping for Odoo 14
-* Extends Ir.Attachment with fields to mark an attachment as an official document and/or secret
+[![Vertel_AB](https://i.ibb.co/GCHLfR5/vertel-small.jpg)](https://vertel.se)
+[![License_AGPL3](https://i.ibb.co/TBK0T8S/agpl3-small.jpg)](http://www.gnu.org/licenses/agpl-3.0-standalone.html)
 
-* Install Law Section to make it mandatory to choose a law if you mark the attachment as secret
 
-* Since Law Section is a new model, you need to give proper groups to users in order to create and modify Law Section records
+# Record-keeping for Odoo 14
+
+This repo holds all addons related to record-keeping.
+
+[//]: # (addons)
+
+Available addons
+----------------
+addon
+--- |
+[record-keeping](record-keeping/) |
+[record-keeping_law_section](record-keeping_law_section/) |
+
+[//]: # (end addons)
 
 ## Credits
-Authors
--------
+
+### Author
+
 * Vertel AB
 
-Contributors
-------------
+### Contributors
+
 * Han Wong <han.wong@vertel.se>
+* Anders Wallenquist <anders.wallenquist@vertel.se>
