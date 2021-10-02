@@ -43,8 +43,11 @@
         <field name="model">ir.attachment</field>
         <field name="inherit_id" ref="record-keeping.view_attachment_form" />
         <field name="arch" type="xml">
+            <field name="is_secret" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
             <field name="is_secret" position="after">
-                <field name="law_section_ids" attrs="{'invisible': [('is_secret', '=', False)]}" widget="many2many_tags" />
+                <field name="law_section_ids" widget="many2many_tags" />
             </field>
         </field>
     </record>
