@@ -36,7 +36,9 @@ Record Keeping
     'website': 'https://vertel.se',
     'author': 'Vertel AB',
     'depends': ['attachment_notebook', 'project'],
-    'data': ['views/ir_attachment_views.xml'],
+    'data': [
+        'views/ir_attachment_views.xml',
+    ],
     'demo': [],
     'application': True,
 }
