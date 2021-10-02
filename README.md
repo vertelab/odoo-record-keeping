@@ -1,4 +1,4 @@
-[![Vertel_AB](https://i.ibb.co/GCHLfR5/vertel-small.jpg)](https://vertel.se)
+[![Vertel_AB](https://i.ibb.co/CJGP79b/vertel.jpg)](https://vertel.se)
 [![License_AGPL3](https://www.gnu.org/graphics/agplv3-88x31.png)](http://www.gnu.org/licenses/agpl-3.0-standalone.html)
 
 
