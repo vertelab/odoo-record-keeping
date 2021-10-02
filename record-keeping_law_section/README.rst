@@ -13,7 +13,7 @@ Record-keeping Law Section
 
 |badge1| |badge2|
 
-This module adds Law Section in Record-keeping. It will be mandatory to select a Law Section record when enabling an attachment with secrecy marker
+This module adds Law Section in Record-keeping. It will be mandatory to select a Law Section record when checking the secrecy marker in an attachment
 
 **Table of contents**
 
