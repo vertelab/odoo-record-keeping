@@ -20,10 +20,10 @@
 ##############################################################################
 
 {
-    'name': 'Record Keeping',
-    'summary': 'Record Keeping for Odoo',
+    'name': 'Record-keeping',
+    'summary': 'Record-keeping for Odoo',
     'description': """
-Record Keeping
+Record-keeping
 ==============
 
 ------------------------------------------------------

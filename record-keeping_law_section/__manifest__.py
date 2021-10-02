@@ -20,10 +20,10 @@
 ##############################################################################
 
 {
-    'name': 'Record Keeping Law Section',
-    'summary': 'Adds Law section to Record Keeping',
+    'name': 'Record-keeping Law Section',
+    'summary': 'Adds Law section to Record-keeping',
     'description': """
-Record Keeping Law Section
+Record-keeping Law Section
 ==========================
 
 ------------------------------------------------------

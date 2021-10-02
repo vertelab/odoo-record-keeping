@@ -10,7 +10,7 @@ _logger = logging.getLogger(__name__)
 
 class RecordKeepingMixin(models.AbstractModel):
     _name = 'rk.mixin'
-    _description = "Inherit this to add record keeping features"
+    _description = "Inherit this to add record-keeping features"
 
     active = fields.Boolean(
         default=True,

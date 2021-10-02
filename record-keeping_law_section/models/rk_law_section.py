@@ -16,7 +16,7 @@ class RecordKeepingLawSection(models.Model):
     information is public in all circumstances and must be disclosed.
     """
     _name = 'rk.law.section'
-    _description = 'Record keeping law section. '
+    _description = 'Record-keeping law section. '
     _order = 'id desc'
 
     name = fields.Char()
@@ -39,12 +39,8 @@ class IrAttachment(models.Model):
     @api.model
     def create(self, vals):
         res = super(IrAttachment, self).create(vals) 
-        _logger.warning(f'law section create-{self}')
         return res
 
     def write(self, vals):
-        
-        
         res = super(IrAttachment, self).write(vals)
-        _logger.warning(f'HAN-----------------------{res}')
         return res
