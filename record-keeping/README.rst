@@ -2,7 +2,7 @@
 Record-keeping
 ==============
 
-.. |badge1| image:: https://vertel.se/web/image/website/1/logo/My%20Website?unique=f31edc7
+.. |badge1| image:: https://i.ibb.co/GCHLfR5/vertel-small.jpg
     :target: https://vertel.se/
     :alt: Vertel AB
 .. |badge2| image:: https://en.wikipedia.org/wiki/File:AGPLv3_Logo.svg
@@ -51,7 +51,7 @@ Maintainers
 
 This module is maintained by Vertel AB.
 
-.. image:: https://vertel.se/web/image/website/1/logo/My%20Website?unique=f31edc7
+.. image:: https://i.ibb.co/GCHLfR5/vertel-small.jpg
    :alt: Vertel AB
    :target: https://www.vertel.se
 
