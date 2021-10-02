@@ -3,15 +3,15 @@ Record-keeping
 ==============
 
 
-.. |badge1| image:: https://i.ibb.co/GCHLfR5/vertel-small.jpg
+.. |badge1| image:: https://i.ibb.co/Bc4qsYT/vertel.jpg
     :target: https://vertel.se/
     :alt: Vertel AB
-.. |badge2| image:: https://i.ibb.co/TBK0T8S/agpl3-small.jpg
+.. |badge2| image:: https://www.gnu.org/graphics/agplv3-88x31.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 
 
-|badge2|
+|badge1| |badge2|
 
 This module adds record-keeping features in attachments.
 
@@ -54,5 +54,4 @@ Maintainers
 ~~~~~~~~~~~
 
 This module is maintained by Vertel AB.
-
 |badge1|
