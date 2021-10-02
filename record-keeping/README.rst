@@ -32,7 +32,7 @@ To use this module, you need to:
 Bug Tracker
 ===========
 
-We don't handle bug tracking at the moment
+We don't handle bug tracking at the moment.
 Do not contact contributors directly about support or help with technical issues.
 
 Credits
