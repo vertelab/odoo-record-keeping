@@ -1,5 +1,6 @@
 from datetime import datetime
 from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 import logging
 
 from werkzeug.exceptions import default_exceptions
@@ -18,7 +19,7 @@ class IrAttachment(models.Model):
     drawn_up_date = fields.Date(
         default=datetime.now().date(),
         help='The date when the document is ready to be used or sent',
-        string='Received',
+        string='Drawn up',
     )
     is_secret = fields.Boolean(
         default=False,
@@ -50,3 +51,26 @@ class IrAttachment(models.Model):
         help='The task which this document is connected to',
         string='Task number',
     )
+
+    @api.onchange('is_official_document', 'is_secret')
+    def _onchange_official_document(self):
+        if self.is_secret:
+            self.is_official_document = True
+
+    @api.model
+    def create(self, vals):
+        if vals.get('is_secret'):
+            vals.update({'is_official_document': True})
+        return super(IrAttachment, self).create(vals)
+
+    def write(self, vals):
+        if vals.get('is_secret'):
+            _logger.warning(f'---write 1---{vals}')
+            vals.update({'is_official_document': True})
+        else:
+            if self.is_secret and vals.get('is_official_document') is False:
+                _logger.warning(f'---write 2---{vals}')
+                raise ValidationError(
+                    _('Cannot uncheck official document if it has a secrecy marker.'))
+
+        return super(IrAttachment, self).write(vals)
