@@ -5,7 +5,7 @@ Record-keeping
 .. |badge1| image:: https://i.ibb.co/GCHLfR5/vertel-small.jpg
     :target: https://vertel.se/
     :alt: Vertel AB
-.. |badge2| image:: https://en.wikipedia.org/wiki/File:AGPLv3_Logo.svg
+.. |badge2| image:: https://i.ibb.co/TBK0T8S/agpl3-small.jpg
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 
@@ -53,5 +53,5 @@ This module is maintained by Vertel AB.
 
 .. image:: https://i.ibb.co/GCHLfR5/vertel-small.jpg
    :alt: Vertel AB
-   :target: https://www.vertel.se
+   :target: https://vertel.se
 
