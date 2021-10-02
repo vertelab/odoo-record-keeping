@@ -17,16 +17,13 @@ addon
 
 [//]: # (end addons)
 
-Credits
-=======
+## Credits
 
-Authors
--------
+### Authors
 
 * Vertel AB
 
-Contributors
-------------
+### Contributors
 
 * Han Wong <han.wong@vertel.se>
 * Anders Wallenquist <anders.wallenquist@vertel.se>
