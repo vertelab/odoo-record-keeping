@@ -41,6 +41,8 @@ def modify4odoo_with_bs4(input):
     # Deletes styles as it has no impact in Odoo
     soup.find('style').extract()
 
+    soup.find('div', class_='document')['class'].append('container')
+
     # Define html-tags to modify, check bootstrap 4.0 documentation
     tags = {
         'a': {'del': ['external', 'internal', 'reference', 'toc-backref']},
