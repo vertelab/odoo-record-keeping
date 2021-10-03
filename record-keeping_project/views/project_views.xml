@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+<!-- add record-keeping notebook view in project form -->
     <record id="edit_project" model="ir.ui.view">
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.edit_project"/>
@@ -37,6 +39,41 @@
             </field>
         </field>
     </record>
-</odoo>
 
-<!-- project.view_task_form2 -->
+<!-- add record-keeping notebook view in task form -->
+    <record id="view_task_form2" model="ir.ui.view">
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="record_keeping" string="Record-keeping">
+                    <group>
+                        <group>
+                            <field name="drawn_up_date" widget="date" />
+                            <field name="received_date" widget="date" />
+                            <field name="receiver_id" />
+                            <field name="sender_id" />
+                        </group>
+                        <group>
+                            <field name="is_secret" />
+                            <field name="is_official_document" />
+                        </group>
+                    </group>
+                </page>
+                <page name="meta_information" string="Meta Information">
+                    <group>
+                        <group>
+                            <field name="create_date" widget="date" />
+                            <field name="create_uid" />
+                        </group>
+                        <group>
+                            <field name="__last_update" widget="date" />
+                            <field name="write_uid" />
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>
