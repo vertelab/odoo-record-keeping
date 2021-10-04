@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_record_keeping_law_section_user,record_keeping.law.section user,model_rk_law_section,base.group_user,1,0,0,0
+access_record_keeping_law_section_manager,record_keeping.law.section manager,model_rk_law_section,group_rk_law_section_manager,1,1,1,1
