@@ -40,7 +40,7 @@ msgstr ""
 #. module: record_keeping_law_section
 #: model_terms:ir.actions.act_window,help:record_keeping_law_section.action_rk_law_section_view
 msgid "Create a new law section"
-msgstr ""
+msgstr "Skapa ett nytt lagrum"
 
 #. module: record_keeping_law_section
 #: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__create_uid
@@ -55,7 +55,7 @@ msgstr ""
 #. module: record_keeping_law_section
 #: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__description
 msgid "Description"
-msgstr ""
+msgstr "Beskrivning"
 
 #. module: record_keeping_law_section
 #: model:ir.model.fields,field_description:record_keeping_law_section.field_ir_attachment__display_name
@@ -91,32 +91,32 @@ msgstr ""
 #: model:ir.ui.menu,name:record_keeping_law_section.menu_rk_law_section
 #: model_terms:ir.ui.view,arch_db:record_keeping_law_section.view_rk_law_section_form
 msgid "Law Section"
-msgstr ""
+msgstr "Lagrum"
 
 #. module: record_keeping_law_section
 #: model:res.groups,name:record_keeping_law_section.group_rk_law_section_manager
 msgid "Law Section Manager"
-msgstr ""
+msgstr "Lagrumsadministratör"
 
 #. module: record_keeping_law_section
 #: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__name
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 #. module: record_keeping_law_section
 #: model:ir.model,name:record_keeping_law_section.model_rk_law_section
 msgid "Record-keeping law section."
-msgstr ""
+msgstr "Lagrum för diarium"
 
 #. module: record_keeping_law_section
 #: model:ir.model.fields,field_description:record_keeping_law_section.field_ir_attachment__is_secret
 msgid "Secrecy marker"
-msgstr ""
+msgstr "Sekretessmarkering"
 
 #. module: record_keeping_law_section
 #: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Sekvens"
 
 #. module: record_keeping_law_section
 #: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__url
