@@ -1,15 +1,124 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
+# 	* record_keeping_law_section
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20210805\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-04 09:08+0000\n"
-"PO-Revision-Date: 2021-10-04 09:08+0000\n"
+"POT-Creation-Date: 2021-10-04 13:31+0000\n"
+"PO-Revision-Date: 2021-10-04 13:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__active
+msgid "Active"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model_terms:ir.ui.view,arch_db:record_keeping_law_section.view_rk_law_section_form
+msgid "Archived"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model,name:record_keeping_law_section.model_ir_attachment
+msgid "Attachment"
+msgstr "Bilaga"
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,help:record_keeping_law_section.field_ir_attachment__is_secret
+msgid ""
+"Check this option if it can be assumed that information contained in this "
+"document should not be disclosed on grounds of secrecy."
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model_terms:ir.actions.act_window,help:record_keeping_law_section.action_rk_law_section_view
+msgid "Create a new law section"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__description
+msgid "Description"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__display_name
+msgid "Display Name"
+msgstr "Visningsnamn"
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_ir_attachment__id
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__id
+msgid "ID"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_ir_attachment____last_update
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section____last_update
+msgid "Last Modified on"
+msgstr "Senast redigerad"
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.actions.act_window,name:record_keeping_law_section.action_rk_law_section_view
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_ir_attachment__law_section_ids
+#: model:ir.ui.menu,name:record_keeping_law_section.menu_rk_law_section
+#: model_terms:ir.ui.view,arch_db:record_keeping_law_section.view_rk_law_section_form
+msgid "Law Section"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:res.groups,name:record_keeping_law_section.group_rk_law_section_manager
+msgid "Law Section Manager"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__name
+msgid "Name"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model,name:record_keeping_law_section.model_rk_law_section
+msgid "Record-keeping law section."
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_ir_attachment__is_secret
+msgid "Secrecy marker"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: record_keeping_law_section
+#: model:ir.model.fields,field_description:record_keeping_law_section.field_rk_law_section__url
+msgid "Url"
+msgstr ""

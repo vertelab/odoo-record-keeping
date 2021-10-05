@@ -7,13 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20210805\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-04 11:09+0000\n"
-"PO-Revision-Date: 2021-10-04 11:09+0000\n"
+"PO-Revision-Date: 2021-10-04 15:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: sv_SE\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__sender_id
@@ -41,9 +43,11 @@ msgstr "Antal Bilagor"
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__is_secret
 #: model:ir.model.fields,help:record_keeping_project.field_project_task__is_secret
 msgid ""
-"Check this option if it can be assumed that information contained in this "
-"document should not be disclosed on grounds of secrecy."
-msgstr "Välj detta om det kan antas att informationen i detta dokument omfattas av sekretess"
+"Check this option if it can be assumed that information contained in this document should "
+"not be disclosed on grounds of secrecy."
+msgstr ""
+"Markera om det kan antas att informationen i detta dokument inte ska lämnas ut på grund av "
+"säkerhetsbestämmelse."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__is_official_document
@@ -92,28 +96,26 @@ msgstr "Följare (kontakter)"
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__id
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__message_needaction
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
-"Om den är markerad så finns det meddelanden som kräver din uppmärksamhet."
+msgstr "Om den är markerad så finns det meddelanden som kräver din uppmärksamhet."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__message_has_error
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Om den är markerad så finns det meddelanden med leveransfel"
+msgstr "Om den är markerad så finns det meddelanden med leveransfel."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__active
 msgid ""
-"If the active field is set to False, it will allow you to hide the project "
-"without removing it."
-msgstr ""
-"Om det aktiva fältet är Falskt, kan du gömma projektet utan att radera det."
+"If the active field is set to False, it will allow you to hide the project without "
+"removing it."
+msgstr "Om det aktiva fältet är Falskt, kan du gömma projektet utan att radera det."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_is_follower
@@ -217,7 +219,7 @@ msgstr "Avsändare"
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__received_date
 #: model:ir.model.fields,help:record_keeping_project.field_project_task__received_date
 msgid "The date when the document has been received by a competent person."
-msgstr "Datumet då handlingen har anlänt eller mottagits av behörig person"
+msgstr "Datumet då handlingen har mottagits av behörig person."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__drawn_up_date
@@ -228,7 +230,7 @@ msgstr "Datumet handlingen är klar att användas eller skickas"
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_task__active
 msgid "True if the document is visible. "
-msgstr "Sant om dokumentet är synligt"
+msgstr "Sant om dokumentet är synligt. "
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_unread
