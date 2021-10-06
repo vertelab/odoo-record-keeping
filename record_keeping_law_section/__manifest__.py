@@ -36,6 +36,7 @@ Record-keeping Law Section
     'author': 'Vertel AB',
     'depends': ['record_keeping',],
     'data': [
+        'data/rk_law_section_data.xml',
         'security/rk_law_section_security.xml',
         'security/ir.model.access.csv',
         'views/rk_law_section_views.xml',
