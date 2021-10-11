@@ -42,7 +42,7 @@
                 <field name="sender_id" />
                 <field name="receiver_id" />
                 <field name="is_secret" />
-                <field name="is_official_document" />
+                <field name="is_official" />
             </field>
         </field>
     </record>
@@ -76,7 +76,7 @@
                     <field name="mimetype" string="Type" />
                     <field name="task_id" widget="many2one" />
                     <field name="is_secret" />
-                    <field name="is_official_document" />
+                    <field name="is_official" />
                 </group>
             </xpath>
             <page name="indexed_content" position="replace">

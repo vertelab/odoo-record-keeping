@@ -17,7 +17,7 @@ class IrAttachment(models.Model):
         string='Active',
     )
     drawn_up_date = fields.Date(
-        default=datetime.now().date(),
+        default=False,
         help='The date when the document is ready to be used or sent',
         string='Drawn up',
     )
@@ -27,13 +27,13 @@ class IrAttachment(models.Model):
              'in this document should not be disclosed on grounds of secrecy.',
         string='Secrecy marker',
     )
-    is_official_document = fields.Boolean(
+    is_official = fields.Boolean(
         default=False,
         help='Check this option if this document is an official document',
         string='Official document',
     )
     received_date = fields.Date(
-        default=datetime.now().date(),
+        default=False,
         help='The date when the document has been received by a competent person.',
         string='Received',
     )
@@ -52,23 +52,23 @@ class IrAttachment(models.Model):
         string='Task number',
     )
 
-    @api.onchange('is_official_document', 'is_secret')
+    @api.onchange('is_official', 'is_secret')
     def _onchange_official_document(self):
         if self.is_secret:
-            self.is_official_document = True
+            self.is_official = True
 
     @api.model
     def create(self, vals):
         if vals.get('is_secret'):
-            vals.update({'is_official_document': True})
+            vals.update({'is_official': True})
         return super(IrAttachment, self).create(vals)
 
     def write(self, vals):
         if vals.get('is_secret'):
             _logger.warning(f'---write 1---{vals}')
-            vals.update({'is_official_document': True})
+            vals.update({'is_official': True})
         else:
-            if self.is_secret and vals.get('is_official_document') is False:
+            if self.is_secret and vals.get('is_official') is False:
                 _logger.warning(f'---write 2---{vals}')
                 raise ValidationError(
                     _('Cannot uncheck official document if it has a secrecy marker.'))

@@ -53,7 +53,7 @@ msgstr ""
 "lämnas ut på grund av säkerhetsbestämmelse."
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_ir_attachment__is_official_document
+#: model:ir.model.fields,help:record_keeping.field_ir_attachment__is_official
 msgid "Check this option if this document is an official document"
 msgstr "Markera om detta dokument är en allmän handling"
 
@@ -108,7 +108,7 @@ msgid "Official Document"
 msgstr "Allmän Handling"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__is_official_document
+#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__is_official
 msgid "Official document"
 msgstr "Allmän handling"
 
