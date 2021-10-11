@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Sequences for rk.document -->
+        <record id="seq_rk_document" model="ir.sequence">
+            <field name="name">Record-keeping Document</field>
+            <field name="code">rk.document</field>
+            <field name="padding">7</field>
+            <field name="prefix">[RD</field>
+            <field name="suffix">]</field>
+        </record>
+
+    </data>
+</odoo>

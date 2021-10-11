@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+    
+        <record id="group_rk_document_manager" model="res.groups">
+            <field name="name">Record-keeping Document Manager</field>
+            <field name="category_id" ref="base.module_category_services_project"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_rk_document_user" model="res.groups">
+            <field name="name">Record-keeping Document User</field>
+            <field name="category_id" ref="base.module_category_services_project"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    
+    </data>
+</odoo>
