@@ -14,7 +14,7 @@ class RecordKeepingMixin(models.AbstractModel):
 
     active = fields.Boolean(
         default=True,
-        help='True if the document is visible. ',
+        help='True if the document is visible.',
         string='Active',
     )
     drawn_up_date = fields.Date(
@@ -28,7 +28,7 @@ class RecordKeepingMixin(models.AbstractModel):
              'in this document should not be disclosed on grounds of secrecy.',
         string='Secrecy marker',
     )
-    is_official_document = fields.Boolean(
+    is_official = fields.Boolean(
         default=False,
         help='Check this option if this document is an official document',
         string='Official document',
