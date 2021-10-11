@@ -59,8 +59,7 @@ class RecordKeepingDocument(models.Model):
                 raise ValidationError('Secrecy provision cannot be empty2')
             vals['name'] = self.env['ir.sequence'].next_by_code(
                 'rk.document') or vals['name']
-        res = super().create(vals)
-        return res
+        return super().create(vals)
 
     def write(self, vals):
         # if not vals.get('is_official', True):
@@ -71,4 +70,6 @@ class RecordKeepingDocument(models.Model):
         #     raise ValidationError('Secrecy provision cannot be empty3')
 
         _logger.warning(vals)
+        if vals.get('is_official'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('rk.document') or vals['name']
         return super(RecordKeepingDocument, self).write(vals)

@@ -37,7 +37,6 @@ Record-keeping
     'author': 'Vertel AB',
     'depends': ['mail'],
     'data': [
-        #'views/ir_attachment_views.xml',
         'data/ir_sequence_data.xml',
         'data/rk_law_section_data.xml',
         'security/rk_document_security.xml',
@@ -45,6 +44,5 @@ Record-keeping
         'views/rk_document_views.xml',
         'views/rk_law_section_views.xml',
     ],
-    'demo': [],
     'application': True,
 }
