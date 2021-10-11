@@ -34,6 +34,5 @@ This module extends Employees with record-keeping features
     'data': [
         'views/hr_views.xml',
     ],
-    'demo': [],
-    'application': True,
+    'post_init_hook': 'post_init_hook',
 }
