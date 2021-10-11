@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+################################################################################
 #
 #    Odoo, Open Source Management Solution, third party addon
 #    Copyright (C) 2004-2017 Vertel AB (<https://vertel.se>).
@@ -17,7 +17,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+################################################################################
 
 {
     'name': 'Record-keeping Project',

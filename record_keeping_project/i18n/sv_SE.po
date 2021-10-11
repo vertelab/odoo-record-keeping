@@ -50,8 +50,8 @@ msgstr ""
 "säkerhetsbestämmelse."
 
 #. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__is_official_document
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__is_official_document
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__is_official
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__is_official
 msgid "Check this option if this document is an official document"
 msgstr "Markera om detta dokument är en allmän handling"
 
@@ -175,8 +175,8 @@ msgid "Number of unread messages"
 msgstr "Antal olästa meddelanden"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__is_official_document
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__is_official_document
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__is_official
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__is_official
 msgid "Official document"
 msgstr "Allmän handling"
 

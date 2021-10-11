@@ -16,8 +16,8 @@
                             <field name="sender_id" />
                         </group>
                         <group>
-                            <field name="is_secret" />
-                            <field name="is_official_document" />
+                            <field name="is_official" />
+                            <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
                         </group>
                     </group>
                 </page>
@@ -55,8 +55,8 @@
                             <field name="sender_id" />
                         </group>
                         <group>
-                            <field name="is_secret" />
-                            <field name="is_official_document" />
+                            <field name="is_official" />
+                            <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
                         </group>
                     </group>
                 </page>

@@ -10,7 +10,7 @@ _logger = logging.getLogger(__name__)
 class ProjectProject(models.Model):
     _name = 'project.project'
     _inherit = ['project.project', 'rk.mixin', 'mail.thread']
-    _description = "Extend Project with Record-keeping Mixin"
+    _description = "Project"
 
 
 class ProjectTask(models.Model):
