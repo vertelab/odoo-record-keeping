@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- add record-keeping notebook view in project form -->
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="record_keeping" string="Record-keeping">
+                    <group>
+                        <group>
+                            <field name="drawn_up_date" widget="date" />
+                            <field name="received_date" widget="date" />
+                            <field name="receiver_id" />
+                            <field name="sender_id" />
+                        </group>
+                        <group>
+                            <field name="is_secret" />
+                            <field name="is_official" />
+                        </group>
+                    </group>
+                </page>
+                <page name="meta_information" string="Meta Information">
+                    <group>
+                        <group>
+                            <field name="create_date" widget="date" />
+                            <field name="create_uid" />
+                        </group>
+                        <group>
+                            <field name="__last_update" widget="date" />
+                            <field name="write_uid" />
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>
