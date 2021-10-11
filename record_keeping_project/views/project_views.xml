@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-<!-- add record-keeping notebook view in project form -->
     <record id="edit_project" model="ir.ui.view">
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.edit_project"/>
@@ -10,14 +8,15 @@
                 <page name="record_keeping" string="Record-keeping">
                     <group>
                         <group>
-                            <field name="drawn_up_date" widget="date" />
-                            <field name="received_date" widget="date" />
+                            <field name="draw_up_date" widget="date" />
+                            <field name="receive_date" widget="date" />
                             <field name="receiver_id" />
                             <field name="sender_id" />
                         </group>
                         <group>
                             <field name="is_official" />
                             <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
+                            <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)]}"/>
                         </group>
                     </group>
                 </page>
@@ -34,13 +33,16 @@
                     </group>
                 </page>
             </notebook>
-            <field name="message_follower_ids" position="after">
-                <field name="message_ids"/>
-            </field>
+            <div class="oe_chatter" position="replace" />
+            <sheet position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" options="{'post_refresh':True}" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </sheet>
         </field>
     </record>
-
-<!-- add record-keeping notebook view in task form -->
     <record id="view_task_form2" model="ir.ui.view">
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2"/>
@@ -49,8 +51,8 @@
                 <page name="record_keeping" string="Record-keeping">
                     <group>
                         <group>
-                            <field name="drawn_up_date" widget="date" />
-                            <field name="received_date" widget="date" />
+                            <field name="draw_up_date" widget="date" />
+                            <field name="receive_date" widget="date" />
                             <field name="receiver_id" />
                             <field name="sender_id" />
                         </group>
@@ -75,5 +77,4 @@
             </notebook>
         </field>
     </record>
-
 </odoo>

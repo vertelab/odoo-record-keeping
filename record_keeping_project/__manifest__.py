@@ -21,7 +21,7 @@
 
 {
     'name': 'Record-keeping Project',
-    'summary': 'Record-keeping Project for Odoo',
+    'summary': 'Extend projects with record-keeping',
     'description': """
 This module extends projects with record-keeping features
 """,
@@ -30,10 +30,9 @@ This module extends projects with record-keeping features
     'license': 'AGPL-3',
     'website': 'https://vertel.se',
     'author': 'Vertel AB',
-    'depends': ['attachment_notebook', 'project', 'record_keeping_mixin', ],
+    'depends': ['mail', 'project', 'record_keeping'],
     'data': [
         'views/project_views.xml',
     ],
-    'demo': [],
-    'application': True,
+    'post_init_hook': 'post_init_hook',
 }
