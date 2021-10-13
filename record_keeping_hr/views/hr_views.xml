@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-<!-- add record-keeping notebook view in project form -->
     <record id="view_employee_form" model="ir.ui.view">
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
+            <widget position="replace" />
+            <div name="button_box" position="before">
+                <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
+            </div>
             <notebook position="inside">
                 <page name="record_keeping" string="Record-keeping">
                     <group>
@@ -16,7 +18,11 @@
                             <field name="sender_id" />
                         </group>
                         <group>
-                            <field name="is_official" />
+                            <label for="is_official"/>
+                            <div class="o_row">
+                                <field name="is_official"/>
+                                <field name="rk_id" attrs="{'invisible':[('is_official','=',False)]}" class="oe_inline" nolabel="1" />
+                            </div>
                             <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
                             <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)]}"/>
                         </group>
@@ -37,5 +43,4 @@
             </notebook>
         </field>
     </record>
-
 </odoo>

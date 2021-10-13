@@ -9,7 +9,7 @@ _logger = logging.getLogger(__name__)
 
 class HrEmployee(models.Model):
     _name = 'hr.employee'
-    _inherit = ['hr.employee']
+    _inherit = ['hr.employee',]
     _inherits = {'rk.document': 'rk_id'}
 
     rk_id = fields.Many2one(
@@ -18,5 +18,5 @@ class HrEmployee(models.Model):
         ondelete='restrict',
         required=True,
         readonly=True,
-        string='Record-keeping Document',
+        string=_('Record-keeping Document'),
     )

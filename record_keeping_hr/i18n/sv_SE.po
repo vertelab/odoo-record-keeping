@@ -6,40 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-08 07:16+0000\n"
-"PO-Revision-Date: 2021-10-08 09:26+0200\n"
+"POT-Creation-Date: 2021-10-13 04:44+0000\n"
+"PO-Revision-Date: 2021-10-13 04:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: sv_SE\n"
-"X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping_hr
-#: model:ir.model.fields,help:record_keeping_hr.field_hr_employee__sender_id
-msgid "A partner designated as sender"
-msgstr "En kontakt som är avsändare"
-
-#. module: record_keeping_hr
-#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__active
-msgid "Active"
-msgstr "Aktiv"
-
-#. module: record_keeping_hr
-#: model:ir.model.fields,help:record_keeping_hr.field_hr_employee__is_secret
-msgid ""
-"Check this option if it can be assumed that information contained in this "
-"document should not be disclosed on grounds of secrecy."
-msgstr ""
-"Markera om det kan antas att informationen i detta dokument inte ska "
-"lämnas ut på grund av säkerhetsbestämmelse."
-
-#. module: record_keeping_hr
-#: model:ir.model.fields,help:record_keeping_hr.field_hr_employee__is_official
-msgid "Check this option if this document is an official document"
-msgstr "Markera om detta dokument är en allmän handling"
+#: model_terms:ir.ui.view,arch_db:record_keeping_hr.view_employee_form
+msgid "Confidential"
+msgstr "Sekretess"
 
 #. module: record_keeping_hr
 #: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__display_name
@@ -47,19 +26,14 @@ msgid "Display Name"
 msgstr "Visningsnamn"
 
 #. module: record_keeping_hr
-#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__drawn_up_date
-msgid "Drawn up"
-msgstr "Upprättad"
-
-#. module: record_keeping_hr
 #: model:ir.model,name:record_keeping_hr.model_hr_employee
-msgid "Employees extended with Record-keeping Mixin"
-msgstr "Utökar Projekt med diarieföring"
+msgid "Employee"
+msgstr "Anställd"
 
 #. module: record_keeping_hr
 #: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: record_keeping_hr
 #: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee____last_update
@@ -67,51 +41,23 @@ msgid "Last Modified on"
 msgstr "Senast redigerad"
 
 #. module: record_keeping_hr
+#: model:ir.model.fields,help:record_keeping_hr.field_hr_employee__rk_id
+msgid "Link to corresponding record-keeping document"
+msgstr "Koppling till allmän handling"
+
+#. module: record_keeping_hr
 #: model_terms:ir.ui.view,arch_db:record_keeping_hr.view_employee_form
 msgid "Meta Information"
 msgstr "Meta information"
 
 #. module: record_keeping_hr
-#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__is_official
-msgid "Official document"
-msgstr "Allmän handling"
-
-#. module: record_keeping_hr
-#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__received_date
-msgid "Received"
-msgstr "Inkommen"
-
-#. module: record_keeping_hr
-#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__receiver_id
-msgid "Receiver"
-msgstr "Mottagare"
-
-#. module: record_keeping_hr
 #: model_terms:ir.ui.view,arch_db:record_keeping_hr.view_employee_form
 msgid "Record-keeping"
-msgstr "Diarie"
+msgstr "Diarium"
 
 #. module: record_keeping_hr
-#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__is_secret
-msgid "Secrecy marker"
-msgstr "Sekretessmarkering"
-
-#. module: record_keeping_hr
-#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__sender_id
-msgid "Sender"
-msgstr "Avsändare"
-
-#. module: record_keeping_hr
-#: model:ir.model.fields,help:record_keeping_hr.field_hr_employee__received_date
-msgid "The date when the document has been received by a competent person."
-msgstr "Datumet då handlingen har mottagits av behörig person."
-
-#. module: record_keeping_hr
-#: model:ir.model.fields,help:record_keeping_hr.field_hr_employee__drawn_up_date
-msgid "The date when the document is ready to be used or sent"
-msgstr "Datumet handlingen är klar att användas eller skickas"
-
-#. module: record_keeping_hr
-#: model:ir.model.fields,help:record_keeping_hr.field_hr_employee__active
-msgid "True if the document is visible. "
-msgstr "Sant om dokumentet är synligt. "
+#: code:addons/record_keeping_hr/models/hr.py:0
+#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__rk_id
+#, python-format
+msgid "Record-keeping Document"
+msgstr "Allmän Handling"

@@ -30,7 +30,7 @@ This module extends Employees with record-keeping features
     'license': 'AGPL-3',
     'website': 'https://vertel.se',
     'author': 'Vertel AB',
-    'depends': ['attachment_notebook', 'hr'],
+    'depends': ['attachment_notebook', 'hr', 'record_keeping'],
     'data': [
         'views/hr_views.xml',
     ],
