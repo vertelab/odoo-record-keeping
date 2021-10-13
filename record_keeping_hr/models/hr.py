@@ -14,9 +14,9 @@ class HrEmployee(models.Model):
 
     rk_id = fields.Many2one(
         comodel_name='rk.document',
-        help='Link to corresponding record-keeping document',
+        help='The record-keeping document of this employee',
         ondelete='restrict',
         required=True,
         readonly=True,
-        string=_('Record-keeping Document'),
+        string='Record-keeping Document',
     )
