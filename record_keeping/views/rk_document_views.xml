@@ -103,7 +103,7 @@
         </field>
     </record>
     <record id="action_document_view" model="ir.actions.act_window">
-        <field name="name">Record-keeping Documents</field>
+        <field name="name">"Record-keeping Documents"</field>
         <field name="res_model">rk.document</field>
         <field name="domain">[('is_official','=',True)]</field>
         <field name="view_mode">kanban,tree,form</field>
