@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-13 08:58+0000\n"
-"PO-Revision-Date: 2021-10-13 11:22+0200\n"
+"POT-Creation-Date: 2021-10-13 12:50+0000\n"
+"PO-Revision-Date: 2021-10-13 14:54+0200\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv\n"
+"Language: sv_SE\n"
 "X-Generator: Poedit 3.0\n"
 
 #. module: record_keeping
@@ -26,11 +26,6 @@ msgstr "En kontakt som är avsändare"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_needaction
 msgid "Action Needed"
 msgstr "Handling krävs"
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__active
-msgid "Active"
-msgstr "Aktiv"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_ids
@@ -51,11 +46,6 @@ msgstr "Aktivitetsstatus"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_type_icon
 msgid "Activity Type Icon"
 msgstr "Aktivitetstypsikon"
-
-#. module: record_keeping
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_law_section_form
-msgid "Archived"
-msgstr "Arkiverad"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_attachment_count
@@ -320,17 +310,17 @@ msgstr "Allmänna handlingar"
 #. module: record_keeping
 #: model:res.groups,name:record_keeping.group_rk_document_manager
 msgid "Record-keeping Document Manager"
-msgstr "Diarie Administratör"
+msgstr "Diarieadministratör"
 
 #. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_document_view
 msgid "Record-keeping Documents"
-msgstr "Allmänna Handlingar"
+msgstr "Allmänna handlingar"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_law_section
 msgid "Record-keeping Law Section"
-msgstr "Lagrum"
+msgstr "Diarielagrum"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_user_id
@@ -343,9 +333,7 @@ msgid "Secrecy marker"
 msgstr "Sekretessmarkering"
 
 #. module: record_keeping
-#: code:addons/record_keeping/models/rk_document.py:0
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__law_section_id
-#, python-format
 msgid "Secrecy provision"
 msgstr "Sekretessbestämmelse"
 
@@ -359,11 +347,6 @@ msgstr "Sekretessbestämmelse får inte vara tomt"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__sender_id
 msgid "Sender"
 msgstr "Avsändare"
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__sequence
-msgid "Sequence"
-msgstr "Sekvens"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__activity_state
@@ -386,7 +369,7 @@ msgstr "Datumet då handlingen har mottagits av behörig person."
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__draw_up_date
 msgid "The date when the document is ready to be used or sent"
-msgstr "Datumet då handlingen är klar att användas eller skickas"
+msgstr "Datumet handlingen är klar att användas eller skickas"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__law_section_id

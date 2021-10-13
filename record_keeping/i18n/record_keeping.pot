@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-13 08:55+0000\n"
-"PO-Revision-Date: 2021-10-13 08:55+0000\n"
+"POT-Creation-Date: 2021-10-13 12:50+0000\n"
+"PO-Revision-Date: 2021-10-13 12:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,6 @@ msgstr ""
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_needaction
 msgid "Action Needed"
-msgstr ""
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__active
-msgid "Active"
 msgstr ""
 
 #. module: record_keeping
@@ -48,11 +43,6 @@ msgstr ""
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
-
-#. module: record_keeping
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_law_section_form
-msgid "Archived"
 msgstr ""
 
 #. module: record_keeping
@@ -338,9 +328,7 @@ msgid "Secrecy marker"
 msgstr ""
 
 #. module: record_keeping
-#: code:addons/record_keeping/models/rk_document.py:0
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__law_section_id
-#, python-format
 msgid "Secrecy provision"
 msgstr ""
 
@@ -353,11 +341,6 @@ msgstr ""
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__sender_id
 msgid "Sender"
-msgstr ""
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__sequence
-msgid "Sequence"
 msgstr ""
 
 #. module: record_keeping

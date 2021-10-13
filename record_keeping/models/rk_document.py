@@ -38,7 +38,7 @@ class RecordKeepingDocument(models.Model):
     law_section_id = fields.Many2one(
         comodel_name='rk.law.section',
         help='The specified secrecy provision when the document has a secrecy marker',
-        string=_('Secrecy provision'),
+        string='Secrecy provision',
         tracking=True,
     )
     receive_date = fields.Date(
