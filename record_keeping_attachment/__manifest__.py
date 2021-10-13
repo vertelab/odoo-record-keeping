@@ -30,7 +30,7 @@ This module extends attachments with record-keeping features
     'license': 'AGPL-3',
     'website': 'https://vertel.se',
     'author': 'Vertel AB',
-    'depends': ['attachment_notebook', 'mail'],
+    'depends': ['attachment_notebook', 'record_keeping', 'mail'],
     'data': [
         'views/ir_attachment_views.xml',
     ],

@@ -10,7 +10,10 @@ def post_init_hook(cr, registry):
     This post-init-hook will create rk.document records for each existing project.
     """
     env = api.Environment(cr, SUPERUSER_ID, dict())
-    attachments = env['ir.attachment'].search([], order='id')
-    for attachment in attachments:
-        if not attachment.rk_id:
-            attachment.rk_id = env['rk.document'].create({})
+    models = ['ir.attachment']
+
+    for model in models:
+        records = env[model].search([], order='id')
+        for record in records:
+            if not record.rk_id:
+                record.rk_id = env['rk.document'].create({})

@@ -4,6 +4,9 @@
         <field name="model">ir.attachment</field>
         <field name="inherit_id" ref="attachment_notebook.view_attachment_form"/>
         <field name="arch" type="xml">
+            <label for="name" position="before">
+                <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
+            </label>
             <notebook position="inside">
                 <page name="record_keeping" string="Record-keeping">
                     <group>
@@ -14,7 +17,11 @@
                             <field name="sender_id" />
                         </group>
                         <group>
-                            <field name="is_official" />
+                            <label for="is_official"/>
+                            <div class="o_row">
+                                <field name="is_official"/>
+                                <field name="rk_id" attrs="{'invisible':[('is_official','=',False)]}" class="oe_inline" nolabel="1" />
+                            </div>
                             <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
                             <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)]}"/>
                         </group>
@@ -33,6 +40,13 @@
                     </group>
                 </page>
             </notebook>
+            <sheet position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" options="{'post_refresh':True}" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </sheet>
         </field>
     </record>
 </odoo>
