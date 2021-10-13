@@ -14,7 +14,7 @@ class IrAttachment(models.Model):
 
     rk_id = fields.Many2one(
         comodel_name='rk.document',
-        help='Link to corresponding record-keeping document',
+        help='The record-keeping document of this attachment',
         ondelete='restrict',
         required=True,
         readonly=True,

@@ -6,19 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-12 21:43+0000\n"
-"PO-Revision-Date: 2021-10-12 21:43+0000\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2021-10-13 11:42+0000\n"
+"PO-Revision-Date: 2021-10-13 13:45+0200\n"
+"Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+"X-Generator: Poedit 3.0\n"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Åtgärd krävs"
 
 #. module: record_keeping_attachment
 #: model:ir.model,name:record_keeping_attachment.model_ir_attachment
@@ -28,7 +30,7 @@ msgstr "Bilaga"
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Antal Bilagor"
 
 #. module: record_keeping_attachment
 #: model_terms:ir.ui.view,arch_db:record_keeping_attachment.view_attachment_form
@@ -46,42 +48,45 @@ msgid ""
 "Follow this project to automatically track the events associated to tasks "
 "and issues of this project."
 msgstr ""
+"Följ det här projektet för att automatiskt spåra händelser i samband med "
+"aktiviteter och ärenden som berör detta projekt."
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Följare"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Följare (Kanaler)"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Följare (kontakter)"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_needaction
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
+"Om den är markerad så finns det meddelanden som kräver din uppmärksamhet."
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Om markerad så har det blivit ett leveransfel för några meddelanden."
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Är följare"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment____last_update
@@ -89,24 +94,19 @@ msgid "Last Modified on"
 msgstr "Senast redigerad"
 
 #. module: record_keeping_attachment
-#: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__rk_id
-msgid "Link to corresponding record-keeping document"
-msgstr "Koppling till allmän handling"
-
-#. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Huvudbilaga"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Fel vid meddelandeleverans"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Meddelanden"
 
 #. module: record_keeping_attachment
 #: model_terms:ir.ui.view,arch_db:record_keeping_attachment.view_attachment_form
@@ -116,27 +116,27 @@ msgstr "Meta information"
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Antal åtgärder"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Antal fel"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Antal meddelanden som kräver en åtgärd"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Antal meddelanden med leveransfel"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Antal olästa meddelanden"
 
 #. module: record_keeping_attachment
 #: model_terms:ir.ui.view,arch_db:record_keeping_attachment.view_attachment_form
@@ -149,21 +149,26 @@ msgid "Record-keeping Document"
 msgstr "Allmän Handling"
 
 #. module: record_keeping_attachment
+#: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__rk_id
+msgid "The record-keeping document of this attachment"
+msgstr "Diariehandlingen för den här bilagan"
+
+#. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Olästa meddelanden"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Räknare olästa meddelanden"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Webbplatsmeddelanden"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Webbplatsens kommunikationshistorik"
