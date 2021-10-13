@@ -12,11 +12,7 @@
         <field name="model">rk.law.section</field>
         <field name="arch" type="xml">
             <form string="Law Section">
-                <field name="active" invisible="1" />
-                <header>
-                </header>
                 <sheet>
-                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}" />
                     <group>
                         <field name="name" />
                         <field name="description" />

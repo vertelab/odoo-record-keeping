@@ -20,7 +20,5 @@ class RecordKeepingLawSection(models.Model):
     _order = 'id desc'
 
     name = fields.Char()
-    active = fields.Boolean(default=True)
     description = fields.Html()
-    sequence = fields.Integer()
     url = fields.Char()
