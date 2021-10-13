@@ -5,6 +5,7 @@
         <field name="arch" type="xml">
             <form string="Record-keeping">
                 <sheet>
+                    <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
                     <label for="name" class="oe_edit_only"/>
                     <h1>
                         <field name="name"/>
@@ -38,14 +39,13 @@
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                        <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
-                        <field name="activity_ids"/>
-                        <field name="message_ids"/>
-                    </div>
+                    <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
-
     <record id="view_document_kanban" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
@@ -62,7 +62,9 @@
                         <div t-attf-class="oe_kanban_global_click o_has_icon">
                             <div class="row">
                                 <div class="col-12">
-                                    <strong><t t-esc="record.name.value"/></strong>
+                                    <strong>
+                                        <t t-esc="record.name.value"/>
+                                    </strong>
                                 </div>
                             </div>
                             <t t-if="record.draw_up_date.value">
@@ -75,7 +77,6 @@
             </kanban>
         </field>
     </record>
-
     <record id="view_document_search" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
@@ -85,7 +86,6 @@
             </search>
         </field>
     </record>
-    
     <record id="view_document_tree" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
@@ -102,7 +102,6 @@
             </tree>
         </field>
     </record>
-
     <record id="action_document_view" model="ir.actions.act_window">
         <field name="name">Record-keeping Documents</field>
         <field name="res_model">rk.document</field>
@@ -113,30 +112,26 @@
         <field name="search_view_id" ref="view_document_search" />
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create a new record-keeping document
+                Create a record-keeping document
             </p>
         </field>
     </record>
-
     <record id="action_document_form" model="ir.actions.act_window.view">
         <field name="sequence" eval="2" />
         <field name="view_mode">form</field>
         <field name="act_window_id" ref="action_document_view" />
     </record>
-
     <record id="action_document_kanban" model="ir.actions.act_window.view">
         <field name="sequence" eval="0" />
         <field name="view_mode">kanban</field>
         <field name="act_window_id" ref="action_document_view" />
     </record>
-
     <record id="action_document_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="1" />
         <field name="view_mode">tree</field>
         <field name="act_window_id" ref="action_document_view" />
     </record>
-
-    <menuitem id="menu_document" name="Record-keeping" />
-    <menuitem action="action_document_view" id="menu_document_menu_1" name="Menu 1" parent="menu_document" />
-    <menuitem action="action_document_view" id="menu_document_configuration" name="Configuration" parent="menu_document" />
+    <menuitem id="menu_record_keeping" name="Record-keeping" />
+    <menuitem action="action_document_view" id="menu_record_keeping_document" name="Documents" parent="menu_record_keeping" sequence="1"/>
+    <menuitem action="action_document_view" id="menu_record_keeping_configuration" name="Configuration" parent="menu_record_keeping" sequence="100" />
 </odoo>

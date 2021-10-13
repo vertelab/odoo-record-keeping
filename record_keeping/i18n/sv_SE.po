@@ -4,58 +4,80 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20210805\n"
+"Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-04 13:30+0000\n"
-"PO-Revision-Date: 2021-10-04 15:43+0200\n"
+"POT-Creation-Date: 2021-10-12 21:19+0000\n"
+"PO-Revision-Date: 2021-10-12 21:19+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: sv_SE\n"
-"X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_record_keeping_search
-msgid "\"Official Document\""
-msgstr "\"Allmän handling\""
-
-#. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_ir_attachment__sender_id
+#: model:ir.model.fields,help:record_keeping.field_rk_document__sender_id
 msgid "A partner designated as sender"
 msgstr "En kontakt som är avsändare"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__active
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_needaction
+msgid "Action Needed"
+msgstr "Handling krävs"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__active
 msgid "Active"
 msgstr "Aktiv"
 
 #. module: record_keeping
-#: model:ir.model,name:record_keeping.model_ir_attachment
-msgid "Attachment"
-msgstr "Bilaga"
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_ids
+msgid "Activities"
+msgstr "Aktiviteter"
 
 #. module: record_keeping
-#: code:addons/record_keeping/models/ir_attachment.py:0
-#, python-format
-msgid "Cannot uncheck official document if it has a secrecy marker."
-msgstr "Får inte avmarkera om handlingen har sekretessmarkering."
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_ir_attachment__is_secret
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_law_section_form
+msgid "Archived"
+msgstr "Arkiverad"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_attachment_count
+msgid "Attachment Count"
+msgstr "Antal bilagor"
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__is_secret
 msgid ""
 "Check this option if it can be assumed that information contained in this "
 "document should not be disclosed on grounds of secrecy."
 msgstr ""
-"Markera om det kan antas att informationen i detta dokument inte ska "
-"lämnas ut på grund av säkerhetsbestämmelse."
+"Markera om det kan antas att informationen i detta dokument inte ska lämnas "
+"ut på grund av säkerhetsbestämmelse."
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_ir_attachment__is_official
+#: model:ir.model.fields,help:record_keeping.field_rk_document__is_official
 msgid "Check this option if this document is an official document"
 msgstr "Markera om detta dokument är en allmän handling"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
+msgid "Confidential"
+msgstr "Sekretess"
 
 #. module: record_keeping
 #: model:ir.ui.menu,name:record_keeping.menu_record_keeping_configuration
@@ -63,107 +85,317 @@ msgid "Configuration"
 msgstr "Inställningar"
 
 #. module: record_keeping
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_attachment_form
-msgid "Content"
-msgstr "Innehåll"
+#: model_terms:ir.actions.act_window,help:record_keeping.action_law_section_view
+msgid "Create a law section"
+msgstr "Skapa ett nytt lagrum"
 
 #. module: record_keeping
-#: model_terms:ir.actions.act_window,help:record_keeping.action_record_keeping_view
-msgid "Create a new official document"
+#: model_terms:ir.actions.act_window,help:record_keeping.action_document_view
+msgid "Create a record-keeping document"
 msgstr "Skapa en ny allmän handling"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__description
+msgid "Description"
+msgstr "Beskrivning"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__display_name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__display_name
 msgid "Display Name"
 msgstr "Visningsnamn"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__drawn_up_date
+#: model:ir.ui.menu,name:record_keeping.menu_record_keeping_document
+msgid "Documents"
+msgstr "Handlingar"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__draw_up_date
 msgid "Drawn up"
 msgstr "Upprättad"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__id
-msgid "ID"
-msgstr "ID"
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_follower_ids
+msgid "Followers"
+msgstr ""
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment____last_update
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__id
+msgid "ID"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__message_needaction
+#: model:ir.model.fields,help:record_keeping.field_rk_document__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document____last_update
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section____last_update
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 
 #. module: record_keeping
-#: model:ir.ui.menu,name:record_keeping.menu_record_keeping_menu_1
-msgid "Menu 1"
-msgstr "Meny 1"
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
 
 #. module: record_keeping
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_attachment_form
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad"
+
+#. module: record_keeping
+#: model:ir.actions.act_window,name:record_keeping.action_law_section_view
+#: model:ir.ui.menu,name:record_keeping.menu_law_section
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_law_section_form
+msgid "Law Section"
+msgstr "Lagrum"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
 msgid "Meta Information"
-msgstr "Meta information"
+msgstr ""
 
 #. module: record_keeping
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_record_keeping_search
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__name
+msgid "Name"
+msgstr "Namn"
+
+#. module: record_keeping
+#: code:addons/record_keeping/models/rk_document.py:0
+#, python-format
+msgid "New"
+msgstr "Ny"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
 msgid "Official Document"
 msgstr "Allmän Handling"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__is_official
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__is_official
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
 msgid "Official document"
 msgstr "Allmän handling"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__received_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__receive_date
 msgid "Received"
 msgstr "Inkommen"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__receiver_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__receiver_id
 msgid "Receiver"
 msgstr "Mottagare"
 
 #. module: record_keeping
-#: model:ir.actions.act_window,name:record_keeping.action_record_keeping_view
 #: model:ir.ui.menu,name:record_keeping.menu_record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_tree
 msgid "Record-keeping"
 msgstr "Diarium"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__is_secret
+#: model:ir.model,name:record_keeping.model_rk_document
+msgid "Record-keeping Document"
+msgstr "Allmänna handlingar"
+
+#. module: record_keeping
+#: model:res.groups,name:record_keeping.group_rk_document_manager
+msgid "Record-keeping Document Manager"
+msgstr "Diarie Administratör"
+
+#. module: record_keeping
+#: model:ir.actions.act_window,name:record_keeping.action_document_view
+msgid "Record-keeping Documents"
+msgstr "Allmänna handlingar"
+
+#. module: record_keeping
+#: model:ir.model,name:record_keeping.model_rk_law_section
+msgid "Record-keeping law section."
+msgstr "Lagrum"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__is_secret
 msgid "Secrecy marker"
 msgstr "Sekretessmarkering"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__sender_id
+#: code:addons/record_keeping/models/rk_document.py:0
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__law_section_id
+#, python-format
+msgid "Secrecy provision"
+msgstr "Sekretessbestämmelse"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__sender_id
 msgid "Sender"
 msgstr "Avsändare"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_ir_attachment__task_id
-msgid "Task number"
-msgstr "Ärendenummer"
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__sequence
+msgid "Sequence"
+msgstr "Sekvens"
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_ir_attachment__received_date
+#: model:ir.model.fields,help:record_keeping.field_rk_document__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__receive_date
 msgid "The date when the document has been received by a competent person."
 msgstr "Datumet då handlingen har mottagits av behörig person."
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_ir_attachment__drawn_up_date
+#: model:ir.model.fields,help:record_keeping.field_rk_document__draw_up_date
 msgid "The date when the document is ready to be used or sent"
 msgstr "Datumet handlingen är klar att användas eller skickas"
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_ir_attachment__task_id
-msgid "The task which this document is connected to"
-msgstr "Ärendet som handlingen är kopplad till"
+#: model:ir.model.fields,help:record_keeping.field_rk_document__law_section_id
+msgid "The specified secrecy provision when document has a secrecy marker"
+msgstr ""
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_ir_attachment__active
-msgid "True if the document is visible. "
-msgstr "Sant om dokumentet är synligt. "
+#: model:ir.model.fields,help:record_keeping.field_rk_document__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
 
 #. module: record_keeping
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_attachment_form
-msgid "Type"
-msgstr "Typ"
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__url
+msgid "Url"
+msgstr ""
