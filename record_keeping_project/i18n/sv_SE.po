@@ -4,24 +4,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20210805\n"
+"Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-04 11:09+0000\n"
-"PO-Revision-Date: 2021-10-04 15:43+0200\n"
+"POT-Creation-Date: 2021-10-12 21:31+0000\n"
+"PO-Revision-Date: 2021-10-12 21:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: sv_SE\n"
-"X-Generator: Poedit 2.3\n"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__sender_id
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__sender_id
-msgid "A partner designated as sender"
-msgstr "En kontakt som är avsändare"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_needaction
@@ -29,31 +21,14 @@ msgid "Action Needed"
 msgstr "Åtgärd krävs"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__active
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__active
-msgid "Active"
-msgstr "Aktiv"
-
-#. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_attachment_count
 msgid "Attachment Count"
 msgstr "Antal Bilagor"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__is_secret
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__is_secret
-msgid ""
-"Check this option if it can be assumed that information contained in this document should "
-"not be disclosed on grounds of secrecy."
-msgstr ""
-"Markera om det kan antas att informationen i detta dokument inte ska lämnas ut på grund av "
-"säkerhetsbestämmelse."
-
-#. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__is_official
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__is_official
-msgid "Check this option if this document is an official document"
-msgstr "Markera om detta dokument är en allmän handling"
+#: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
+msgid "Confidential"
+msgstr "Sekretess"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__display_name
@@ -62,20 +37,16 @@ msgid "Display Name"
 msgstr "Visningsnamn"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__drawn_up_date
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__drawn_up_date
-msgid "Drawn up"
-msgstr "Upprättad"
-
-#. module: record_keeping_project
 #: model:ir.model,name:record_keeping_project.model_project_task
 msgid "Extend Project Task with Record-keeping Mixin"
-msgstr "Utökar Projekt Aktiviteter med diarieföring"
+msgstr ""
 
 #. module: record_keeping_project
-#: model:ir.model,name:record_keeping_project.model_project_project
-msgid "Extend Project with Record-keeping Mixin"
-msgstr "Utökar Projekt med diarieföring"
+#: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
+msgid ""
+"Follow this project to automatically track the events associated to tasks "
+"and issues of this project."
+msgstr ""
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_follower_ids
@@ -96,26 +67,19 @@ msgstr "Följare (kontakter)"
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__id
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__message_needaction
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__message_unread
 msgid "If checked, new messages require your attention."
-msgstr "Om den är markerad så finns det meddelanden som kräver din uppmärksamhet."
+msgstr ""
+"Om den är markerad så finns det meddelanden som kräver din uppmärksamhet."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__message_has_error
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Om den är markerad så finns det meddelanden med leveransfel."
-
-#. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__active
-msgid ""
-"If the active field is set to False, it will allow you to hide the project without "
-"removing it."
-msgstr "Om det aktiva fältet är Falskt, kan du gömma projektet utan att radera det."
+msgstr "Om markerad så har det blivit ett leveransfel för några  meddelanden."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_is_follower
@@ -129,6 +93,12 @@ msgid "Last Modified on"
 msgstr "Senast redigerad"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__rk_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__rk_id
+msgid "Link to corresponding record-keeping document"
+msgstr "Koppling till allmän handling"
+
+#. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Huvudbilaga"
@@ -136,7 +106,7 @@ msgstr "Huvudbilaga"
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_has_error
 msgid "Message Delivery error"
-msgstr "Meddelandeleveransfel"
+msgstr "Fel vid meddelandeleverans"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_ids
@@ -175,62 +145,21 @@ msgid "Number of unread messages"
 msgstr "Antal olästa meddelanden"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__is_official
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__is_official
-msgid "Official document"
-msgstr "Allmän handling"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__received_date
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__received_date
-msgid "Received"
-msgstr "Inkommen"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__receiver_id
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__receiver_id
-msgid "Receiver"
-msgstr "Mottagare"
+#: model:ir.model,name:record_keeping_project.model_project_project
+msgid "Project"
+msgstr "Projekt"
 
 #. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.view_task_form2
 msgid "Record-keeping"
-msgstr "Diarie"
+msgstr "Diarium"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "SMS leveransfel"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__is_secret
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__is_secret
-msgid "Secrecy marker"
-msgstr "Sekretessmarkering"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__sender_id
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__sender_id
-msgid "Sender"
-msgstr "Avsändare"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__received_date
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__received_date
-msgid "The date when the document has been received by a competent person."
-msgstr "Datumet då handlingen har mottagits av behörig person."
-
-#. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__drawn_up_date
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__drawn_up_date
-msgid "The date when the document is ready to be used or sent"
-msgstr "Datumet handlingen är klar att användas eller skickas"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__active
-msgid "True if the document is visible. "
-msgstr "Sant om dokumentet är synligt. "
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__rk_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__rk_id
+msgid "Record-keeping Document"
+msgstr "Allmän handling"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_unread

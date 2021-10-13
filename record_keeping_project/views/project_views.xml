@@ -4,6 +4,9 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
+            <widget position="replace">
+                <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
+            </widget>
             <notebook position="inside">
                 <page name="record_keeping" string="Record-keeping">
                     <group>
@@ -14,7 +17,11 @@
                             <field name="sender_id" />
                         </group>
                         <group>
-                            <field name="is_official" />
+                            <label for="is_official"/>
+                            <div class="o_row">
+                                <field name="is_official"/>
+                                <field name="rk_id" attrs="{'invisible':[('is_official','=',False)]}" class="oe_inline" nolabel="1" />
+                            </div>
                             <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
                             <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)]}"/>
                         </group>
@@ -57,8 +64,10 @@
                             <field name="sender_id" />
                         </group>
                         <group>
+                            <field name="rk_id" attrs="{'invisible':[('is_official','=',False)]}"/>
                             <field name="is_official" />
                             <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
+                            <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)]}"/>
                         </group>
                     </group>
                 </page>
