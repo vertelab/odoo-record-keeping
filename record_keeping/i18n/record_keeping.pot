@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-12 21:19+0000\n"
-"PO-Revision-Date: 2021-10-12 21:19+0000\n"
+"POT-Creation-Date: 2021-10-13 08:55+0000\n"
+"PO-Revision-Date: 2021-10-13 08:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -84,12 +84,12 @@ msgstr ""
 
 #. module: record_keeping
 #: model_terms:ir.actions.act_window,help:record_keeping.action_law_section_view
-msgid "Create a law section"
+msgid "Create a Law Section"
 msgstr ""
 
 #. module: record_keeping
 #: model_terms:ir.actions.act_window,help:record_keeping.action_document_view
-msgid "Create a record-keeping document"
+msgid "Create a Record-keeping Document"
 msgstr ""
 
 #. module: record_keeping
@@ -324,7 +324,7 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_law_section
-msgid "Record-keeping law section."
+msgid "Record-keeping Law Section"
 msgstr ""
 
 #. module: record_keeping
@@ -342,6 +342,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__law_section_id
 #, python-format
 msgid "Secrecy provision"
+msgstr ""
+
+#. module: record_keeping
+#: code:addons/record_keeping/models/rk_document.py:0
+#, python-format
+msgid "Secrecy provision cannot be empty"
 msgstr ""
 
 #. module: record_keeping
@@ -375,7 +381,7 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__law_section_id
-msgid "The specified secrecy provision when document has a secrecy marker"
+msgid "The specified secrecy provision when the document has a secrecy marker"
 msgstr ""
 
 #. module: record_keeping

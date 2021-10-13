@@ -16,7 +16,7 @@ class RecordKeepingLawSection(models.Model):
     information is public in all circumstances and must be disclosed.
     """
     _name = 'rk.law.section'
-    _description = 'Record-keeping law section.'
+    _description = 'Record-keeping Law Section'
     _order = 'id desc'
 
     name = fields.Char()

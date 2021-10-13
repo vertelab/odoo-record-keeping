@@ -74,7 +74,7 @@ class RecordKeepingDocument(models.Model):
         # if not vals.get('is_secret', True):
         #     vals.update({'law_section_id': False})
         # if not vals.get('law_section_id', True) and self.is_secret:
-        #     raise ValidationError('Secrecy provision cannot be empty3')
+        #     raise ValidationError(_('Secrecy provision cannot be empty'))
 
         _logger.warning(vals)
         if vals.get('is_official'):

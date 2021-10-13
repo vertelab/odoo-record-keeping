@@ -103,7 +103,7 @@
         </field>
     </record>
     <record id="action_document_view" model="ir.actions.act_window">
-        <field name="name">"Record-keeping Documents"</field>
+        <field name="name">Record-keeping Documents</field>
         <field name="res_model">rk.document</field>
         <field name="domain">[('is_official','=',True)]</field>
         <field name="view_mode">kanban,tree,form</field>
@@ -112,7 +112,7 @@
         <field name="search_view_id" ref="view_document_search" />
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create a record-keeping document
+                Create a Record-keeping Document
             </p>
         </field>
     </record>
