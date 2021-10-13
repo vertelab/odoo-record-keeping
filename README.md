@@ -12,10 +12,10 @@ Available addons
 ----------------
 addon
 --- |
-[record_keeping](record_keeping/) |
-[record_keeping_law_section](record_keeping_law_section/) |
-[record_keeping_mixin](record_keeping_mixin) |
-[record_keeping_project_mixin](record_keeping_project_mixin) |
+[record_keeping](record_keeping) |
+[record_keeping_attachment](record_keeping_attachment) |
+[record_keeping_hr](record_keeping_hr) |
+[record_keeping_project](record_keeping_project) |
 
 [//]: # (end addons)
 
