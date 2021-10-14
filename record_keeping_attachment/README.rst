@@ -1,6 +1,6 @@
-==============
-Record-keeping
-==============
+=========================
+Record-keeping Attachment
+=========================
 
 
 .. |badge1| image:: https://i.ibb.co/Bc4qsYT/vertel.jpg
@@ -26,8 +26,7 @@ Usage
 To use this module, you need to:
 
 * Have rights to access attachments in general.
-* Go to **Record-keeping** and all attachments will be visible
-* Create or edit an attachment with record-keeping data.
+* Create or edit an attachment, Record-keeping will be a notebook tab in form view
 
 Bug Tracker
 ===========
