@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-13 12:50+0000\n"
-"PO-Revision-Date: 2021-10-13 14:54+0200\n"
+"POT-Creation-Date: 2021-10-14 15:12+0000\n"
+"PO-Revision-Date: 2021-10-14 17:17+0200\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -168,6 +168,11 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Om markerad så har det blivit ett leveransfel för några meddelanden."
 
 #. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__secrecy_grounds
+msgid "If marked as secret, please provide more information"
+msgstr "Om märkt med sekretess, uppge mer information"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_is_follower
 msgid "Is Follower"
 msgstr "Är följare"
@@ -310,7 +315,7 @@ msgstr "Allmänna handlingar"
 #. module: record_keeping
 #: model:res.groups,name:record_keeping.group_rk_document_manager
 msgid "Record-keeping Document Manager"
-msgstr "Diarieadministratör"
+msgstr "Administratör Diarium"
 
 #. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_document_view
@@ -320,12 +325,17 @@ msgstr "Allmänna handlingar"
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_law_section
 msgid "Record-keeping Law Section"
-msgstr "Diarielagrum"
+msgstr "Lagrum Diarium"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_user_id
 msgid "Responsible User"
 msgstr "Ansvarig användare"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__secrecy_grounds
+msgid "Secrecy grounds"
+msgstr "Motivering"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__is_secret

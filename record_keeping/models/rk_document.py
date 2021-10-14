@@ -52,6 +52,12 @@ class RecordKeepingDocument(models.Model):
         string='Receiver',
         tracking=True,
     )
+    secrecy_grounds = fields.Char(
+        default=False,
+        help='If marked as secret, please provide more information',
+        string='Secrecy grounds',
+        tracking=True,
+    )
     sender_id = fields.Many2one(
         comodel_name='res.partner',
         help='A partner designated as sender',
