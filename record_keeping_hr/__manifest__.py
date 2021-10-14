@@ -23,7 +23,7 @@
     'name': 'Record-keeping HR',
     'summary': 'Record-keeping HR for Odoo',
     'description': """
-This module extends Employees with record-keeping features
+This module extends employees with record-keeping features
 """,
     'version': '14.0.1',
     'category': 'Administration',

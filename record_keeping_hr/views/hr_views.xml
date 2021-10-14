@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
             <widget position="replace" />
-            <div name="button_box" position="before">
+            <div name="button_box" position="after">
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
             </div>
             <notebook position="inside">
@@ -24,7 +24,8 @@
                                 <field name="rk_id" attrs="{'invisible':[('is_official','=',False)]}" class="oe_inline" nolabel="1" />
                             </div>
                             <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
-                            <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)]}"/>
+                            <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)], 'required': [('is_secret','=',True)]}"/>
+                            <field name="secrecy_grounds" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)], 'required': [('is_secret','=',True)]}"/>
                         </group>
                     </group>
                 </page>

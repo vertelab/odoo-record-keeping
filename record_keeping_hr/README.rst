@@ -13,7 +13,7 @@ Record-keeping HR
 
 |badge1| |badge2|
 
-This module extends Employess with record-keeping fields and adds them in a notebook tab. 
+This module extends employees with record-keeping fields and adds them in a notebook tab. 
 
 **Table of contents**
 
@@ -26,7 +26,7 @@ Usage
 To use this module, you need to:
 
 * Have rights to access HR objects.
-* Create or edit a employee, Record-keeping will be a notebook tab in form view
+* Create or edit an employee, Record-keeping will be a notebook tab in form view
 
 Bug Tracker
 ===========
