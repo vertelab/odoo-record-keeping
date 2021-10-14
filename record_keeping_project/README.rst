@@ -25,7 +25,7 @@ Usage
 
 To use this module, you need to:
 
-* Have rights to access Project and Project Tasks.
+* Have rights to access Project and Project Task objects.
 * Create or edit a Project or Project Task, Record-keeping will be a notebook tab in form view
 
 Bug Tracker
