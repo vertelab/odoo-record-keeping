@@ -14,8 +14,11 @@ addon
 --- |
 [record_keeping](record_keeping) |
 [record_keeping_attachment](record_keeping_attachment) |
+[record_keeping_event](record_keeping_event) |
 [record_keeping_hr](record_keeping_hr) |
 [record_keeping_project](record_keeping_project) |
+[record_keeping_property_mgmt](record_keeping_property_mgmt) |
+[record_keeping_sale](record_keeping_sale) |
 
 [//]: # (end addons)
 
