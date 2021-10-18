@@ -21,9 +21,9 @@
 
 {
     'name': 'Record-keeping Attachment',
-    'summary': 'Extend attachment with record-keeping',
+    'summary': 'Record-keeping Attachment for Odoo',
     'description': """
-This module extends attachments with record-keeping features
+This module extends attachments with record-keeping fields
 """,
     'version': '14.0.1',
     'category': 'Administration',

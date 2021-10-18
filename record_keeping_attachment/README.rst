@@ -13,7 +13,7 @@ Record-keeping Attachment
 
 |badge1| |badge2|
 
-This module adds record-keeping features in attachments.
+This module extends attachments with record-keeping fields and adds them in a notebook tab.
 
 **Table of contents**
 
