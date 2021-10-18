@@ -2,7 +2,7 @@
 <odoo>
     <record id="view_property_form" model="ir.ui.view">
         <field name="model">property.property</field>
-        <field name="inherit_id" ref="property_mgmt.property_property_form_view"/>
+        <field name="inherit_id" ref="property_mgmt.property_property_form_view" />
         <field name="arch" type="xml">
             <div name="button_box" position="after">
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
@@ -17,14 +17,12 @@
                             <field name="sender_id" />
                         </group>
                         <group>
-                            <label for="is_official"/>
-                            <div class="o_row">
-                                <field name="is_official"/>
-                                <field name="rk_id" attrs="{'invisible':[('is_official','=',False)]}" class="oe_inline" nolabel="1" />
-                            </div>
-                            <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
-                            <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)], 'required': [('is_secret','=',True)]}"/>
-                            <field name="secrecy_grounds" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)], 'required': [('is_secret','=',True)]}"/>
+                            <field name="rk_name" invisible="1" />
+                            <field name="is_official" attrs="{'invisible':[('rk_name', '!=', False)]}" />
+                            <field name="rk_ref" attrs="{'invisible':[('rk_name', '=', False)]}" />
+                            <field name="is_secret" attrs="{'invisible':[('is_official', '=', False)]}" />
+                            <field name="law_section_id" attrs="{'invisible':['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
+                            <field name="secrecy_grounds" attrs="{'invisible':['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
                         </group>
                     </group>
                 </page>
@@ -43,9 +41,9 @@
             </notebook>
             <sheet position="after">
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" options="{'post_refresh':True}" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids"/>
+                    <field name="message_follower_ids" options="{'post_refresh':True}" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
                 </div>
             </sheet>
         </field>

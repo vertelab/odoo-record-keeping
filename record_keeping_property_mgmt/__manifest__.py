@@ -23,7 +23,7 @@
     'name': 'Record-keeping Property Management',
     'summary': 'Record-keeping Property Management for Odoo',
     'description': """
-This module extends properties with record-keeping features
+This module extends properties with record-keeping fields
 """,
     'version': '14.0.1',
     'category': 'Administration',
