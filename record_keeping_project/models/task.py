@@ -3,14 +3,14 @@
 from odoo import _, api, fields, models
 
 
-class Project(models.Model):
-    _name = 'project.project'
-    _inherit = ['mail.thread', 'project.project']
+class Task(models.Model):
+    _name = 'project.task'
+    _inherit = ['project.task']
     _inherits = {'rk.document': 'rk_id'}
 
     rk_id = fields.Many2one(
         comodel_name='rk.document',
-        help='The record-keeping document of this project',
+        help='The record-keeping document of this task',
         ondelete='restrict',
         required=True,
         readonly=True,
@@ -18,7 +18,7 @@ class Project(models.Model):
     )
 
     rk_ref = fields.Reference(
-        help='The record-keeping document of this project',
+        help='The record-keeping document of this task',
         readonly=True,
         selection='_selection_target_model',
         string='Registration Number',
@@ -42,8 +42,8 @@ class Project(models.Model):
 
     @api.model
     def create(self, vals):
-        project = super(Project, self).create(vals)
-        project.rk_ref = f'{project.rk_id._name},{project.rk_id.id}'
-        project.rk_res_model = project._name
-        project.rk_res_id = project.id
-        return project
+        task = super(Task, self).create(vals)
+        task.rk_ref = f'{task.rk_id._name},{task.rk_id.id}'
+        task.rk_res_model = task._name
+        task.rk_res_id = task.id
+        return task

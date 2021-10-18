@@ -21,9 +21,9 @@
 
 {
     'name': 'Record-keeping Project',
-    'summary': 'Extend projects with record-keeping',
+    'summary': 'Record-keeping Project for Odoo',
     'description': """
-This module extends projects with record-keeping features
+This module extends projects with record-keeping fields
 """,
     'version': '14.0.1',
     'category': 'Administration',
@@ -33,6 +33,7 @@ This module extends projects with record-keeping features
     'depends': ['mail', 'project', 'record_keeping'],
     'data': [
         'views/project_views.xml',
+        'views/task_views.xml',
     ],
     'post_init_hook': 'post_init_hook',
 }

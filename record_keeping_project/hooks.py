@@ -1,13 +1,11 @@
-from odoo import SUPERUSER_ID, api, fields
-import logging
+# -*- coding: utf-8 -*-
 
-
-_logger = logging.getLogger(__name__)
+from odoo import SUPERUSER_ID, api
 
 
 def post_init_hook(cr, registry):
     """
-    This post-init-hook will create rk.document records for each existing project.
+    This post-init-hook will create rk.document records for each existing project and task.
     """
     env = api.Environment(cr, SUPERUSER_ID, dict())
     models = ['project.project', 'project.task']
@@ -16,4 +14,6 @@ def post_init_hook(cr, registry):
         records = env[model].search([], order='id')
         for record in records:
             if not record.rk_id:
-                record.rk_id = env['rk.document'].create({})
+                vals = {'rk_res_model': model, 'rk_res_id': record.id}
+                record.rk_id = env['rk.document'].create(vals)
+                record.rk_ref = f'{record.rk_id._name},{record.rk_id.id}'
