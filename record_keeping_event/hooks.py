@@ -15,3 +15,4 @@ def post_init_hook(cr, registry):
         for record in records:
             if not record.rk_id:
                 record.rk_id = env['rk.document'].create({})
+                record.rk_ref = f'{record.rk_id._name},{record.rk_id.id}'
