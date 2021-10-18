@@ -23,7 +23,7 @@
     'name': 'Record-keeping Sale',
     'summary': 'Record-keeping Sale for Odoo',
     'description': """
-This module extends sale orders with record-keeping features
+This module extends sale orders with record-keeping fields
 """,
     'version': '14.0.1',
     'category': 'Administration',
