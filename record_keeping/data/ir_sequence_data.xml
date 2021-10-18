@@ -6,9 +6,9 @@
         <record id="seq_rk_document" model="ir.sequence">
             <field name="name">Record-keeping Document</field>
             <field name="code">rk.document</field>
-            <field name="padding">7</field>
-            <field name="prefix">[RD</field>
-            <field name="suffix">]</field>
+            <field name="padding">1</field>
+            <field name="prefix">%(year)s/</field>
+            <field name="suffix"></field>
         </record>
 
     </data>
