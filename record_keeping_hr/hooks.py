@@ -1,8 +1,6 @@
-from odoo import SUPERUSER_ID, api, fields
-import logging
+# -*- coding: utf-8 -*-
 
-
-_logger = logging.getLogger(__name__)
+from odoo import SUPERUSER_ID, api
 
 
 def post_init_hook(cr, registry):
