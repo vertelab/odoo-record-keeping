@@ -23,7 +23,7 @@
     'name': 'Record-keeping Event',
     'summary': 'Record-keeping Event for Odoo',
     'description': """
-This module extends events with record-keeping features
+This module extends events with record-keeping fields
 """,
     'version': '14.0.1',
     'category': 'Administration',
