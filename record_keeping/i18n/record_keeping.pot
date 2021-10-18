@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-14 15:12+0000\n"
-"PO-Revision-Date: 2021-10-14 15:12+0000\n"
+"POT-Creation-Date: 2021-10-18 21:07+0000\n"
+"PO-Revision-Date: 2021-10-18 21:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -83,12 +83,14 @@ msgid "Create a Record-keeping Document"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_date
 msgid "Created on"
@@ -100,6 +102,7 @@ msgid "Description"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__display_name
 msgid "Display Name"
@@ -107,11 +110,13 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.ui.menu,name:record_keeping.menu_record_keeping_document
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
 msgid "Documents"
 msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__draw_up_date
+#: model:ir.model.fields.selection,name:record_keeping.selection__rk_document__rk_type__drawn_up
 msgid "Drawn up"
 msgstr ""
 
@@ -136,6 +141,7 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__id
 msgid "ID"
@@ -173,18 +179,21 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_date
 msgid "Last Updated on"
@@ -223,15 +232,9 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document__name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__name
 msgid "Name"
-msgstr ""
-
-#. module: record_keeping
-#: code:addons/record_keeping/models/rk_document.py:0
-#, python-format
-msgid "New"
 msgstr ""
 
 #. module: record_keeping
@@ -281,12 +284,22 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__is_official
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
 msgid "Official document"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.constraint,message:record_keeping.constraint_rk_document_is_secret_require_grounds
+msgid "Please provide legal grounds"
+msgstr ""
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__receive_date
+#: model:ir.model.fields.selection,name:record_keeping.selection__rk_document__rk_type__received
 msgid "Received"
 msgstr ""
 
@@ -303,6 +316,11 @@ msgid "Record-keeping"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model,name:record_keeping.model_rk_classification
+msgid "Record-keeping Classification"
+msgstr ""
+
+#. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_document
 msgid "Record-keeping Document"
 msgstr ""
@@ -310,6 +328,16 @@ msgstr ""
 #. module: record_keeping
 #: model:res.groups,name:record_keeping.group_rk_document_manager
 msgid "Record-keeping Document Manager"
+msgstr ""
+
+#. module: record_keeping
+#: model:res.groups,name:record_keeping.group_rk_document_responsible
+msgid "Record-keeping Document Responsible"
+msgstr ""
+
+#. module: record_keeping
+#: model:res.groups,name:record_keeping.group_rk_document_user
+msgid "Record-keeping Document User"
 msgstr ""
 
 #. module: record_keeping
@@ -323,8 +351,35 @@ msgid "Record-keeping Law Section"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__rk_name
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
+msgid "Registration number"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__rk_res_id
+msgid "Resource ID"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__rk_res_model
+msgid "Resource Model"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__rk_res_ref
+msgid "Resource Reference"
+msgstr ""
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_user_id
 msgid "Responsible User"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__rk_type
+msgid "Rk Type"
 msgstr ""
 
 #. module: record_keeping
@@ -340,12 +395,6 @@ msgstr ""
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__law_section_id
 msgid "Secrecy provision"
-msgstr ""
-
-#. module: record_keeping
-#: code:addons/record_keeping/models/rk_document.py:0
-#, python-format
-msgid "Secrecy provision cannot be empty"
 msgstr ""
 
 #. module: record_keeping
@@ -370,6 +419,28 @@ msgstr ""
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__draw_up_date
 msgid "The date when the document is ready to be used or sent"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__name
+#: model:ir.model.fields,help:record_keeping.field_rk_document__rk_name
+msgid ""
+"The format is [current year]/[sequence] and is set when document is official"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__rk_res_id
+msgid "The record id this document is attached to."
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__rk_res_model
+msgid "The record model this attachment is attached to."
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__rk_res_ref
+msgid "The record this document is attached to."
 msgstr ""
 
 #. module: record_keeping

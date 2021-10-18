@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    
-        <record id="law_section_k31p12" model="rk.law.section">
-            <field name="name">Offentlighets- och sekretesslag (2009:400), 31 Kapitlet 12§</field>
-            <field name="description">Provning, värdering, undersökning m.m.
+    <record id="law_section_k31p12" model="rk.law.section">
+        <field name="name">Offentlighets- och sekretesslag (2009:400), 31 Kapitlet 12§</field>
+        <field name="description">Provning, värdering, undersökning m.m.
 
 12 §   Sekretess gäller för uppgift som avser provning, bestämning av egenskaper eller myckenhet, värdering, vetenskaplig, teknisk, ekonomisk eller statistisk undersökning eller annat sådant uppdrag som myndigheten utför för en enskilds räkning, om det måste antas att uppdraget har lämnats under förutsättning att uppgiften inte röjs.
 
 Sekretessen gäller inte om intresset av allmän kännedom om förhållande som rör människors hälsa har sådan vikt att uppgiften bör lämnas ut. Sekretessen gäller dock för uppgift från uppdragsverksamhet inom universitet och högskolor.
 
 För uppgift i en allmän handling gäller sekretessen i högst tjugo år. Hos universitet och högskolor gäller sekretessen dock i högst tio år. Hos Patent- och registreringsverket gäller sekretessen i högst femtio år.</field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K31P12</field>
-        </record>
-        <record id="law_section_k17p1" model="rk.law.section">
-            <field name="name">Förberedelser för tillsyn, 17 kap 1 §</field>
-            <field name="description">Förberedelser för inspektion, revision eller annan granskning
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K31P12</field>
+    </record>
+    <record id="law_section_k17p1" model="rk.law.section">
+        <field name="name">Förberedelser för tillsyn, 17 kap 1 §</field>
+        <field name="description">Förberedelser för inspektion, revision eller annan granskning
 
 1 §   Sekretess gäller för uppgift om planläggning eller andra förberedelser för sådan inspektion, revision eller annan granskning som en myndighet ska göra, om det kan antas att syftet med granskningsverksamheten motverkas om uppgiften röjs.</field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K17</field>
-        </record>
-        <record id="law_section_k18p1" model="rk.law.section">
-            <field name="name">Förundersökningssekretess, 18 kap 1 §</field>
-            <field name="description">Förundersökningar m.m.
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K17</field>
+    </record>
+    <record id="law_section_k18p1" model="rk.law.section">
+        <field name="name">Förundersökningssekretess, 18 kap 1 §</field>
+        <field name="description">Förundersökningar m.m.
 
 1 §   Sekretess gäller för uppgift som hänför sig till förundersökning i brottmål eller till angelägenhet som avser användning av tvångsmedel i sådant mål eller i annan verksamhet för att förebygga brott, om det kan antas att syftet med beslutade eller förutsedda åtgärder motverkas eller den framtida verksamheten skadas om uppgiften röjs.
 
@@ -31,18 +30,18 @@ Sekretess gäller, under motsvarande förutsättningar som anges i första styck
 
 För uppgift i en allmän handling gäller sekretessen i högst fyrtio år. Lag (2016:1314).
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K18</field>
-        </record>
-        <record id="law_section_k18p3" model="rk.law.section">
-            <field name="name">Förundersökningssekretess, 18 kap 3 §</field>
-            <field name="description">Myndigheter som biträder åklagarmyndigheter m.fl.
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K18</field>
+    </record>
+    <record id="law_section_k18p3" model="rk.law.section">
+        <field name="name">Förundersökningssekretess, 18 kap 3 §</field>
+        <field name="description">Myndigheter som biträder åklagarmyndigheter m.fl.
 
 3 §   Sekretessen enligt 1 och 2 §§ gäller i annan verksamhet än som där avses hos en myndighet för att biträda en åklagarmyndighet, Polismyndigheten, Säkerhetspolisen, Skatteverket, Tullverket eller Kustbevakningen med att förebygga, uppdaga, utreda eller beivra brott samt hos tillsynsmyndigheten i konkurs och hos Kronofogdemyndigheten för uppgift som angår misstanke om brott. Lag (2014:633).</field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K18P3</field>
-        </record>
-        <record id="law_section_k19" model="rk.law.section">
-            <field name="name">Myndighetens affärshemligheter, 19 kap 1 §</field>
-            <field name="description">Affärs- och driftförhållanden
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K18P3</field>
+    </record>
+    <record id="law_section_k19" model="rk.law.section">
+        <field name="name">Myndighetens affärshemligheter, 19 kap 1 §</field>
+        <field name="description">Affärs- och driftförhållanden
 
 1 §   Sekretess gäller i en myndighets affärsverksamhet för uppgift om myndighetens affärs- eller driftförhållanden, om det kan antas att någon som driver likartad rörelse gynnas på myndighetens bekostnad om uppgiften röjs. Under motsvarande förutsättning gäller sekretess hos en myndighet för uppgift om affärs- eller driftförhållanden hos bolag, förening, samfällighet eller stiftelse som driver affärsverksamhet och där det allmänna genom myndigheten utövar ett bestämmande inflytande eller bedriver revision.
 
@@ -50,31 +49,31 @@ Sekretessen hos en myndighet som bedriver revision enligt första stycket gälle
 
 För uppgift i en allmän handling gäller sekretessen i högst tjugo år.
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K19</field>
-        </record>
-        <record id="law_section_k31p16" model="rk.law.section">
-            <field name="name">Enskilds affärsförbindelse med myndighet, 31 kap 16 §</field>
-            <field name="description">Affärsförbindelse med myndighet
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K19</field>
+    </record>
+    <record id="law_section_k31p16" model="rk.law.section">
+        <field name="name">Enskilds affärsförbindelse med myndighet, 31 kap 16 §</field>
+        <field name="description">Affärsförbindelse med myndighet
 
 16 §   Sekretess gäller för uppgift om en enskilds affärs- eller driftförhållanden när denne i annat fall än som avses i 1 § första stycket, 2-4 och 12 §§ har trätt i affärsförbindelse med en myndighet, om det av särskild anledning kan antas att den enskilde lider skada om uppgiften röjs.
 
 För uppgift i en allmän handling gäller sekretessen i högst tjugo år. Beträffande en handling som anger villkoren i ett avtal gäller sekretessen dock längst till dess att två år, eller hos statliga affärsverk, Försvarets materielverk och i kommunal affärsverksamhet fem år, har gått från det att avtalet slöts. Lag (2015:781).
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K31P16</field>
-        </record>
-        <record id="law_section_k19p3" model="rk.law.section">
-            <field name="name">Upphandlingssekretess, 19 kap 3 § 2 st</field>
-            <field name="description">Upphandling m.m.
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K31P16</field>
+    </record>
+    <record id="law_section_k19p3" model="rk.law.section">
+        <field name="name">Upphandlingssekretess, 19 kap 3 § 2 st</field>
+        <field name="description">Upphandling m.m.
 
 3 §   Sekretess gäller för uppgift som hänför sig till ärende om förvärv, överlåtelse, upplåtelse eller användning av egendom, tjänst eller annan nyttighet, om det kan antas att det allmänna lider skada om uppgiften röjs. Begreppet tjänst omfattar inte arbete som för en myndighets behov utförs av dess egen eller någon annan myndighets personal, om det inte är fråga om ett arbete som en myndighet i konkurrens med andra myndigheter eller enskilda erbjuder sig att utföra.
 
 Om ett ärende enligt första stycket rör upphandling, får uppgift som rör anbud eller som rör motsvarande erbjudande inom en kommun, en region eller en myndighet eller mellan statliga myndigheter inte i något fall lämnas till någon annan än den som har lämnat anbudet eller erbjudandet förrän alla anbud eller erbjudanden offentliggörs eller beslut om leverantör och anbud fattats eller ärendet dessförinnan har slutförts. Under en elektronisk auktion får dock lämnas sådana uppgifter som avses i 8 kap. 25 § lagen (2016:1145) om offentlig upphandling, 8 kap. 25 § lagen (2016:1146) om upphandling inom försörjningssektorerna eller 6 kap. 11 § lagen (2011:1029) om upphandling på försvars- och säkerhetsområdet.
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K19P3</field>
-        </record>
-        <record id="law_section_k19p6" model="rk.law.section">
-            <field name="name">Facklig verksamhet, 19 kap 6 §</field>
-            <field name="description">Förhandlingar
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K19P3</field>
+    </record>
+    <record id="law_section_k19p6" model="rk.law.section">
+        <field name="name">Facklig verksamhet, 19 kap 6 §</field>
+        <field name="description">Förhandlingar
 
 6 §   Sekretess gäller för uppgift som har tillkommit eller inhämtats för att användas vid facklig förhandling inom den offentliga sektorn eller vid förberedelse för sådan förhandling, om det kan antas att det allmännas eller ett statligt eller kommunalt företags ställning som förhandlingspart försämras om uppgiften röjs.
 
@@ -82,51 +81,51 @@ Med facklig förhandling inom den offentliga sektorn avses en sådan förhandlin
 
 För uppgift i en allmän handling gäller sekretessen i högst fem år.
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K19P6</field>
-        </record>
-        <record id="law_section_k19p7" model="rk.law.section">
-            <field name="name">Facklig verksamhet, 19 kap 7 §</field>
-            <field name="description">Stridsåtgärder
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K19P6</field>
+    </record>
+    <record id="law_section_k19p7" model="rk.law.section">
+        <field name="name">Facklig verksamhet, 19 kap 7 §</field>
+        <field name="description">Stridsåtgärder
 
 7 §   Sekretess gäller för uppgift som har tillkommit eller inhämtats med anledning av facklig stridsåtgärd inom den offentliga sektorn eller vid förberedelse till sådan stridsåtgärd, om det kan antas att det allmännas eller statligt eller kommunalt företags ställning som part i arbetskonflikt försämras om uppgiften röjs.
 
 Med facklig stridsåtgärd inom den offentliga sektorn avses facklig stridsåtgärd som vidtas av eller mot arbetsgivare, för vars räkning en myndighet, en sammanslutning av kommuner eller ett statligt eller kommunalt företag ska förhandla i en fråga som rör förhållandet mellan arbetsgivare och arbetstagare.
 
 För uppgift i en allmän handling gäller sekretessen i högst tio år.</field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K19P7</field>
-        </record>
-        <record id="law_section_k20p1" model="rk.law.section">
-            <field name="name">Sekretess för hotade arter, 20 kap 1 §</field>
-            <field name="description">Sekretess till skydd för intresset av att bevara djur- eller växtart 
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K19P7</field>
+    </record>
+    <record id="law_section_k20p1" model="rk.law.section">
+        <field name="name">Sekretess för hotade arter, 20 kap 1 §</field>
+        <field name="description">Sekretess till skydd för intresset av att bevara djur- eller växtart 
 1 §   Sekretess gäller för uppgift om en djur- eller växtart som är i behov av skydd och som det finns ett intresse av att bevara i ett livskraftigt bestånd, om det kan antas att ett sådant bevarande av arten inom landet eller del av landet motverkas om uppgiften röjs. Lag (2012:770).
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K20</field>
-        </record>
-        <record id="law_section_k21p3" model="rk.law.section">
-            <field name="name">Förföljda personer, 21 kap 3 §</field>
-            <field name="description">3 §   Sekretess gäller för uppgift om en enskilds bostadsadress eller annan jämförbar uppgift som kan lämna upplysning om var den enskilde bor stadigvarande eller tillfälligt, den enskildes telefonnummer, e-postadress eller annan jämförbar uppgift som kan användas för att komma i kontakt med denne samt för motsvarande uppgifter om den enskildes anhöriga, om det av särskild anledning kan antas att den enskilde eller någon närstående till denne kan komma att utsättas för hot eller våld eller lida annat allvarligt men om uppgiften röjs.
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K20</field>
+    </record>
+    <record id="law_section_k21p3" model="rk.law.section">
+        <field name="name">Förföljda personer, 21 kap 3 §</field>
+        <field name="description">3 §   Sekretess gäller för uppgift om en enskilds bostadsadress eller annan jämförbar uppgift som kan lämna upplysning om var den enskilde bor stadigvarande eller tillfälligt, den enskildes telefonnummer, e-postadress eller annan jämförbar uppgift som kan användas för att komma i kontakt med denne samt för motsvarande uppgifter om den enskildes anhöriga, om det av särskild anledning kan antas att den enskilde eller någon närstående till denne kan komma att utsättas för hot eller våld eller lida annat allvarligt men om uppgiften röjs.
 
 Sekretessen gäller inte för uppgift i aktiebolagsregistret eller handelsregistret eller, i den utsträckning regeringen meddelar föreskrifter om det, i annat liknande register. Sekretessen gäller inte heller för uppgift om beteckning på fastighet eller tomträtt. Sekretessen gäller dock för uppgift om beteckning på fastighet hos en hyres- och arrendenämnd eller hos en domstol efter att en sådan nämnds beslut överklagats.
 
 Sekretess gäller för uppgift om kopplingen mellan fingerade personuppgifter som en enskild har medgivande att använda enligt lagen (1991:483) om fingerade personuppgifter och den enskildes verkliga personuppgifter, om det inte står klart att uppgiften kan röjas utan att den enskilde eller någon närstående till denne lider men.
 
 För uppgift i en allmän handling gäller sekretessen i högst sjuttio år. Lag (2020:277).</field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K21P3</field>
-        </record>
-        <record id="law_section_k2p7" model="rk.law.section">
-            <field name="name">Behandling i strid med GDPR, 21 kap 7 §</field>
-            <field name="description">Behandling i strid med dataskyddsregleringen
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K21P3</field>
+    </record>
+    <record id="law_section_k2p7" model="rk.law.section">
+        <field name="name">Behandling i strid med GDPR, 21 kap 7 §</field>
+        <field name="description">Behandling i strid med dataskyddsregleringen
 
 7 §   Sekretess gäller för personuppgift, om det kan antas att uppgiften efter ett utlämnande kommer att behandlas i strid med
    1. Europaparlamentets och rådets förordning (EU) 2016/679 av den 27 april 2016 om skydd för fysiska personer med avseende på behandling av personuppgifter och om det fria flödet av sådana uppgifter och om upphävande av direktiv 95/46/EG (allmän dataskyddsförordning), i den ursprungliga lydelsen,
    2. lagen (2018:218) med kompletterande bestämmelser till EU:s dataskyddsförordning, eller
    3. 6 § lagen (2003:460) om etikprövning av forskning som avser människor. Lag (2018:2000).
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K21P7</field>
-        </record>
-        <record id="law_section_k39p1" model="rk.law.section">
-            <field name="name">Personaladministrativ verksamhet, 39 kap 1-3 §§</field>
-            <field name="description">Personalsocial verksamhet
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K21P7</field>
+    </record>
+    <record id="law_section_k39p1" model="rk.law.section">
+        <field name="name">Personaladministrativ verksamhet, 39 kap 1-3 §§</field>
+        <field name="description">Personalsocial verksamhet
 
 1 §   Sekretess gäller i personalsocial verksamhet för uppgift som hänför sig till psykologisk undersökning eller behandling och för uppgift om en enskilds personliga förhållanden hos psykolog, personalkonsulent eller en annan sådan befattningshavare som särskilt har till uppgift att bistå med råd och hjälp i personliga angelägenheter, om det inte står klart att uppgiften kan röjas utan att den enskilde eller någon närstående till denne lider men.
 
@@ -134,11 +133,11 @@ Sekretess gäller i verksamhet som avses i första stycket för annan uppgift om
 
 För uppgift i en allmän handling gäller sekretessen i högst femtio år.
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K39</field>
-        </record>
-        <record id="law_section_k39p2" model="rk.law.section">
-            <field name="name">Personaladministrativ verksamhet, 39 kap 2 §</field>
-            <field name="description">Personaladministrativ verksamhet i övrigt
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K39</field>
+    </record>
+    <record id="law_section_k39p2" model="rk.law.section">
+        <field name="name">Personaladministrativ verksamhet, 39 kap 2 §</field>
+        <field name="description">Personaladministrativ verksamhet i övrigt
 
 2 §   Sekretess gäller i övrig personaladministrativ verksamhet än som anges i 1 § för dels uppgift om en enskilds hälsotillstånd, dels sådan uppgift om en enskilds personliga förhållanden som hänför sig till ärende om omplacering eller pensionering av en anställd, om det kan antas att den enskilde eller någon närstående till denne lider men om uppgiften röjs.
 
@@ -146,11 +145,11 @@ Sekretessen gäller inte i ärende om anställning, om inte annat följer av 5 a
 
 För uppgift i en allmän handling gäller sekretessen i högst femtio år. Lag (2010:85).
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K39P2</field>
-        </record>
-        <record id="law_section_k39p1" model="rk.law.section">
-            <field name="name">Personaladministrativ verksamhet, 39 kap 3 §</field>
-            <field name="description">Adresser, telefonnummer, m.m.
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K39P2</field>
+    </record>
+    <record id="law_section_k39p1" model="rk.law.section">
+        <field name="name">Personaladministrativ verksamhet, 39 kap 3 §</field>
+        <field name="description">Adresser, telefonnummer, m.m.
 
 3 §   Sekretess gäller i annat fall än som avses i 1 och 2 §§ i personaladministrativ verksamhet för uppgift om en enskilds personliga förhållanden, om det kan antas att den enskilde eller någon närstående utsätts för våld eller lider annat allvarligt men om uppgiften röjs.
 
@@ -160,11 +159,11 @@ Sekretess gäller också i den personaladministrativa verksamheten hos Riksdagen
 
 För uppgift i en allmän handling gäller sekretessen i högst femtio år. Lag (2017:1076).
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K39P3</field>
-        </record>
-        <record id="law_section_k24p8" model="rk.law.section">
-            <field name="name">Statistik, 24 kap 8 §</field>
-            <field name="description">Statistik
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K39P3</field>
+    </record>
+    <record id="law_section_k24p8" model="rk.law.section">
+        <field name="name">Statistik, 24 kap 8 §</field>
+        <field name="description">Statistik
 
 8 §   Sekretess gäller i sådan särskild verksamhet hos en myndighet som avser framställning av statistik för uppgift som avser en enskilds personliga eller ekonomiska förhållanden och som kan hänföras till den enskilde.
 
@@ -175,11 +174,11 @@ Uppgift som behövs för forsknings- eller statistikändamål och uppgift som in
 
 För uppgift i en allmän handling gäller sekretessen i högst sjuttio år, om uppgiften avser en enskilds personliga förhållanden, och annars i högst tjugo år. Lag (2014:415).
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K24P8</field>
-        </record>
-        <record id="law_section_k30p23" model="rk.law.section">
-            <field name="name">Tillsynsekretess, 30 kap 23 § + förordningen</field>
-            <field name="description">Tillsyn, stödverksamhet, m.m.
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K24P8</field>
+    </record>
+    <record id="law_section_k30p23" model="rk.law.section">
+        <field name="name">Tillsynsekretess, 30 kap 23 § + förordningen</field>
+        <field name="description">Tillsyn, stödverksamhet, m.m.
 
 23 §   Sekretess gäller, i den utsträckning regeringen meddelar föreskrifter om det, i en statlig myndighets verksamhet som består i utredning, planering, prisreglering, tillståndsgivning, tillsyn eller stödverksamhet med avseende på produktion, handel, transportverksamhet eller näringslivet i övrigt
    1. för uppgift om en enskilds affärs- eller driftförhållanden, uppfinningar eller forskningsresultat, om det kan antas att den enskilde lider skada om uppgiften röjs, och
@@ -187,19 +186,19 @@ För uppgift i en allmän handling gäller sekretessen i högst sjuttio år, om 
 
 För uppgift i en allmän handling gäller sekretessen i högst tjugo år.
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K30P23</field>
-        </record>
-        <record id="law_section_k31p12" model="rk.law.section">
-            <field name="name">Uppdragssekretess, 31 kap 12 § 1 st</field>
-            <field name="description">Provning, värdering, undersökning m.m.
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K30P23</field>
+    </record>
+    <record id="law_section_k31p12" model="rk.law.section">
+        <field name="name">Uppdragssekretess, 31 kap 12 § 1 st</field>
+        <field name="description">Provning, värdering, undersökning m.m.
 
 12 §   Sekretess gäller för uppgift som avser provning, bestämning av egenskaper eller myckenhet, värdering, vetenskaplig, teknisk, ekonomisk eller statistisk undersökning eller annat sådant uppdrag som myndigheten utför för en enskilds räkning, om det måste antas att uppdraget har lämnats under förutsättning att uppgiften inte röjs.
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K31P12</field>
-        </record>
-        <record id="law_section_k10p27" model="rk.law.section">
-            <field name="name">Generalklausul, utlämnande till myndighet, 10 kap 27 §</field>
-            <field name="description">Generalklausul
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K31P12</field>
+    </record>
+    <record id="law_section_k10p27" model="rk.law.section">
+        <field name="name">Generalklausul, utlämnande till myndighet, 10 kap 27 §</field>
+        <field name="description">Generalklausul
 
 27 §    /Upphör att gälla U:2022-01-01/ Utöver vad som följer av 2, 3, 5 och 15-26 §§ får en sekretessbelagd uppgift lämnas till en myndighet, om det är uppenbart att intresset av att uppgiften lämnas har företräde framför det intresse som sekretessen ska skydda.
 
@@ -207,27 +206,27 @@ Första stycket gäller inte i fråga om sekretess enligt 24 kap. 2 a och 8 §§
 
 Första stycket gäller inte heller om utlämnandet strider mot lag eller förordning. Lag (2018:220).
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K10P27</field>
-        </record>
-        <record id="law_section_k10p28" model="rk.law.section">
-            <field name="name">Uppgiftsskyldighet till följd av lag eller förordning, 10 kap 28 §</field>
-            <field name="description">Ytterligare sekretessbrytande bestämmelser och undantag från sekretess
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K10P27</field>
+    </record>
+    <record id="law_section_k10p28" model="rk.law.section">
+        <field name="name">Uppgiftsskyldighet till följd av lag eller förordning, 10 kap 28 §</field>
+        <field name="description">Ytterligare sekretessbrytande bestämmelser och undantag från sekretess
 
 28 §   Sekretess hindrar inte att en uppgift lämnas till en annan myndighet, om uppgiftsskyldighet följer av lag eller förordning.
 
 Ytterligare sekretessbrytande bestämmelser och bestämmelser om undantag från sekretess finns i anslutning till berörda sekretessbestämmelser i avdelning IV-VI.
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K10P28</field>
-        </record>
-        <record id="law_section_17" model="rk.law.section">
-            <field name="name">Utlämnande av uppgift med förbehåll, 10 kap 14 §</field>
-            <field name="description">Utlämnande av uppgift med förbehåll
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K10P28</field>
+    </record>
+    <record id="law_section_17" model="rk.law.section">
+        <field name="name">Utlämnande av uppgift med förbehåll, 10 kap 14 §</field>
+        <field name="description">Utlämnande av uppgift med förbehåll
 
 14 §   Om en myndighet finner att sådan risk för skada, men eller annan olägenhet som enligt en bestämmelse om sekretess hindrar att en uppgift lämnas till en enskild kan undanröjas genom ett förbehåll som inskränker den enskildes rätt att lämna uppgiften vidare eller utnyttja den, ska myndigheten göra ett sådant förbehåll när uppgiften lämnas till den enskilde.
 
 Att den tystnadsplikt som uppkommer genom ett sådant förbehåll som anges i första stycket inskränker den rätt att meddela och offentliggöra uppgifter som följer av 1 kap. 1 och 7 §§ tryckfrihetsförordningen och 1 kap. 1 och 10 §§ yttrandefrihetsgrundlagen följer av 13 kap. 5 § andra stycket. Lag (2018:1919).
             </field>
-            <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K10P14</field>
-        </record>
-    
+        <field name="url">https://www.riksdagen.se/sv/dokument-lagar/dokument/svensk-forfattningssamling/offentlighets--och-sekretesslag-2009400_sfs-2009-400#K10P14</field>
+    </record>
+
 </odoo>

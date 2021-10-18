@@ -1,2 +1,2 @@
-from . import rk_document
-from . import rk_law_section
+from . import document
+from . import law_section

@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
+
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
-import logging
-
-_logger = logging.getLogger(__name__)
 
 
-class RecordKeepingLawSection(models.Model):
+class LawSection(models.Model):
     """
     In order for a public authority to refuse to disclose information in an of-
     ficial document to a natural or legal person, or any kind of information

@@ -23,12 +23,7 @@
     'name': 'Record-keeping',
     'summary': 'Record-keeping for Odoo',
     'description': """
-Record-keeping
-==============
-
-------------------------------------------------------
-    * Display attachments in notebook view
-    * Mark as classified
+This module is the base module for Record-keeping
 """,
     'version': '14.0.1',
     'category': 'Administration',

@@ -6,21 +6,19 @@
             <form string="Record-keeping">
                 <sheet>
                     <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
-                    <label for="name" class="oe_edit_only"/>
                     <h1>
-                        <field name="name"/>
+                        <field name="name" />
                     </h1>
                     <group>
                         <group>
-                            <field name="draw_up_date" widget="date"/>
-                            <field name="receive_date" widget="date"/>
-                            <field name="receiver_id"/>
-                            <field name="sender_id"/>
+                            <field name="rk_res_model" />
+                            <field name="rk_res_id" />
                         </group>
                         <group>
-                            <field name="is_official" />
-                            <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}"/>
-                            <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)]}"/>
+                            <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
+                            <field name="is_secret" attrs="{'invisible':[('is_official','=',False)]}" />
+                            <field name="law_section_id" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)], 'required': [('is_secret', '=', True)]}" />
+                            <field name="secrecy_grounds" attrs="{'invisible':['|',('is_official','=',False),('is_secret','=',False)], 'required': [('is_secret', '=', True)]}" />
                         </group>
                     </group>
                     <notebook>
@@ -36,40 +34,50 @@
                                 </group>
                             </group>
                         </page>
+                        <page name="documents" string="Documents">
+                            <group>
+                                <group>
+                                    <field name="rk_res_ref" />
+
+                                </group>
+                                <group class="text-nowrap"></group>
+                            </group>
+                        </page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids"/>
+                    <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
                 </div>
             </form>
         </field>
     </record>
+
     <record id="view_document_kanban" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
             <kanban class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors" sample="1">
-                <field name="draw_up_date"/>
-                <field name="receive_date"/>
-                <field name="is_secret"/>
-                <field name="is_official"/>
-                <field name="name"/>
-                <field name="receiver_id"/>
-                <field name="sender_id"/>
+                <field name="draw_up_date" />
+                <field name="receive_date" />
+                <field name="is_secret" />
+                <field name="is_official" />
+                <field name="name" />
+                <field name="receiver_id" />
+                <field name="sender_id" />
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click o_has_icon">
                             <div class="row">
                                 <div class="col-12">
                                     <strong>
-                                        <t t-esc="record.name.value"/>
+                                        <t t-esc="record.name.value" />
                                     </strong>
                                 </div>
                             </div>
                             <t t-if="record.draw_up_date.value">
-                                <hr class="mt8 mb8"/>
-                                <t t-esc="record.draw_up_date.value"/>
+                                <hr class="mt8 mb8" />
+                                <t t-esc="record.draw_up_date.value" />
                             </t>
                         </div>
                     </t>
@@ -77,38 +85,37 @@
             </kanban>
         </field>
     </record>
+
     <record id="view_document_search" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
             <search string="Official Document">
-                <field name="name" filter_domain="[('is_official','=',True), ('name','ilike',self)]" string="Official document"/>
-                <field name="is_official"/>
+                <field name="name" filter_domain="[('is_official','=',True), ('name','ilike',self)]" string="Registration number" />
+                <field name="is_official" />
             </search>
         </field>
     </record>
+
     <record id="view_document_tree" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
             <tree string="Record-keeping">
-                <field name="name"/>
-                <field name="draw_up_date" widget="date"/>
-                <field name="receive_date" widget="date"/>
-                <field name="receiver_id"/>
-                <field name="sender_id"/>
-                <field name="is_official"/>
-                <field name="is_secret"/>
-                <field name="create_uid"/>
-                <field name="create_date"/>
+                <field name="name" />
+                <field name="is_secret" />
+                <field name="create_uid" />
+                <field name="create_date" />
+                <field name="rk_res_ref" />
             </tree>
         </field>
     </record>
+
     <record id="action_document_view" model="ir.actions.act_window">
         <field name="name">Record-keeping Documents</field>
         <field name="res_model">rk.document</field>
         <field name="domain">[('is_official','=',True)]</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="view_id" eval="False"/>
-        <field name="context">{"search_default_filter_name":1}</field>
+        <field name="view_id" eval="False" />
+        <field name="context">{'create': False,'search_default_filter_name':1}</field>
         <field name="search_view_id" ref="view_document_search" />
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -116,22 +123,26 @@
             </p>
         </field>
     </record>
+
     <record id="action_document_form" model="ir.actions.act_window.view">
         <field name="sequence" eval="2" />
         <field name="view_mode">form</field>
         <field name="act_window_id" ref="action_document_view" />
     </record>
+
     <record id="action_document_kanban" model="ir.actions.act_window.view">
         <field name="sequence" eval="0" />
         <field name="view_mode">kanban</field>
         <field name="act_window_id" ref="action_document_view" />
     </record>
+
     <record id="action_document_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="1" />
         <field name="view_mode">tree</field>
         <field name="act_window_id" ref="action_document_view" />
     </record>
+
     <menuitem id="menu_record_keeping" name="Record-keeping" />
-    <menuitem action="action_document_view" id="menu_record_keeping_document" name="Documents" parent="menu_record_keeping" sequence="1"/>
+    <menuitem action="action_document_view" id="menu_record_keeping_document" name="Documents" parent="menu_record_keeping" sequence="1" />
     <menuitem action="action_document_view" id="menu_record_keeping_configuration" name="Configuration" parent="menu_record_keeping" sequence="100" />
 </odoo>
