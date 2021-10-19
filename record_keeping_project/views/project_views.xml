@@ -28,8 +28,8 @@
                             <field name="is_official" attrs="{'invisible':[('rk_name', '!=', False)]}" />
                             <field name="rk_ref" attrs="{'invisible':[('rk_name', '=', False)]}" />
                             <field name="is_secret" attrs="{'invisible':[('is_official', '=', False)]}" />
-                            <field name="law_section_id" attrs="{'invisible':['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
-                            <field name="secrecy_grounds" attrs="{'invisible':['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
+                            <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
+                            <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
                         </group>
                     </group>
                 </page>
