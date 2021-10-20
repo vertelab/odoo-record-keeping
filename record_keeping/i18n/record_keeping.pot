@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-20 11:55+0000\n"
-"PO-Revision-Date: 2021-10-20 11:55+0000\n"
+"POT-Creation-Date: 2021-10-20 12:49+0000\n"
+"PO-Revision-Date: 2021-10-20 12:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -55,6 +55,11 @@ msgstr ""
 #: model:ir.ui.menu,name:record_keeping.menu_type_view
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_type_form
 msgid "Case Types"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__rk_notes
+msgid "Case notes"
 msgstr ""
 
 #. module: record_keeping
@@ -319,6 +324,11 @@ msgstr ""
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_type_id
 msgid "Next Activity Type"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__rk_notes
+msgid "Notes about the case"
 msgstr ""
 
 #. module: record_keeping
