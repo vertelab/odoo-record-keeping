@@ -13,6 +13,7 @@
                         <group>
                             <field name="rk_res_model" />
                             <field name="rk_res_id" />
+                            <field name="classification_id" domain="[('is_selectable', '=', True)]"/>
                         </group>
                         <group>
                             <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
@@ -38,7 +39,6 @@
                             <group>
                                 <group>
                                     <field name="rk_res_ref" />
-
                                 </group>
                                 <group class="text-nowrap"></group>
                             </group>
@@ -105,6 +105,7 @@
                 <field name="create_uid" />
                 <field name="create_date" />
                 <field name="rk_res_ref" />
+                <field name="classification_id" domain="[('is_selectable', '=', True)]"/>
             </tree>
         </field>
     </record>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-18 21:07+0000\n"
-"PO-Revision-Date: 2021-10-18 23:25+0200\n"
+"POT-Creation-Date: 2021-10-20 11:55+0000\n"
+"PO-Revision-Date: 2021-10-20 14:00+0200\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: sv_SE\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__sender_id
@@ -53,6 +53,13 @@ msgid "Attachment Count"
 msgstr "Antal bilagor"
 
 #. module: record_keeping
+#: model:ir.actions.act_window,name:record_keeping.action_type_view
+#: model:ir.ui.menu,name:record_keeping.menu_type_view
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_type_form
+msgid "Case Types"
+msgstr "Ärendetyp"
+
+#. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__is_secret
 msgid ""
 "Check this option if it can be assumed that information contained in this "
@@ -67,6 +74,22 @@ msgid "Check this option if this document is an official document"
 msgstr "Markera om detta dokument är en allmän handling"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__child_ids
+msgid "Children"
+msgstr "Barn"
+
+#. module: record_keeping
+#: model:ir.actions.act_window,name:record_keeping.action_classification_view
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__classification_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type__classification_id
+#: model:ir.ui.menu,name:record_keeping.menu_classification_view
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_form
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_tree
+msgid "Classification"
+msgstr "Klassificering"
+
+#. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
 msgid "Confidential"
 msgstr "Sekretess"
@@ -75,6 +98,16 @@ msgstr "Sekretess"
 #: model:ir.ui.menu,name:record_keeping.menu_record_keeping_configuration
 msgid "Configuration"
 msgstr "Inställningar"
+
+#. module: record_keeping
+#: model_terms:ir.actions.act_window,help:record_keeping.action_type_view
+msgid "Create a Case Type"
+msgstr "Skapa en ärendetyp"
+
+#. module: record_keeping
+#: model_terms:ir.actions.act_window,help:record_keeping.action_classification_view
+msgid "Create a Classification"
+msgstr "Skapa en klassificering"
 
 #. module: record_keeping
 #: model_terms:ir.actions.act_window,help:record_keeping.action_law_section_view
@@ -90,6 +123,7 @@ msgstr "Skapa en ny allmän handling"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type__create_uid
 msgid "Created by"
 msgstr "Skapad av"
 
@@ -97,20 +131,30 @@ msgstr "Skapad av"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type__create_date
 msgid "Created on"
 msgstr "Skapad den"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__description
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type__description
 msgid "Description"
 msgstr "Beskrivning"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__display_name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__display_name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type__display_name
 msgid "Display Name"
 msgstr "Visningsnamn"
+
+#. module: record_keeping
+#: model:ir.module.category,name:record_keeping.module_category_record_keeping_document
+msgid "Document"
+msgstr "Handling"
 
 #. module: record_keeping
 #: model:ir.ui.menu,name:record_keeping.menu_record_keeping_document
@@ -120,7 +164,6 @@ msgstr "Handlingar"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__draw_up_date
-#: model:ir.model.fields.selection,name:record_keeping.selection__rk_document__rk_type__drawn_up
 msgid "Drawn up"
 msgstr "Upprättad"
 
@@ -145,9 +188,20 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr "Font awesomeikon t.ex fa-tasks"
 
 #. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
+msgid "Group By"
+msgstr "Gruppera efter"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__header
+msgid "Header"
+msgstr "Namn"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type__id
 msgid "ID"
 msgstr "ID"
 
@@ -187,6 +241,7 @@ msgstr "Är följare"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section____last_update
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type____last_update
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 
@@ -194,6 +249,7 @@ msgstr "Senast redigerad"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type__write_uid
 msgid "Last Updated by"
 msgstr "Senast uppdaterad av"
 
@@ -201,15 +257,22 @@ msgstr "Senast uppdaterad av"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type__write_date
 msgid "Last Updated on"
 msgstr "Senast uppdaterad"
 
 #. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_law_section_view
+#: model:ir.module.category,name:record_keeping.module_category_record_keeping_law_section
 #: model:ir.ui.menu,name:record_keeping.menu_law_section
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_law_section_form
 msgid "Law Section"
 msgstr "Lagrum"
+
+#. module: record_keeping
+#: model:res.groups,name:record_keeping.group_rk_law_section_manager
+msgid "Law Section Manager"
+msgstr "Lagrumsadministratör"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_main_attachment_id
@@ -237,8 +300,14 @@ msgid "My Activity Deadline"
 msgstr "Min aktivitets slutdatum"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__number
+msgid "My number"
+msgstr "Nummer"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_type__name
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
 msgid "Name"
 msgstr "Namn"
 
@@ -294,6 +363,7 @@ msgstr "Allmän handling"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__parent_id
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
 msgid "Parent"
 msgstr "Förälder"
 
@@ -304,7 +374,6 @@ msgstr "Vänligen ange rättsliga grunder"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__receive_date
-#: model:ir.model.fields.selection,name:record_keeping.selection__rk_document__rk_type__received
 msgid "Received"
 msgstr "Inkommen"
 
@@ -314,11 +383,17 @@ msgid "Receiver"
 msgstr "Mottagare"
 
 #. module: record_keeping
+#: model:ir.module.category,name:record_keeping.module_category_record_keeping
 #: model:ir.ui.menu,name:record_keeping.menu_record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_tree
 msgid "Record-keeping"
 msgstr "Diarium"
+
+#. module: record_keeping
+#: model:ir.model,name:record_keeping.model_rk_type
+msgid "Record-keeping Case Type"
+msgstr "Diarium Ärendetyp"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_classification
@@ -383,11 +458,6 @@ msgid "Responsible User"
 msgstr "Ansvarig användare"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document__rk_type
-msgid "Rk Type"
-msgstr "Diarietyp"
-
-#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__secrecy_grounds
 msgid "Secrecy grounds"
 msgstr "Motivering"
@@ -401,6 +471,11 @@ msgstr "Sekretessmarkering"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__law_section_id
 msgid "Secrecy provision"
 msgstr "Sekretessbestämmelse"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__is_selectable
+msgid "Selectable"
+msgstr "Valbar"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__sender_id
@@ -464,6 +539,11 @@ msgstr ""
 #: model:ir.model.fields,help:record_keeping.field_rk_document__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "Typ av undantagsaktivitet i posten."
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__type_ids
+msgid "Types"
+msgstr "Typer"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_unread

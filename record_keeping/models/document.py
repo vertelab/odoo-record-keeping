@@ -82,7 +82,11 @@ class Document(models.Model):
         selection='_selection_target_model',
         string='Resource Reference',
     )
-    rk_type = fields.Selection(TYPES)
+    classification_id = fields.Many2one(
+        comodel_name='rk.classification',
+        string='Classification',
+        tracking=True,
+    )
     secrecy_grounds = fields.Char(
         default=False,
         help='If marked as secret, please provide more information',
@@ -98,19 +102,11 @@ class Document(models.Model):
 
     _sql_constraints = [
         ('is_secret_require_grounds',
-         "CHECK(is_secret IS NOT TRUE OR (law_section_id IS NOT NULL AND secrecy_grounds IS NOT NULL))",
+         "CHECK(is_secret IS NOT TRUE OR law_section_id IS NOT NULL)",
+         #  "CHECK(is_secret IS NOT TRUE OR (law_section_id IS NOT NULL AND secrecy_grounds IS NOT NULL))",
          'Please provide legal grounds')]
 
-    def _compute_url(self):
-        base_url = self.env['ir.config_parameter'].sudo().get_param(
-            'web.base.url')
-        action = self.env.ref('record_keeping.action_document_view',
-                              raise_if_not_found=False)
-        for record in self:
-            record.rk_url = (
-                f'{base_url}/web#id={record.id}&view_type=form&model='
-                f'{record._name}&action={action.id}')
-
+    
     @api.depends('rk_res_model', 'rk_res_id')
     def _compute_res_ref(self):
         for record in self:
@@ -151,5 +147,67 @@ class Classification(models.Model):
     _name = 'rk.classification'
     _description = 'Record-keeping Classification'
 
+    name = fields.Char(
+        compute='_compute_name',
+        search='_search_names',
+        string='Display Name',
+    )
+    description = fields.Char()
+    header = fields.Char(default='',)
+    number = fields.Integer(
+        default=0,
+        string='My number',
+    )
+    parent_id = fields.Many2one(
+        comodel_name='rk.classification',
+        default=False,
+        string='Parent',
+    )
+    child_ids = fields.One2many(
+        comodel_name='rk.classification',
+        inverse_name='parent_id',
+        string='Children'
+    )
+    is_selectable = fields.Boolean(
+        default=False,
+        string='Selectable',)
+    type_ids = fields.One2many(
+        comodel_name='rk.type',
+        inverse_name='classification_id',
+        string='Types')
+
+    @api.depends('header', 'number', 'parent_id')
+    def _compute_name(self):
+        for record in self:
+            header = record.header
+            number = record.number
+            parent = record.parent_id
+            if parent:
+                p_name = parent.name.split(' ')[0]
+                if p_name:
+                    record.name = f"{p_name}.{number} {header}"
+                else:
+                    record.name = ''
+            elif number:
+                record.name = f"{number} {header}"
+            else:
+                record.name = ''
+
+    def _search_names(self, operator, value):
+        domain = ['|', ('header', operator, value),
+                  ('number', operator, value)]
+        names = self.env['rk.classification'].search(domain)
+        return [('id', 'in', names.ids)]
+
+
+class Type(models.Model):
+    _name = 'rk.type'
+    _description = 'Record-keeping Case Type'
+
     name = fields.Char()
-    parent_id = fields.Many2one('rk.classification')
+    description = fields.Char()
+    classification_id = fields.Many2one(
+        comodel_name='rk.classification',
+        default=False,
+        string='Classification',
+    )

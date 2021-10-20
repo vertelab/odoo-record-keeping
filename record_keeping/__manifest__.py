@@ -32,12 +32,14 @@ This module is the base module for Record-keeping
     'author': 'Vertel AB',
     'depends': ['mail'],
     'data': [
+        'data/rk.classification.csv',
         'data/ir_sequence_data.xml',
-        'data/rk_law_section_data.xml',
-        'security/rk_document_security.xml',
+        'data/law_section_data.xml',
+        'security/document_security.xml',
         'security/ir.model.access.csv',
-        'views/rk_document_views.xml',
-        'views/rk_law_section_views.xml',
+        'views/document_views.xml',
+        'views/classification_views.xml',
+        'views/law_section_views.xml',
     ],
     'application': True,
 }
