@@ -11,6 +11,7 @@
                 <group>
                     <group>
                         <field name="rk_ref" attrs="{'invisible':[('rk_name', '=', False)]}" />
+                        <field name="classification_id" domain="[('is_selectable', '=', True)]" />
                     </group>
                 </group>
             </div>
@@ -56,6 +57,7 @@
             </sheet>
         </field>
     </record>
+
     <record id="view_project_kanban" model="ir.ui.view">
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.view_project_kanban" />
@@ -64,6 +66,16 @@
                 <field name="is_official" invisible="1" />
                 <field name="rk_name" attrs="{'invisible':[('is_official', '=', False)]}" decoration-success="1" widget="badge" />
             </div>
+        </field>
+    </record>
+
+    <record id="view_project_project_filter" model="ir.ui.view">
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="rk_name" filter_domain="[('is_official','=',True), ('rk_name','ilike',self)]" string="Registration number" />
+            </field>
         </field>
     </record>
 </odoo>
