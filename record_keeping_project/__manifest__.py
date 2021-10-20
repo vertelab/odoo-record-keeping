@@ -23,9 +23,11 @@
     'name': 'Record-keeping Project',
     'summary': 'Record-keeping Project for Odoo',
     'description': """
-This module extends projects with record-keeping fields
+This module extends projects with record-keeping fields\n
+v14.1.1.0 added new version number.   \n
+
 """,
-    'version': '14.0.1',
+    'version': '14.0.1.1.0',
     'category': 'Administration',
     'license': 'AGPL-3',
     'website': 'https://vertel.se',
