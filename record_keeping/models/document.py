@@ -24,6 +24,11 @@ class Document(models.Model):
         readonly=True,
         string="Registration number"
     )
+    classification_id = fields.Many2one(
+        comodel_name='rk.classification',
+        string='Classification',
+        tracking=True,
+    )
     draw_up_date = fields.Date(
         default=False,
         help='The date when the document is ready to be used or sent',
@@ -60,6 +65,11 @@ class Document(models.Model):
         string='Receiver',
         tracking=True,
     )
+    rk_notes = fields.Char(
+        help='Notes about the case',
+        string='Case notes',
+        tracking=True,
+    )
     rk_name = fields.Char(
         help="The format is [current year]/[sequence] and is set when document is official",
         readonly=True,
@@ -82,11 +92,6 @@ class Document(models.Model):
         selection='_selection_target_model',
         string='Resource Reference',
     )
-    classification_id = fields.Many2one(
-        comodel_name='rk.classification',
-        string='Classification',
-        tracking=True,
-    )
     secrecy_grounds = fields.Char(
         default=False,
         help='If marked as secret, please provide more information',
@@ -106,7 +111,6 @@ class Document(models.Model):
          #  "CHECK(is_secret IS NOT TRUE OR (law_section_id IS NOT NULL AND secrecy_grounds IS NOT NULL))",
          'Please provide legal grounds')]
 
-    
     @api.depends('rk_res_model', 'rk_res_id')
     def _compute_res_ref(self):
         for record in self:
