@@ -23,7 +23,7 @@
     'name': 'Record-keeping Attachment',
     'summary': 'Record-keeping Attachment for Odoo',
     'author': 'Vertel AB',
-    'contributor': 'Mitchell Admin',
+    'contributor': '',
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-event.git',
     'category': 'Administration',
