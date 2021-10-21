@@ -22,14 +22,18 @@
 {
     'name': 'Record-keeping Attachment',
     'summary': 'Record-keeping Attachment for Odoo',
-    'description': """
-This module extends attachments with record-keeping fields
-""",
-    'version': '14.0.1',
-    'category': 'Administration',
-    'license': 'AGPL-3',
-    'website': 'https://vertel.se',
     'author': 'Vertel AB',
+    'contributor': 'Mitchell Admin',
+    'maintainer': 'Vertel AB',
+    'repository': 'https://github.com/vertelab/odoo-event.git',
+    'category': 'Administration',
+    'version': '14.0.1',
+    # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
+    'license': 'AGPL-3',
+    'website': 'https://vertel.se/',
+    'description': """
+        This module extends attachments with record-keeping fields
+    """,
     'depends': ['attachment_notebook', 'record_keeping', 'mail'],
     'data': [
         'views/ir_attachment_views.xml',
