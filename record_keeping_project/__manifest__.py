@@ -22,16 +22,20 @@
 {
     'name': 'Record-keeping Project',
     'summary': 'Record-keeping Project for Odoo',
+    'author': 'Vertel AB',
+    'contributor': '',
+    'maintainer': 'Vertel AB',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'category': 'Administration',
+    'version': '14.0.1.1.0',
+    # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
+    'license': 'AGPL-3',
+    'website': 'https://vertel.se/',
     'description': """
 This module extends projects with record-keeping fields\n
 v14.1.1.0 added new version number.   \n
 
 """,
-    'version': '14.0.1.1.0',
-    'category': 'Administration',
-    'license': 'AGPL-3',
-    'website': 'https://vertel.se',
-    'author': 'Vertel AB',
     'depends': ['mail', 'project', 'record_keeping'],
     'data': [
         'views/project_views.xml',
