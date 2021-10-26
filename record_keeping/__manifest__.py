@@ -15,7 +15,7 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ################################################################################
 
@@ -23,7 +23,7 @@
     'name': 'Record-keeping',
     'summary': 'Record-keeping for Odoo',
     'author': 'Vertel AB',
-    'contributor': 'Mitchell Admin',
+    'contributor': '',
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
