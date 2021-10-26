@@ -30,7 +30,7 @@
     'version': '14.0.1.1.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
-    'website': 'https://vertel.se/',
+    'website': 'https://vertel.se/record-keeping',
     'description': """
 This module extends projects with record-keeping fields\n
 v14.1.1.0 added new version number.   \n
