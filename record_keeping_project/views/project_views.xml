@@ -73,9 +73,9 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.view_project_project_filter" />
         <field name="arch" type="xml">
-            <field name="name" position="before">
+            <search position="inside">
                 <field name="rk_name" filter_domain="[('is_official','=',True), ('rk_name','ilike',self)]" string="Registration number" />
-            </field>
+            </search>
         </field>
     </record>
 </odoo>
