@@ -34,7 +34,7 @@
     'description': """
 This module extends sale orders with record-keeping fields
 """,
-    'depends': ['record_keeping', 'sale'],
+    'depends': ['record_keeping', 'sale_management'],
     'data': [
         'views/sale_views.xml',
     ],
