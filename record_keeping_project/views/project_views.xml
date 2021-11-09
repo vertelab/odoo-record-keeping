@@ -12,6 +12,7 @@
                     <group>
                         <field name="rk_ref" attrs="{'invisible':[('rk_name', '=', False)]}" />
                         <field name="classification_id" domain="[('is_selectable', '=', True)]" />
+                        <field name="rk_type_id"/>
                     </group>
                 </group>
             </div>

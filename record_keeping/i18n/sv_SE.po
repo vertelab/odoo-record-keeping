@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-20 12:49+0000\n"
-"PO-Revision-Date: 2021-10-20 14:53+0200\n"
+"POT-Creation-Date: 2021-11-09 14:43+0000\n"
+"PO-Revision-Date: 2021-11-09 15:47+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Antal bilagor"
 #: model:ir.ui.menu,name:record_keeping.menu_type_view
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_type_form
 msgid "Case Types"
-msgstr "Ärendetyp"
+msgstr "Handlingstyp"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__rk_notes
@@ -107,7 +107,7 @@ msgstr "Inställningar"
 #. module: record_keeping
 #: model_terms:ir.actions.act_window,help:record_keeping.action_type_view
 msgid "Create a Case Type"
-msgstr "Skapa en ärendetyp"
+msgstr "Skapa en handlingstyp"
 
 #. module: record_keeping
 #: model_terms:ir.actions.act_window,help:record_keeping.action_classification_view
@@ -160,6 +160,11 @@ msgstr "Visningsnamn"
 #: model:ir.module.category,name:record_keeping.module_category_record_keeping_document
 msgid "Document"
 msgstr "Handling"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__rk_type_id
+msgid "Document type"
+msgstr "Handlingstyp"
 
 #. module: record_keeping
 #: model:ir.ui.menu,name:record_keeping.menu_record_keeping_document
@@ -403,7 +408,7 @@ msgstr "Diarium"
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_type
 msgid "Record-keeping Case Type"
-msgstr "Diarium Ärendetyp"
+msgstr "Diarium Handlingstyp"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_classification

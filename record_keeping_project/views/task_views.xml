@@ -10,6 +10,7 @@
             <field name="partner_id" position="before">
                 <field name="rk_ref" attrs="{'invisible':[('rk_name', '=', False)]}" />
                 <field name="classification_id" domain="[('is_selectable', '=', True)]" />
+                <field name="rk_type_id"/>
             </field>
             <notebook position="inside">
                 <page name="record_keeping" string="Record-keeping">

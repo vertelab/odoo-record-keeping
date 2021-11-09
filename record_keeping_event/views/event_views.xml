@@ -8,6 +8,10 @@
             <div name="button_box" position="after">
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
             </div>
+            <field name="tag_ids" position="after">
+                <field name="classification_id" domain="[('is_selectable', '=', True)]" />
+                <field name="rk_type_id"/>
+            </field>
             <notebook position="inside">
                 <page name="record_keeping" string="Record-keeping">
                     <group>

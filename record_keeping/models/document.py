@@ -92,6 +92,11 @@ class Document(models.Model):
         selection='_selection_target_model',
         string='Resource Reference',
     )
+    rk_type_id = fields.Many2one(
+        comodel_name='rk.type',
+        string='Document type',
+        tracking=True,
+    )
     secrecy_grounds = fields.Char(
         default=False,
         help='If marked as secret, please provide more information',
