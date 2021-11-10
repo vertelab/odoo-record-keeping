@@ -32,6 +32,21 @@
         </field>
     </record>
 
+    <record id="view_classification_kanban" model="ir.ui.view">
+        <field name="model">rk.classification</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_details oe_kanban_global_click">
+                            <field name="name" />
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="view_classification_search" model="ir.ui.view">
         <field name="model">rk.classification</field>
         <field name="arch" type="xml">

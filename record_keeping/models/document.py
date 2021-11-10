@@ -192,15 +192,15 @@ class Classification(models.Model):
             number = record.number
             parent = record.parent_id
             if parent:
-                p_name = parent.name.split(' ')[0]
-                if p_name:
-                    record.name = f"{p_name}.{number} {header}"
+                name = parent.name
+                if name and ' ' in name:
+                    record.name = f"{name.split(' ')[0]}.{number} {header}"
                 else:
-                    record.name = ''
+                    record.name = f"{number} {header}"
             elif number:
                 record.name = f"{number} {header}"
             else:
-                record.name = ''
+                record.name = header
 
     def _search_names(self, operator, value):
         domain = ['|', ('header', operator, value),
