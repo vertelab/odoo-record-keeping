@@ -7,7 +7,7 @@
             <div name="button_box" position="after">
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
             </div>
-            <field name="property_status" position="after">
+            <field name="acquired_date" position="after">
                 <field name="classification_id" domain="[('is_selectable', '=', True)]" />
                 <field name="rk_type_id"/>
             </field>
