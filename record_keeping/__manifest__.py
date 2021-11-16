@@ -37,6 +37,7 @@
     'depends': ['mail'],
     'data': [
         'data/rk.classification.csv',
+        'data/rk.type.csv',
         'data/ir_sequence_data.xml',
         'data/law_section_data.xml',
         'security/document_security.xml',
