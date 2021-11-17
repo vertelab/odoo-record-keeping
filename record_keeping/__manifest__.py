@@ -44,6 +44,7 @@
         'security/ir.model.access.csv',
         'views/document_views.xml',
         'views/classification_views.xml',
+        'views/type_views.xml',
         'views/law_section_views.xml',
     ],
     'application': True,
