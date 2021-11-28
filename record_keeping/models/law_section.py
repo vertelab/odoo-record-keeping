@@ -14,9 +14,23 @@ class LawSection(models.Model):
     information is public in all circumstances and must be disclosed.
     """
     _name = 'rk.law.section'
-    _description = 'Record-keeping Law Section'
-    _order = 'id desc'
+    _description = 'Law Section'
+    _inherit = ['mail.activity.mixin', 'mail.thread']
+    _order = 'name'
 
-    name = fields.Char()
-    description = fields.Html()
-    url = fields.Char()
+    name = fields.Char(
+        help='The name of this secrecy provision',
+        required=True,
+        string='Name',
+        tracking=True,
+    )
+    description = fields.Html(
+        help='The description of this secrecy provision',
+        string='Description',
+        tracking=True,
+    )
+    url = fields.Char(
+        help='The url of this secrecy provision',
+        string='Url',
+        tracking=True,
+    )

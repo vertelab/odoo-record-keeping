@@ -27,7 +27,7 @@
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
-    'version': '14.0.1',
+    'version': '14.0.2.0.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
     'website': 'https://vertel.se/record-keeping',   
@@ -37,15 +37,17 @@
     'depends': ['mail'],
     'data': [
         'data/rk.classification.csv',
-        'data/rk.type.csv',
+        'data/rk.document.type.csv',
         'data/ir_sequence_data.xml',
         'data/law_section_data.xml',
         'security/document_security.xml',
         'security/ir.model.access.csv',
+        'views/ir_config_parameter.xml',
         'views/document_views.xml',
         'views/classification_views.xml',
-        'views/type_views.xml',
+        'views/document_type_views.xml',
         'views/law_section_views.xml',
+        'views/matter_views.xml',
     ],
     'application': True,
 }

@@ -13,7 +13,7 @@ Record-keeping
 
 |badge1| |badge2|
 
-This module adds record-keeping features in attachments.
+This module adds record-keeping features in Odoo.
 
 **Table of contents**
 

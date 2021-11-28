@@ -1,4 +1,4 @@
-id,number,parent_id:id,is_selectable,header
+id,sequence,parent_id:id,has_types,classification_name
 classification_1,1,False,False,"Styrande verksamhet"
 classification_2,2,False,False,"Stödjande verksamhet"
 classification_3,3,False,False,"Kärnverksamhet"

@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_document_form" model="ir.ui.view">
-        <field name="model">rk.document</field>
+    <record id="view_matter_form" model="ir.ui.view">
+        <field name="model">rk.matter</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Record-keeping">
                 <sheet>
                     <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
                     <h1>
                         <field name="name" class="oe_read_only"/>
-                        <field name="document_name" class="oe_edit_only"/>
+                        <field name="matter_name" class="oe_edit_only"/>
                     </h1>
                     <group>
                         <group>
-                            <field name="matter_id" />
-                            <field name="document_no" />
+                            <field name="registration_no" />
+                            <field name="description" />
                             <field name="classification_id" domain="[('has_types', '=', True)]" />
-                            <field name="document_type_id"/>
-                            <field name="resource_ref" attrs="{'invisible': [('resource_ref','=',False)]}"  />
-                            <field name="res_model" groups="base.group_no_one" />
-                            <field name="res_id" groups="base.group_no_one" />
+
                         </group>
                         <group>
                             <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
@@ -40,6 +37,9 @@
                                 </group>
                             </group>
                         </page>
+                        <page name="documents" string="Documents">
+                            <field name="document_ids" />
+                        </page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
@@ -51,14 +51,14 @@
         </field>
     </record>
 
-    <record id="view_document_kanban" model="ir.ui.view">
-        <field name="model">rk.document</field>
+    <record id="view_matter_kanban" model="ir.ui.view">
+        <field name="model">rk.matter</field>
         <field name="arch" type="xml">
-            <kanban class="oe_background_grey o_kanban_dashboard o_emphasize_colors" sample="1">
+            <kanban class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors" sample="1">
                 <field name="name" />
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_card oe_kanban_global_click o_has_icon">
+                        <div t-attf-class="oe_kanban_global_click o_has_icon">
                             <div class="row">
                                 <div class="col-12">
                                     <strong>
@@ -73,66 +73,63 @@
         </field>
     </record>
 
-    <record id="view_document_search" model="ir.ui.view">
-        <field name="model">rk.document</field>
+    <record id="view_matter_search" model="ir.ui.view">
+        <field name="model">rk.matter</field>
         <field name="arch" type="xml">
-            <search string="Official Document">
+            <search string="Matter">
                 <field name="name" />
+                <field name="description" />
                 <field name="is_official" />
-                <field name="is_secret" />
             </search>
         </field>
     </record>
 
-    <record id="view_document_tree" model="ir.ui.view">
-        <field name="model">rk.document</field>
+    <record id="view_matter_tree" model="ir.ui.view">
+        <field name="model">rk.matter</field>
         <field name="arch" type="xml">
-            <tree string="Record-keeping" sample="1">
+            <tree string="Record-keeping">
                 <field name="name" />
                 <field name="is_official" />
                 <field name="is_secret" />
                 <field name="create_uid" />
                 <field name="create_date" />
-                <field name="resource_ref" />
-                <field name="classification_id" />
+                <field name="classification_id" domain="[('has_types', '=', True)]" />
             </tree>
         </field>
-    </record> -->
+    </record>
 
-    <record id="action_document_view" model="ir.actions.act_window">
-        <field name="name">Documents</field>
-        <field name="res_model">rk.document</field>
+    <record id="action_matter_view" model="ir.actions.act_window">
+        <field name="name">Matters</field>
+        <field name="res_model">rk.matter</field>
         <field name="domain">[]</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="view_id" eval="False" />
         <field name="context">{'search_default_filter_id':1}</field>
-        <field name="search_view_id" ref="view_document_search" />
+        <field name="search_view_id" ref="view_matter_search" />
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create Document
+                Create Matter
             </p>
         </field>
     </record>
 
-    <record id="action_document_form" model="ir.actions.act_window.view">
+    <record id="action_matter_form" model="ir.actions.act_window.view">
         <field name="sequence" eval="2" />
         <field name="view_mode">form</field>
-        <field name="act_window_id" ref="action_document_view" />
+        <field name="act_window_id" ref="action_matter_view" />
     </record>
 
-    <record id="action_document_kanban" model="ir.actions.act_window.view">
+    <record id="action_matter_kanban" model="ir.actions.act_window.view">
         <field name="sequence" eval="0" />
         <field name="view_mode">kanban</field>
-        <field name="act_window_id" ref="action_document_view" />
+        <field name="act_window_id" ref="action_matter_view" />
     </record>
 
-    <record id="action_document_tree" model="ir.actions.act_window.view">
+    <record id="action_matter_tree" model="ir.actions.act_window.view">
         <field name="sequence" eval="1" />
         <field name="view_mode">tree</field>
-        <field name="act_window_id" ref="action_document_view" />
+        <field name="act_window_id" ref="action_matter_view" />
     </record>
 
-    <menuitem id="menu_record_keeping" name="Record-keeping" />
-    <menuitem action="action_document_view" id="menu_record_keeping_document" name="Documents" parent="menu_record_keeping" sequence="2" />
-    <menuitem action="action_document_view" id="menu_record_keeping_configuration" name="Configuration" parent="menu_record_keeping" sequence="100" />
+    <menuitem action="action_matter_view" id="menu_record_keeping_matter" name="Matters" parent="menu_record_keeping" sequence="1" />
 </odoo>

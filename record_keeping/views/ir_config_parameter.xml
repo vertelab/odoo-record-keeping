@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.config_parameter" id="record_keeping_default_classification">
+        <field name="key">record_keeping.default_classification</field>
+        <field name="value" ref="record_keeping.classification_3_12_2"/>
+    </record>
+</odoo>
