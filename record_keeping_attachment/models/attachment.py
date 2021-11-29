@@ -6,28 +6,28 @@ from odoo import _, api, fields, models
 class Attachment(models.Model):
     _name = 'ir.attachment'
     _inherit = ['ir.attachment', 'mail.thread']
-    _inherits = {'rk.document': 'rk_id'}
+    _inherits = {'rk.document': 'document_id'}
 
-    rk_id = fields.Many2one(
+    document_id = fields.Many2one(
         comodel_name='rk.document',
-        help='The record-keeping document of this attachment',
+        help='The record-keeping document id',
         ondelete='restrict',
-        required=True,
         readonly=True,
-        string='Record-keeping Document',
+        required=True,
+        string='Document',
     )
-
-    rk_ref = fields.Reference(
-        help='The record-keeping document of this attachment',
+    document_ref = fields.Reference(
+        compute='_compute_document_ref',
+        help='The record-keeping document reference',
         readonly=True,
         selection='_selection_target_model',
-        string='Registration Number',
+        string='Document Reference',
     )
 
-    @api.model
-    def _selection_target_model(self):
-        models = self.env['ir.model'].search([('model', '=', 'rk.document')])
-        return [(model.model, model.name) for model in models]
+    @api.depends('document_id')
+    def _compute_document_ref(self):
+        for rec in self:
+            rec.document_ref = f"rk.document,{rec.document_id.id or 0}"
 
     @api.onchange('is_official')
     def _onchange_is_official(self):
@@ -41,9 +41,13 @@ class Attachment(models.Model):
             self.secrecy_grounds = False
 
     @api.model
+    def _selection_target_model(self):
+        models = self.env['ir.model'].search([('model', '=', 'rk.document')])
+        return [(model.model, model.name) for model in models]
+
+    @api.model
     def create(self, vals):
-        attachment = super(Attachment, self).create(vals)
-        attachment.rk_ref = f'{attachment.rk_id._name},{attachment.rk_id.id}'
-        attachment.rk_res_model = attachment._name
-        attachment.rk_res_id = attachment.id
-        return attachment
+        record = super(Attachment, self).create(vals)
+        vals = {'res_model': record._name, 'res_id': record.id}
+        record.document_id = self.env['rk.document'].create(vals)
+        return record
