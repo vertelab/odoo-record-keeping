@@ -16,6 +16,6 @@ class DocumentType(models.Model):
     )
     classification_id = fields.Many2one(
         comodel_name='rk.classification',
-        domain=[("has_types", "=", True)],
+        domain=[('has_types', '=', True)],
         string='Classification',
     )

@@ -12,7 +12,7 @@
                     </h1>
                     <group>
                         <group>
-                            <field name="registration_no" />
+                            <field name="reg_no" />
                             <field name="description" />
                             <field name="classification_id" domain="[('has_types', '=', True)]" />
 

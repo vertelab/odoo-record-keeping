@@ -7,8 +7,7 @@
                 <sheet>
                     <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
                     <h1>
-                        <field name="name" class="oe_read_only"/>
-                        <field name="document_name" class="oe_edit_only"/>
+                        <field name="name" />
                     </h1>
                     <group>
                         <group>
@@ -16,7 +15,7 @@
                             <field name="document_no" />
                             <field name="classification_id" domain="[('has_types', '=', True)]" />
                             <field name="document_type_id"/>
-                            <field name="resource_ref" attrs="{'invisible': [('resource_ref','=',False)]}"  />
+                            <field name="res_ref" attrs="{'invisible': [('res_ref','=',False)]}"  />
                             <field name="res_model" groups="base.group_no_one" />
                             <field name="res_id" groups="base.group_no_one" />
                         </group>
@@ -93,7 +92,7 @@
                 <field name="is_secret" />
                 <field name="create_uid" />
                 <field name="create_date" />
-                <field name="resource_ref" />
+                <field name="res_ref" />
                 <field name="classification_id" />
             </tree>
         </field>

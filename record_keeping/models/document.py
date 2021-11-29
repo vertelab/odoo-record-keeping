@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from datetime import datetime
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
 
 
 class Document(models.Model):
@@ -44,18 +42,18 @@ class Document(models.Model):
         readonly=True,
         string='Resource Model',
     )
-    resource_ref = fields.Reference(
-        compute='_compute_resource_ref',
+    res_ref = fields.Reference(
+        compute='_compute_res_ref',
         help='The record this document is attached to.',
         selection='_selection_target_model',
         string='Resource Reference',
     )
 
-    @api.depends('resource_ref')
+    @api.depends('res_ref')
     def _compute_document_name(self):
         for rec in self:
-            if rec.resource_ref:
-                rec.document_name = rec.resource_ref.name
+            if rec.res_ref:
+                rec.document_name = rec.res_ref.name
             else:
                 rec.document_name = rec.document_name
 
@@ -63,18 +61,17 @@ class Document(models.Model):
     def _compute_name(self):
         for rec in self:
             if rec.matter_id:
-                rec.name = f"{rec.matter_id.registration_no}-{rec.document_no or ''} {rec.document_name}"
+                rec.name = f'{rec.matter_id.reg_no}-{rec.document_no or ''} {rec.document_name}'
             else:
                 rec.name = rec.document_name or ''
 
     @api.depends('res_model', 'res_id')
-    def _compute_resource_ref(self):
+    def _compute_res_ref(self):
         for rec in self:
             if rec.res_model and rec.res_id:
-                rec.resource_ref = f"{rec.res_model},{rec.res_id}"
-                rec.document_name = rec.resource_ref.name
+                rec.res_ref = f'{rec.res_model},{rec.res_id}'
             else:
-                rec.resource_ref = None
+                rec.res_ref = None
 
     def _next_document_no(self):
         self.ensure_one()
