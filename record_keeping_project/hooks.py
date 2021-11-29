@@ -5,7 +5,7 @@ from odoo import SUPERUSER_ID, api
 
 def post_init_hook(cr, registry):
     """
-    This post-init-hook will create a rk.document for each existing project and task.
+    This post-init-hook will create a rk.document for existing projects and tasks.
     """
     env = api.Environment(cr, SUPERUSER_ID, dict())
     models = ['project.project', 'project.task']
