@@ -27,7 +27,7 @@
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
-    'version': '14.0.2.0.0',
+    'version': '14.0.2.0.1',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
     'website': 'https://vertel.se/record-keeping',
@@ -41,5 +41,5 @@ v14.1.1.0 added new version number.   \n
         'views/project_views.xml',
         'views/task_views.xml',
     ],
-    'post_init_hook': 'post_init_hook',
+    # 'post_init_hook': 'post_init_hook',
 }

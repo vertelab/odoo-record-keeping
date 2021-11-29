@@ -27,16 +27,16 @@
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
-    'version': '14.0.2.0.0',
+    'version': '14.0.2.0.1',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
     'website': 'https://vertel.se/record-keeping',
     'description': """
         This module extends Attachments with record-keeping fields
     """,
-    'depends': ['attachment_notebook', 'record_keeping', 'mail'],
+    'depends': ['attachment_notebook', 'mail', 'record_keeping'],
     'data': [
         'views/ir_attachment_views.xml',
     ],
-    'post_init_hook': 'post_init_hook',
+    # 'post_init_hook': 'post_init_hook',
 }
