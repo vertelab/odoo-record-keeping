@@ -8,9 +8,8 @@
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
             </widget>
             <field name="partner_id" position="before">
-                <field name="rk_ref" attrs="{'invisible':[('rk_name', '=', False)]}" />
-                <field name="classification_id" domain="[('is_selectable', '=', True)]" />
-                <field name="rk_type_id" domain="[('classification_id', '=', classification_id)]"/>
+                <field name="classification_id" domain="[('has_types', '=', True)]" />
+                <field name="document_type_id" />
             </field>
             <notebook position="inside">
                 <page name="record_keeping" string="Record-keeping">
@@ -22,9 +21,9 @@
                             <field name="sender_id" />
                         </group>
                         <group>
-                            <field name="rk_name" invisible="1" />
-                            <field name="is_official" attrs="{'invisible':[('rk_name', '!=', False)]}" />
-                            <field name="rk_ref" attrs="{'invisible':[('rk_name', '=', False)]}" />
+                            <field name="document_id" invisible="1" />
+                            <field name="document_ref" attrs="{'invisible':[('is_official', '=', False)]}" />
+                            <field name="is_official" attrs="{'invisible':[('document_id', '=', False)]}" />
                             <field name="is_secret" attrs="{'invisible':[('is_official', '=', False)]}" />
                             <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
                             <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
@@ -53,7 +52,7 @@
         <field name="arch" type="xml">
             <div class="o_kanban_record_top" position="after">
                 <field name="is_official" invisible="1" />
-                <field name="rk_name" attrs="{'invisible':[('is_official', '=', False)]}" decoration-success="1" widget="badge" />
+                <field name="document_id" attrs="{'invisible':[('is_official', '=', False)]}" decoration-success="1" widget="badge" />
             </div>
         </field>
     </record>
@@ -63,7 +62,7 @@
         <field name="inherit_id" ref="project.view_task_search_form" />
         <field name="arch" type="xml">
             <search position="inside">
-                <field name="rk_name" filter_domain="[('is_official','=',True), ('rk_name','ilike',self)]" string="Registration number" />
+                <field name="document_id" filter_domain="[('is_official','=',True), ('document_id','like',self)]" string="Registration number" />
             </search>
         </field>
     </record>

@@ -6,28 +6,28 @@ from odoo import _, api, fields, models
 class Task(models.Model):
     _name = 'project.task'
     _inherit = ['project.task']
-    _inherits = {'rk.document': 'rk_id'}
+    _inherits = {'rk.document': 'document_id'}
 
-    rk_id = fields.Many2one(
+    document_id = fields.Many2one(
         comodel_name='rk.document',
-        help='The record-keeping document of this task',
+        help='The record-keeping document id',
         ondelete='restrict',
-        required=True,
         readonly=True,
-        string='Record-keeping Document',
+        required=True,
+        string='Document',
     )
-
-    rk_ref = fields.Reference(
-        help='The record-keeping document of this task',
+    document_ref = fields.Reference(
+        compute='_compute_document_ref',
+        help='The record-keeping document reference',
         readonly=True,
         selection='_selection_target_model',
-        string='Registration Number',
+        string='Document Reference',
     )
 
-    @api.model
-    def _selection_target_model(self):
-        models = self.env['ir.model'].search([('model', '=', 'rk.document')])
-        return [(model.model, model.name) for model in models]
+    @api.depends('document_id')
+    def _compute_document_ref(self):
+        for rec in self:
+            rec.document_ref = f"rk.document,{rec.document_id.id or 0}"
 
     @api.onchange('is_official')
     def _onchange_is_official(self):
@@ -41,9 +41,13 @@ class Task(models.Model):
             self.secrecy_grounds = False
 
     @api.model
+    def _selection_target_model(self):
+        models = self.env['ir.model'].search([('model', '=', 'rk.document')])
+        return [(model.model, model.name) for model in models]
+
+    @api.model
     def create(self, vals):
-        task = super(Task, self).create(vals)
-        task.rk_ref = f'{task.rk_id._name},{task.rk_id.id}'
-        task.rk_res_model = task._name
-        task.rk_res_id = task.id
-        return task
+        record = super(Task, self).create(vals)
+        vals = {'res_model': record._name, 'res_id': record.id}
+        record.document_id = self.env['rk.document'].create(vals)
+        return record
