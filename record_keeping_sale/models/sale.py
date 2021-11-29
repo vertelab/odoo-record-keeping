@@ -35,8 +35,9 @@ class Order(models.Model):
     @api.model
     def create(self, vals):
         record = super(Order, self).create(vals)
-        record.document_id = self.env['rk.document'].create(
-            {'res_model': record._name, 'res_id': record.id})
+        if record.is_official:
+            record.document_id = self.env['rk.document'].create(
+                {'res_model': record._name, 'res_id': record.id})
         return record
 
     def write(self, vals):
