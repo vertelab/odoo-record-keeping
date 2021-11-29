@@ -46,7 +46,7 @@ class Matter(models.Model):
     @api.depends('matter_name', 'reg_no')
     def _compute_name(self):
         for record in self:
-            record.name = f'{record.reg_no or ''} {record.matter_name or ''}'
+            record.name = f'{record.reg_no or ""} {record.matter_name or ""}'
 
     @api.model
     def create(self, vals):

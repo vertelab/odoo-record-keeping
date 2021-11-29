@@ -61,7 +61,8 @@ class Document(models.Model):
     def _compute_name(self):
         for rec in self:
             if rec.matter_id:
-                rec.name = f'{rec.matter_id.reg_no}-{rec.document_no or ''} {rec.document_name}'
+                rec.name = (f'{rec.matter_id.reg_no}-{rec.document_no or ""} '
+                            f'{rec.document_name}')
             else:
                 rec.name = rec.document_name or ''
 

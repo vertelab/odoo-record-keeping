@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-29 15:01+0000\n"
-"PO-Revision-Date: 2021-11-29 15:01+0000\n"
+"POT-Creation-Date: 2021-11-29 21:23+0000\n"
+"PO-Revision-Date: 2021-11-29 21:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -312,11 +312,8 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_error
-#: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_error
-#: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_error
-#: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -577,11 +574,6 @@ msgid "Record-keeping User"
 msgstr ""
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__registration_no
-msgid "Registration number"
-msgstr ""
-
-#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__res_id
 msgid "Resource ID"
 msgstr ""
@@ -592,7 +584,7 @@ msgid "Resource Model"
 msgstr ""
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document__resource_ref
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__res_ref
 msgid "Resource Reference"
 msgstr ""
 
@@ -601,13 +593,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_user_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_user_id
 msgid "Responsible User"
-msgstr ""
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_has_sms_error
-#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_has_sms_error
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_has_sms_error
-msgid "SMS Delivery error"
 msgstr ""
 
 #. module: record_keeping
@@ -680,7 +665,6 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__name
-#: model:ir.model.fields,help:record_keeping.field_rk_matter__registration_no
 msgid ""
 "The format is [current year]/[sequence] and is set when the matter is "
 "created"
@@ -729,7 +713,7 @@ msgid "The record model this document is attached to."
 msgstr ""
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_rk_document__resource_ref
+#: model:ir.model.fields,help:record_keeping.field_rk_document__res_ref
 msgid "The record this document is attached to."
 msgstr ""
 
@@ -769,18 +753,4 @@ msgstr ""
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__url
 msgid "Url"
-msgstr ""
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document__website_message_ids
-#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__website_message_ids
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_rk_document__website_message_ids
-#: model:ir.model.fields,help:record_keeping.field_rk_law_section__website_message_ids
-#: model:ir.model.fields,help:record_keeping.field_rk_matter__website_message_ids
-msgid "Website communication history"
 msgstr ""
