@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-28 22:14+0000\n"
-"PO-Revision-Date: 2021-11-28 23:16+0100\n"
+"POT-Creation-Date: 2021-11-29 15:01+0000\n"
+"PO-Revision-Date: 2021-11-29 16:02+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: sv_SE\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__sender_id
@@ -95,6 +95,7 @@ msgstr "Underliggande struktur"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__classification_id
+#: model:ir.module.category,name:record_keeping.module_category_rk_law_section
 #: model:ir.ui.menu,name:record_keeping.menu_classification_view
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
@@ -193,7 +194,7 @@ msgstr "Visningsnamn"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_document
-#: model:ir.module.category,name:record_keeping.module_category_record_keeping_document
+#: model:ir.module.category,name:record_keeping.module_category_rk_document
 msgid "Document"
 msgstr "Handling"
 
@@ -369,7 +370,6 @@ msgstr "Senast uppdaterad"
 #. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_law_section_view
 #: model:ir.model,name:record_keeping.model_rk_law_section
-#: model:ir.module.category,name:record_keeping.module_category_record_keeping_law_section
 #: model:ir.ui.menu,name:record_keeping.menu_law_section
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_law_section_form
 msgid "Law Section"
@@ -390,6 +390,7 @@ msgstr "Huvudbilaga"
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_matter
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__matter_id
+#: model:ir.module.category,name:record_keeping.module_category_rk_matter
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_search
 msgid "Matter"
 msgstr "Ärende"
@@ -557,7 +558,7 @@ msgid "Receiver"
 msgstr "Mottagare"
 
 #. module: record_keeping
-#: model:ir.module.category,name:record_keeping.module_category_record_keeping
+#: model:ir.module.category,name:record_keeping.module_category_rk
 #: model:ir.ui.menu,name:record_keeping.menu_record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_tree
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form
@@ -566,18 +567,18 @@ msgid "Record-keeping"
 msgstr "Diarium"
 
 #. module: record_keeping
-#: model:res.groups,name:record_keeping.group_rk_document_manager
-msgid "Record-keeping Document Manager"
-msgstr "Diarium Administratör"
-
-#. module: record_keeping
-#: model:res.groups,name:record_keeping.group_rk_document_responsible
+#: model:res.groups,name:record_keeping.group_rk_responsible
 msgid "Record-keeping Document Responsible"
 msgstr "Diarium Ansvarig"
 
 #. module: record_keeping
-#: model:res.groups,name:record_keeping.group_rk_document_user
-msgid "Record-keeping Document User"
+#: model:res.groups,name:record_keeping.group_rk_manager
+msgid "Record-keeping Manager"
+msgstr "Diarium Administratör"
+
+#. module: record_keeping
+#: model:res.groups,name:record_keeping.group_rk_user
+msgid "Record-keeping User"
 msgstr "Diarium Användare"
 
 #. module: record_keeping
@@ -734,8 +735,8 @@ msgstr "Id som  handlingen är knuten till."
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__res_model
-msgid "The record model this attachment is attached to."
-msgstr "Tabellen som handlingen är knuten till."
+msgid "The record model this document is attached to."
+msgstr "Objektet som handlingen är knuten till."
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__resource_ref

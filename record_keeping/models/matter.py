@@ -7,7 +7,7 @@ class Matter(models.Model):
     _name = 'rk.matter'
     _description = 'Matter'
     _inherit = ['mail.activity.mixin', 'mail.thread', 'rk.mixin']
-    
+
     description = fields.Char(
         help="The description of this matter",
         string='Description',
@@ -44,9 +44,9 @@ class Matter(models.Model):
     def _compute_name(self):
         for rec in self:
             rec.name = f"{rec.registration_no or ''} {rec.matter_name or ''}"
-                
+
     @api.model
     def create(self, vals):
         vals.update(
             {'registration_no': self.env['ir.sequence'].next_by_code('rk.matter')})
-        return super().create(vals)
+        return super(Matter, self).create(vals)

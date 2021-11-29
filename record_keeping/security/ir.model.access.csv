@@ -1,11 +1,11 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_rk_classification_manager,rk.classification manager,model_rk_classification,group_rk_document_manager,1,1,1,1
-access_rk_classification_user,rk.classification user,model_rk_classification,group_rk_document_user,1,0,0,0
-access_rk_document_manager,rk.document manager,model_rk_document,group_rk_document_manager,1,1,1,1
-access_rk_document_user,rk.document user,model_rk_document,group_rk_document_user,1,1,1,1
-access_rk_matter_manager,rk.matter manager,model_rk_matter,group_rk_document_manager,1,1,1,1
-access_rk_matter_user,rk.matter user,model_rk_matter,group_rk_document_user,1,0,0,0
-access_rk_law_section_manager,rk.law.section manager,model_rk_law_section,group_rk_document_manager,1,1,1,1
-access_rk_law_section_user,rk.law.section user,model_rk_law_section,group_rk_document_user,1,0,0,0
-access_rk_type_manager,rk.document.type manager,model_rk_document_type,group_rk_document_manager,1,1,1,1
-access_rk_type_user,rk.document.type user,model_rk_document_type,group_rk_document_user,1,0,0,0
+access_rk_classification_manager,rk.classification manager,model_rk_classification,group_rk_manager,1,1,1,1
+access_rk_classification_user,rk.classification.user,model_rk_classification,base.group_user,1,0,0,0
+access_rk_document_manager,rk.document manager,model_rk_document,group_rk_manager,1,1,1,1
+access_rk_document_user,rk.document.user,model_rk_document,base.group_user,1,1,1,1
+access_rk_matter_manager,rk.matter.manager,model_rk_matter,group_rk_manager,1,1,1,1
+access_rk_matter_user,rk.matter.user,model_rk_matter,base.group_user,1,1,1,1
+access_rk_law_section_manager,rk.law.section.manager,model_rk_law_section,group_rk_manager,1,1,1,1
+access_rk_law_section_user,rk.law.section.user,model_rk_law_section,base.group_user,1,0,0,0
+access_rk_type_manager,rk.document.type.manager,model_rk_document_type,group_rk_manager,1,1,1,1
+access_rk_type_user,rk.document.type.user,model_rk_document_type,base.group_user,1,0,0,0

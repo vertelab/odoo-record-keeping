@@ -40,7 +40,7 @@
         'data/rk.document.type.csv',
         'data/ir_sequence_data.xml',
         'data/law_section_data.xml',
-        'security/document_security.xml',
+        'security/rk_security.xml',
         'security/ir.model.access.csv',
         'views/ir_config_parameter.xml',
         'views/document_views.xml',
