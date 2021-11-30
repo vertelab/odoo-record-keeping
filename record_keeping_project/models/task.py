@@ -40,6 +40,10 @@ class Task(models.Model):
                 {'res_model': record._name, 'res_id': record.id})
         return record
 
+    def create_matter(self):
+        self.is_official = True
+        self.matter_id = self.env['rk.matter'].create({})
+
     def write(self, vals):
         for record in self:
             if vals.get('is_official') and not record.document_id:

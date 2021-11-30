@@ -4,6 +4,9 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2" />
         <field name="arch" type="xml">
+            <header position="inside">
+                <button attrs="{'invisible': [('matter_id', '!=', False)]}" class="oe_highlight" name="create_matter" string="Create Matter" type="object" />
+            </header>
             <widget position="replace">
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
             </widget>
@@ -56,7 +59,7 @@
             </div>
         </field>
     </record>
-    
+
     <record id="view_task_search_form" model="ir.ui.view">
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_search_form" />

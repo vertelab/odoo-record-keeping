@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211005\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-29 21:24+0000\n"
-"PO-Revision-Date: 2021-11-29 22:28+0100\n"
+"POT-Creation-Date: 2021-11-30 13:48+0000\n"
+"PO-Revision-Date: 2021-11-30 14:49+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.view_task_form2
 msgid "Confidential"
-msgstr "Sekretessmarkering"
+msgstr "Sekretess"
+
+#. module: record_keeping_project
+#: model_terms:ir.ui.view,arch_db:record_keeping_project.view_task_form2
+msgid "Create Matter"
+msgstr "Skapa ärende"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__display_name
