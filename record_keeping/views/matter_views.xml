@@ -7,8 +7,8 @@
                 <sheet>
                     <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
                     <h1>
-                        <field name="name" class="oe_read_only"/>
-                        <field name="matter_name" class="oe_edit_only"/>
+                        <field name="name" class="oe_read_only" />
+                        <field name="matter_name" class="oe_edit_only" />
                     </h1>
                     <group>
                         <group>

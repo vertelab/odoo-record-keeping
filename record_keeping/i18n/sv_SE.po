@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20211005\n"
+"Project-Id-Version: Odoo Server 14.0-20211130\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-29 21:23+0000\n"
-"PO-Revision-Date: 2021-11-29 22:24+0100\n"
+"POT-Creation-Date: 2021-11-30 19:57+0000\n"
+"PO-Revision-Date: 2021-11-30 20:58+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -317,8 +317,11 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Om markerad så har det blivit ett leveransfel för några meddelanden."
 
@@ -579,6 +582,11 @@ msgid "Record-keeping User"
 msgstr "Diarium Användare"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__reg_no
+msgid "Registration number"
+msgstr "Registreringsnummer"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__res_id
 msgid "Resource ID"
 msgstr "Resurs-ID"
@@ -599,6 +607,13 @@ msgstr "Resursreferens"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_user_id
 msgid "Responsible User"
 msgstr "Ansvarig användare"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_has_sms_error
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_has_sms_error
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS-leveransfel"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__secrecy_grounds
@@ -671,6 +686,11 @@ msgstr "Beskrivning på ärendet"
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__description
 msgid "The description of this secrecy provision"
 msgstr "Beskrivning på säkerhetsbestämmelsen"
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_matter__reg_no
+msgid "The format is [current year]/[sequence]"
+msgstr "Formatet är [aktuellt år]/[sekvens]"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__name
@@ -765,3 +785,17 @@ msgstr "Räknare olästa meddelanden"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__url
 msgid "Url"
 msgstr "Url"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__website_message_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__website_message_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__website_message_ids
+msgid "Website Messages"
+msgstr "Webbplatsmeddelanden"
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__website_message_ids
+#: model:ir.model.fields,help:record_keeping.field_rk_law_section__website_message_ids
+#: model:ir.model.fields,help:record_keeping.field_rk_matter__website_message_ids
+msgid "Website communication history"
+msgstr "Webbplatsens kommunikationshistorik"
