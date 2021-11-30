@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20211005\n"
+"Project-Id-Version: Odoo Server 14.0-20211130\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 13:48+0000\n"
-"PO-Revision-Date: 2021-11-30 14:49+0100\n"
+"POT-Creation-Date: 2021-11-30 19:58+0000\n"
+"PO-Revision-Date: 2021-11-30 21:00+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"

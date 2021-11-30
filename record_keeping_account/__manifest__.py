@@ -20,8 +20,8 @@
 ################################################################################
 
 {
-    'name': 'Record-keeping',
-    'summary': 'Record-keeping for Odoo',
+    'name': 'Record-keeping Account',
+    'summary': 'Record-keeping Account for Odoo',
     'author': 'Vertel AB',
     'contributor': '',
     'maintainer': 'Vertel AB',
@@ -30,24 +30,13 @@
     'version': '14.0.2.0.2',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
-    'website': 'https://vertel.se/record-keeping',   
+    'website': 'https://vertel.se/record-keeping',
     'description': """
-    This module is the base module for Record-keeping
+        This module extends Account with record-keeping fields
     """,
-    'depends': ['mail'],
+    'depends': ['account', 'record_keeping', 'sale'],
     'data': [
-        'data/rk.classification.csv',
-        'data/rk.document.type.csv',
-        'data/ir_sequence_data.xml',
-        'data/law_section_data.xml',
-        'security/rk_security.xml',
-        'security/ir.model.access.csv',
-        'views/ir_config_parameter.xml',
-        'views/document_views.xml',
-        'views/classification_views.xml',
-        'views/document_type_views.xml',
-        'views/law_section_views.xml',
-        'views/matter_views.xml',
+        'views/account_views.xml',
     ],
     'application': True,
 }

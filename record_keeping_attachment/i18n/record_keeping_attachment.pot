@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20211005\n"
+"Project-Id-Version: Odoo Server 14.0-20211130\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-29 21:23+0000\n"
-"PO-Revision-Date: 2021-11-29 21:23+0000\n"
+"POT-Creation-Date: 2021-11-30 19:57+0000\n"
+"PO-Revision-Date: 2021-11-30 19:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -48,13 +48,6 @@ msgstr ""
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__document_ref
 msgid "Document Reference"
-msgstr ""
-
-#. module: record_keeping_attachment
-#: model_terms:ir.ui.view,arch_db:record_keeping_attachment.view_attachment_form
-msgid ""
-"Follow this project to automatically track the events associated to tasks "
-"and issues of this project."
 msgstr ""
 
 #. module: record_keeping_attachment
