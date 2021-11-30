@@ -32,22 +32,34 @@ class Task(models.Model):
         models = self.env['ir.model'].search([('model', '=', 'rk.document')])
         return [(model.model, model.name) for model in models]
 
-    @api.model
-    def create(self, vals):
-        record = super(Task, self).create(vals)
-        if record.is_official:
-            record.document_id = self.env['rk.document'].create(
-                {'res_model': record._name, 'res_id': record.id})
-        return record
+    def _set_document_link(self):
+        self.ensure_one()
+        document = self.document_id
+        if not document.res_model or not document.res_id:
+            return {'res_model': self._name, 'res_id': self.id}
 
     def create_matter(self):
         self.is_official = True
         self.matter_id = self.env['rk.matter'].create({})
 
+    @api.model
+    def create(self, vals):
+        record = super(Task, self).create(vals)
+        document_vals = record._set_document_link()
+        if document_vals:
+            record.document_id.write(document_vals)
+        return record
+
     def write(self, vals):
         for record in self:
-            if vals.get('is_official') and not record.document_id:
-                vals['document_id'] = self.env['rk.document'].create(
-                    {'res_model': record._name, 'res_id': record.id})
+            document_vals = record._set_document_link()
+            if document_vals:
+                Document = self.env['rk.document']
+                if record.document_id:
+                    Document.write(record.document_id.id, document_vals)
+                    vals.update(document_vals)
+                else:
+                    vals['document_id'] = Document.create(document_vals)
         result = super(Task, self).write(vals)
         return result
+
