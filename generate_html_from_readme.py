@@ -93,3 +93,17 @@ for pathitem in pathlist:
 
             except Exception as error:
                 print('FAIL!', destination_path, error)
+
+# from bs4 import BeautifulSoup
+
+# with open("./Hämtningar/Klara_exempelfil_för_import.xml") as fp:  
+#     soup = BeautifulSoup(fp, 'lxml') 
+# for p in soup.find_all('process'):  
+#     p_code = p.find('process.code').string.replace('.','_')
+#     p_name = '"'+p.find('process.name').string+'"'
+#     print(p_code, p_name) 
+#     for q in p.find_all('processacttype'):
+#         q_code = q.find('processacttype.sequence').string
+#         q_name = '"'+q.find('processacttype.name').string+'"'
+#         print(f"type_{q_code},classification_{p_code},{q_name}")
+        

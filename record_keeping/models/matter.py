@@ -7,6 +7,7 @@ class Matter(models.Model):
     _name = 'rk.matter'
     _description = 'Matter'
     _inherit = ['mail.activity.mixin', 'mail.thread', 'rk.mixin']
+    _order = 'name desc'
 
     description = fields.Char(
         help='The description of this matter',
@@ -15,8 +16,9 @@ class Matter(models.Model):
     )
     name = fields.Char(
         compute='_compute_name',
-        help='The format is [current year]/[sequence] and is set when the matter is created',
-        string='Display name',
+        help=('The format is [current year]/[sequence] and is set when '
+              'the matter is created'),
+        string='Matter Number',
         store=True,
     )
     document_ids = fields.One2many(

@@ -6,8 +6,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211130\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< Updated upstream
 "POT-Creation-Date: 2021-11-30 19:57+0000\n"
 "PO-Revision-Date: 2021-11-30 20:58+0100\n"
+=======
+<<<<<<< Updated upstream
+"POT-Creation-Date: 2021-11-29 21:23+0000\n"
+"PO-Revision-Date: 2021-11-29 22:24+0100\n"
+=======
+"POT-Creation-Date: 2021-11-30 20:54+0000\n"
+"PO-Revision-Date: 2021-11-30 21:55+0100\n"
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -185,11 +195,6 @@ msgstr "Beskrivning"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__display_name
 msgid "Display Name"
-msgstr "Visningsnamn"
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__name
-msgid "Display name"
 msgstr "Visningsnamn"
 
 #. module: record_keeping
@@ -399,6 +404,11 @@ msgstr "Ärende"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__matter_name
 msgid "Matter Name"
 msgstr "Ärendenamn"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__name
+msgid "Matter Number"
+msgstr "Ärendenummer"
 
 #. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_matter_view

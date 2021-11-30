@@ -15,7 +15,6 @@
                             <field name="reg_no" />
                             <field name="description" />
                             <field name="classification_id" domain="[('has_types', '=', True)]" />
-
                         </group>
                         <group>
                             <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
@@ -120,13 +119,13 @@
     </record>
 
     <record id="action_matter_kanban" model="ir.actions.act_window.view">
-        <field name="sequence" eval="0" />
+        <field name="sequence" eval="1" />
         <field name="view_mode">kanban</field>
         <field name="act_window_id" ref="action_matter_view" />
     </record>
 
     <record id="action_matter_tree" model="ir.actions.act_window.view">
-        <field name="sequence" eval="1" />
+        <field name="sequence" eval="0" />
         <field name="view_mode">tree</field>
         <field name="act_window_id" ref="action_matter_view" />
     </record>
