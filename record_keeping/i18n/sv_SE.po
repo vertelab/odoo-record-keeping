@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211130\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-29 21:23+0000\n"
-"PO-Revision-Date: 2021-11-29 22:24+0100\n"
+"POT-Creation-Date: 2021-12-01 11:20+0000\n"
+"PO-Revision-Date: 2021-12-01 12:45+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: sv_SE\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__sender_id
@@ -95,7 +95,6 @@ msgstr "Underliggande struktur"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__classification_id
-#: model:ir.module.category,name:record_keeping.module_category_rk_law_section
 #: model:ir.ui.menu,name:record_keeping.menu_classification_view
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
@@ -189,7 +188,6 @@ msgstr "Visningsnamn"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_document
-#: model:ir.module.category,name:record_keeping.module_category_rk_document
 msgid "Document"
 msgstr "Handling"
 
@@ -365,15 +363,11 @@ msgstr "Senast uppdaterad"
 #. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_law_section_view
 #: model:ir.model,name:record_keeping.model_rk_law_section
+#: model:ir.module.category,name:record_keeping.module_category_rk_law_section
 #: model:ir.ui.menu,name:record_keeping.menu_law_section
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_law_section_form
 msgid "Law Section"
 msgstr "Lagrum"
-
-#. module: record_keeping
-#: model:res.groups,name:record_keeping.group_rk_law_section_manager
-msgid "Law Section Manager"
-msgstr "Lagrumsadministratör"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_main_attachment_id
@@ -381,6 +375,12 @@ msgstr "Lagrumsadministratör"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Huvudbilaga"
+
+#. module: record_keeping
+#: model:res.groups,name:record_keeping.group_rk_law_section_manager
+#: model:res.groups,name:record_keeping.group_rk_manager
+msgid "Manager"
+msgstr "Administratör"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_matter
@@ -565,21 +565,6 @@ msgstr "Mottagare"
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_tree
 msgid "Record-keeping"
 msgstr "Diarium"
-
-#. module: record_keeping
-#: model:res.groups,name:record_keeping.group_rk_responsible
-msgid "Record-keeping Document Responsible"
-msgstr "Diarium Ansvarig"
-
-#. module: record_keeping
-#: model:res.groups,name:record_keeping.group_rk_manager
-msgid "Record-keeping Manager"
-msgstr "Diarium Administratör"
-
-#. module: record_keeping
-#: model:res.groups,name:record_keeping.group_rk_user
-msgid "Record-keeping User"
-msgstr "Diarium Användare"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__reg_no
@@ -785,6 +770,11 @@ msgstr "Räknare olästa meddelanden"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__url
 msgid "Url"
 msgstr "Url"
+
+#. module: record_keeping
+#: model:res.groups,name:record_keeping.group_rk_user
+msgid "User"
+msgstr "Användare"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__website_message_ids
