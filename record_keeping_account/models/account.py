@@ -50,11 +50,10 @@ class Account(models.Model):
         for record in self:
             document_vals = record._set_document_link()
             if document_vals:
-                Document = self.env['rk.document']
                 if record.document_id:
-                    Document.write(record.document_id.id, document_vals)
                     vals.update(document_vals)
                 else:
-                    vals['document_id'] = Document.create(document_vals)
+                    vals['document_id'] = self.env['rk.document'].create(
+                        document_vals)
         result = super(Account, self).write(vals)
         return result
