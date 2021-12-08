@@ -15,6 +15,8 @@
                             <field name="reg_no" />
                             <field name="description" />
                             <field name="classification_id" domain="[('has_types', '=', True)]" />
+                            <field name="partner_id" />
+                            <field name="manager_id" />
                         </group>
                         <group>
                             <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
@@ -88,11 +90,11 @@
         <field name="arch" type="xml">
             <tree string="Record-keeping">
                 <field name="name" />
-                <field name="is_official" />
-                <field name="is_secret" />
-                <field name="create_uid" />
-                <field name="create_date" />
-                <field name="classification_id" domain="[('has_types', '=', True)]" />
+                <field name="draw_up_date" />
+                <field name="description" />
+                <field name="partner_id" />
+                <field name="write_date" />
+                <field name="manager_id" />
             </tree>
         </field>
     </record>

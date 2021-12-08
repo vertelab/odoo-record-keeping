@@ -14,13 +14,6 @@ class Matter(models.Model):
         string='Description',
         tracking=True,
     )
-    name = fields.Char(
-        compute='_compute_name',
-        help=('The format is [current year]/[sequence] and is set when '
-              'the matter is created'),
-        string='Matter Number',
-        store=True,
-    )
     document_ids = fields.One2many(
         comodel_name='rk.document',
         inverse_name='matter_id',
@@ -33,9 +26,26 @@ class Matter(models.Model):
         help='Counter used to assign to the next document',
         string='The next document number',
     )
+    manager_id = fields.Many2one(
+        comodel_name='res.users',
+        string='Manager',
+        tracking=True,
+    )
     matter_name = fields.Char(
         help='The name of this matter',
         string='Matter Name',
+        tracking=True,
+    )
+    name = fields.Char(
+        compute='_compute_name',
+        help=('The format is [current year]/[sequence] and is set when '
+              'the matter is created'),
+        string='Matter Number',
+        store=True,
+    )
+    partner_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Customer',
         tracking=True,
     )
     reg_no = fields.Char(
