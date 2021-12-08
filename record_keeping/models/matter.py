@@ -7,7 +7,7 @@ class Matter(models.Model):
     _name = 'rk.matter'
     _description = 'Matter'
     _inherit = ['mail.activity.mixin', 'mail.thread', 'rk.mixin']
-    _order = 'name desc'
+    _order = 'id'
 
     description = fields.Char(
         help='The description of this matter',
