@@ -40,7 +40,7 @@
 
     <data>
         <record id="base.default_user" model="res.users">
-            <field name="groups_id" eval="[(4,ref('record_keeping.group_rk_manager'))]"/>
+            <field name="groups_id" eval="[(4, ref('group_rk_user'))]"/>
         </record>
     </data>
 </odoo>

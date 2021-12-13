@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import _, api, fields, models
-import logging
-_logger = logging.getLogger(__name__)
+
 
 class Matter(models.Model):
     _name = 'rk.matter'
@@ -57,8 +56,8 @@ class Matter(models.Model):
     )
     write_message = fields.Html(
         compute='_compute_write_message',
-        string='Contents', 
-        )
+        string='Contents',
+    )
 
     @api.depends('matter_name', 'reg_no')
     def _compute_name(self):
@@ -74,7 +73,8 @@ class Matter(models.Model):
                 if description:
                     record.write_message = description
                 elif tracking_values:
-                    record.write_message = (f"{tracking_values[0].field_desc} -> {tracking_values[0].get_new_display_value()[0]}")
+                    record.write_message = (
+                        f"{tracking_values[0].field_desc} -> {tracking_values[0].get_new_display_value()[0]}")
             else:
                 record.write_message = ''
 

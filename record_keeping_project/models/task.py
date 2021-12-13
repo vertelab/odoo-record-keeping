@@ -38,10 +38,6 @@ class Task(models.Model):
         if not document.res_model or not document.res_id:
             return {'res_model': self._name, 'res_id': self.id}
 
-    def create_matter(self):
-        self.is_official = True
-        self.matter_id = self.env['rk.matter'].create({})
-
     @api.model
     def create(self, vals):
         record = super(Task, self).create(vals)
@@ -49,6 +45,10 @@ class Task(models.Model):
         if document_vals:
             record.document_id.write(document_vals)
         return record
+
+    def create_matter(self):
+        self.is_official = True
+        self.matter_id = self.env['rk.matter'].create({})
 
     def write(self, vals):
         for record in self:
@@ -61,4 +61,3 @@ class Task(models.Model):
                         document_vals)
         result = super(Task, self).write(vals)
         return result
-
