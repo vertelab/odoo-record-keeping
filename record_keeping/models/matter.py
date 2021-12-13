@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, api, fields, models
+from odoo import _, api, fields, models, tools
 
 
 class Matter(models.Model):
@@ -54,9 +54,9 @@ class Matter(models.Model):
         string='Registration number',
         store=True,
     )
-    write_message = fields.Html(
-        compute='_compute_write_message',
-        string='Contents',
+    latest_change = fields.Char(
+        compute='_compute_latest_change',
+        string='Latest change',
     )
 
     @api.depends('matter_name', 'reg_no')
@@ -65,18 +65,18 @@ class Matter(models.Model):
             record.name = f'{record.reg_no or ""} {record.matter_name or ""}'
 
     @api.depends('message_ids')
-    def _compute_write_message(self):
+    def _compute_latest_change(self):
         for record in self:
             if record.message_ids:
                 description = record.message_ids[0].description
                 tracking_values = record.message_ids[0].tracking_value_ids
                 if description:
-                    record.write_message = description
+                    record.latest_change = description
                 elif tracking_values:
-                    record.write_message = (
+                    record.latest_change = (
                         f"{tracking_values[0].field_desc} -> {tracking_values[0].get_new_display_value()[0]}")
             else:
-                record.write_message = ''
+                record.latest_change = ''
 
     @api.model
     def create(self, vals):

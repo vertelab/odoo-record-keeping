@@ -20,7 +20,7 @@
                         </group>
                         <group>
                             <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
-                            <field name="is_secret" attrs="{'invisible': [('is_official','=',False)]}" />
+                            <field name="is_secret" attrs="{'invisible': [('is_official', '=', False)]}" />
                             <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
                             <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
                         </group>
@@ -44,7 +44,7 @@
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user" />
+                    <field name="message_follower_ids" options="{'post_refresh': True}" groups="base.group_user" />
                     <field name="activity_ids" />
                     <field name="message_ids" />
                 </div>
@@ -94,7 +94,7 @@
                 <field name="description" />
                 <field name="partner_id" />
                 <field name="write_date" />
-                <field name="write_message" />
+                <field name="latest_change" />
                 <field name="manager_id" />
             </tree>
         </field>
