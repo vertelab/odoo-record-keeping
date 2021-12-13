@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211130\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-01 11:20+0000\n"
-"PO-Revision-Date: 2021-12-01 12:45+0100\n"
+"POT-Creation-Date: 2021-12-13 10:24+0000\n"
+"PO-Revision-Date: 2021-12-13 11:26+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -110,8 +110,10 @@ msgid "Classification Structure"
 msgstr "Klassificeringsstruktur"
 
 #. module: record_keeping
+#: code:addons/record_keeping/models/matter.py:0
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form
+#, python-format
 msgid "Confidential"
 msgstr "Sekretessmarkering"
 
@@ -167,6 +169,11 @@ msgstr "Skapad av"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__create_date
 msgid "Created on"
 msgstr "Skapad den"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__partner_id
+msgid "Customer"
+msgstr "Kund"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__description
@@ -310,11 +317,8 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_error
-#: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_error
-#: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_error
-#: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Om markerad så har det blivit ett leveransfel för några meddelanden."
 
@@ -361,6 +365,11 @@ msgid "Last Updated on"
 msgstr "Senast uppdaterad"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__latest_change
+msgid "Latest change"
+msgstr "Senaste ändring"
+
+#. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_law_section_view
 #: model:ir.model,name:record_keeping.model_rk_law_section
 #: model:ir.module.category,name:record_keeping.module_category_rk_law_section
@@ -377,10 +386,11 @@ msgid "Main Attachment"
 msgstr "Huvudbilaga"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__manager_id
 #: model:res.groups,name:record_keeping.group_rk_law_section_manager
 #: model:res.groups,name:record_keeping.group_rk_manager
 msgid "Manager"
-msgstr "Administratör"
+msgstr "Lagrumsadministratör"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_matter
@@ -447,6 +457,11 @@ msgstr "Min aktivitets slutdatum"
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_type_search
 msgid "Name"
 msgstr "Namn"
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_matter__partner_name
+msgid "Name of partner "
+msgstr "Namn på kund"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__document_name
@@ -537,6 +552,11 @@ msgid "Parent Structure"
 msgstr "Överliggande struktur"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__partner_name
+msgid "Partner Name"
+msgstr "Kundnamn"
+
+#. module: record_keeping
 #: model:ir.model.constraint,message:record_keeping.constraint_rk_document_is_secret_requires_provision
 #: model:ir.model.constraint,message:record_keeping.constraint_rk_matter_is_secret_requires_provision
 #: model:ir.model.constraint,message:record_keeping.constraint_rk_mixin_is_secret_requires_provision
@@ -592,13 +612,6 @@ msgstr "Resursreferens"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_user_id
 msgid "Responsible User"
 msgstr "Ansvarig användare"
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_has_sms_error
-#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_has_sms_error
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "SMS-leveransfel"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__secrecy_grounds
@@ -774,18 +787,4 @@ msgstr "Url"
 #. module: record_keeping
 #: model:res.groups,name:record_keeping.group_rk_user
 msgid "User"
-msgstr "Användare"
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document__website_message_ids
-#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__website_message_ids
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__website_message_ids
-msgid "Website Messages"
-msgstr "Webbplatsmeddelanden"
-
-#. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_rk_document__website_message_ids
-#: model:ir.model.fields,help:record_keeping.field_rk_law_section__website_message_ids
-#: model:ir.model.fields,help:record_keeping.field_rk_matter__website_message_ids
-msgid "Website communication history"
-msgstr "Webbplatsens kommunikationshistorik"
+msgstr "Diarium Användare"

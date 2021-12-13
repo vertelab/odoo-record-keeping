@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211130\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 19:57+0000\n"
-"PO-Revision-Date: 2021-11-30 21:00+0100\n"
+"POT-Creation-Date: 2021-12-13 10:24+0000\n"
+"PO-Revision-Date: 2021-12-13 11:28+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: sv_SE\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_needaction
@@ -80,7 +80,6 @@ msgstr "Om den är markerad så finns det meddelanden som kräver din uppmärksa
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_has_error
-#: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Om markerad så har det blivit ett leveransfel för några meddelanden."
 
@@ -143,11 +142,6 @@ msgstr "Antal olästa meddelanden"
 #: model_terms:ir.ui.view,arch_db:record_keeping_attachment.view_attachment_form
 msgid "Record-keeping"
 msgstr "Diarium"
-
-#. module: record_keeping_attachment
-#: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "SMS-leveransfel"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__document_id
