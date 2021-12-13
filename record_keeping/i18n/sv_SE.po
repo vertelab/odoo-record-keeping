@@ -791,4 +791,4 @@ msgstr "Url"
 #. module: record_keeping
 #: model:res.groups,name:record_keeping.group_rk_user
 msgid "User"
-msgstr "Diarium Användare"
+msgstr "Användare"
