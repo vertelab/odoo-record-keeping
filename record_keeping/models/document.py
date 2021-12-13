@@ -12,14 +12,12 @@ class Document(models.Model):
         compute='_compute_name',
         help='The format is [current year]/[sequence] if this document is belongs to a matter',
         string='Name',
-        store=True,
     )
     document_name = fields.Char(
         compute='_compute_document_name',
         default='Unknown',
         help='Name of this document',
         string='Document Name',
-        store=True,
     )
     document_no = fields.Char(
         help='The number assigned to this document',
