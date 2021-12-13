@@ -92,7 +92,7 @@
                 <field name="name" />
                 <field name="draw_up_date" />
                 <field name="description" />
-                <field name="partner_id" />
+                <field name="partner_name" />
                 <field name="write_date" />
                 <field name="latest_change" />
                 <field name="manager_id" />

@@ -26,6 +26,10 @@ class Matter(models.Model):
         help='Counter used to assign to the next document',
         string='The next document number',
     )
+    latest_change = fields.Char(
+        compute='_compute_latest_change',
+        string='Latest change',
+    )
     manager_id = fields.Many2one(
         comodel_name='res.users',
         string='Manager',
@@ -48,21 +52,17 @@ class Matter(models.Model):
         string='Customer',
         tracking=True,
     )
+    partner_name = fields.Char(
+        compute='_compute_partner_name',
+        help='Name of partner ',
+        string='Partner Name',
+    )
     reg_no = fields.Char(
         readonly=True,
         help='The format is [current year]/[sequence]',
         string='Registration number',
         store=True,
     )
-    latest_change = fields.Char(
-        compute='_compute_latest_change',
-        string='Latest change',
-    )
-
-    @api.depends('matter_name', 'reg_no')
-    def _compute_name(self):
-        for record in self:
-            record.name = f'{record.reg_no or ""} {record.matter_name or ""}'
 
     @api.depends('message_ids')
     def _compute_latest_change(self):
@@ -77,6 +77,21 @@ class Matter(models.Model):
                         f"{tracking_values[0].field_desc} -> {tracking_values[0].get_new_display_value()[0]}")
             else:
                 record.latest_change = ''
+
+    @api.depends('matter_name', 'reg_no')
+    def _compute_name(self):
+        for record in self:
+            record.name = f'{record.reg_no or ""} {record.matter_name or ""}'
+
+    @api.depends('is_secret', 'partner_id')
+    def _compute_partner_name(self):
+        for record in self:
+            if record.is_secret:
+                record.partner_name = _('Confidential')
+            elif record.partner_id:
+                record.partner_name = record.partner_id.name
+            else:
+                record.partner_name = ''
 
     @api.model
     def create(self, vals):
