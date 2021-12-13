@@ -9,6 +9,11 @@ class Matter(models.Model):
     _inherit = ['mail.activity.mixin', 'mail.thread', 'rk.mixin']
     _order = 'id'
 
+    administrator_id = fields.Many2one(
+        comodel_name='res.users',
+        string='Administrator',
+        tracking=True,
+    )
     description = fields.Char(
         help='The description of this matter',
         string='Description',
@@ -29,11 +34,6 @@ class Matter(models.Model):
     latest_change = fields.Char(
         compute='_compute_latest_change',
         string='Latest change',
-    )
-    manager_id = fields.Many2one(
-        comodel_name='res.users',
-        string='Manager',
-        tracking=True,
     )
     matter_name = fields.Char(
         help='The name of this matter',

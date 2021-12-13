@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211130\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-13 10:24+0000\n"
-"PO-Revision-Date: 2021-12-13 11:26+0100\n"
+"POT-Creation-Date: 2021-12-13 12:15+0000\n"
+"PO-Revision-Date: 2021-12-13 13:15+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -58,6 +58,11 @@ msgstr "Aktivitetsstatus"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_type_icon
 msgid "Activity Type Icon"
 msgstr "Aktivitetstypsikon"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__administrator_id
+msgid "Administrator"
+msgstr "Handläggare"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_attachment_count
@@ -173,7 +178,7 @@ msgstr "Skapad den"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__partner_id
 msgid "Customer"
-msgstr "Kund"
+msgstr "Motpart"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__description
@@ -386,11 +391,10 @@ msgid "Main Attachment"
 msgstr "Huvudbilaga"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__manager_id
 #: model:res.groups,name:record_keeping.group_rk_law_section_manager
 #: model:res.groups,name:record_keeping.group_rk_manager
 msgid "Manager"
-msgstr "Lagrumsadministratör"
+msgstr "Administratör"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_matter

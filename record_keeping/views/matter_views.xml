@@ -16,7 +16,7 @@
                             <field name="description" />
                             <field name="classification_id" domain="[('has_types', '=', True)]" />
                             <field name="partner_id" />
-                            <field name="manager_id" />
+                            <field name="administrator_id" />
                         </group>
                         <group>
                             <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
@@ -95,7 +95,7 @@
                 <field name="partner_name" />
                 <field name="write_date" />
                 <field name="latest_change" />
-                <field name="manager_id" />
+                <field name="administrator_id" />
             </tree>
         </field>
     </record>
