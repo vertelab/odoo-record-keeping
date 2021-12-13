@@ -4,6 +4,9 @@
         <field name="model">rk.matter</field>
         <field name="arch" type="xml">
             <form string="Record-keeping">
+                <header>
+                    <field name="state" options="{'clickable': '1'}" statusbar_visible="draft,pending,done,cancel" widget="statusbar" />
+                </header>
                 <sheet>
                     <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
                     <h1>

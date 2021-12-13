@@ -63,6 +63,18 @@ class Matter(models.Model):
         string='Registration number',
         store=True,
     )
+    state = fields.Selection(
+        [
+            ('draft', 'Draft'),
+            ('pending', 'Pending'),
+            ('done', 'Done'),
+            ('cancel', 'Cancelled'),
+        ],
+        copy=False,
+        default='draft',
+        string='Status',
+        tracking=True,
+    )
 
     @api.depends('message_ids')
     def _compute_latest_change(self):
