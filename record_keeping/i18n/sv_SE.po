@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211130\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-13 12:49+0000\n"
-"PO-Revision-Date: 2021-12-13 13:50+0100\n"
+"POT-Creation-Date: 2021-12-13 13:22+0000\n"
+"PO-Revision-Date: 2021-12-13 14:25+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -184,6 +184,11 @@ msgstr "Skapad den"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__partner_id
 msgid "Customer"
 msgstr "Motpart"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__department_id
+msgid "Department"
+msgstr "Kontor"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__description

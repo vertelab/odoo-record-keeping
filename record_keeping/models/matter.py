@@ -14,6 +14,12 @@ class Matter(models.Model):
         string='Administrator',
         tracking=True,
     )
+    department_id = fields.Many2one(
+        index=True,
+        related='administrator_id.department_id',
+        store=True,
+        string='Department',
+    )
     description = fields.Char(
         help='The description of this matter',
         string='Description',
