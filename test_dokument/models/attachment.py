@@ -36,10 +36,10 @@ class Attachment(models.Model):
             for key in list(vals):
                 value = getattr(record, key)
                 if 'relation' in record_fields.get(key):
-                    if 'res.partner.category' in record_fields.get(key)['model']:
+                    if 'res.partner.category' in record_fields.get(key)['relation']:
                         _logger.info(f"{value=}")
                     value = list(value)
-                    if 'res.partner.category' in record_fields.get(key)['model']:
+                    if 'res.partner.category' in record_fields.get(key)['relation']:
                         _logger.info(f"{value=}")
                     _logger.info(f"{value=}")
                     if type(vals[key]) is list:
