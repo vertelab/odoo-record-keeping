@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ################################################################################
 #
-#    Odoo, Open Source Management Solution, third party addon
-#    Copyright (C) 2004-2017 Vertel AB (<https://vertel.se>).
+#    Odoo SA, Open Source Management Solution, third party addon
+#    Copyright (C) 2021- Vertel AB (<https://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -15,32 +15,28 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ################################################################################
 
 {
-    'name': 'Record-keeping Project',
-    'summary': 'Record-keeping Project for Odoo',
+    'name': 'Record-keeping Wizard',
+    'summary': 'Record-keeping Wizard for Odoo',
     'author': 'Vertel AB',
     'contributor': '',
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
-    'version': '14.0.2.1.0',
+    'version': '14.0.2.0.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
     'website': 'https://vertel.se/record-keeping',
     'description': """
-This module extends projects with record-keeping fields\n
-v14.1.1.0 added new version number.   \n
-v14.0.2.1.0 added wizard to link to record
+This module extends multiple modules with a button and a wizard to link actions to matter
 """,
-    'depends': ['mail', 'project', 'record_keeping', 'record_keeping_wizard'],
+    'depends': ['record_keeping'],
     'data': [
-        'views/project_views.xml',
-        'views/task_views.xml',
+        'views/matter_wizard.xml',
         'security/ir.model.access.csv',
     ],
-    # 'post_init_hook': 'post_init_hook',
 }

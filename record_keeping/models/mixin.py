@@ -87,5 +87,3 @@ class Mixin(models.AbstractModel):
         if not self.is_secret:
             self.law_section_id = False
             self.secrecy_grounds = False
-
-

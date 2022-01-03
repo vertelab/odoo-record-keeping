@@ -4,18 +4,30 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20211130\n"
+"Project-Id-Version: Odoo Server 14.0-20211214\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-13 10:25+0000\n"
-"PO-Revision-Date: 2021-12-13 11:28+0100\n"
-"Last-Translator: Han Wong <han.wong@vertel.se>\n"
+"POT-Creation-Date: 2022-01-05 09:58+0000\n"
+"PO-Revision-Date: 2022-01-05 11:01+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: \n"
+"Language: sv\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,help:record_keeping_event.field_rk_wizard_event__is_secret
+msgid "Check this option if it can be assumed that information contained in this "
+"document should not be disclosed on grounds of secrecy."
+msgstr "Markera om det kan antas att informationen i detta dokument inte ska lämnas "
+"ut på grund av säkerhetsbestämmelse."
+
+#. module: record_keeping_event
+#: model:ir.model.fields,help:record_keeping_event.field_rk_wizard_event__is_official
+msgid "Check this option if this document is an official document"
+msgstr "Markera om detta dokument är en allmän handling"
 
 #. module: record_keeping_event
 #: model_terms:ir.ui.view,arch_db:record_keeping_event.view_event_form
@@ -28,7 +40,18 @@ msgid "Create Matter"
 msgstr "Skapa ärende"
 
 #. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: record_keeping_event
 #: model:ir.model.fields,field_description:record_keeping_event.field_event_event__display_name
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__display_name
 msgid "Display Name"
 msgstr "Visningsnamn"
 
@@ -44,18 +67,46 @@ msgstr "Handlingsreferens"
 
 #. module: record_keeping_event
 #: model:ir.model,name:record_keeping_event.model_event_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__model
 msgid "Event"
-msgstr "Evenemang"
+msgstr "Utbildningen"
 
 #. module: record_keeping_event
 #: model:ir.model.fields,field_description:record_keeping_event.field_event_event__id
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__id
 msgid "ID"
 msgstr "ID"
 
 #. module: record_keeping_event
+#: model:ir.model.fields,help:record_keeping_event.field_rk_wizard_event__secrecy_grounds
+msgid "If marked as secret, please provide more information"
+msgstr "Om märkt med sekretess, uppge mer information"
+
+#. module: record_keeping_event
 #: model:ir.model.fields,field_description:record_keeping_event.field_event_event____last_update
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event____last_update
 msgid "Last Modified on"
 msgstr "Senast redigerad"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad"
+
+#. module: record_keeping_event
+#: model_terms:ir.ui.view,arch_db:record_keeping_event.view_event_form
+msgid "Link to record"
+msgstr "Koppla till ärende"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__matter_id
+msgid "Matter"
+msgstr "Ärende"
 
 #. module: record_keeping_event
 #: model_terms:ir.ui.view,arch_db:record_keeping_event.view_event_form
@@ -63,9 +114,34 @@ msgid "Meta Information"
 msgstr "Meta information"
 
 #. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__is_official
+msgid "Official document"
+msgstr "Allmän Handling"
+
+#. module: record_keeping_event
 #: model_terms:ir.ui.view,arch_db:record_keeping_event.view_event_form
 msgid "Record-keeping"
 msgstr "Diarium"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__secrecy_grounds
+msgid "Secrecy grounds"
+msgstr "Motivering"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__is_secret
+msgid "Secrecy marker"
+msgstr "Sekretessmarkering"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__law_section_id
+msgid "Secrecy provision"
+msgstr "Sekretessbestämmelse"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,help:record_keeping_event.field_rk_wizard_event__matter_id
+msgid "The matter this document belongs to"
+msgstr "Ärendet som handling hör till"
 
 #. module: record_keeping_event
 #: model:ir.model.fields,help:record_keeping_event.field_event_event__document_id
@@ -76,3 +152,18 @@ msgstr "Id på handlingen"
 #: model:ir.model.fields,help:record_keeping_event.field_event_event__document_ref
 msgid "The record-keeping document reference"
 msgstr "Referens till handlingen"
+
+#. module: record_keeping_event
+#: model:ir.model.fields,help:record_keeping_event.field_rk_wizard_event__law_section_id
+msgid "The specified secrecy provision when the document has a secrecy marker"
+msgstr "Den angivna sekretessbestämmelsen när dokumentet har en sekretessmarkering"
+
+#. module: record_keeping_event
+#: model:ir.actions.act_window,name:record_keeping_event.open_link_to_record_wizard
+msgid "open.link.to.record.wizard"
+msgstr "Koppla till ärende"
+
+#. module: record_keeping_event
+#: model:ir.model,name:record_keeping_event.model_rk_wizard_event
+msgid "rk.wizard.event"
+msgstr ""

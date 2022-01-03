@@ -4,18 +4,32 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20211130\n"
+"Project-Id-Version: Odoo Server 14.0-20211214\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-13 10:25+0000\n"
-"PO-Revision-Date: 2021-12-13 11:29+0100\n"
-"Last-Translator: Han Wong <han.wong@vertel.se>\n"
+"POT-Creation-Date: 2022-01-05 10:07+0000\n"
+"PO-Revision-Date: 2022-01-05 11:09+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: \n"
+"Language: sv\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__is_secret
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__is_secret
+msgid "Check this option if it can be assumed that information contained in this "
+"document should not be disclosed on grounds of secrecy."
+msgstr "Markera om det kan antas att informationen i detta dokument inte ska lämnas "
+"ut på grund av säkerhetsbestämmelse."
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__is_official
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__is_official
+msgid "Check this option if this document is an official document"
+msgstr "Markera om detta dokument är en allmän handling"
 
 #. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
@@ -29,8 +43,22 @@ msgid "Create Matter"
 msgstr "Skapa ärende"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__create_uid
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__create_date
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__display_name
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__display_name
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__display_name
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__display_name
 msgid "Display Name"
 msgstr "Visningsnamn"
 
@@ -48,24 +76,56 @@ msgstr "Handlingsreferens"
 
 #. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
-msgid ""
-"Follow this project to automatically track the events associated to tasks "
+msgid "Follow this project to automatically track the events associated to tasks "
 "and issues of this project."
-msgstr ""
-"Följ det här projektet för att automatiskt spåra händelser i samband med "
+msgstr "Följ det här projektet för att automatiskt spåra händelser i samband med "
 "aktiviteter och ärenden som berör detta projekt."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__id
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__id
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__id
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__id
 msgid "ID"
 msgstr "ID"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__secrecy_grounds
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__secrecy_grounds
+msgid "If marked as secret, please provide more information"
+msgstr "Om märkt med sekretess, uppge mer information"
+
+#. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project____last_update
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task____last_update
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project____last_update
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task____last_update
 msgid "Last Modified on"
 msgstr "Senast redigerad"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__write_uid
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__write_date
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad"
+
+#. module: record_keeping_project
+#: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
+#: model_terms:ir.ui.view,arch_db:record_keeping_project.view_task_form2
+msgid "Link to record"
+msgstr "Koppla till ärende"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__matter_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__matter_id
+msgid "Matter"
+msgstr "Ärende"
 
 #. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
@@ -74,7 +134,14 @@ msgid "Meta Information"
 msgstr "Meta information"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__is_official
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__is_official
+msgid "Official document"
+msgstr "Allmän Handling"
+
+#. module: record_keeping_project
 #: model:ir.model,name:record_keeping_project.model_project_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__model
 msgid "Project"
 msgstr "Projekt"
 
@@ -91,9 +158,33 @@ msgid "Registration number"
 msgstr "Registreringsnummer"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__secrecy_grounds
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__secrecy_grounds
+msgid "Secrecy grounds"
+msgstr "Motivering"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__is_secret
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__is_secret
+msgid "Secrecy marker"
+msgstr "Sekretessmarkering"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__law_section_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__law_section_id
+msgid "Secrecy provision"
+msgstr "Sekretessbestämmelse"
+
+#. module: record_keeping_project
 #: model:ir.model,name:record_keeping_project.model_project_task
 msgid "Task"
 msgstr "Aktivitet"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__matter_id
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__matter_id
+msgid "The matter this document belongs to"
+msgstr "Ärendet som handling hör till"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__document_id
@@ -106,3 +197,24 @@ msgstr "Id på handlingen"
 #: model:ir.model.fields,help:record_keeping_project.field_project_task__document_ref
 msgid "The record-keeping document reference"
 msgstr "Referens till handlingen"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__law_section_id
+#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__law_section_id
+msgid "The specified secrecy provision when the document has a secrecy marker"
+msgstr "Den angivna sekretessbestämmelsen när dokumentet har en sekretessmarkering"
+
+#. module: record_keeping_project
+#: model:ir.actions.act_window,name:record_keeping_project.open_link_to_record_wizard
+msgid "open.link.to.record.wizard"
+msgstr "Koppla till ärende"
+
+#. module: record_keeping_project
+#: model:ir.model,name:record_keeping_project.model_rk_wizard_project
+msgid "rk.wizard.project"
+msgstr ""
+
+#. module: record_keeping_project
+#: model:ir.model,name:record_keeping_project.model_rk_wizard_project_task
+msgid "rk.wizard.project.task"
+msgstr ""
