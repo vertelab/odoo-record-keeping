@@ -1,3 +1,60 @@
+# region fafast.xlsx
+fafast = {
+    'model': 'property.property',
+    'fields': {
+        'agare.idagare': 'agare.idagare',
+        'name': 'namnfast',
+        'property_key': 'fastnr',
+        'xkoordinat': 'xkoordinat',
+        'ykoordinat': 'ykoordinat'
+    },
+    'before': """
+latitude = str(vals.pop('xkoordinat')).replace('.','')
+longitude = str(vals.pop('ykoordinat')).replace('.','')
+
+for key in ['property_key']:
+    if key in vals and not vals[key]:
+        vals[key] = False
+
+for key in ['name', 'property_key']:
+    if key in vals and type(vals[key]) is int:
+        vals[key] = str(vals[key])
+
+if vals['name'] and ',' in vals['name']:
+    vals['city'] = vals['name'].split(',')[0]
+
+if len(latitude) == 7 and len(longitude) == 7:
+    vals['property_lat_rt90'] = latitude
+    vals['property_long_rt90'] = longitude
+    vals['latitude'] = False
+    vals['longitude'] = False
+
+elif len(latitude) == 7 and len(longitude) == 6:
+    vals['property_lat_sweref99'] = latitude
+    vals['property_long_sweref99'] = longitude
+    vals['latitude'] = False
+    vals['longitude'] = False
+
+params['agare_id'] = vals.pop('agare.idagare')
+""",
+          'after': """
+agare_id = params.get('agare_id')
+
+partner_xmlid = get_xmlid('kund', agare_id)
+partner_id = get_res_id(partner_xmlid)
+if partner_id:
+    property_id = get_res_id(xmlid)
+    if property_id:
+        xmlid = get_xmlid('kund_fafast', row[0].value)
+        vals = {
+            'partner_id': partner_id,
+            'property_id': property_id,
+        }
+        create_record_and_xmlid_or_update(
+            'property.stakeholder', params, vals, xmlid)
+"""}
+# endregion fafast.xlsx
+
 # region kund.xlsx
 kund = {
     'model': 'res.partner',
@@ -12,7 +69,11 @@ kund = {
         'street': 'adress',
         'vat': 'vatnr',
         'zip': 'postnr',
-    },
+        },
+    '__import__.kategori_kund': {
+        'model': 'res.partner.category',
+        'vals': {'name': 'kund'}
+        },
     'before': """
 category_id = params.get('category_id')
 if not category_id:
@@ -99,61 +160,13 @@ if kundgrupp:
 """}
 # endregion kund.xlsx
 
-# region pepers.xlsx
-pepers = {
-    'model': 'res.partner',
-    'fields': {
-        'comment': 'info',
-        'name': 'namn',
-        'email': 'epost',
-        'kund': 'kund.idkund',
-        'mobile': 'mobnr',
-        'phone': 'telnr'
-    },
-    'before': """
-category_id = params.get('category_id')
-if not category_id:
-    category_xmlid = get_xmlid('kategori', 'pepers')
-    category_id = get_res_id(category_xmlid)
-    if not category_id:
-        Category = self.env['res.partner.category'].with_context(new_context)
-        category_id = Category.create({'name':'pepers'}).id
-        create_xmlid('res.partner.category', category_id, category_xmlid)
-        params['category_id'] = category_id
-
-vals['category_id'] = [(4, category_id, 0)]
-vals['country_id'] = get_res_id('base.se')
-
-for key in ['city', 'comment', 'email', 'mobile', 'partner_ssn', 'phone', 'street', 'vat', 'zip']:
-    if key in vals and not vals[key]:
-        vals[key] = False
-
-for key in ['comment', 'mobile', 'name', 'partner_ssn', 'phone', 'street', 'zip']:
-    if key in vals and type(vals[key]) is int:
-        if key in ['mobile', 'phone']:
-            vals[key] = '0' + str(vals[key])
-        else:
-            vals[key] = str(vals[key])
-
-for key in ['name']:
-    vals[key] = " ".join(vals[key].split())
-
-parent_xmlid = get_xmlid('kund', vals.pop('kund'))
-vals['parent_id'] = get_res_id(parent_xmlid)
-
-if type(vals['phone']) is int:
-    if not str(vals['phone']).startswith('0'):
-        vals['phone'] = '0' + str(vals['phone'])
-"""}
-# endregion pepers.xlsx
-
 # region kurs.xlsx
 kurs = {
     'model': 'event.event',
     'fields': {
         'name': 'kursbenamning',
         'date_begin': 'startdat',
-        'date_begin_time': 'starttidpunkt',
+        'starttidpunkt': 'starttidpunkt',
         'date_end': 'antaldagar',
         'kursstatus': 'kursstatus',
         'user_id': 'ansvarig_medarbetare.epost'
@@ -209,22 +222,22 @@ else:
         uid = self.env['res.users'].search([('login', '=', uid.lower())])
         if uid:
             vals['user_id'] = uid.id
-        else:
-            _logger.warning(f"{uid=}")
     if not uid:
         vals['user_id'] = 2
-    date_begin_time = vals.pop('date_begin_time')
-    if not date_begin_time:
-        date_begin_time = '00:00'
+    starttidpunkt = vals.pop('starttidpunkt')
+    if not starttidpunkt:
+        starttidpunkt = '00:00'
     fmt = '%Y-%m-%d %H:%M'
     tz = pytz.timezone('Europe/Stockholm')
-    naive = datetime.strptime(f"{vals['date_begin']} {date_begin_time}", fmt)
+    naive = datetime.strptime(f"{vals['date_begin']} {starttidpunkt}", fmt)
     local = tz.localize(naive, is_dst=True)
     date_begin = local.astimezone(pytz.utc)
     vals['date_begin'] = datetime.strftime(date_begin, fmt)
+    vals['date_begin'] = datetime.strptime(vals['date_begin'], fmt)
     if vals['date_end']:
         date_end = date_begin + timedelta(days=vals['date_end'])
         vals['date_end'] = datetime.strftime(date_end, fmt)
+        vals['date_end'] = datetime.strptime(vals['date_end'], fmt)
     else:
         vals['date_end'] = vals['date_begin']
 """}
@@ -275,14 +288,10 @@ for key in ['name']:
 parent_xmlid = get_xmlid('kund', vals.pop('kund.idkund'))
 vals['parent_id'] = get_res_id(parent_xmlid)
 
-if type(vals['phone']) is int:
-    if not str(vals['phone']).startswith('0'):
-        vals['phone'] = '0' + str(vals['phone'])
-
 params['event_xmlid'] = get_xmlid('kurs', vals.pop('kurs.idkurs'))
 params['deltagarstatus'] = vals.pop('deltagarstatus')
 """,
-                 'after': """
+    'after': """
 event_xmlid = params.get('event_xmlid')
 event_id = get_res_id(event_xmlid)
 partner_id = get_res_id(xmlid)
@@ -317,59 +326,49 @@ if event_id and partner_id and 'skip' not in vals:
 """}
 # endregion kursdeltagare.xlsx
 
-# region fafast.xlsx
-fafast = {'model': 'property.property',
-          'fields': {'agare.idagare': 'agare.idagare',
-                     'name': 'namnfast',
-                     'property_key': 'fastnr',
-                     'xkoordinat': 'xkoordinat',
-                     'ykoordinat': 'ykoordinat'},
-          'before': """
-latitude = str(vals.pop('xkoordinat')).replace('.','')
-longitude = str(vals.pop('ykoordinat')).replace('.','')
-name = str(vals['name'])
+# region pepers.xlsx
+pepers = {
+    'model': 'res.partner',
+    'fields': {
+        'comment': 'info',
+        'name': 'namn',
+        'email': 'epost',
+        'kund': 'kund.idkund',
+        'mobile': 'mobnr',
+        'phone': 'telnr'
+    },
+    'before': """
+category_id = params.get('category_id')
+if not category_id:
+    category_xmlid = get_xmlid('kategori', 'pepers')
+    category_id = get_res_id(category_xmlid)
+    if not category_id:
+        Category = self.env['res.partner.category'].with_context(new_context)
+        category_id = Category.create({'name':'pepers'}).id
+        create_xmlid('res.partner.category', category_id, category_xmlid)
+        params['category_id'] = category_id
 
-if name and ',' in name:
-    vals['city'] = name.split(',')[0]
+vals['category_id'] = [(4, category_id, 0)]
+vals['country_id'] = get_res_id('base.se')
 
-if len(latitude) == 7 and len(longitude) == 7:
-    vals['property_lat_rt90'] = latitude
-    vals['property_long_rt90'] = longitude
-    vals['latitude'] = False
-    vals['longitude'] = False
+for key in ['city', 'comment', 'email', 'mobile', 'partner_ssn', 'phone', 'street', 'vat', 'zip']:
+    if key in vals and not vals[key]:
+        vals[key] = False
 
-elif len(latitude) == 7 and len(longitude) == 6:
-    vals['property_lat_sweref99'] = latitude
-    vals['property_long_sweref99'] = longitude
-    vals['latitude'] = False
-    vals['longitude'] = False
-
-params['agare_id'] = vals.pop('agare.idagare')
-""",
-          'after': """
-agare_id = params.get('agare_id')
-
-partner_xmlid = get_xmlid('kund', agare_id)
-partner_id = get_res_id(partner_xmlid)
-if partner_id:
-    stakeholder_vals = {'partner_id': partner_id}
-    stakeholder_model = 'property.stakeholder'
-    stakeholder_xmlid = get_xmlid('fastighetsagare', agare_id)
-
-    fastighet_id = xmlid.split('_')[-1]
-    property_xmlid = get_xmlid('fafast', fastighet_id)
-    property_id = get_res_id(property_xmlid)
-    if property_id:
-        stakeholder_vals['property_id'] = property_id
-
-        if mode == 'debug':
-            print(f"{stakeholder_vals=}")
-            print(f"{stakeholder_xmlid=}")
+for key in ['comment', 'mobile', 'name', 'partner_ssn', 'phone', 'street', 'zip']:
+    if key in vals and type(vals[key]) is int:
+        if key in ['mobile', 'phone']:
+            vals[key] = '0' + str(vals[key])
         else:
-            create_record_and_xmlid_or_update(
-                stakeholder_model, stakeholder_vals, stakeholder_xmlid)
+            vals[key] = str(vals[key])
+
+for key in ['name']:
+    vals[key] = " ".join(vals[key].split())
+
+parent_xmlid = get_xmlid('kund', vals.pop('kund'))
+vals['parent_id'] = get_res_id(parent_xmlid)
 """}
-# endregion fafast.xlsx
+# endregion pepers.xlsx
 
 # region prod_reg.xlsx
 prod_reg = {'model': 'product.template',
@@ -476,13 +475,13 @@ if not vals['uom_id'] and uom == 'ha':
 
     create_xmlid(UomUom._name, ha_id, uom_xmlid)
     vals['uom_id'] = ha_id
-
+_logger.warning(f"{vals=}")
 vals['uom_po_id'] = vals['uom_id']
 params['parent_template_xmlid'] = get_xmlid(
     'prod_reg', vals.pop('parent_template_id'))
 """,
            'after': """
-Template = target.env['product.template']
+Template = self.env['product.template'].with_context(new_context)
 template_id = get_res_id(xmlid)
 if template_id:
     template = Template.read(template_id)[0]
@@ -501,6 +500,7 @@ if template_id:
                 ppl_xmlid = get_xmlid('pack_artikel', xmlid.split('_')[-1])
                 create_record_and_xmlid_or_update(
                     model=ppl_model, 
+                    params=params,
                     vals=ppl_vals, 
                     xmlid=ppl_xmlid
                 )

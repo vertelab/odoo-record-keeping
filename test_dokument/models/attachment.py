@@ -1,21 +1,18 @@
 # -*- coding: utf-8 -*-
 
-import logging
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
+import logging
 
 _logger = logging.getLogger(__name__)
+
 IMPORT = '__import__'
 
 class Attachment(models.Model):
     _inherit = ['ir.attachment']
     
-    def migrate_from_xlsx_files(self, paths, count=100):
-        for path in paths:
-            self.migrate_from_xlsx(path, count=count)
-
     @api.model
-    def migrate_from_xlsx(self, path, count=1000, start=0, end=0):
+    def migrate_from_xlsx(self, path, count=0, start=0, end=0):
         import base64
         import openpyxl
         import pytz
@@ -32,16 +29,22 @@ class Attachment(models.Model):
             'tz': 'UTC',
         }
 
-        def compare_values(record, record_fields, vals):
+        path_to_file = Path(path)
+        file_name = path_to_file.stem
+        count = count or int(self.env['ir.config_parameter'].get_param('/migration/count', '0'))
+        start = start or int(self.env['ir.config_parameter'].get_param(path, '0'))
+        _logger.info(f"Initializing migration: {path=}, {start=}")
+        if start < 0:
+            return
+
+        def compare_values(record, model_fields, vals):
             for key in list(vals):
                 value = getattr(record, key)
-                if 'relation' in record_fields.get(key):
-                    if 'res.partner.category' in record_fields.get(key)['relation']:
-                        _logger.info(f"{value=}")
-                    value = list(value)
-                    if 'res.partner.category' in record_fields.get(key)['relation']:
-                        _logger.info(f"{value=}")
-                    _logger.info(f"{value=}")
+                field_type = model_fields.get(key).get('type')
+                if field_type in ['many2one']:
+                    value = value.id
+                elif field_type in ['one2many', 'many2many']:    
+                    value = value.ids
                     if type(vals[key]) is list:
                         for command in vals[key]:
                             if type(command) is list or tuple:
@@ -52,18 +55,8 @@ class Attachment(models.Model):
                     vals.pop(key)
             return vals
 
-        def create_xmlid(model, res_id, xmlid):
-            module = xmlid.split('.')[0]
-            vals = {'model': model,
-                    'module': module,
-                    'name': xmlid.split('.')[1],
-                    'res_id': res_id}
-            if module != IMPORT:
-                vals['noupdate'] = True
-            self.env['ir.model.data'].with_context(new_context).create(vals)
-
         def create_record_and_xmlid_or_update(model, params, vals, xmlid):
-            model_fields = get_model_fields(params, model)
+            model_fields = get_model_fields(model, params)
             if 'skip' in vals:
                _logger.warning(f"skip {vals=}, {xmlid=}")
                return 0
@@ -80,20 +73,34 @@ class Attachment(models.Model):
                 create_xmlid(model, res_id, xmlid)
                 _logger.info(f"create_record_and_xmlid_or_update({model=}, {vals=}, {xmlid=})")
                 _logger.info(f"create_xmlid({model=}, {res_id=}, {xmlid=})")
+            if vals:
+                if '_counter' in params:
+                    params['_counter'] += 1
+                else:
+                    params['_counter'] = 1
             return res_id
             
-        def get_model_fields(params, model):
+        def create_xmlid(model, res_id, xmlid):
+            module = xmlid.split('.')[0]
+            vals = {'model': model,
+                    'module': module,
+                    'name': xmlid.split('.')[1],
+                    'res_id': res_id}
+            if module != IMPORT:
+                vals['noupdate'] = True
+            self.env['ir.model.data'].with_context(new_context).create(vals)
+
+        def get_model_fields(model, params):
             model_fields = f"{model.replace('.', '_')}_fields_get"
             if model_fields not in params:
-                _logger.info(f"only once {model_fields=}")
                 params[model_fields] = self.env[model].fields_get()
             return params[model_fields]
 
         def get_res_id(xmlid):
             return self.env['ir.model.data'].xmlid_to_res_id(xmlid)
 
-        def get_xmlid(identifier, ext_id):
-            return f"{IMPORT}.{identifier.replace('.', '_')}_{ext_id}"
+        def get_xmlid(name, ext_id):
+            return f"{IMPORT}.{name.replace('.', '_')}_{ext_id}"
         
         def vals_builder(row, cols, fields):
             vals = {}
@@ -103,9 +110,6 @@ class Attachment(models.Model):
                     vals[key] = row[i].value
             return vals
 
-        path_to_file = Path(path)
-        file_name = path_to_file.stem
-        
         sheet = openpyxl.load_workbook(path_to_file, data_only=True).active
         cols = [col.value for col in sheet[1]]
 
@@ -114,29 +118,31 @@ class Attachment(models.Model):
         fields = params.get('fields')
         before = params.get('before', '')
         after = params.get('after', '')
-        counter = 0
-        for row in sheet.iter_rows(min_row=start if start else 2, max_row=end if end else None):
+        params['_counter'] = 0
+        
+        for row in sheet.iter_rows(min_row=start or 2, max_row=end or None):
             vals = vals_builder(row, cols, fields)
             xmlid = get_xmlid(file_name, row[0].value)
-            
+            row_number = row[0].row
+            if row_number % 1000 == 0:
+                _logger.info(f"{row_number=}")
             try:
                 exec(before)
                 create_record_and_xmlid_or_update(model, params, vals, xmlid)
                 exec(after)
-                if vals:
-                    counter += 1
 
             except Exception as e:
                 _logger.error(f"{e=}")
                 _logger.info(f"{[r.value for r in row]=}")
                 _logger.warning(f"{vals=}")
                 _logger.info(f"{xmlid=}")
+                params['_counter'] = 1
                 break
 
             else:
-                if count and counter >= count:
-                    _logger.info(f"{row[0].row=}")
+                if count and params['_counter'] >= count:
                     break
 
-        _logger.info(f"migrate_from_xlsx({path=}, {count=}, {start=}, {end=}): DONE!")
-            
+        _logger.info(f"{file_name=}, {row_number=}, {params['_counter']=}")
+        
+        self.env['ir.config_parameter'].set_param(path, str(row_number) if params['_counter'] else '-1')
