@@ -3,6 +3,11 @@
 from odoo import _, api, fields, models
 
 
+import logging
+
+logger = logging.getLogger()
+
+
 class Order(models.Model):
     _name = 'sale.order'
     _inherit = ['sale.order']

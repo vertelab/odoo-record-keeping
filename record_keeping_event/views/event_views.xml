@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record model="ir.actions.act_window" id="open_link_to_record_wizard">
+        <field name="name">open.link.to.record.wizard</field>
+        <field name="res_model">rk.wizard.event</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="record_keeping_wizard.link_to_record_view"/>
+    </record>
     <record id="view_event_form" model="ir.ui.view">
         <field name="model">event.event</field>
         <field name="inherit_id" ref="event.view_event_form"/>
         <field name="arch" type="xml">
             <header position="inside">
                 <button attrs="{'invisible': [('matter_id', '!=', False)]}" class="oe_highlight" name="create_matter" string="Create Matter" type="object" />
+                <button name="%(open_link_to_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}"  string="Link to record" type="action" />
             </header>
             <widget position="replace" />
             <div name="button_box" position="after">

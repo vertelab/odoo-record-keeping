@@ -27,15 +27,16 @@
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
-    'version': '14.0.2.0.3',
+    'version': '14.0.2.1.3',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
     'website': 'https://vertel.se/record-keeping',
     'description': """
 This module extends Sale Orders with record-keeping fields
 """,
-    'depends': ['record_keeping', 'sale_management'],
+    'depends': ['record_keeping', 'sale_management', 'record_keeping_wizard'],
     'data': [
+        'security/ir.model.access.csv',
         'views/sale_views.xml',
     ],
     # 'post_init_hook': 'post_init_hook',

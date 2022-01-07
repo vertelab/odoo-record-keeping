@@ -4,18 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20211130\n"
+"Project-Id-Version: Odoo Server 14.0-20211214\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-13 10:24+0000\n"
-"PO-Revision-Date: 2021-12-13 11:28+0100\n"
-"Last-Translator: Han Wong <han.wong@vertel.se>\n"
+"POT-Creation-Date: 2022-01-05 09:48+0000\n"
+"PO-Revision-Date: 2022-01-05 10:53+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: \n"
+"Language: sv\n"
+"X-Generator: Poedit 3.0\n"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_needaction
@@ -24,6 +24,7 @@ msgstr "Handling krävs"
 
 #. module: record_keeping_attachment
 #: model:ir.model,name:record_keeping_attachment.model_ir_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__model
 msgid "Attachment"
 msgstr "Bilaga"
 
@@ -33,12 +34,35 @@ msgid "Attachment Count"
 msgstr "Antal bilagor"
 
 #. module: record_keeping_attachment
+#: model:ir.model.fields,help:record_keeping_attachment.field_rk_wizard_attachment__is_secret
+msgid "Check this option if it can be assumed that information contained in this "
+"document should not be disclosed on grounds of secrecy."
+msgstr "Markera om det kan antas att informationen i detta dokument inte ska lämnas "
+"ut på grund av säkerhetsbestämmelse."
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,help:record_keeping_attachment.field_rk_wizard_attachment__is_official
+msgid "Check this option if this document is an official document"
+msgstr "Markera om detta dokument är en allmän handling"
+
+#. module: record_keeping_attachment
 #: model_terms:ir.ui.view,arch_db:record_keeping_attachment.view_attachment_form
 msgid "Confidential"
 msgstr "Sekretessmarkering"
 
 #. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__display_name
 msgid "Display Name"
 msgstr "Visningsnamn"
 
@@ -69,6 +93,7 @@ msgstr "Följare (kontakter)"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__id
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__id
 msgid "ID"
 msgstr "ID"
 
@@ -80,8 +105,14 @@ msgstr "Om den är markerad så finns det meddelanden som kräver din uppmärksa
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_has_error
+#: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Om markerad så har det blivit ett leveransfel för några meddelanden."
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,help:record_keeping_attachment.field_rk_wizard_attachment__secrecy_grounds
+msgid "If marked as secret, please provide more information"
+msgstr "Om märkt med sekretess, uppge mer information"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_is_follower
@@ -90,13 +121,34 @@ msgstr "Är följare"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment____last_update
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment____last_update
 msgid "Last Modified on"
 msgstr "Senast redigerad"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad"
+
+#. module: record_keeping_attachment
+#: model_terms:ir.ui.view,arch_db:record_keeping_attachment.view_attachment_form
+msgid "Link to record"
+msgstr "Koppla till ärende"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Huvudbilaga"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__matter_id
+msgid "Matter"
+msgstr "Ärende"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_has_error
@@ -139,9 +191,39 @@ msgid "Number of unread messages"
 msgstr "Antal olästa meddelanden"
 
 #. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__is_official
+msgid "Official document"
+msgstr "Allmän Handling"
+
+#. module: record_keeping_attachment
 #: model_terms:ir.ui.view,arch_db:record_keeping_attachment.view_attachment_form
 msgid "Record-keeping"
 msgstr "Diarium"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS-leveransfel"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__secrecy_grounds
+msgid "Secrecy grounds"
+msgstr "Motivering"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__is_secret
+msgid "Secrecy marker"
+msgstr "Sekretessmarkering"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_wizard_attachment__law_section_id
+msgid "Secrecy provision"
+msgstr "Sekretessbestämmelse"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,help:record_keeping_attachment.field_rk_wizard_attachment__matter_id
+msgid "The matter this document belongs to"
+msgstr "Ärendet som handling hör till"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__document_id
@@ -152,6 +234,11 @@ msgstr "Id på handlingen"
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__document_ref
 msgid "The record-keeping document reference"
 msgstr "Referens till handlingen"
+
+#. module: record_keeping_attachment
+#: model:ir.model.fields,help:record_keeping_attachment.field_rk_wizard_attachment__law_section_id
+msgid "The specified secrecy provision when the document has a secrecy marker"
+msgstr "Den angivna sekretessbestämmelsen när dokumentet har en sekretessmarkering"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__message_unread
@@ -172,3 +259,13 @@ msgstr "Webbplatsmeddelanden"
 #: model:ir.model.fields,help:record_keeping_attachment.field_ir_attachment__website_message_ids
 msgid "Website communication history"
 msgstr "Webbplatsens kommunikationshistorik"
+
+#. module: record_keeping_attachment
+#: model:ir.actions.act_window,name:record_keeping_attachment.open_link_to_record_wizard
+msgid "open.link.to.record.wizard"
+msgstr "Koppla till ärende"
+
+#. module: record_keeping_attachment
+#: model:ir.model,name:record_keeping_attachment.model_rk_wizard_attachment
+msgid "rk.wizard.attachment"
+msgstr ""
