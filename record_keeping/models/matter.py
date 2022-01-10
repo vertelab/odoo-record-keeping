@@ -111,6 +111,9 @@ class Matter(models.Model):
             else:
                 record.partner_name = ''
 
+    def action_done(self):
+        self.write({'state': 'done'})
+
     @api.model
     def create(self, vals):
         vals.update(
