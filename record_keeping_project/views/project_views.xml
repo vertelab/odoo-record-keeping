@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.actions.act_window" id="open_link_to_record_wizard">
+    <record model="ir.actions.act_window" id="open_link_to_project_record_wizard">
         <field name="name">open.link.to.record.wizard</field>
         <field name="res_model">rk.wizard.project</field>
         <field name="view_mode">form</field>
@@ -13,7 +13,7 @@
         <field name="inherit_id" ref="project.edit_project" />
         <field name="arch" type="xml">
             <header position="inside">
-                <button name="%(open_link_to_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}"  string="Link to record" type="action" />
+                <button name="%(open_link_to_project_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}"  string="Link to record" type="action" />
             </header>
             <widget position="replace">
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />

@@ -8,4 +8,4 @@ access_rk_type_user,rk.document.type.user,model_rk_document_type,base.group_user
 access_rk_law_section_manager,rk.law.section.manager,model_rk_law_section,group_rk_law_section_manager,1,1,1,1
 access_rk_law_section_user,rk.law.section.user,model_rk_law_section,base.group_user,1,0,0,0
 access_rk_matter_manager,rk.matter.manager,model_rk_matter,group_rk_manager,1,1,1,1
-access_rk_matter_user,rk.matter.user,model_rk_matter,base.group_user,1,0,0,0
+access_rk_matter_user,rk.matter.user,model_rk_matter,base.group_user,1,1,1,0

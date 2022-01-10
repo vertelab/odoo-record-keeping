@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.actions.act_window" id="open_link_to_record_wizard">
+    <record model="ir.actions.act_window" id="open_link_to_task_record_wizard">
         <field name="name">open.link.to.record.wizard</field>
         <field name="res_model">rk.wizard.project.task</field>
         <field name="view_mode">form</field>
@@ -13,7 +13,7 @@
         <field name="inherit_id" ref="project.view_task_form2" />
         <field name="arch" type="xml">
             <header position="inside">
-                <button name="%(open_link_to_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}"  string="Link to record" type="action" />
+                <button name="%(open_link_to_task_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}"  string="Link to record" type="action" />
                 <button attrs="{'invisible': [('matter_id', '!=', False)]}" class="oe_highlight" name="create_matter" string="Create Matter" type="object" />
             </header>
             <widget position="replace">
