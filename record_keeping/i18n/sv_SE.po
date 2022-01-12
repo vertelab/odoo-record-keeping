@@ -120,6 +120,11 @@ msgid "Classification Structure"
 msgstr "Klassificeringsstruktur"
 
 #. module: record_keeping
+#: model:ir.actions.server,name:record_keeping.action_done
+msgid "Close"
+msgstr "Stäng"
+
+#. module: record_keeping
 #: code:addons/record_keeping/models/matter.py:0
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form

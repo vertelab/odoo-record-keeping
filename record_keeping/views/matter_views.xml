@@ -119,6 +119,15 @@
         </field>
     </record>
 
+    <record id="action_done" model="ir.actions.server">
+        <field name="name">Close</field>
+        <field name="model_id" ref="record_keeping.model_rk_matter"/>
+        <field name="binding_model_id" ref="record_keeping.model_rk_matter"/>
+        <field name="binding_view_types">kanban,form,list</field>
+        <field name="state">code</field>
+        <field name="code">action = record.action_done()</field>
+    </record>
+
     <record id="action_matter_form" model="ir.actions.act_window.view">
         <field name="sequence" eval="2" />
         <field name="view_mode">form</field>
