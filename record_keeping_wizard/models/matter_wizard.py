@@ -8,6 +8,7 @@ _logger = logging.getLogger(__name__)
 
 class MatterWizard(models.TransientModel):
     _name = "rk.wizard"
+    _description = 'Wizard for attaching a record to a Record-keeping Matter'
 
     @property
     def model(self):
@@ -21,32 +22,27 @@ class MatterWizard(models.TransientModel):
         comodel_name='rk.matter',
         help='The matter this document belongs to',
         string='Matter',
-        tracking=True,
     )
     is_official = fields.Boolean(
         default=True,
         help='Check this option if this document is an official document',
         string='Official document',
-        tracking=True,
     )
     is_secret = fields.Boolean(
         default=False,
         help='Check this option if it can be assumed that information contained '
              'in this document should not be disclosed on grounds of secrecy.',
         string='Secrecy marker',
-        tracking=True,
     )
     law_section_id = fields.Many2one(
         comodel_name='rk.law.section',
         help='The specified secrecy provision when the document has a secrecy marker',
         string='Secrecy provision',
-        tracking=True,
     )
     secrecy_grounds = fields.Char(
         default=False,
         help='If marked as secret, please provide more information',
         string='Secrecy grounds',
-        tracking=True,
     )
 
     def save_button(self):

@@ -79,6 +79,7 @@
                 <field name="name" />
                 <field name="is_official" />
                 <field name="is_secret" />
+                <filter string="Secrecy marker" name="secrecy_marker" domain="[('is_secret', '=', True)]"/>
             </search>
         </field>
     </record>

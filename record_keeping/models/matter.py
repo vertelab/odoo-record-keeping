@@ -84,6 +84,7 @@ class Matter(models.Model):
 
     @api.depends('message_ids')
     def _compute_latest_change(self):
+        self = self.sudo()
         for record in self:
             if record.message_ids:
                 description = record.message_ids[0].description
