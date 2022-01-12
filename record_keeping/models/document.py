@@ -45,10 +45,14 @@ class Document(models.Model):
 
     @api.depends('res_model', 'res_id')
     def _compute_res_ref(self):
+        self = self.sudo()
         for rec in self:
             if rec.res_model and rec.res_id:
-                rec.res_ref = f'{rec.res_model},{rec.res_id}'
-                rec.name = rec.res_ref.name
+                rec.res_ref = f"{rec.res_model},{rec.res_id}"
+                if rec.res_ref:
+                    rec.name = rec.res_ref.name
+                else:
+                    _logger.warning(f"{rec.id=}, {rec.res_ref=}")
                 if rec.matter_id:
                     rec.name = f"{rec.matter_id.reg_no}-{rec.document_no or ''} {rec.name}"
             else:

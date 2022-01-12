@@ -51,7 +51,7 @@ class Mixin(models.AbstractModel):
     )
     receiver_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Receiver',
+        string='The competent person who received the document',
         tracking=True,
     )
     secrecy_grounds = fields.Char(
