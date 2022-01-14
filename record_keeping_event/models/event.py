@@ -31,6 +31,7 @@ class Event(models.Model):
             if record.document_id:
                 record.document_id.res_model = record._name
                 record.document_id.res_id = record.id
+                record.document_id._compute_res_ref()
             record.document_ref = f"rk.document,{record.document_id.id or 0}"
 
     @api.model
