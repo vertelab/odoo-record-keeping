@@ -27,14 +27,14 @@
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
-    'version': '14.0.2.1.0',
+    'version': '14.0.2.1.1',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
     'website': 'https://vertel.se/record-keeping',
     'description': """
 This module extends Events with record-keeping fields
 """,
-    'depends': ['event', 'record_keeping', 'record_keeping_wizard'],
+    'depends': ['event','event_template', 'record_keeping', 'record_keeping_wizard'],
     'data': [
         'views/event_views.xml',
         'security/ir.model.access.csv',

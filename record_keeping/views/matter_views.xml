@@ -90,6 +90,11 @@
                 <field name="name" />
                 <field name="description" />
                 <field name="is_official" />
+                <field name="create_date" />
+                <field name="draw_up_date" />
+                <field name="receive_date" />
+                <field name="write_date" />
+                <field name="latest_change" />
             </search>
         </field>
     </record>
