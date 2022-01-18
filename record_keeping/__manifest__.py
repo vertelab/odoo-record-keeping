@@ -27,12 +27,13 @@
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
-    'version': '14.0.2.0.3',
+    'version': '14.0.2.0.4',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
     'website': 'https://vertel.se/record-keeping',   
     'description': """
-    This module is the base module for Record-keeping
+    This module is the base module for Record-keeping \n 
+    14.0.2.0.4 - Added relationship to ir.attachments
     """,
     'depends': ['mail'],
     'data': [

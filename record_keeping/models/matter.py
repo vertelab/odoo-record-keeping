@@ -82,6 +82,16 @@ class Matter(models.Model):
         tracking=True,
     )
 
+    def _compute_attached_docs_count(self):
+        # total number of attachments linked to the rk matter
+        Attachment = self.env['ir.attachment']
+        for rk_matter in self:
+            rk_matter.doc_count = Attachment.search_count([
+                ('res_model', '=', 'rk.matter'), ('res_id', '=', rk_matter.id),
+            ])
+
+    doc_count = fields.Integer(compute='_compute_attached_docs_count', string="Number of documents attached")
+
     @api.depends('message_ids')
     def _compute_latest_change(self):
         for record in self:
@@ -119,3 +129,10 @@ class Matter(models.Model):
         vals.update(
             {'reg_no': self.env['ir.sequence'].next_by_code('rk.matter')})
         return super(Matter, self).create(vals)
+
+    def attachment_tree_view(self):
+        # shows the tree view of the documents linked to rk.matter
+        action = self.env['ir.actions.act_window']._for_xml_id('base.action_attachment')
+        action['domain'] = str([('res_model', '=', 'rk.matter'), ('res_id', 'in', self.ids)])
+        action['context'] = "{'default_res_model': '%s','default_res_id': %d}" % (self._name, self.id)
+        return action
