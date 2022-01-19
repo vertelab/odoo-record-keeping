@@ -51,10 +51,13 @@ class Classification(models.Model):
     @api.depends('classification_name', 'parent_id.name')
     def _compute_name(self):
         for record in self:
+            name = record.classification_name
             if record.parent_id:
                 parent_seq = record.parent_id.name.split(' ')[0]
-                record.name = (f'{parent_seq}.{record.sequence} '
-                               f'{record.classification_name}')
+                if record.sequence:
+                    name = f"{parent_seq}.{record.sequence} {name}"
+                else:
+                    name = f"{parent_seq} {name}"
             else:
-                record.name = (f'{record.sequence} '
-                               f'{record.classification_name}')
+                name = f"{record.sequence} {name}"
+            record.name = name
