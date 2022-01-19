@@ -25,6 +25,10 @@ class Matter(models.Model):
         string='Description',
         tracking=True,
     )
+    document_count = fields.Integer(
+        compute='_compute_document_count',
+        string='Number of documents in this matter',
+    )
     document_ids = fields.One2many(
         comodel_name='rk.document',
         inverse_name='matter_id',
@@ -60,12 +64,12 @@ class Matter(models.Model):
     )
     partner_name = fields.Char(
         compute='_compute_partner_name',
-        help='Name of partner ',
+        help='Name of partner',
         string='Partner Name',
     )
     reg_no = fields.Char(
-        readonly=True,
         help='The format is [current year]/[sequence]',
+        readonly=True,
         string='Registration number',
         store=True,
     )
@@ -82,15 +86,13 @@ class Matter(models.Model):
         tracking=True,
     )
 
-    def _compute_attached_docs_count(self):
-        # total number of attachments linked to the rk matter
-        Attachment = self.env['ir.attachment']
-        for rk_matter in self:
-            rk_matter.doc_count = Attachment.search_count([
-                ('res_model', '=', 'rk.matter'), ('res_id', '=', rk_matter.id),
+    def _compute_document_count(self):
+        # total number of documents linked to the rk matter
+        Document = self.env['rk.document']
+        for matter in self:
+            matter.document_count = Document.search_count([
+                ('matter_id', '=', matter.id),
             ])
-
-    doc_count = fields.Integer(compute='_compute_attached_docs_count', string="Number of documents attached")
 
     @api.depends('message_ids')
     def _compute_latest_change(self):
@@ -131,9 +133,10 @@ class Matter(models.Model):
             {'reg_no': self.env['ir.sequence'].next_by_code('rk.matter')})
         return super(Matter, self).create(vals)
 
-    def attachment_tree_view(self):
+    def document_tree_view(self):
         # shows the tree view of the documents linked to rk.matter
-        action = self.env['ir.actions.act_window']._for_xml_id('base.action_attachment')
-        action['domain'] = str([('res_model', '=', 'rk.matter'), ('res_id', 'in', self.ids)])
-        action['context'] = "{'default_res_model': '%s','default_res_id': %d}" % (self._name, self.id)
+        action = self.env['ir.actions.act_window']._for_xml_id(
+            'record_keeping.action_document_view')
+        action['domain'] = str([('matter_id', 'in', self.ids)])
+        action['context'] = "{'matter_id': '%d'}" % (self.id)
         return action

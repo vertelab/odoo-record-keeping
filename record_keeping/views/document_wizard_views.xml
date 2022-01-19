@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_attachment_form" model="ir.ui.view">
+        <field name="model">rk.document.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                <group>
+                    <field name="type"/>
+                    <field name="datas" filename="name" attrs="{'invisible':[('type', '=', 'url')]}"/>
+                    <field name="url" widget="url" attrs="{'invisible':[('type', '=', 'binary')]}"/>
+                </group>
+                <field name="description"  nolabel="1"/>
+                <footer>
+                    <button name="save_button" type="object" string="Save" class="btn btn-primary btn-sm mt8 fa fa-check"/>
+                    <button name="cancel_button" type="object" string="Cancel" class="btn btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

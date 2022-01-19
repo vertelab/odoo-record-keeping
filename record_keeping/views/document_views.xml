@@ -105,15 +105,17 @@
                 <field name="create_date" />
                 <field name="res_ref" />
                 <field name="classification_id" />
+                <field name="sender_id" />
+                <field name="receiver_id" />
             </tree>
         </field>
-    </record> -->
+    </record>
 
     <record id="action_document_view" model="ir.actions.act_window">
         <field name="name">Documents</field>
         <field name="res_model">rk.document</field>
         <field name="domain">[('is_official','=',True)]</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
         <field name="view_id" eval="False" />
         <field name="context">{'search_default_filter_id':1}</field>
         <field name="search_view_id" ref="view_document_search" />
@@ -125,19 +127,16 @@
     </record>
 
     <record id="action_document_form" model="ir.actions.act_window.view">
-        <field name="sequence" eval="2" />
         <field name="view_mode">form</field>
         <field name="act_window_id" ref="action_document_view" />
     </record>
 
     <record id="action_document_kanban" model="ir.actions.act_window.view">
-        <field name="sequence" eval="0" />
         <field name="view_mode">kanban</field>
         <field name="act_window_id" ref="action_document_view" />
     </record>
 
     <record id="action_document_tree" model="ir.actions.act_window.view">
-        <field name="sequence" eval="1" />
         <field name="view_mode">tree</field>
         <field name="act_window_id" ref="action_document_view" />
     </record>
