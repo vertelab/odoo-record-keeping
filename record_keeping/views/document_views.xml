@@ -3,7 +3,7 @@
     <record id="view_document_form" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
-            <form>
+            <form create="false">
                 <sheet>
                     <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
                     <h1>
@@ -61,7 +61,7 @@
     <record id="view_document_kanban" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
-            <kanban class="oe_background_grey o_kanban_dashboard o_emphasize_colors" sample="1">
+            <kanban class="oe_background_grey o_kanban_dashboard o_emphasize_colors" create="false" sample="1">
                 <field name="name" />
                 <field name="res_ref" />
                 <templates>
@@ -97,7 +97,7 @@
     <record id="view_document_tree" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
-            <tree string="Record-keeping" sample="1">
+            <tree create="false" string="Record-keeping" sample="1">
                 <field name="name" />
                 <field name="is_official" />
                 <field name="is_secret" />

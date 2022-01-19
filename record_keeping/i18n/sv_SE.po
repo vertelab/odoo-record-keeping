@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211230\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-19 17:40+0000\n"
-"PO-Revision-Date: 2022-01-19 19:15+0100\n"
+"POT-Creation-Date: 2022-01-19 21:36+0000\n"
+"PO-Revision-Date: 2022-01-19 22:39+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,13 +16,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: sv_SE\n"
 "X-Generator: Poedit 3.0\n"
-
-#. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_rk_document__sender_id
-#: model:ir.model.fields,help:record_keeping.field_rk_matter__sender_id
-#: model:ir.model.fields,help:record_keeping.field_rk_mixin__sender_id
-msgid "A partner designated as sender"
-msgstr "En kontakt som är avsändare"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_needaction
@@ -130,6 +123,11 @@ msgid "Classification Structure"
 msgstr "Klassificeringsstruktur"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__classification_name
+msgid "Classification name"
+msgstr "Klassificeringsnamn"
+
+#. module: record_keeping
 #: model:ir.actions.server,name:record_keeping.action_done
 msgid "Close"
 msgstr "Stäng"
@@ -181,9 +179,9 @@ msgstr "Skapa ett nytt lagrum"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__create_uid
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__create_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__create_uid
 msgid "Created by"
 msgstr "Skapad av"
 
@@ -191,9 +189,9 @@ msgstr "Skapad av"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__create_date
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__create_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__create_date
 msgid "Created on"
 msgstr "Skapad den"
 
@@ -215,9 +213,9 @@ msgstr "Kontor"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__description
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__description
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__description
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -230,9 +228,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__display_name
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__display_name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__display_name
 msgid "Display Name"
 msgstr "Visningsnamn"
@@ -291,12 +289,12 @@ msgid "Drawn up"
 msgstr "Upprättad"
 
 #. module: record_keeping
-#: model:ir.model.fields.selection,name:record_keeping.selection__rk_document_wizard__type__binary
+#: model:ir.model.fields.selection,name:record_keeping.selection__rk_matter_document_wizard__type__binary
 msgid "File"
 msgstr "Fil"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__datas
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__datas
 msgid "File Content (base64)"
 msgstr "Filinnehåll (bas64)"
 
@@ -343,9 +341,9 @@ msgstr "Har typer"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__id
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__id
 msgid "ID"
 msgstr ""
@@ -400,9 +398,9 @@ msgstr "Är följare"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter____last_update
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin____last_update
 msgid "Last Modified on"
 msgstr "Senast redigerad"
@@ -411,9 +409,9 @@ msgstr "Senast redigerad"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__write_uid
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__write_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__write_uid
 msgid "Last Updated by"
 msgstr "Senast uppdaterad av"
 
@@ -421,9 +419,9 @@ msgstr "Senast uppdaterad av"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__write_date
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__write_date
 msgid "Last Updated on"
 msgstr "Senast uppdaterad"
 
@@ -516,12 +514,11 @@ msgid "My Activity Deadline"
 msgstr "Min aktivitets slutdatum"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__classification_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__name
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__name
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_type_search
 msgid "Name"
 msgstr "Namn"
@@ -644,6 +641,13 @@ msgid "Received"
 msgstr "Inkommen"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__receiver_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__receiver_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__receiver_id
+msgid "Receiver"
+msgstr "Mottagare"
+
+#. module: record_keeping
 #: model:ir.module.category,name:record_keeping.module_category_rk
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_tree
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form
@@ -738,9 +742,9 @@ msgstr ""
 "\"Kommande: Framtida aktiviteter."
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document__receiver_id
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__receiver_id
-#: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__receiver_id
+#: model:ir.model.fields,help:record_keeping.field_rk_document__receiver_id
+#: model:ir.model.fields,help:record_keeping.field_rk_matter__receiver_id
+#: model:ir.model.fields,help:record_keeping.field_rk_mixin__receiver_id
 msgid "The competent person who received the document"
 msgstr "Behörig person som har mottagit handlingen"
 
@@ -814,6 +818,13 @@ msgid "The number assigned to this document"
 msgstr "Numret tillhörande denna handling"
 
 #. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__sender_id
+#: model:ir.model.fields,help:record_keeping.field_rk_matter__sender_id
+#: model:ir.model.fields,help:record_keeping.field_rk_mixin__sender_id
+msgid "The person who sent this document"
+msgstr "Personen som skickat handlingen"
+
+#. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__res_id
 msgid "The record id this document is attached to."
 msgstr "Id som  handlingen är knuten till."
@@ -842,7 +853,7 @@ msgid "The url of this secrecy provision"
 msgstr "Webb-adress till säkerhetsbestämmelsen"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__type
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__type
 msgid "Type"
 msgstr "Typ"
 
@@ -854,7 +865,7 @@ msgid "Type of the exception activity on record."
 msgstr "Typ av undantagsaktivitet i posten."
 
 #. module: record_keeping
-#: model:ir.model.fields.selection,name:record_keeping.selection__rk_document_wizard__type__url
+#: model:ir.model.fields.selection,name:record_keeping.selection__rk_matter_document_wizard__type__url
 msgid "URL"
 msgstr ""
 
@@ -873,8 +884,8 @@ msgid "Unread Messages Counter"
 msgstr "Räknare olästa meddelanden"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_wizard__url
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__url
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__url
 msgid "Url"
 msgstr ""
 
@@ -885,12 +896,12 @@ msgstr "Användare"
 
 #. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_attachment_form
-#: model:ir.model,name:record_keeping.model_rk_document_wizard
+#: model:ir.model,name:record_keeping.model_rk_matter_document_wizard
 msgid "Wizard for attaching an attachment to a document"
 msgstr "Hjälpreda för att koppla en bilaga till en handling"
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_rk_document_wizard__type
+#: model:ir.model.fields,help:record_keeping.field_rk_matter_document_wizard__type
 msgid ""
 "You can either upload a file from your computer or copy/paste an internet "
 "link to your file."

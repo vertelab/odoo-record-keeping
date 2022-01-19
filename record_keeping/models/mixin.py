@@ -51,7 +51,8 @@ class Mixin(models.AbstractModel):
     )
     receiver_id = fields.Many2one(
         comodel_name='res.partner',
-        string='The competent person who received the document',
+        help='The competent person who received the document',
+        string='Receiver',
         tracking=True,
     )
     secrecy_grounds = fields.Char(
@@ -62,7 +63,7 @@ class Mixin(models.AbstractModel):
     )
     sender_id = fields.Many2one(
         comodel_name='res.partner',
-        help='A partner designated as sender',
+        help='The person who sent this document',
         string='Sender',
         tracking=True,
     )
@@ -74,8 +75,8 @@ class Mixin(models.AbstractModel):
          'Please provide legal provision')]
 
     def _default_classification(self):
-        Parameters = self.env['ir.config_parameter'].sudo()
-        return int(Parameters.get_param('record_keeping.default_classification'))
+        ParameterSudo = self.env['ir.config_parameter'].sudo()
+        return int(ParameterSudo.get_param('record_keeping.default_classification'))
 
     @api.onchange('is_official')
     def _onchange_is_official(self):

@@ -46,17 +46,21 @@ class Document(models.Model):
     @api.depends('res_model', 'res_id')
     def _compute_res_ref(self):
         self = self.sudo()
-        for rec in self:
-            if rec.res_model and rec.res_id:
-                rec.res_ref = f"{rec.res_model},{rec.res_id}"
-                if rec.res_ref:
-                    rec.name = rec.res_ref.name
-                else:
-                    _logger.warning(f"{rec.id=}, {rec.res_ref=}")
-                if rec.matter_id:
-                    rec.name = f"{rec.matter_id.reg_no}-{rec.document_no or ''} {rec.name}"
+        for document in self:
+            if document.res_model and document.res_id:
+                document.res_ref = f"{document.res_model},{document.res_id}"
+                name = ''
+                if document.matter_id:
+                    name += document.matter_id.reg_no
+                    if document.document_no:
+                        name += '-' + document.document_no + ' '
+                    else:
+                        name += ' '
+                if document.res_ref:
+                    name += document.res_ref.name
+                document.name = name
             else:
-                rec.res_ref = None
+                document.res_ref = None
 
     def _next_document_no(self):
         self.ensure_one()

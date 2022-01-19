@@ -88,9 +88,8 @@ class Matter(models.Model):
 
     def _compute_document_count(self):
         # total number of documents linked to the rk matter
-        Document = self.env['rk.document']
         for matter in self:
-            matter.document_count = Document.search_count([
+            matter.document_count = self.env['rk.document'].search_count([
                 ('matter_id', '=', matter.id),
             ])
 

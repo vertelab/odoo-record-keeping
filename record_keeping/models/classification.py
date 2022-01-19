@@ -17,7 +17,7 @@ class Classification(models.Model):
     classification_name = fields.Char(
         index=True,
         required=True,
-        string='Name'
+        string='Classification name'
     )
     description = fields.Char(
         string='Description',
