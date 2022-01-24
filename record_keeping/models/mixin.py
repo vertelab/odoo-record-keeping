@@ -19,8 +19,9 @@ class Mixin(models.AbstractModel):
         tracking=True,
     )
     draw_up_date = fields.Date(
-        default=False,
+        default=lambda self: fields.Date.today(),
         help='The date when the document is ready to be used or sent',
+        index=True,
         string='Drawn up',
         tracking=True,
     )
@@ -44,8 +45,9 @@ class Mixin(models.AbstractModel):
         tracking=True,
     )
     receive_date = fields.Date(
-        default=False,
+        default=lambda self: fields.Date.today(),
         help='The date when the document has been received by a competent person.',
+        index=True,
         string='Received',
         tracking=True,
     )
@@ -76,7 +78,7 @@ class Mixin(models.AbstractModel):
 
     def _default_classification(self):
         ParameterSudo = self.env['ir.config_parameter'].sudo()
-        return int(ParameterSudo.get_param('record_keeping.default_classification'))
+        return int(ParameterSudo.get_param('record_keeping.matter_default_classification_id'))
 
     @api.onchange('is_official')
     def _onchange_is_official(self):

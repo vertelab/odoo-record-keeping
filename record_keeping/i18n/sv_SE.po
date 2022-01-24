@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211230\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-19 21:36+0000\n"
-"PO-Revision-Date: 2022-01-19 22:39+0100\n"
+"POT-Creation-Date: 2022-01-24 22:01+0000\n"
+"PO-Revision-Date: 2022-01-24 23:09+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
+"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_needaction
@@ -112,8 +112,8 @@ msgstr "Underliggande struktur"
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_tree
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_type_search
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_type_tree
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_type_search
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_type_tree
 msgid "Classification"
 msgstr "Klassificering"
 
@@ -133,6 +133,11 @@ msgid "Close"
 msgstr "Stäng"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__close_date
+msgid "Closed"
+msgstr "Stängd"
+
+#. module: record_keeping
 #: code:addons/record_keeping/models/matter.py:0
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form
@@ -141,9 +146,14 @@ msgid "Confidential"
 msgstr "Sekretessmarkering"
 
 #. module: record_keeping
-#: model:ir.ui.menu,name:record_keeping.menu_record_keeping_configuration
-msgid "Configuration"
+#: model:ir.model,name:record_keeping.model_res_config_settings
+msgid "Config Settings"
 msgstr "Inställningar"
+
+#. module: record_keeping
+#: model:ir.ui.menu,name:record_keeping.menu_record_keeping_config
+msgid "Configuration"
+msgstr "Konfiguration"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__document_no_next
@@ -166,7 +176,7 @@ msgid "Create a Classification"
 msgstr "Skapa en klassificering"
 
 #. module: record_keeping
-#: model_terms:ir.actions.act_window,help:record_keeping.action_type_view
+#: model_terms:ir.actions.act_window,help:record_keeping.action_document_type_view
 msgid "Create a Document Type"
 msgstr "Skapa en handlingstyp"
 
@@ -201,9 +211,50 @@ msgid "Customer"
 msgstr "Motpart"
 
 #. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_matter__close_date
+msgid "Date when matter is closed"
+msgstr "Datum när ärendet är avslutat"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form
+msgid "Dates"
+msgstr "Datum"
+
+#. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
 msgid "Debug"
 msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_classification_id
+msgid "Default Classification for Matters"
+msgstr "Standardklassificering för Ärenden"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_date
+msgid "Default Date"
+msgstr "Standarddatum"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_date_str
+msgid "Default Date (str)"
+msgstr "Standarddatum (str)"
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_res_config_settings__matter_default_classification_id
+msgid "Default classification used for matters"
+msgstr "Standardklassificering för ärenden"
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_res_config_settings__matter_default_date
+#: model:ir.model.fields,help:record_keeping.field_res_config_settings__matter_default_date_str
+msgid "Default date used for filtering matters not done"
+msgstr "Standarddatum som används för filtrering av ärenden som inte är klara"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.res_config_settings_view_form
+msgid "Defaults"
+msgstr "Standardvärden"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__department_id
@@ -225,6 +276,7 @@ msgid "Diarium"
 msgstr ""
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__display_name
@@ -245,16 +297,16 @@ msgstr "Handling"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__document_type_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__document_type_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__document_type_id
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_type_search
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_type_search
 msgid "Document Type"
 msgstr "Handlingstyp"
 
 #. module: record_keeping
-#: model:ir.actions.act_window,name:record_keeping.action_type_view
+#: model:ir.actions.act_window,name:record_keeping.action_document_type_view
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__type_ids
-#: model:ir.ui.menu,name:record_keeping.menu_type_view
+#: model:ir.ui.menu,name:record_keeping.menu_document_type_view
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_form
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_type_form
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_type_form
 msgid "Document Types"
 msgstr "Handlingstyper"
 
@@ -328,7 +380,7 @@ msgstr "Font awesomeikon t.ex fa-tasks"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_type_search
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_document_type_search
 msgid "Group By"
 msgstr "Gruppera efter"
 
@@ -338,6 +390,7 @@ msgid "Has Types"
 msgstr "Har typer"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__id
@@ -395,6 +448,7 @@ msgid "Is Follower"
 msgstr "Är följare"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type____last_update
@@ -482,6 +536,17 @@ msgid "Matters"
 msgstr "Ärenden"
 
 #. module: record_keeping
+#: code:addons/record_keeping/models/settings.py:0
+#, python-format
+msgid "Matters not done before %s"
+msgstr "Ärenden som inte är klara före %s"
+
+#. module: record_keeping
+#: model:ir.filters,name:record_keeping.filter_matters_not_done_before_default_date
+msgid "Matters not done before default date"
+msgstr "Matters not done before 2021-07-01"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_has_error
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_has_error
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_has_error
@@ -519,7 +584,6 @@ msgstr "Min aktivitets slutdatum"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__name
-#: model_terms:ir.ui.view,arch_db:record_keeping.view_type_search
 msgid "Name"
 msgstr "Namn"
 
@@ -648,6 +712,11 @@ msgid "Receiver"
 msgstr "Mottagare"
 
 #. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.res_config_settings_view_form
+msgid "Record Keeping"
+msgstr "Diarium"
+
+#. module: record_keeping
 #: model:ir.module.category,name:record_keeping.module_category_rk
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_tree
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form
@@ -720,6 +789,17 @@ msgstr "Avsändare"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__sequence
 msgid "Sequence"
 msgstr "Sekvens"
+
+#. module: record_keeping
+#: model:ir.actions.act_window,name:record_keeping.action_settings_view
+#: model:ir.ui.menu,name:record_keeping.menu_settings
+msgid "Settings"
+msgstr "Inställningar"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_law_section_kanban
+msgid "Source"
+msgstr "Källa"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__state

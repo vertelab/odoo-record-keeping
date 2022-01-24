@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Record-keeping" 
+        id="menu_record_keeping" 
+        sequence="50"
+    />
+    
+    <menuitem name="Matters" 
+        id="menu_record_keeping_matter" 
+        action="action_matter_view" 
+        parent="menu_record_keeping" 
+        sequence="10" 
+    />
+    
+    <menuitem name="Documents" 
+        id="menu_record_keeping_document"
+        action="action_document_view"
+        parent="menu_record_keeping" 
+        sequence="20" 
+    />
+    
+    <menuitem name="Configuration" 
+        id="menu_record_keeping_config" 
+        parent="menu_record_keeping" 
+        sequence="100"
+    />
+
+    <menuitem name="Settings"
+        id="menu_settings"
+        action="action_settings_view"
+        parent="menu_record_keeping_config"
+        sequence="10"
+    />
+
+    <menuitem name="Law Section"
+        id="menu_law_section" 
+        action="action_law_section_view"         
+        parent="menu_record_keeping_config" 
+        sequence="20" 
+    />
+
+    <menuitem name="Classification"
+        id="menu_classification_view" 
+        action="action_classification_view" 
+        parent="menu_record_keeping_config" 
+        sequence="30"
+    />
+
+    <menuitem name="Document Types"
+        id="menu_document_type_view" 
+        action="action_document_type_view" 
+        parent="menu_record_keeping_config" 
+        sequence="40"
+    />
+
+</odoo>

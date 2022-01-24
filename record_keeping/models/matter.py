@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, api, fields, models, tools
+import logging
+from odoo import _, api, fields, models
+
+_logger = logging.getLogger(__name__)
 
 
 class Matter(models.Model):
@@ -40,6 +43,13 @@ class Matter(models.Model):
         default=1,
         help='Counter used to assign to the next document',
         string='The next document number',
+    )
+    close_date = fields.Date(
+        copy=False,
+        help='Date when matter is closed',
+        readonly=1,
+        string='Closed',
+        tracking=True,
     )
     latest_change = fields.Char(
         compute='_compute_latest_change',
@@ -139,3 +149,16 @@ class Matter(models.Model):
         action['domain'] = str([('matter_id', 'in', self.ids)])
         action['context'] = "{'matter_id': '%d'}" % (self.id)
         return action
+
+    def get_matter_default_date(self):
+        ParameterSudo = self.env['ir.config_parameter'].sudo()
+        res = ParameterSudo.get_param('record_keeping.matter_default_date')
+        _logger.warning(f"{res=}")
+        if not res:
+            res = '2021-07-01'
+        return res 
+        
+    def write(self, vals):
+        if vals.get('state') == 'done':
+            vals['close_date'] = fields.Date.today()
+        return super().write(vals)
