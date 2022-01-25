@@ -6,19 +6,43 @@
         <field name="arch" type="xml">
             <form string="Record-keeping">
                 <header>
-                    <button name="%(action_attachment_form)d" string="Add document" type="action" />
-                    <field name="state" 
-                           options="{'clickable': '1'}" 
-                           statusbar_visible="draft,pending,done,cancel" 
-                           widget="statusbar" />
+                    <button 
+                        name="%(action_attachment_form)d" 
+                        string="Add document" 
+                        type="action" 
+                    />
+                    <field 
+                        name="state"
+                        options="{'clickable': '1'}" 
+                        statusbar_visible="draft,pending,done,cancel" 
+                        widget="statusbar"
+                    />
                 </header>
                 <sheet>
-                    <div class="oe_button_box" name="button_box" groups="base.group_user">
-                        <button class="oe_stat_button" name="document_tree_view" type="object" icon="fa-file-text-o">
-                            <field string="Documents" name="document_count" widget="statinfo"/>
+                    <div 
+                        name="button_box" 
+                        class="oe_button_box" 
+                        groups="base.group_user"
+                    >
+                        <button 
+                            name="document_tree_view" 
+                            class="oe_stat_button" 
+                            icon="fa-file-text-o"
+                            type="object" 
+                        >
+                            <field 
+                                name="document_count" 
+                                string="Documents" 
+                                widget="statinfo" 
+                            />
                         </button>
                     </div>
-                    <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
+                    <widget 
+                        name="web_ribbon" 
+                        attrs="{'invisible': [('is_secret', '=', False)]}" 
+                        bg_color="bg-danger" 
+                        title="Confidential" 
+                    />
                     <h1>
                         <field name="name" class="oe_read_only" />
                         <field name="matter_name" class="oe_edit_only" />
@@ -27,16 +51,32 @@
                         <group>
                             <field name="reg_no" />
                             <field name="description" />
-                            <field name="classification_id" domain="[('has_types', '=', True)]" />
+                            <field 
+                                name="classification_id" 
+                                domain="[('has_types', '=', True)]" 
+                            />
                             <field name="partner_id" />
                             <field name="administrator_id" />
                             <field name="department_id" />
                         </group>
                         <group>
-                            <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
-                            <field name="is_secret" attrs="{'invisible': [('is_official', '=', False)]}" />
-                            <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
-                            <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
+                            <field 
+                                name="is_official" 
+                                attrs="{'required': [('is_secret', '=', True)]}" 
+                            />
+                            <field 
+                                name="is_secret" 
+                                attrs="{'invisible': [('is_official', '=', False)]}" 
+                            />
+                            <field 
+                                name="law_section_id"
+                                attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 
+                                        'required': [('is_secret', '=', True)]}" 
+                            />
+                            <field 
+                                name="secrecy_grounds"
+                                attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}"
+                            />
                         </group>
                     </group>
                     <notebook>
@@ -60,12 +100,9 @@
                                 <group>
                                     <field name="receive_date" />
                                     <field name="draw_up_date" />
-                                    <field name="close_date" 
-                                           attrs="{'invisible': [
-                                                '|', 
-                                                    ('close_date', '=', False), 
-                                                    ('state', 'not in', ['done'])
-                                                ]}" 
+                                    <field 
+                                        name="close_date" 
+                                        attrs="{'invisible': ['|', ('close_date', '=', False), ('state', 'not in', ['done'])]}"
                                     />
                                 </group>
                                 <group />
@@ -74,7 +111,11 @@
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" options="{'post_refresh': True}" groups="base.group_user" />
+                    <field 
+                        name="message_follower_ids" 
+                        options="{'post_refresh': True}" 
+                        groups="base.group_user" 
+                    />
                     <field name="activity_ids" />
                     <field name="message_ids" />
                 </div>
@@ -116,9 +157,23 @@
                 <field name="receive_date" />
                 <field name="write_date" />
                 <group expand="1" string="Group By">
-                    <filter string="Administrator" name="administrator" context="{'group_by': 'administrator_id'}" />
+                    <filter 
+                        name="administrator" 
+                        string="Administrator" 
+                        context="{'group_by': 'administrator_id'}" 
+                    />
                     <separator orientation="vertical" />
-                    <filter string="State" name="state" context="{'group_by': 'state'}" />
+                    <filter 
+                        name="state" 
+                        context="{'group_by': 'state'}" 
+                        string="State" 
+                    />
+                    <separator orientation="vertical" />
+                    <filter 
+                        name="classification" 
+                        string="Classification" 
+                        context="{'group_by': 'classification_id'}" 
+                    />
                 </group>
             </search>
         </field>
@@ -169,14 +224,16 @@
         <record id="filter_matters_not_done_before_default_date" model="ir.filters">
             <field name="name">Matters not done before default date</field>
             <field name="model_id">rk.matter</field>
-            <field name="domain">[('state', 'not in', ['done']), 
-                                    '|', 
-                                        ('draw_up_date', '&lt;', '2021-07-01'), 
-                                        ('draw_up_date', '=', False), 
-                                    '|',
-                                        ('receive_date', '&lt;', '2021-07-01'), 
-                                        ('receive_date', '=', False), 
-                                ]</field>
+            <field name="domain">
+                [('state', 'not in', ['done']), 
+                    '|', 
+                        ('draw_up_date', '&lt;', '2021-07-01'), 
+                        ('draw_up_date', '=', False), 
+                    '|',
+                        ('receive_date', '&lt;', '2021-07-01'), 
+                        ('receive_date', '=', False), 
+                ]
+            </field>
             <field name="user_id" eval="False"/>
         </record>
     </data>

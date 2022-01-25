@@ -19,6 +19,7 @@ class Matter(models.Model):
         related='administrator_id.department_id',
         store=True,
         string='Department',
+        tracking=True,
     )
     description = fields.Char(
         help='The description of this matter',
@@ -51,6 +52,7 @@ class Matter(models.Model):
     latest_change = fields.Char(
         compute='_compute_latest_change',
         string='Latest change',
+        tracking=True,
     )
     matter_name = fields.Char(
         help='The name of this matter',
@@ -63,6 +65,7 @@ class Matter(models.Model):
               'the matter is created'),
         string='Matter Number',
         store=True,
+        tracking=True,
     )
     partner_id = fields.Many2one(
         comodel_name='res.partner',
@@ -73,12 +76,14 @@ class Matter(models.Model):
         compute='_compute_partner_name',
         help='Name of partner',
         string='Partner Name',
+        tracking=True,
     )
     reg_no = fields.Char(
         help='The format is [current year]/[sequence]',
         readonly=True,
         string='Registration number',
         store=True,
+        tracking=True,
     )
     state = fields.Selection(
         [
@@ -136,26 +141,24 @@ class Matter(models.Model):
         return [key for key, val in type(self).state.selection]
 
     def action_done(self):
-        self.write({'state': 'done'})
+        self.write(dict(state='done'))
 
     @api.model
     def create(self, vals):
-        vals.update(
-            {'reg_no': self.env['ir.sequence'].next_by_code('rk.matter')})
+        vals['reg_no'] = self.env['ir.sequence'].next_by_code('rk.matter')
         return super(Matter, self).create(vals)
 
     def document_tree_view(self):
         # shows the tree view of the documents linked to rk.matter
-        action = self.env['ir.actions.act_window']._for_xml_id(
-            'record_keeping.action_document_view')
+        action_xmlid = 'record_keeping.action_document_view'
+        action = self.env['ir.actions.act_window']._for_xml_id(action_xmlid)
         action['domain'] = str([('matter_id', 'in', self.ids)])
         action['context'] = "{'matter_id': '%d'}" % (self.id)
         return action
 
     def get_matter_default_date(self):
-        ParameterSudo = self.env['ir.config_parameter'].sudo()
-        res = ParameterSudo.get_param('record_keeping.matter_default_date')
-        if not res:
+        param = 'record_keeping.matter_default_date'
+        if not (res := self.env['ir.config_parameter'].sudo().get_param(param)):
             res = '2021-07-01'
         return res 
         

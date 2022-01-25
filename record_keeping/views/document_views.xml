@@ -7,7 +7,7 @@
         <field name="domain">[('is_official','=',True)]</field>
         <field name="view_mode">tree,kanban,form</field>
         <field name="view_id" eval="False" />
-        <field name="context">{'search_default_filter_id':1}</field>
+        <field name="context">{'search_default_filter_id': 1}</field>
         <field name="search_view_id" ref="view_document_search" />
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -21,7 +21,12 @@
         <field name="arch" type="xml">
             <form create="false">
                 <sheet>
-                    <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
+                    <widget 
+                        name="web_ribbon" 
+                        attrs="{'invisible': [('is_secret', '=', False)]}" 
+                        bg_color="bg-danger" 
+                        title="Confidential" 
+                    />
                     <h1>
                         <field name="name" />
                     </h1>
@@ -29,15 +34,38 @@
                         <group>
                             <field name="matter_id" />
                             <field name="document_no" />
-                            <field name="classification_id" domain="[('has_types', '=', True)]" />
-                            <field name="document_type_id" domain="[('classification_id', '=', classification_id)]" />
-                            <field name="res_ref" attrs="{'invisible': [('res_ref','=',False)]}"  />
+                            <field 
+                                name="classification_id" 
+                                domain="[('has_types', '=', True)]" 
+                            />
+                            <field 
+                                name="document_type_id" 
+                                domain="[('classification_id', '=', classification_id)]" 
+                            />
+                            <field 
+                                name="res_ref" 
+                                attrs="{'invisible': [('res_ref', '=', False)]}" 
+                            />
                         </group>
                         <group>
-                            <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
-                            <field name="is_secret" attrs="{'invisible': [('is_official','=',False)]}" />
-                            <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
-                            <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
+                            <field 
+                                name="is_official" 
+                                attrs="{'required': [('is_secret', '=', True)]}" 
+                            />
+                            <field 
+                                name="is_secret" 
+                                attrs="{'invisible': [('is_official', '=', False)]}" 
+                            />
+                            <field 
+                                name="law_section_id"
+                                attrs="{
+                                    'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 
+                                    'required': [('is_secret', '=', True)]}" 
+                            />
+                            <field 
+                                name="secrecy_grounds"
+                                attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" 
+                            />
                         </group>
                     </group>
                     <notebook>
@@ -66,7 +94,10 @@
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user" />
+                    <field name="message_follower_ids" 
+                           groups="base.group_user"
+                           options="{'post_refresh':True}"
+                           />
                     <field name="activity_ids" />
                     <field name="message_ids" />
                 </div>
@@ -77,7 +108,8 @@
     <record id="view_document_kanban" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
-            <kanban class="oe_background_grey o_kanban_dashboard o_emphasize_colors" create="false" sample="1">
+            <kanban class="oe_background_grey o_kanban_dashboard o_emphasize_colors"
+                    create="false" sample="1" >
                 <field name="name" />
                 <field name="res_ref" />
                 <templates>
@@ -104,8 +136,34 @@
                 <field name="name" />
                 <field name="is_official" />
                 <field name="is_secret" />
-                <filter string="Secrecy marker" name="secrecy_marker" domain="[('is_secret', '=', True)]"/>
-                <filter string="Matter is missing" name="matter_is_missing" domain="[('matter_id', '=', False)]"/>
+                <filter 
+                    name="secrecy_marker"
+                    domain="[('is_secret', '=', True)]"
+                    string="Secrecy marker"
+                />
+                <filter 
+                    name="matter_is_missing"
+                    domain="[('matter_id', '=', False)]"
+                    string="Matter is missing" 
+                />
+                <group expand="1" string="Group By">
+                    <filter 
+                        name="matter" 
+                        string="Matter" 
+                        context="{'group_by': 'matter_id'}" 
+                    />
+                    <separator orientation="vertical" />
+                    <filter 
+                        name="classification" 
+                        string="Classification" 
+                        context="{'group_by': 'classification_id'}" 
+                    />
+                    <filter 
+                        name="document_type" 
+                        context="{'group_by': 'document_type_id'}" 
+                        string="Document Type" 
+                    />
+                </group>
             </search>
         </field>
     </record>

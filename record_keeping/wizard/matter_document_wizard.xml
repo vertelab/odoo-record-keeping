@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="action_attachment_form" model="ir.actions.act_window">
         <field name="res_model">rk.matter.document.wizard</field>
         <field name="target">new</field>
@@ -14,30 +15,35 @@
                 <group>
                     <field name="name" />
                     <field name="type" />
-                    <field name="datas" 
-                           attrs="{'invisible':[('type', '=', 'url')]}" 
-                           filename="name" 
+                    <field 
+                        name="datas" 
+                        attrs="{'invisible': [('type', '=', 'url')]}" 
+                        filename="name" 
                     />
-                    <field name="url" 
-                           attrs="{'invisible':[('type', '=', 'binary')]}" 
-                           widget="url" 
+                    <field 
+                        name="url" 
+                        attrs="{'invisible': [('type', '=', 'binary')]}" 
+                        widget="url" 
                     />
                     <field name="description" />
                 </group>
                 <footer>
-                    <button name="save_button" 
-                            class="btn btn-primary" 
-                            string="Save" 
-                            type="object" 
+                    <button 
+                        name="save_button" 
+                        class="btn btn-primary" 
+                        string="Save" 
+                        type="object" 
                     />
-                    <button name="cancel_button" 
-                            class="btn btn-secondary" 
-                            special="cancel" 
-                            string="Cancel" 
-                            type="object" 
+                    <button 
+                        name="cancel_button" 
+                        class="btn btn-secondary" 
+                        special="cancel" 
+                        string="Cancel" 
+                        type="object" 
                     />
                 </footer>
             </form>
         </field>
     </record>
+    
 </odoo>

@@ -7,7 +7,12 @@
         <field name="inherit_id" ref="base.res_config_settings_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('settings')]" position="inside">
-                <div class="app_settings_block" data-string="Record Keeping" string="Record Keeping" data-key="record_keeping">
+                <div 
+                    class="app_settings_block" 
+                    data-key="record_keeping"
+                    data-string="Record Keeping" 
+                    string="Record Keeping" 
+                >
                     <h2>Defaults</h2>
                     <div class="row mt16 o_settings_container">
                         <div class="col-12 col-lg-6 o_setting_box" id="domain_setting">
@@ -16,7 +21,8 @@
                                 <label for="matter_default_classification_id" />                            
                                 <div class="content-group">
                                     <div class="mt16">
-                                        <field name="matter_default_classification_id" 
+                                        <field 
+                                            name="matter_default_classification_id" 
                                             domain="[('has_types', '=', True)]" 
                                             options="{'no_create': True, 'no_open': True}"
                                         />
@@ -31,7 +37,10 @@
                                 <div class="content-group">
                                     <div class="mt16">
                                         <field name="matter_default_date" />
-                                        <field name="matter_default_date_str" invisible="1" />
+                                        <field 
+                                            name="matter_default_date_str" 
+                                            invisible="1" 
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +58,7 @@
         <field name="view_id" ref="res_config_settings_view_form"/>
         <field name="view_mode">form</field>
         <field name="target">inline</field>
-        <field name="context">{'module' : 'record_keeping'}</field>
+        <field name="context">{'module': 'record_keeping'}</field>
     </record>
 
 </odoo>

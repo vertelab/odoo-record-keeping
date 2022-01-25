@@ -20,7 +20,8 @@
                     <group>
                         <field name="name" />
                         <field name="description" />
-                        <field name="classification_id" 
+                        <field 
+                            name="classification_id" 
                             domain="[('has_types', '=', True)]" 
                             options="{'no_create': True}" 
                         />
@@ -51,9 +52,10 @@
             <search string="Document Type">
                 <field name="name" />
                 <group expand="0" string="Group By">
-                    <filter string="Classification" 
+                    <filter 
                         name="classification" 
                         context="{'group_by': 'classification_id'}" 
+                        string="Classification" 
                     />
                 </group>
             </search>
@@ -66,7 +68,10 @@
             <tree string="Classification" delete="0" sample="1">
                 <field name="name" />
                 <field name="description" />
-                <field name="classification_id" domain="[('has_types', '=', True)]" />
+                <field 
+                    name="classification_id" 
+                    domain="[('has_types', '=', True)]" 
+                />
             </tree>
         </field>
     </record>

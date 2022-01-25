@@ -39,7 +39,8 @@
                                 <field name="name" />
                             </strong>
                             <div t-if="record.url">
-                                <a t-att-href="record.url.raw_value"  
+                                <a 
+                                    t-att-href="record.url.raw_value"  
                                     class="btn btn-sm btn-secondary float-right o-hidden-ios" 
                                     role="button"
                                     target="_blank" 

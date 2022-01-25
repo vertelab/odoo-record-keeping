@@ -12,6 +12,7 @@ class Document(models.Model):
         help='The format is [current year]/[sequence] if this document is '
              'belongs to a matter',
         string='Name',
+        tracking=True,
     )
     document_no = fields.Char(
         help='The number assigned to this document',
@@ -80,7 +81,7 @@ class Document(models.Model):
         return document
 
     def write(self, vals):
-        if vals.get('matter_id', ):
+        if vals.get('matter_id'):
             vals['document_no'] = ''
         res = super(Document, self).write(vals)
         for document in self:
