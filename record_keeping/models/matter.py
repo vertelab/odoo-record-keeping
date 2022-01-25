@@ -92,6 +92,7 @@ class Matter(models.Model):
         ],
         copy=False,
         default='draft',
+        group_expand='_expand_states',
         string='Status',
         tracking=True,
     )
@@ -132,6 +133,9 @@ class Matter(models.Model):
                 record.partner_name = record.partner_id.name
             else:
                 record.partner_name = ''
+
+    def _expand_states(self, states, domain, order):
+        return [key for key, val in type(self).state.selection]
 
     def action_done(self):
         self.write({'state': 'done'})

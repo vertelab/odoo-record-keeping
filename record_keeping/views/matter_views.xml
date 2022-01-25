@@ -87,14 +87,10 @@
                 <field name="name" />
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_global_click o_has_icon">
-                            <div class="row">
-                                <div class="col-12">
-                                    <strong>
-                                        <t t-esc="record.name.value" />
-                                    </strong>
-                                </div>
-                            </div>
+                        <div t-attf-class="oe_kanban_card oe_kanban_details oe_kanban_global_click o_has_icon">
+                            <strong>
+                                <field name="name" />
+                            </strong>
                         </div>
                     </t>
                 </templates>
@@ -108,13 +104,20 @@
             <search string="Matter">
                 <field name="name" />
                 <field name="description" />
+                <field name="latest_change" />
+                <separator />
                 <field name="is_official" />
+                <field name="state" />
+                <separator />
                 <field name="create_date" />
                 <field name="draw_up_date" />
                 <field name="receive_date" />
                 <field name="write_date" />
-                <field name="latest_change" />
-                <separator />
+                <group expand="1" string="Group By">
+                    <filter string="Administrator" name="administrator" context="{'group_by': 'administrator_id'}" />
+                    <separator orientation="vertical" />
+                    <filter string="State" name="state" context="{'group_by': 'state'}" />
+                </group>
             </search>
         </field>
     </record>
