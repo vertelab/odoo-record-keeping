@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
+
 from odoo import _, api, fields, models
 
-from datetime import timedelta
 
 class RecordKeepingSettings(models.TransientModel):
     _inherit = 'res.config.settings'
@@ -26,15 +26,15 @@ class RecordKeepingSettings(models.TransientModel):
 
     @api.depends('matter_default_date_str')
     def _compute_matter_default_date(self):
+        to_date = fields.Date.to_date
         for setting in self:
-            default_date = setting.matter_default_date_str
-            if not default_date:
-                setting.matter_default_date = fields.Date.to_date(fields.Date.today())
+            if not (default_date := setting.matter_default_date_str):
+                setting.matter_default_date = to_date(fields.Date.today())
             else:
                 try:
-                    setting.matter_default_date = fields.Date.to_date(default_date)
+                    setting.matter_default_date = to_date(default_date)
                 except ValueError:
-                    setting.matter_default_date = fields.Date.to_date(fields.Date.today())
+                    setting.matter_default_date = to_date(fields.Date.today())
 
     def _inverse_matter_default_date_str(self):
         xmlid = 'record_keeping.filter_matters_not_done_before_default_date'

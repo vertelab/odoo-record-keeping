@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import logging
-from odoo import _, api, fields, models
-
-_logger = logging.getLogger(__name__)
+from odoo import _, fields, models
 
 
 class MatterDocumentWizard(models.TransientModel):
@@ -48,10 +45,10 @@ class MatterDocumentWizard(models.TransientModel):
         }
         attachment = self.env['ir.attachment'].create(attachment_vals)
 
-        ctx = self.env.context
-        if attachment and 'rk.matter' in ctx['active_model']:
+        ctx = self.env.context.get
+        if attachment and 'rk.matter' in ctx('active_model'):
             document_vals = {
-                'matter_id': ctx.get('active_id', 0),
+                'matter_id': ctx('active_id', 0),
                 'res_id': attachment.id,
                 'res_model': 'ir.attachment',
             }

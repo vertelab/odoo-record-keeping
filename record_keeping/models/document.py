@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import logging
 from odoo import _, api, fields, models
-
-_logger = logging.getLogger(__name__)
 
 
 class Document(models.Model):
@@ -12,7 +9,8 @@ class Document(models.Model):
     _inherit = ['mail.activity.mixin', 'mail.thread', 'rk.mixin']
 
     name = fields.Char(
-        help='The format is [current year]/[sequence] if this document is belongs to a matter',
+        help='The format is [current year]/[sequence] if this document is '
+             'belongs to a matter',
         string='Name',
     )
     document_no = fields.Char(

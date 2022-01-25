@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import _, fields, models
 
 
 class LawSection(models.Model):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, api, fields, models
+from odoo import _, fields, models
 
 
 class DocumentType(models.Model):

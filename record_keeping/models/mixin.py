@@ -10,7 +10,7 @@ class Mixin(models.AbstractModel):
     classification_id = fields.Many2one(
         comodel_name='rk.classification',
         string='Classification',
-        default=lambda self: self._default_classification(),
+        default=lambda self: self._get_default_classification(),
         tracking=True,
     )
     document_type_id = fields.Many2one(
@@ -76,9 +76,9 @@ class Mixin(models.AbstractModel):
          #  "CHECK(is_secret IS NOT TRUE OR (law_section_id IS NOT NULL AND secrecy_grounds IS NOT NULL))",
          'Please provide legal provision')]
 
-    def _default_classification(self):
-        ParameterSudo = self.env['ir.config_parameter'].sudo()
-        return int(ParameterSudo.get_param('record_keeping.matter_default_classification_id'))
+    def _get_default_classification(self):
+        param = 'record_keeping.matter_default_classification_id'
+        return int(self.env['ir.config_parameter'].sudo().get_param(param))
 
     @api.onchange('is_official')
     def _onchange_is_official(self):

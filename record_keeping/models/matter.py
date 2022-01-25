@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import logging
 from odoo import _, api, fields, models
-
-_logger = logging.getLogger(__name__)
 
 
 class Matter(models.Model):
@@ -115,14 +112,15 @@ class Matter(models.Model):
                     record.latest_change = description
                 elif tracking_values:
                     record.latest_change = (
-                        f"{tracking_values[0].field_desc} -> {tracking_values[0].get_new_display_value()[0]}")
+                        f"{tracking_values[0].field_desc} -> "
+                        f"{tracking_values[0].get_new_display_value()[0]}")
             else:
                 record.latest_change = ''
 
     @api.depends('matter_name', 'reg_no')
     def _compute_name(self):
         for record in self:
-            record.name = f'{record.reg_no or ""} {record.matter_name or ""}'
+            record.name = f"{record.reg_no or ''} {record.matter_name or ''}"
 
     @api.depends('is_secret', 'partner_id')
     def _compute_partner_name(self):
@@ -157,7 +155,6 @@ class Matter(models.Model):
     def get_matter_default_date(self):
         ParameterSudo = self.env['ir.config_parameter'].sudo()
         res = ParameterSudo.get_param('record_keeping.matter_default_date')
-        _logger.warning(f"{res=}")
         if not res:
             res = '2021-07-01'
         return res 

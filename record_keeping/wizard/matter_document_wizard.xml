@@ -14,13 +14,28 @@
                 <group>
                     <field name="name" />
                     <field name="type" />
-                    <field name="datas" attrs="{'invisible':[('type', '=', 'url')]}" filename="name" />
-                    <field name="url" attrs="{'invisible':[('type', '=', 'binary')]}" widget="url" />
+                    <field name="datas" 
+                           attrs="{'invisible':[('type', '=', 'url')]}" 
+                           filename="name" 
+                    />
+                    <field name="url" 
+                           attrs="{'invisible':[('type', '=', 'binary')]}" 
+                           widget="url" 
+                    />
                     <field name="description" />
                 </group>
                 <footer>
-                    <button name="save_button" class="btn btn-primary" string="Save" type="object" />
-                    <button name="cancel_button" class="btn btn-secondary" special="cancel" string="Cancel" type="object" />
+                    <button name="save_button" 
+                            class="btn btn-primary" 
+                            string="Save" 
+                            type="object" 
+                    />
+                    <button name="cancel_button" 
+                            class="btn btn-secondary" 
+                            special="cancel" 
+                            string="Cancel" 
+                            type="object" 
+                    />
                 </footer>
             </form>
         </field>
