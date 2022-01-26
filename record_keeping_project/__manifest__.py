@@ -40,5 +40,6 @@ v14.0.2.1.0 added wizard to link to record
     'data': [
         'views/project_views.xml',
         'views/task_views.xml',
+        'views/res_config_settings_views.xml',
     ],
 }
