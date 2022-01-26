@@ -8,20 +8,21 @@ class RecordKeepingSettings(models.TransientModel):
 
     matter_default_classification_id = fields.Many2one(
         comodel_name='rk.classification',
-        config_parameter='record_keeping.matter_default_classification_id',
+        config_parameter=(
+            'record_keeping.rk_matter_default_classification_id'),
         help='Default classification used for matters',
-        string='Default Classification for Matters',
+        string='Classification',
     )
     matter_default_date = fields.Date(
         compute="_compute_matter_default_date",
         inverse="_inverse_matter_default_date_str",
         help='Default date used for filtering matters not done',
-        string='Default Date',
+        string='Date',
     )
     matter_default_date_str = fields.Char(
-        config_parameter='record_keeping.matter_default_date',
+        config_parameter='record_keeping.rk_matter_default_date',
         help='Default date used for filtering matters not done',    
-        string='Default Date (str)', 
+        string='Date (str)', 
     )
 
     @api.depends('matter_default_date_str')

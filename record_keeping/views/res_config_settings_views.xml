@@ -2,6 +2,7 @@
 <odoo>
 
     <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.record_keeping</field>
         <field name="model">res.config.settings</field>
         <field name="priority" eval="100" />
         <field name="inherit_id" ref="base.res_config_settings_view_form" />
@@ -18,11 +19,16 @@
                         <div class="col-12 col-lg-6 o_setting_box" id="domain_setting">
                             <div class="o_setting_left_pane" />
                             <div class="o_setting_right_pane">
-                                <label for="matter_default_classification_id" />                            
+                                <span class="o_form_label">Defaults for Matters</span> 
                                 <div class="content-group">
-                                    <div class="mt16">
+                                    <div class="row mt8">
+                                        <label 
+                                            for="matter_default_classification_id" 
+                                            class="col-lg-4 o_light_label" 
+                                        />
                                         <field 
                                             name="matter_default_classification_id" 
+                                            class="col-lg-8"
                                             domain="[('has_types', '=', True)]" 
                                             options="{'no_create': True, 'no_open': True}"
                                         />
@@ -33,10 +39,17 @@
                         <div class="col-12 col-lg-6 o_setting_box" id="domain_setting">
                             <div class="o_setting_left_pane" />
                             <div class="o_setting_right_pane">
-                                <label for="matter_default_date" />                           
+                                <span class="o_form_label">Default Date for Matter filter</span>                         
                                 <div class="content-group">
-                                    <div class="mt16">
-                                        <field name="matter_default_date" />
+                                    <div class="row mt8">
+                                        <label 
+                                            for="matter_default_date" 
+                                            class="col-lg-4 o_light_label" 
+                                        />
+                                        <field 
+                                            name="matter_default_date" 
+                                            class="col-lg-8" 
+                                        />
                                         <field 
                                             name="matter_default_date_str" 
                                             invisible="1" 
@@ -53,9 +66,7 @@
 
     <record id="action_settings_view" model="ir.actions.act_window">
         <field name="name">Settings</field>
-        <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.config.settings</field>
-        <field name="view_id" ref="res_config_settings_view_form"/>
         <field name="view_mode">form</field>
         <field name="target">inline</field>
         <field name="context">{'module': 'record_keeping'}</field>

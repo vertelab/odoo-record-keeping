@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211230\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-26 07:32+0000\n"
-"PO-Revision-Date: 2022-01-26 08:32+0100\n"
+"POT-Creation-Date: 2022-01-26 15:32+0000\n"
+"PO-Revision-Date: 2022-01-26 16:33+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -16,6 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Default Date for Matter filter</span>"
+msgstr "<span class=\"o_form_label\">Standarddatum för Ärende-filter</span>"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Defaults for Matters</span>"
+msgstr "<span class=\"o_form_label\">Standardvärden för Ärenden</span>"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_needaction
@@ -105,10 +115,10 @@ msgstr "Underliggande struktur"
 
 #. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_classification_view
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__classification_id
-#: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__classification_id
 #: model:ir.ui.menu,name:record_keeping.menu_classification
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
@@ -214,6 +224,16 @@ msgid "Customer"
 msgstr "Motpart"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_date
+msgid "Date"
+msgstr "Datum"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_date_str
+msgid "Date (str)"
+msgstr "Datum (str)"
+
+#. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__close_date
 msgid "Date when matter is closed"
 msgstr "Datum när ärendet är avslutat"
@@ -227,21 +247,6 @@ msgstr "Datum"
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
 msgid "Debug"
 msgstr ""
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_classification_id
-msgid "Default Classification for Matters"
-msgstr "Standardklassificering för Ärenden"
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_date
-msgid "Default Date"
-msgstr "Standarddatum"
-
-#. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_date_str
-msgid "Default Date (str)"
-msgstr "Standarddatum (str)"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_res_config_settings__matter_default_classification_id
@@ -544,7 +549,7 @@ msgid "Matters"
 msgstr "Ärenden"
 
 #. module: record_keeping
-#: code:addons/record_keeping/models/settings.py:0
+#: code:addons/record_keeping/models/res_config_settings.py:0
 #, python-format
 msgid "Matters not done before %s"
 msgstr "Ärenden som inte är klara före %s"
