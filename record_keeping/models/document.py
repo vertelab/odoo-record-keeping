@@ -14,6 +14,11 @@ class Document(models.Model):
         string='Name',
         tracking=True,
     )
+    classification_id = fields.Many2one(
+        comodel_name='rk.classification',
+        string='Classification',
+        tracking=True,
+    )
     description = fields.Char(
         help='The description of this document',
         string='Description',
@@ -23,6 +28,11 @@ class Document(models.Model):
         help='The number assigned to this document',
         readonly=True,
         string='Document number',
+    )
+    document_type_id = fields.Many2one(
+        comodel_name='rk.document.type',
+        string='Document Type',
+        tracking=True,
     )
     matter_id = fields.Many2one(
         comodel_name='rk.matter',

@@ -7,12 +7,6 @@ class Mixin(models.AbstractModel):
     _name = 'rk.mixin'
     _description = 'Mixin'
 
-    classification_id = fields.Many2one(
-        comodel_name='rk.classification',
-        string='Classification',
-        default=lambda self: self._get_default_classification(),
-        tracking=True,
-    )
     document_type_id = fields.Many2one(
         comodel_name='rk.document.type',
         string='Document Type',

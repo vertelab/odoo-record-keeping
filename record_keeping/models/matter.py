@@ -14,6 +14,12 @@ class Matter(models.Model):
         string='Administrator',
         tracking=True,
     )
+    classification_id = fields.Many2one(
+        comodel_name='rk.classification',
+        string='Classification',
+        default=lambda self: self._get_default_param('classification_id'),
+        tracking=True,
+    )
     department_id = fields.Many2one(
         index=True,
         related='administrator_id.department_id',
@@ -140,6 +146,12 @@ class Matter(models.Model):
     def _expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
 
+    def _get_default_param(self, field):
+        param = f"record_keeping.{self._name.replace('.', '_')}_default_{field}"
+        if (res := self.env['ir.config_parameter'].sudo().get_param(param)):
+            res = int(res)
+        return res
+
     def action_done(self):
         self.write(dict(state='done'))
 
@@ -157,7 +169,7 @@ class Matter(models.Model):
         return action
 
     def get_matter_default_date(self):
-        param = 'record_keeping.matter_default_date'
+        param = 'record_keeping.rk_matter_default_date'
         if not (res := self.env['ir.config_parameter'].sudo().get_param(param)):
             res = '2021-07-01'
         return res 
