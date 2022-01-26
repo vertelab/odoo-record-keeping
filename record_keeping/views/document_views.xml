@@ -46,6 +46,7 @@
                                 name="res_ref" 
                                 attrs="{'invisible': [('res_ref', '=', False)]}" 
                             />
+                            <field name="description" />
                         </group>
                         <group>
                             <field 

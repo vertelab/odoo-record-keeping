@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211230\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-25 21:08+0000\n"
-"PO-Revision-Date: 2022-01-25 22:09+0100\n"
+"POT-Creation-Date: 2022-01-26 07:32+0000\n"
+"PO-Revision-Date: 2022-01-26 08:32+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -266,6 +266,7 @@ msgstr "Kontor"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__description
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__description
@@ -853,6 +854,11 @@ msgstr "Datumet då handlingen har mottagits av behörig person."
 #: model:ir.model.fields,help:record_keeping.field_rk_mixin__draw_up_date
 msgid "The date when the document is ready to be used or sent"
 msgstr "Datumet handlingen är klar att användas eller skickas"
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document__description
+msgid "The description of this document"
+msgstr "Beskrivningen av detta dokument"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__description

@@ -14,6 +14,11 @@ class Document(models.Model):
         string='Name',
         tracking=True,
     )
+    description = fields.Char(
+        help='The description of this document',
+        string='Description',
+        tracking=True,
+    )
     document_no = fields.Char(
         help='The number assigned to this document',
         readonly=True,

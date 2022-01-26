@@ -13,8 +13,6 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="name" />
-                    <field name="type" />
                     <field 
                         name="datas" 
                         attrs="{'invisible': [('type', '=', 'url')]}" 
@@ -25,6 +23,8 @@
                         attrs="{'invisible': [('type', '=', 'binary')]}" 
                         widget="url" 
                     />
+                    <field name="type" />
+                    <field name="name" />
                     <field name="description" />
                 </group>
                 <footer>

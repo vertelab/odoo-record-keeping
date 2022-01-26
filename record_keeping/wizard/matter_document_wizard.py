@@ -37,9 +37,9 @@ class MatterDocumentWizard(models.TransientModel):
 
     def save_button(self):
         attachment_vals = {
-            'name': self.name,
-            'description': self.description,
             'datas': self.datas,
+            'description': self.description,
+            'name': self.name,
             'type': self.type,
             'url': self.url,
         }
@@ -48,6 +48,7 @@ class MatterDocumentWizard(models.TransientModel):
         ctx = self.env.context.get
         if attachment and 'rk.matter' in ctx('active_model'):
             document_vals = {
+                'description': self.description,
                 'matter_id': ctx('active_id', 0),
                 'res_id': attachment.id,
                 'res_model': 'ir.attachment',
