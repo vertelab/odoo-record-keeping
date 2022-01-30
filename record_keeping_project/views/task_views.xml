@@ -7,17 +7,17 @@
         <field name="arch" type="xml">
             <header position="inside">
                 <button 
-                    name="%(record_keeping_wizard.open_link_to_record_wizard)d" 
-                    attrs="{'invisible': [('matter_id', '!=', False)]}"  
-                    string="Link to record" 
-                    type="action" 
-                />
-                <button 
                     name="create_matter" 
                     attrs="{'invisible': [('matter_id', '!=', False)]}" 
                     class="oe_highlight" 
                     string="Create Matter" 
                     type="object" 
+                />
+                <button 
+                    name="%(record_keeping_wizard.open_link_to_record_wizard)d" 
+                    attrs="{'invisible': [('matter_id', '!=', False)]}"  
+                    string="Link to record" 
+                    type="action" 
                 />
             </header>
             <widget position="replace">
