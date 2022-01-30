@@ -25,6 +25,7 @@ class LawSection(models.Model):
     )
     description = fields.Html(
         help='The description of this secrecy provision',
+        required=True,
         string='Description',
         tracking=True,
     )

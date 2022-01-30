@@ -18,12 +18,12 @@
                         attrs="{'invisible': [('type', '=', 'url')]}" 
                         filename="name" 
                     />
-                    <field 
+                    <!-- <field 
                         name="url" 
                         attrs="{'invisible': [('type', '=', 'binary')]}" 
                         widget="url" 
-                    />
-                    <field name="type" />
+                    /> -->
+                    <field name="type" invisible="1" />
                     <field name="name" />
                     <field name="description" />
                 </group>

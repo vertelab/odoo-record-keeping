@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20211230\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-26 15:32+0000\n"
-"PO-Revision-Date: 2022-01-26 16:33+0100\n"
+"POT-Creation-Date: 2022-01-30 12:17+0000\n"
+"PO-Revision-Date: 2022-01-30 13:22+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -29,35 +29,45 @@ msgstr "<span class=\"o_form_label\">Standardvärden för Ärenden</span>"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_needaction
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_needaction
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_needaction
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_needaction
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_needaction
 msgid "Action Needed"
 msgstr "Handling krävs"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__activity_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__activity_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_ids
 msgid "Activities"
 msgstr "Aktiviteter"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_exception_decoration
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__activity_exception_decoration
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_exception_decoration
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__activity_exception_decoration
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_exception_decoration
 msgid "Activity Exception Decoration"
 msgstr "Dekoration för aktivitetsundantag"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_state
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__activity_state
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_state
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__activity_state
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_state
 msgid "Activity State"
 msgstr "Aktivitetsstatus"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_type_icon
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__activity_type_icon
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_type_icon
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__activity_type_icon
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_type_icon
 msgid "Activity Type Icon"
 msgstr "Aktivitetstypsikon"
@@ -74,11 +84,43 @@ msgid "Administrator"
 msgstr "Handläggare"
 
 #. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
+msgid "Advanced"
+msgstr "Avancerat"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__attachment_ids
+msgid "Attachment"
+msgstr "Bilaga"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_attachment_count
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_attachment_count
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_attachment_count
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_attachment_count
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_attachment_count
 msgid "Attachment Count"
 msgstr "Antal bilagor"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
+msgid "Attachments"
+msgstr "Bilagor"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__author_id
+msgid "Author"
+msgstr "Författare"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__auto_delete
+msgid "Auto Delete"
+msgstr "Autoradera"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
+msgid "Body"
+msgstr "Bulk"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_attachment_form
@@ -91,7 +133,14 @@ msgid "Cancelled"
 msgstr "Avbruten"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__email_cc
+msgid "Cc"
+msgstr "Kopia"
+
+#. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__is_secret
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__is_secret
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__is_secret
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__is_secret
 #: model:ir.model.fields,help:record_keeping.field_rk_mixin__is_secret
 msgid ""
@@ -103,6 +152,8 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__is_official
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__is_official
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__is_official
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__is_official
 #: model:ir.model.fields,help:record_keeping.field_rk_mixin__is_official
 msgid "Check this option if this document is an official document"
@@ -117,7 +168,9 @@ msgstr "Underliggande struktur"
 #: model:ir.actions.act_window,name:record_keeping.action_classification_view
 #: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__classification_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__classification_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__classification_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__classification_id
 #: model:ir.ui.menu,name:record_keeping.menu_classification
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_form
@@ -126,6 +179,7 @@ msgstr "Underliggande struktur"
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_type_search
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_type_tree
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_search
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_search
 msgid "Classification"
 msgstr "Klassificering"
@@ -151,8 +205,14 @@ msgid "Closed"
 msgstr "Stängd"
 
 #. module: record_keeping
+#: model:ir.model.fields.selection,name:record_keeping.selection__rk_mail__message_type__comment
+msgid "Comment"
+msgstr "Kommentar"
+
+#. module: record_keeping
 #: code:addons/record_keeping/models/matter.py:0
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form
 #, python-format
 msgid "Confidential"
@@ -201,8 +261,10 @@ msgstr "Skapa ett nytt lagrum"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__create_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__create_uid
 msgid "Created by"
@@ -211,8 +273,10 @@ msgstr "Skapad av"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__create_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__create_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__create_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__create_date
 msgid "Created on"
@@ -225,6 +289,7 @@ msgstr "Motpart"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__matter_default_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__date
 msgid "Date"
 msgstr "Datum"
 
@@ -272,8 +337,10 @@ msgstr "Kontor"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__description
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__description
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__description
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__description
 msgid "Description"
@@ -288,8 +355,10 @@ msgstr ""
 #: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__display_name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__display_name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__display_name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__display_name
@@ -298,16 +367,32 @@ msgstr "Visningsnamn"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_document
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__document_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__document_id
 msgid "Document"
 msgstr "Handling"
 
 #. module: record_keeping
+#: model:ir.model,name:record_keeping.model_rk_document_mixin
+msgid "Document Mixin"
+msgstr ""
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__document_ref
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__document_ref
+msgid "Document Reference"
+msgstr "Dokument"
+
+#. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_document_type
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__document_type_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__document_type_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__document_type_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__document_type_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__document_type_id
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_type_search
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_search
 msgid "Document Type"
 msgstr "Handlingstyp"
 
@@ -322,8 +407,10 @@ msgstr "Handlingstyper"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__document_no
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__document_no
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__document_no
 msgid "Document number"
-msgstr "Handlingsnummer"
+msgstr "Löpnummer"
 
 #. module: record_keeping
 #: model:ir.actions.act_window,name:record_keeping.action_document_view
@@ -345,10 +432,23 @@ msgstr "Ny"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__draw_up_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__draw_up_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__draw_up_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__draw_up_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__draw_up_date
 msgid "Drawn up"
 msgstr "Upprättad"
+
+#. module: record_keeping
+#: model:ir.model.fields.selection,name:record_keeping.selection__rk_mail__message_type__email
+msgid "Email"
+msgstr "E-post"
+
+#. module: record_keeping
+#: model:ir.actions.act_window,name:record_keeping.action_mail_view
+#: model:ir.ui.menu,name:record_keeping.menu_mail
+msgid "Emails"
+msgstr "Epost"
 
 #. module: record_keeping
 #: model:ir.model.fields.selection,name:record_keeping.selection__rk_matter_document_wizard__type__binary
@@ -362,36 +462,50 @@ msgstr "Filinnehåll (bas64)"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_follower_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_follower_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_follower_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_follower_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_follower_ids
 msgid "Followers"
 msgstr "Följare"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_channel_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_channel_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_channel_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_channel_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_channel_ids
 msgid "Followers (Channels)"
 msgstr "Följare (Kanaler)"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_partner_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_partner_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_partner_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_partner_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Följare (kontakter)"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__activity_type_icon
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__activity_type_icon
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__activity_type_icon
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__activity_type_icon
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
 msgstr "Font awesomeikon t.ex fa-tasks"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__email_from
+msgid "From"
+msgstr "Från"
+
+#. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_type_search
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_search
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_search
 msgid "Group By"
 msgstr "Gruppera efter"
@@ -402,27 +516,39 @@ msgid "Has Types"
 msgstr "Har typer"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__headers
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
+msgid "Headers"
+msgstr "Sidhuvuden"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_exception_icon
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__activity_exception_icon
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_exception_icon
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__activity_exception_icon
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_exception_icon
 msgid "Icon"
 msgstr "Ikon"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__activity_exception_icon
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__activity_exception_icon
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__activity_exception_icon
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__activity_exception_icon
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr "Ikon för att indikera en undantagsaktivitet."
@@ -430,8 +556,12 @@ msgstr "Ikon för att indikera en undantagsaktivitet."
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_needaction
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_unread
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__message_needaction
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__message_unread
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_needaction
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_unread
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__message_needaction
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__message_unread
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_needaction
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_unread
 msgid "If checked, new messages require your attention."
@@ -440,13 +570,17 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__message_has_error
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__message_has_error
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Om markerad så har det blivit ett leveransfel för några meddelanden."
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__secrecy_grounds
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__secrecy_grounds
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__secrecy_grounds
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__secrecy_grounds
 #: model:ir.model.fields,help:record_keeping.field_rk_mixin__secrecy_grounds
 msgid "If marked as secret, please provide more information"
@@ -454,17 +588,26 @@ msgstr "Om märkt med sekretess, uppge mer information"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_is_follower
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_is_follower
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_is_follower
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_is_follower
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_is_follower
 msgid "Is Follower"
 msgstr "Är följare"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__notification
+msgid "Is Notification"
+msgstr "Är en avisering"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_res_config_settings____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document____last_update
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section____last_update
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard____last_update
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin____last_update
@@ -474,8 +617,10 @@ msgstr "Senast redigerad"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_uid
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__write_uid
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__write_uid
 msgid "Last Updated by"
@@ -484,8 +629,10 @@ msgstr "Senast uppdaterad av"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__write_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__write_date
 msgid "Last Updated on"
@@ -506,8 +653,15 @@ msgid "Law Section"
 msgstr "Lagrum"
 
 #. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_search
+msgid "Mail"
+msgstr "Epost"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_main_attachment_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_main_attachment_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_main_attachment_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_main_attachment_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Huvudbilaga"
@@ -521,8 +675,11 @@ msgstr "Administratör"
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_rk_matter
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__matter_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__matter_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__matter_id
 #: model:ir.module.category,name:record_keeping.module_category_rk_matter
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_search
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_search
 msgid "Matter"
 msgstr "Ärende"
@@ -539,6 +696,7 @@ msgstr "Ärendenummer"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_search
 msgid "Matter is missing"
 msgstr "Ärende saknas"
 
@@ -560,21 +718,41 @@ msgid "Matters not done before default date"
 msgstr "Ärenden som inte är klara före 2021-07-01"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__mail_message_id
+msgid "Message"
+msgstr "Meddelande"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_has_error
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_has_error
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_has_error
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_has_error
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_has_error
 msgid "Message Delivery error"
 msgstr "Fel vid meddelandeleverans"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__record_name
+msgid "Message Record Name"
+msgstr "Namn på meddelandepost"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_id
+msgid "Message-Id"
+msgstr "Meddelande-id"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_ids
 msgid "Messages"
 msgstr "Meddelanden"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_form
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form
 msgid "Meta Information"
 msgstr "Meta information"
@@ -586,7 +764,9 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__my_activity_date_deadline
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__my_activity_date_deadline
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__my_activity_date_deadline
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__my_activity_date_deadline
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__my_activity_date_deadline
 msgid "My Activity Deadline"
 msgstr "Min aktivitets slutdatum"
@@ -594,6 +774,7 @@ msgstr "Min aktivitets slutdatum"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__name
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__name
@@ -607,28 +788,36 @@ msgstr "Namn på kund"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_date_deadline
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__activity_date_deadline
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_date_deadline
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__activity_date_deadline
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Nästa slutdatum för aktivitet"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_summary
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__activity_summary
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_summary
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__activity_summary
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_summary
 msgid "Next Activity Summary"
 msgstr "Nästa aktivitetssummering"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_type_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__activity_type_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_type_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__activity_type_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_type_id
 msgid "Next Activity Type"
 msgstr "Nästa aktivitetstyp"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_needaction_counter
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_needaction_counter
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_needaction_counter
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_needaction_counter
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_needaction_counter
 msgid "Number of Actions"
 msgstr "Antal åtgärder"
@@ -640,28 +829,36 @@ msgstr "Antal handlingar i ärendet"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_has_error_counter
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_has_error_counter
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_has_error_counter
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_has_error_counter
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_has_error_counter
 msgid "Number of errors"
 msgstr "Antal fel"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_needaction_counter
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__message_needaction_counter
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_needaction_counter
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__message_needaction_counter
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr "Antal meddelanden som kräver en åtgärd"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_error_counter
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__message_has_error_counter
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_error_counter
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__message_has_error_counter
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Antal meddelanden med leveransfel"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_unread_counter
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__message_unread_counter
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_unread_counter
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__message_unread_counter
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_unread_counter
 msgid "Number of unread messages"
 msgstr "Antal olästa meddelanden"
@@ -673,10 +870,17 @@ msgstr "Allmän Handling"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__is_official
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__is_official
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__is_official
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__is_official
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__is_official
 msgid "Official document"
 msgstr "Allmän handling"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__mail_server_id
+msgid "Outgoing mail server"
+msgstr "Utgående e-postserver"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
@@ -712,6 +916,8 @@ msgstr "Uppge bestämmelse"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__receive_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__receive_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__receive_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__receive_date
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__receive_date
 msgid "Received"
@@ -719,6 +925,8 @@ msgstr "Inkommen"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__receiver_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__receiver_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__receiver_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__receiver_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__receiver_id
 msgid "Receiver"
@@ -732,37 +940,70 @@ msgstr "Diarium"
 #. module: record_keeping
 #: model:ir.module.category,name:record_keeping.module_category_rk
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_tree
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_form
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_tree
 msgid "Record-keeping"
 msgstr "Diarium"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__references
+msgid "References"
+msgstr "Referenser"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__reg_no
 msgid "Registration number"
-msgstr "Registreringsnummer"
+msgstr "Ärendenummer"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__res_id
+msgid "Related Document ID"
+msgstr "ID relaterat dokument"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__model
+msgid "Related Document Model"
+msgstr "Modell för relaterade dokument"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__reply_to
+msgid "Reply-To"
+msgstr "Svar till"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__res_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__res_id
 msgid "Resource ID"
 msgstr "Resurs-ID"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__res_model
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__res_model
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__res_model
 msgid "Resource Model"
 msgstr "Resursmodell"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__res_ref
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__res_ref
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__res_ref
 msgid "Resource Reference"
-msgstr "Resursreferens"
+msgstr "Dokument"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_user_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__activity_user_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__activity_user_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__activity_user_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__activity_user_id
 msgid "Responsible User"
 msgstr "Ansvarig användare"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__body_html
+msgid "Rich-text Contents"
+msgstr "Utsmyckat innehåll"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_attachment_form
@@ -770,7 +1011,19 @@ msgid "Save"
 msgstr "Spara"
 
 #. module: record_keeping
+#: model:ir.model,name:record_keeping.model_rk_mail
+msgid "Saves mail for Record-Keeping"
+msgstr "Sparar e-post för diarieföring"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__scheduled_date
+msgid "Scheduled Send Date"
+msgstr "Planerat sändningsdatum"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__secrecy_grounds
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__secrecy_grounds
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__secrecy_grounds
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__secrecy_grounds
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__secrecy_grounds
 msgid "Secrecy grounds"
@@ -778,14 +1031,19 @@ msgstr "Motivering"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__is_secret
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__is_secret
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__is_secret
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__is_secret
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__is_secret
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_document_search
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_search
 msgid "Secrecy marker"
 msgstr "Sekretessmarkering"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__law_section_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__law_section_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__law_section_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__law_section_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__law_section_id
 msgid "Secrecy provision"
@@ -793,6 +1051,8 @@ msgstr "Sekretessbestämmelse"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__sender_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__sender_id
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__sender_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__sender_id
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__sender_id
 msgid "Sender"
@@ -821,12 +1081,15 @@ msgstr "Status"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__state
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__activity_state
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__activity_state
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__activity_state
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__activity_state
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__activity_state
 msgid ""
 "Status based on activities\n"
@@ -840,7 +1103,20 @@ msgstr ""
 "\"Kommande: Framtida aktiviteter."
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__name
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__subject
+msgid "Subject"
+msgstr "Ämne"
+
+#. module: record_keeping
+#: model:ir.model.fields.selection,name:record_keeping.selection__rk_mail__message_type__notification
+msgid "System notification"
+msgstr "Varningsmeddelande"
+
+#. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__receiver_id
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__receiver_id
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__receiver_id
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__receiver_id
 #: model:ir.model.fields,help:record_keeping.field_rk_mixin__receiver_id
 msgid "The competent person who received the document"
@@ -848,6 +1124,8 @@ msgstr "Behörig person som har mottagit handlingen"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__receive_date
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__receive_date
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__receive_date
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__receive_date
 #: model:ir.model.fields,help:record_keeping.field_rk_mixin__receive_date
 msgid "The date when the document has been received by a competent person."
@@ -855,6 +1133,8 @@ msgstr "Datumet då handlingen har mottagits av behörig person."
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__draw_up_date
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__draw_up_date
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__draw_up_date
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__draw_up_date
 #: model:ir.model.fields,help:record_keeping.field_rk_mixin__draw_up_date
 msgid "The date when the document is ready to be used or sent"
@@ -862,6 +1142,8 @@ msgstr "Datumet handlingen är klar att användas eller skickas"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__description
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__description
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__description
 msgid "The description of this document"
 msgstr "Beskrivningen av detta dokument"
 
@@ -890,6 +1172,7 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__name
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__name
 msgid ""
 "The format is [current year]/[sequence] if this document is belongs to a "
 "matter"
@@ -897,6 +1180,8 @@ msgstr "Formatet är [nuvarande år]/[sekvens] om handlingen tillhör ett ärend
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__matter_id
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__matter_id
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__matter_id
 msgid "The matter this document belongs to"
 msgstr "Ärendet som handling hör till"
 
@@ -913,15 +1198,19 @@ msgstr "Namnet på säkerhetsbestämmelsen"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__document_no_next
 msgid "The next document number"
-msgstr "Nästa handlingsnummer"
+msgstr "Nästa löpnummer"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__document_no
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__document_no
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__document_no
 msgid "The number assigned to this document"
 msgstr "Numret tillhörande denna handling"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__sender_id
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__sender_id
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__sender_id
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__sender_id
 #: model:ir.model.fields,help:record_keeping.field_rk_mixin__sender_id
 msgid "The person who sent this document"
@@ -929,21 +1218,40 @@ msgstr "Personen som skickat handlingen"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__res_id
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__res_id
 msgid "The record id this document is attached to."
 msgstr "Id som  handlingen är knuten till."
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__res_model
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__res_model
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__res_model
 msgid "The record model this document is attached to."
 msgstr "Objektet som handlingen är knuten till."
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__res_ref
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__res_ref
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__res_ref
 msgid "The record this document is attached to."
 msgstr "Tabellraden som handling är knuten till."
 
 #. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__document_id
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__document_id
+msgid "The record-keeping document id"
+msgstr "Id på handlingen"
+
+#. module: record_keeping
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__document_ref
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__document_ref
+msgid "The record-keeping document reference"
+msgstr "Referens till handlingen"
+
+#. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__law_section_id
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__law_section_id
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__law_section_id
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__law_section_id
 #: model:ir.model.fields,help:record_keeping.field_rk_mixin__law_section_id
 msgid "The specified secrecy provision when the document has a secrecy marker"
@@ -956,57 +1264,78 @@ msgid "The url of this secrecy provision"
 msgstr "Webb-adress till säkerhetsbestämmelsen"
 
 #. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__email_to
+msgid "To"
+msgstr "Till"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__recipient_ids
+msgid "To (Partners)"
+msgstr "Till (företag)"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_type
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__type
 msgid "Type"
 msgstr "Typ"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__activity_exception_decoration
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__activity_exception_decoration
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__activity_exception_decoration
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__activity_exception_decoration
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "Typ av undantagsaktivitet i posten."
 
 #. module: record_keeping
-#: model:ir.model.fields.selection,name:record_keeping.selection__rk_matter_document_wizard__type__url
-msgid "URL"
-msgstr ""
-
-#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_unread
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_unread
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_unread
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_unread
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_unread
 msgid "Unread Messages"
 msgstr "Olästa meddelanden"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_unread_counter
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_unread_counter
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_unread_counter
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_unread_counter
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr "Räknare olästa meddelanden"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__url
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__url
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 #. module: record_keeping
 #: model:res.groups,name:record_keeping.group_rk_user
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
 msgid "User"
 msgstr "Användare"
 
 #. module: record_keeping
+#: model:ir.model.fields.selection,name:record_keeping.selection__rk_mail__message_type__user_notification
+msgid "User Specific Notification"
+msgstr ""
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__website_message_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__website_message_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__website_message_ids
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__website_message_ids
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__website_message_ids
 msgid "Website Messages"
 msgstr "Webbplatsmeddelanden"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__website_message_ids
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__website_message_ids
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__website_message_ids
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__website_message_ids
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__website_message_ids
 msgid "Website communication history"
 msgstr "Webbplatsens kommunikationshistorik"
@@ -1018,10 +1347,11 @@ msgid "Wizard for attaching an attachment to a document"
 msgstr "Hjälpreda för att koppla en bilaga till en handling"
 
 #. module: record_keeping
-#: model:ir.model.fields,help:record_keeping.field_rk_matter_document_wizard__type
-msgid ""
-"You can either upload a file from your computer or copy/paste an internet "
-"link to your file."
-msgstr ""
-"Du kan antingen ladda upp en fil från din dator eller kopiera/klistra in en "
-"internetlänk till din fil."
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
+msgid "by"
+msgstr "av"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
+msgid "on"
+msgstr "på"

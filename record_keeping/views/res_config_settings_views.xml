@@ -11,7 +11,8 @@
                 <div 
                     class="app_settings_block" 
                     data-key="record_keeping"
-                    data-string="Record Keeping" 
+                    data-string="Record Keeping"
+                    groups="record_keeping.group_rk_manager" 
                     string="Record Keeping" 
                 >
                     <h2>Defaults</h2>

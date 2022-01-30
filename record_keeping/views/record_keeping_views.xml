@@ -24,6 +24,15 @@
     />
     
     <menuitem 
+        id="menu_mail"
+        action="action_mail_view"
+        groups="base.group_no_one"
+        name="Emails" 
+        parent="record_keeping.menu_record_keeping"
+        sequence="30" 
+    />
+    
+    <menuitem 
         id="menu_configuration" 
         name="Configuration" 
         parent="menu_record_keeping" 

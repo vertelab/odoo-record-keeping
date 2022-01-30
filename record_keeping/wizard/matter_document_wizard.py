@@ -20,19 +20,10 @@ class MatterDocumentWizard(models.TransientModel):
     type = fields.Selection(
         [
             ('binary', 'File'),
-            ('url', 'URL'), 
         ],
-        change_default=True,
         default='binary',
-        help='You can either upload a file from your computer or copy/paste '
-             'an internet link to your file.',
         required=True,
         string='Type',
-    )
-    url = fields.Char(
-        index=True,
-        size=1024,
-        string='Url',
     )
 
     def save_button(self):
@@ -41,7 +32,6 @@ class MatterDocumentWizard(models.TransientModel):
             'description': self.description,
             'name': self.name,
             'type': self.type,
-            'url': self.url,
         }
         attachment = self.env['ir.attachment'].create(attachment_vals)
 
