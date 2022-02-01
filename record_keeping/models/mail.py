@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, fields, models
+import logging
+from odoo import _, api, fields, models
+
+
+_logger = logging.getLogger(__name__)
 
 
 class RecordKeepingMail(models.Model):
@@ -107,3 +111,14 @@ class RecordKeepingMail(models.Model):
     subject = fields.Char(
         readonly=1,
     )
+
+
+class Mail(models.Model):
+    _inherit = 'mail.mail'
+
+    @api.model
+    def create(self, vals):
+        res = super().create(vals)
+        _logger.warning(f"{vals=}")
+        _logger.warning(f"{res=}")
+        return res
