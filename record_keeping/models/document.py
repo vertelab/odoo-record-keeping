@@ -11,6 +11,7 @@ class Document(models.Model):
     name = fields.Char(
         help='The format is [current year]/[sequence] if this document is '
              'belongs to a matter',
+        readonly=True,
         string='Name',
         tracking=True,
     )
@@ -28,6 +29,7 @@ class Document(models.Model):
         help='The number assigned to this document',
         readonly=True,
         string='Document number',
+        tracking=True,
     )
     document_type_id = fields.Many2one(
         comodel_name='rk.document.type',
@@ -57,7 +59,7 @@ class Document(models.Model):
         string='Resource Reference',
     )
 
-    @api.depends('res_model', 'res_id')
+    @api.depends('name', 'res_model', 'res_id')
     def _compute_res_ref(self):
         self = self.sudo()
         for document in self:
@@ -76,6 +78,7 @@ class Document(models.Model):
             else:
                 document.res_ref = None
 
+
     def _next_document_no(self):
         self.ensure_one()
         if self.matter_id and not self.document_no:
@@ -90,15 +93,14 @@ class Document(models.Model):
 
     @api.model
     def create(self, vals):
-        document = super(Document, self).create(vals)
-        if 'matter_id' in vals:
-            document._next_document_no()
+        document = super().create(vals)
+        document._next_document_no()
         return document
 
     def write(self, vals):
         if vals.get('matter_id'):
             vals['document_no'] = ''
-        res = super(Document, self).write(vals)
+        res = super().write(vals)
         for document in self:
             document._next_document_no()
         return res
