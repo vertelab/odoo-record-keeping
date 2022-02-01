@@ -1,0 +1,56 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* record_keeping_sale_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20211230\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-01 12:58+0000\n"
+"PO-Revision-Date: 2022-02-01 13:59+0100\n"
+"Last-Translator: Han Wong <han.wong@vertel.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: record_keeping_sale_project
+#: model_terms:ir.ui.view,arch_db:record_keeping_sale_project.view_task_form2
+msgid "Create Matter"
+msgstr "Skapa ärende"
+
+#. module: record_keeping_sale_project
+#: model_terms:ir.ui.view,arch_db:record_keeping_sale_project.view_task_form2
+msgid "Create Sale Order"
+msgstr "Skapa offert"
+
+#. module: record_keeping_sale_project
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_mail_mail__display_name
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task__display_name
+msgid "Display Name"
+msgstr "Visningsnamn"
+
+#. module: record_keeping_sale_project
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_mail_mail__id
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task__id
+msgid "ID"
+msgstr "ID"
+
+#. module: record_keeping_sale_project
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_mail_mail____last_update
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task____last_update
+msgid "Last Modified on"
+msgstr "Senast redigerad"
+
+#. module: record_keeping_sale_project
+#: model:ir.model,name:record_keeping_sale_project.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "Utgående e-post"
+
+#. module: record_keeping_sale_project
+#: model:ir.model,name:record_keeping_sale_project.model_project_task
+msgid "Task"
+msgstr "Aktivitet"
