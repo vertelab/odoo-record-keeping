@@ -1,64 +1,40 @@
 # -*- coding: utf-8 -*-
 
+import logging
 from odoo import _, api, fields, models
 
 
-import logging
-
-logger = logging.getLogger()
+_logger = logging.getLogger(__name__)
 
 
-class Order(models.Model):
+class SaleOrder(models.Model):
     _name = 'sale.order'
-    _inherit = ['sale.order']
+    _inherit = ['sale.order', 'rk.document.mixin']
     _inherits = {'rk.document': 'document_id'}
 
-    document_id = fields.Many2one(
-        comodel_name='rk.document',
-        help='The record-keeping document id',
-        ondelete='restrict',
-        required=True,
-        string='Document',
-    )
-    document_ref = fields.Reference(
-        compute='_compute_document_ref',
-        help='The record-keeping document reference',
-        selection='_selection_target_model',
-        string='Document Reference',
-    )
-
-    @api.depends('document_id')
-    def _compute_document_ref(self):
-        for record in self:
-            record.document_ref = f'rk.document,{record.document_id.id or 0}'
-
-    @api.model
-    def _selection_target_model(self):
-        models = self.env['ir.model'].search([('model', '=', 'rk.document')])
-        return [(model.model, model.name) for model in models]
-
-    def _set_document_link(self):
-        self.ensure_one()
-        document = self.document_id
-        if not document.res_model or not document.res_id:
-            return {'res_model': self._name, 'res_id': self.id}
-
-    @api.model
-    def create(self, vals):
-        record = super(Order, self).create(vals)
-        document_vals = record._set_document_link()
-        if document_vals:
-            record.document_id.write(document_vals)
-        return record
-
-    def write(self, vals):
-        for record in self:
-            document_vals = record._set_document_link()
-            if document_vals:
-                if record.document_id:
-                    vals.update(document_vals)
-                else:
-                    vals['document_id'] = self.env['rk.document'].create(
-                        document_vals)
-        result = super(Order, self).write(vals)
-        return result
+    
+    def message_post(self, **kwargs):
+        self = self.sudo()
+        _logger.warning(f"{self._description=}")
+        res = super().message_post(**kwargs)
+        matter_id = self.matter_id.id or False
+        fields = self.env['rk.mail'].fields_get()
+        _logger.warning(f"{res=}")
+        _logger.warning(f"{res.mail_ids=}")
+        for mail in res.mail_ids:
+            vals = {'name': mail['subject']}
+            for key in fields.keys():
+                if hasattr(mail, key):
+                    if fields[key]['type'] in ['many2many']:
+                        vals[key] = mail[key].ids
+                    elif fields[key]['type'] in ['many2one']:
+                        vals[key] = mail[key].id
+                    else:
+                        vals[key] = mail[key]
+            if matter_id:
+                vals['matter_id'] = matter_id
+                vals['is_official'] = True
+            _logger.warning(f"{vals=}")
+            mail = self.env['rk.mail'].create(vals)
+            # mail.document_id.matter_id = matter_id
+        return res
