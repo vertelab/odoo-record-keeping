@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
+import logging
 from odoo import _, api, fields, models
 
+
+_logger = logging.getLogger(__name__)
 
 class Task(models.Model):
     _name = 'project.task'
@@ -9,6 +12,7 @@ class Task(models.Model):
     _inherits = {'rk.document': 'document_id'}
 
     def create_matter(self):
-        self.is_official = True
-        self.matter_id = self.env['rk.matter'].create({})
-        return self.matter_id
+        self.ensure_one()
+        if not self.matter_id:
+            self.is_official = True
+            self.matter_id = self.env['rk.matter'].create({})
