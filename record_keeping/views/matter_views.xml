@@ -50,6 +50,11 @@
                     <group>
                         <group>
                             <field name="reg_no" />
+                            <field name="legacy_reg_no" class="oe_edit_only" />
+                            <field 
+                                name="legacy_reg_no"
+                                attrs="{'invisible': [('legacy_reg_no', '=', False)]}" 
+                                class="oe_read_only" />
                             <field name="description" />
                             <field 
                                 name="classification_id" 
@@ -102,7 +107,11 @@
                                     <field name="draw_up_date" />
                                     <field 
                                         name="close_date" 
-                                        attrs="{'invisible': ['|', ('close_date', '=', False), ('state', 'not in', ['done'])]}"
+                                        attrs="{'invisible': [('state', 'not in', ['done'])]}"
+                                    />
+                                    <field 
+                                        name="sorting_out_date" 
+                                        attrs="{'invisible': [('state', 'not in', ['done'])]}"
                                     />
                                 </group>
                                 <group />

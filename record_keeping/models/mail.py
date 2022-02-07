@@ -119,6 +119,22 @@ class Mail(models.Model):
     @api.model
     def create(self, vals):
         res = super().create(vals)
+        # for mail in res.mail_ids:
+        #     vals = {'name': mail['subject']}
+        #     for key in fields.keys():
+        #         if hasattr(mail, key):
+        #             if fields[key]['type'] in ['many2many']:
+        #                 vals[key] = mail[key].ids
+        #             elif fields[key]['type'] in ['many2one']:
+        #                 vals[key] = mail[key].id
+        #             else:
+        #                 vals[key] = mail[key]
+        #     if matter_id:
+        #         vals['matter_id'] = matter_id
+        #         vals['is_official'] = True
+        #     _logger.warning(f"{vals=}")
+        #     mail = self.env['rk.mail'].create(vals)
+        #     # mail.document_id.matter_id = matter_id
         _logger.warning(f"{vals=}")
         _logger.warning(f"{res=}")
         return res

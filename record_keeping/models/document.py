@@ -58,7 +58,7 @@ class Document(models.Model):
         selection='_selection_target_model',
         string='Resource Reference',
     )
-
+    
     @api.depends('name', 'res_model', 'res_id')
     def _compute_res_ref(self):
         self = self.sudo()

@@ -16,11 +16,17 @@
                     string="Record Keeping" 
                 >
                     <h2>Defaults</h2>
-                    <div class="row mt16 o_settings_container">
-                        <div class="col-12 col-lg-6 o_setting_box" id="domain_setting">
+                    <div 
+                        name="record_keeping_defaults_setting_container"
+                        class="row mt16 o_settings_container" 
+                    >
+                        <div 
+                            name="record_keeping_defaults_for_matters"
+                            class="col-12 col-lg-6 o_setting_box" 
+                        >
                             <div class="o_setting_left_pane" />
                             <div class="o_setting_right_pane">
-                                <span class="o_form_label">Defaults for Matters</span> 
+                                <span class="o_form_label">Matters</span> 
                                 <div class="content-group">
                                     <div class="row mt8">
                                         <label 
@@ -29,36 +35,47 @@
                                         />
                                         <field 
                                             name="matter_default_classification_id" 
-                                            class="col-lg-8"
                                             domain="[('has_types', '=', True)]" 
                                             options="{'no_create': True, 'no_open': True}"
                                         />
                                     </div>
+                                </div>                        
+                            </div>                    
+
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">    
+                                <div class="content-group">
+                                    <div class="row">
+                                        <label 
+                                            for="matter_default_sorting_out_days" 
+                                            class="col-lg-4 o_light_label" 
+                                        />
+                                        <field name="matter_default_sorting_out_days" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6 o_setting_box" id="domain_setting">
+                    
+                        <div 
+                            name="record_keeping_default_date_for_matter_filter"
+                            class="col-12 col-lg-6 o_setting_box" 
+                        >
                             <div class="o_setting_left_pane" />
                             <div class="o_setting_right_pane">
-                                <span class="o_form_label">Default Date for Matter filter</span>                         
+                                <span class="o_form_label">Matter filter</span>                         
                                 <div class="content-group">
                                     <div class="row mt8">
                                         <label 
                                             for="matter_default_date" 
                                             class="col-lg-4 o_light_label" 
                                         />
-                                        <field 
-                                            name="matter_default_date" 
-                                            class="col-lg-8" 
-                                        />
-                                        <field 
-                                            name="matter_default_date_str" 
-                                            invisible="1" 
-                                        />
+                                        <field name="matter_default_date" />
+                                        <field name="matter_default_date_str" invisible="1" />
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    
                     </div>
                 </div>
             </xpath>

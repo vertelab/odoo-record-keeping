@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from datetime import timedelta
 from odoo import _, api, fields, models
 
 
@@ -11,23 +12,26 @@ class Matter(models.Model):
 
     administrator_id = fields.Many2one(
         comodel_name='res.users',
+        copy=False,
         string='Administrator',
         tracking=True,
     )
     classification_id = fields.Many2one(
         comodel_name='rk.classification',
+        copy=False,
         string='Classification',
-        default=lambda self: self._get_default_param('classification_id'),
+        default=lambda self: int(self._get_default_param('classification_id')) or 0,
         tracking=True,
     )
     department_id = fields.Many2one(
-        index=True,
+        copy=False,
         related='administrator_id.department_id',
         store=True,
         string='Department',
         tracking=True,
     )
     description = fields.Char(
+        copy=False,
         help='The description of this matter',
         string='Description',
         tracking=True,
@@ -38,6 +42,7 @@ class Matter(models.Model):
     )
     document_ids = fields.One2many(
         comodel_name='rk.document',
+        copy=False,
         inverse_name='matter_id',
         string='Documents',
         tracking=True,
@@ -46,6 +51,7 @@ class Matter(models.Model):
         copy=False,
         default=1,
         help='Counter used to assign to the next document',
+        readonly=True,
         string='The next document number',
     )
     close_date = fields.Date(
@@ -60,7 +66,14 @@ class Matter(models.Model):
         string='Latest change',
         tracking=True,
     )
+    legacy_reg_no = fields.Char(
+        copy=False,
+        help='From other sources',
+        string='Legacy registration number',
+        tracking=True,
+    )
     matter_name = fields.Char(
+        copy=False,
         help='The name of this matter',
         string='Matter Name',
         tracking=True,
@@ -85,10 +98,15 @@ class Matter(models.Model):
         tracking=True,
     )
     reg_no = fields.Char(
+        copy=False,
         help='The format is [current year]/[sequence]',
         readonly=True,
         string='Registration number',
-        store=True,
+        tracking=True,
+    )
+    sorting_out_date = fields.Date(
+        help='The date this matter should be archived or moved out',
+        index=True,
         tracking=True,
     )
     state = fields.Selection(
@@ -106,7 +124,6 @@ class Matter(models.Model):
     )
 
     def _compute_document_count(self):
-        # total number of documents linked to the rk matter
         for matter in self:
             matter.document_count = self.env['rk.document'].search_count([
                 ('matter_id', '=', matter.id),
@@ -138,19 +155,17 @@ class Matter(models.Model):
         for record in self:
             if record.is_secret:
                 record.partner_name = _('Confidential')
-            elif record.partner_id:
-                record.partner_name = record.partner_id.name
             else:
-                record.partner_name = ''
+                record.partner_name = record.partner_id.name or ''
+            # elif record.partner_id:
+            #     record.partner_name = ''
 
     def _expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
 
     def _get_default_param(self, field):
         param = f"record_keeping.{self._name.replace('.', '_')}_default_{field}"
-        if (res := self.env['ir.config_parameter'].sudo().get_param(param)):
-            res = int(res)
-        return res
+        return self.env['ir.config_parameter'].sudo().get_param(param)
 
     def action_done(self):
         self.write(dict(state='done'))
@@ -167,14 +182,10 @@ class Matter(models.Model):
         action['domain'] = str([('matter_id', 'in', self.ids)])
         action['context'] = "{'matter_id': '%d'}" % (self.id)
         return action
-
-    def get_matter_default_date(self):
-        param = 'record_keeping.rk_matter_default_date'
-        if not (res := self.env['ir.config_parameter'].sudo().get_param(param)):
-            res = '2021-07-01'
-        return res 
-        
+    
     def write(self, vals):
         if vals.get('state') == 'done':
             vals['close_date'] = fields.Date.today()
+            if (days := int(self._get_default_param('sorting_out_days')) or 0):
+                vals['sorting_out_date'] = fields.Date.today() + timedelta(days=days)
         return super().write(vals)

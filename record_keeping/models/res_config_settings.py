@@ -24,6 +24,13 @@ class RecordKeepingSettings(models.TransientModel):
         help='Default date used for filtering matters not done',    
         string='Date (str)', 
     )
+    matter_default_sorting_out_days = fields.Integer(
+        config_parameter=(
+            'record_keeping.rk_matter_default_sorting_out_days'),
+        help='Default number of sorting out days',
+        string='Sorting out days',
+    )
+
 
     @api.depends('matter_default_date_str')
     def _compute_matter_default_date(self):

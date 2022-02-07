@@ -27,7 +27,7 @@
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
-    'version': '14.0.2.3.0',
+    'version': '14.0.2.4.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
     'website': 'https://vertel.se/record-keeping',   
@@ -35,6 +35,7 @@
     This module is the base module for Record-keeping \n 
     14.0.2.3.0 - Added new class for mails
     14.0.2.0.4 - Added relationship to ir.attachments
+    14.0.2.0.4 - Added button to res.partner
     """,
     'depends': ['hr', 'mail'],
     'data': [
@@ -52,6 +53,7 @@
         'views/matter_views.xml',
         'views/mail_views.xml',
         'views/res_config_settings_views.xml',
+        'views/res_partner_views.xml',
         'views/record_keeping_views.xml',
     ],
     'application': True,
