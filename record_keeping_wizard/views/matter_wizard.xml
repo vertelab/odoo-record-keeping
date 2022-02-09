@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record model="ir.actions.act_window" id="open_link_to_record_wizard">
-        <field name="name">open.link.to.record.wizard</field>
-        <field name="res_model">rk.wizard</field>
-        <field name="view_mode">form</field>
-        <field name="target">new</field>
-        <field name="view_id" ref="link_to_record_view"/>
-    </record>
-
     <record id="link_to_record_view" model="ir.ui.view">
         <field name="name">link.to.record.view</field>
         <field name="model">rk.wizard</field>
@@ -26,6 +18,14 @@
                 </footer>
             </form>
         </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="open_link_to_record_wizard">
+        <field name="name">open.link.to.record.wizard</field>
+        <field name="res_model">rk.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="link_to_record_view"/>
     </record>
 
     <!--Boiler plate for opening wizard, to copy into inheriting model
