@@ -8,17 +8,17 @@
                 <group>
                     <field 
                         name="datas" 
-                        attrs="{'invisible': [('type', '=', 'url')]}" 
                         filename="name" 
+                        required="1"
                     />
-                    <!-- <field 
-                        name="url" 
-                        attrs="{'invisible': [('type', '=', 'binary')]}" 
-                        widget="url" 
-                    /> -->
-                    <field name="type" invisible="1" />
-                    <field name="name" />
-                    <field name="description" />
+                    <field 
+                        name="name" 
+                        attrs="{'invisible': [('datas', '=', False)], }"
+                    />
+                    <field 
+                        name="description"
+                        attrs="{'invisible': [('datas', '=', False)], }"
+                    />
                 </group>
                 <footer>
                     <button 

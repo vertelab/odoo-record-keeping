@@ -39,6 +39,7 @@ class MatterDocumentWizard(models.TransientModel):
         if attachment and 'rk.matter' in ctx('active_model'):
             document_vals = {
                 'description': self.description,
+                'is_official': True,
                 'matter_id': ctx('active_id', 0),
                 'res_id': attachment.id,
                 'res_model': 'ir.attachment',
