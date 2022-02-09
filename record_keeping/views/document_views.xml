@@ -119,7 +119,9 @@
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
             <search string="Official Document">
-                <field name="name" />
+                <field 
+                    name="name" 
+                    filter_domain="['|', ('name', 'ilike', self), ('message_ids.tracking_value_ids.old_value_char', 'ilike', self)]" />
                 <field name="is_official" />
                 <field name="is_secret" />
                 <filter 

@@ -134,14 +134,14 @@ class Matter(models.Model):
         self = self.sudo()
         for record in self:
             if record.message_ids:
-                description = record.message_ids[0].description
-                tracking_values = record.message_ids[0].tracking_value_ids
+                description = record.message_ids[-1].description
+                tracking_values = record.message_ids[-1].tracking_value_ids
                 if description:
                     record.latest_change = description
                 elif tracking_values:
                     record.latest_change = (
-                        f"{tracking_values[0].field_desc} -> "
-                        f"{tracking_values[0].get_new_display_value()[0]}")
+                        f"{tracking_values[-1].field_desc} -> "
+                        f"{tracking_values[-1].get_new_display_value()[-1]}")
             else:
                 record.latest_change = ''
 
@@ -157,15 +157,22 @@ class Matter(models.Model):
                 record.partner_name = _('Confidential')
             else:
                 record.partner_name = record.partner_id.name or ''
-            # elif record.partner_id:
-            #     record.partner_name = ''
-
+            
     def _expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
 
     def _get_default_param(self, field):
         param = f"record_keeping.{self._name.replace('.', '_')}_default_{field}"
         return self.env['ir.config_parameter'].sudo().get_param(param)
+
+    def action_archive_after_sorting_date(self):
+        if self.state in ['done']:
+            if self.sorting_out_date < fields.Date.today():
+                self.write(dict(active=False))
+
+    def action_archive_documents(self):
+        for document in self.document_ids:
+            document.write(dict(active=False))
 
     def action_done(self):
         self.write(dict(state='done'))
@@ -188,4 +195,9 @@ class Matter(models.Model):
             vals['close_date'] = fields.Date.today()
             if (days := int(self._get_default_param('sorting_out_days')) or 0):
                 vals['sorting_out_date'] = fields.Date.today() + timedelta(days=days)
+        if vals.get('active', True) == False:
+            if not self.state in ['done']:
+                vals.pop('active')
+            else:
+                self.action_archive_documents()
         return super().write(vals)

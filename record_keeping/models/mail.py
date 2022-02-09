@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import logging
 from odoo import _, api, fields, models
-
-
-_logger = logging.getLogger(__name__)
 
 
 class RecordKeepingMail(models.Model):
@@ -119,22 +115,20 @@ class Mail(models.Model):
     @api.model
     def create(self, vals):
         res = super().create(vals)
-        # for mail in res.mail_ids:
-        #     vals = {'name': mail['subject']}
-        #     for key in fields.keys():
-        #         if hasattr(mail, key):
-        #             if fields[key]['type'] in ['many2many']:
-        #                 vals[key] = mail[key].ids
-        #             elif fields[key]['type'] in ['many2one']:
-        #                 vals[key] = mail[key].id
-        #             else:
-        #                 vals[key] = mail[key]
-        #     if matter_id:
-        #         vals['matter_id'] = matter_id
-        #         vals['is_official'] = True
-        #     _logger.warning(f"{vals=}")
-        #     mail = self.env['rk.mail'].create(vals)
-        #     # mail.document_id.matter_id = matter_id
-        _logger.warning(f"{vals=}")
-        _logger.warning(f"{res=}")
+        fields = self.env['rk.mail'].fields_get()
+        for mail in res.mail_ids:
+            values = {'name': mail['subject']}
+            for key in fields.keys():
+                if hasattr(mail, key):
+                    if fields[key]['type'] in ['many2many']:
+                        values[key] = mail[key].ids
+                    elif fields[key]['type'] in ['many2one']:
+                        values[key] = mail[key].id
+                    else:
+                        values[key] = mail[key]
+            if (model := mail.model) and (res_id := mail.res_id):
+                if (matter_id := self.env[model].browse(res_id).matter_id):
+                    values['matter_id'] = matter_id.id
+                    values['is_official'] = True
+            self.env['rk.mail'].create(values)
         return res

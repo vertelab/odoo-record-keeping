@@ -229,6 +229,15 @@
         <field name="code">action = record.action_done()</field>
     </record>
 
+    <record id="action_archive_after_sorting_date" model="ir.actions.server">
+        <field name="name">Archive matters after sorting out date</field>
+        <field name="model_id" ref="record_keeping.model_rk_matter" />
+        <field name="binding_model_id" ref="record_keeping.model_rk_matter"/>
+        <field name="binding_view_types">form,list</field>
+        <field name="state">code</field>
+        <field name="code">action = record.action_archive_after_sorting_date()</field>
+    </record>
+
     <data noupdate="1">
         <record id="filter_matters_not_done_before_default_date" model="ir.filters">
             <field name="name">Matters not done before default date</field>

@@ -7,6 +7,11 @@ class Mixin(models.AbstractModel):
     _name = 'rk.mixin'
     _description = 'Mixin'
 
+    active = fields.Boolean(
+        default=True,
+        string='Archived',
+        tracking=True,
+    )
     document_type_id = fields.Many2one(
         comodel_name='rk.document.type',
         string='Document Type',

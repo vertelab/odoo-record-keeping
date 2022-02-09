@@ -2,6 +2,9 @@
 
 from odoo import _, api, fields, models
 
+import logging
+_logger = logging.getLogger(__name__)
+
 
 class Document(models.Model):
     _name = 'rk.document'
@@ -58,7 +61,7 @@ class Document(models.Model):
         selection='_selection_target_model',
         string='Resource Reference',
     )
-    
+
     @api.depends('name', 'res_model', 'res_id')
     def _compute_res_ref(self):
         self = self.sudo()
@@ -78,6 +81,27 @@ class Document(models.Model):
             else:
                 document.res_ref = None
 
+    def _message_log(self, **kwargs):
+        if kwargs:
+            res = super(Document, self)._message_log(**kwargs)
+        if self.matter_id:
+            kwargs['body'] = _('<p>Document (%s):</p>') % self.name.split(' ')[0]
+            self.matter_id._message_log(**kwargs)
+        return res
+
+    def _message_log_batch(self, bodies, author_id=None, email_from=None, 
+                           subject=False, message_type='notification'):
+        res = super()._message_log_batch(bodies, author_id=None, 
+                                         email_from=None, subject=False, 
+                                         message_type='notification')
+        if res and self.matter_id and message_type in ['notification']:
+            self._next_document_no()
+            for b in bodies.values():
+                name = f"{self.matter_id.reg_no}-{self.document_no}"
+                body = _('<p>Document (%s) created</p>') % name
+                self.matter_id._message_log(body=body)
+       
+        return res
 
     def _next_document_no(self):
         self.ensure_one()
@@ -94,6 +118,7 @@ class Document(models.Model):
     @api.model
     def create(self, vals):
         document = super().create(vals)
+        _logger.warning(f"{vals=}")
         document._next_document_no()
         return document
 
