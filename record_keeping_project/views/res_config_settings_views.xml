@@ -6,92 +6,94 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="record_keeping.res_config_settings_view_form" />
         <field name="arch" type="xml">
-            <div data-key="record_keeping" position="inside">
-                <div class="row mt16 o_settings_container">
-                    <div 
-                        class="col-12 col-lg-6 o_setting_box" 
-                        id="project_default_classification_setting"
-                    >
-                        <div class="o_setting_left_pane" />
-                        <div class="o_setting_right_pane">
-                            <span class="o_form_label">Defaults for Projects</span>
-                            <div class="content-group">
-                                <div class="row mt8">
-                                    <label 
-                                        class="col-lg-4 o_light_label"
-                                        for="project_default_classification_id" 
-                                    />
-                                    <field 
-                                        name="project_default_classification_id" 
-                                        class="col-lg-8"
-                                        domain="[('has_types', '=', True)]" 
-                                        options="{'no_create': True, 'no_open': True}"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div 
-                            class="o_setting_right_pane"
-                            attrs="{'invisible': [('project_default_classification_id', '=', False)]}"
-                        >
-                            <div class="content-group">
-                                <div class="row">
-                                    <label 
-                                        class="col-lg-4 o_light_label"
-                                        for="project_default_document_type_id" 
-                                    />
-                                    <field 
-                                        name="project_default_document_type_id" 
-                                        class="col-lg-8"
-                                        domain="[('classification_id', '=', project_default_classification_id)]" 
-                                        options="{'no_create': True, 'no_open': True}"
-                                    />
-                                </div>
+            <div name="record_keeping_defaults_setting_container" position="inside">
+                <div 
+                    name="record_keeping_project_defaults_for_projects"
+                    class="col-12 col-lg-6 o_setting_box" 
+                >
+                    <div class="o_setting_left_pane" />
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Projects</span>
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label 
+                                    class="col-lg-4 o_light_label"
+                                    for="project_default_classification_id" 
+                                />
+                                <field 
+                                    name="project_default_classification_id" 
+                                    domain="[('has_types', '=', True)]" 
+                                    options="{'no_create': True, 'no_open': True}"
+                                />
                             </div>
                         </div>
                     </div>
+
+                    <div class="o_setting_left_pane" />
                     <div 
-                        class="col-12 col-lg-6 o_setting_box" 
-                        id="task_default_classification_setting"
+                        class="o_setting_right_pane"
+                        attrs="{'invisible': [('project_default_classification_id', '=', False)]}"
                     >
-                        <div class="o_setting_left_pane" />
-                        <div class="o_setting_right_pane">
-                            <span class="o_form_label">Defaults for Tasks</span> 
-                            <div class="content-group">
-                                <div class="row mt8">
-                                    <label 
-                                        class="col-lg-4 o_light_label"
-                                        for="task_default_classification_id" 
-                                    />
-                                    <field 
-                                        name="task_default_classification_id" 
-                                        class="col-lg-8"
-                                        domain="[('has_types', '=', True)]" 
-                                        options="{'no_create': True, 'no_open': True}"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div 
-                            class="o_setting_right_pane"
-                            attrs="{'invisible': [('task_default_classification_id', '=', False)]}"
-                        >
-                            <div class="content-group">
-                                <div class="row">
-                                    <label 
-                                        class="col-lg-4 o_light_label"
-                                        for="task_default_document_type_id" 
-                                    />
-                                    <field 
-                                        name="task_default_document_type_id" 
-                                        class="col-lg-8"
-                                        domain="[('classification_id', '=', task_default_classification_id)]" 
-                                        options="{'no_create': True, 'no_open': True}"
-                                    />
-                                </div>
+                        <div class="content-group">
+                            <div class="row">
+                                <label 
+                                    class="col-lg-4 o_light_label"
+                                    for="project_default_document_type_id" 
+                                />
+                                <field 
+                                    name="project_default_document_type_id" 
+                                    domain="[('classification_id', '=', project_default_classification_id)]" 
+                                    options="{'no_create': True, 'no_open': True}"
+                                />
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="col-12 col-lg-6 o_setting_box" />
+
+                <div 
+                    name="record_keeping_project_defaults_for_tasks"
+                    class="col-12 col-lg-6 o_setting_box" 
+                >
+                    <div class="o_setting_left_pane" />
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Tasks</span> 
+                        <div class="content-group">
+                            <div class="row mt8">
+                                <label 
+                                    class="col-lg-4 o_light_label"
+                                    for="task_default_classification_id" 
+                                />
+                                <field 
+                                    name="task_default_classification_id" 
+                                    domain="[('has_types', '=', True)]" 
+                                    options="{'no_create': True, 'no_open': True}"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="o_setting_left_pane" />
+                    <div 
+                        class="o_setting_right_pane"
+                        attrs="{'invisible': [('task_default_classification_id', '=', False)]}"
+                    >
+                        <div class="content-group">
+                            <div class="row">
+                                <label 
+                                    class="col-lg-4 o_light_label"
+                                    for="task_default_document_type_id" 
+                                />
+                                <field 
+                                    name="task_default_document_type_id" 
+                                    domain="[('classification_id', '=', task_default_classification_id)]" 
+                                    options="{'no_create': True, 'no_open': True}"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </field>
