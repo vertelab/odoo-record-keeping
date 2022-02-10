@@ -122,6 +122,13 @@ class Document(models.Model):
         document._next_document_no()
         return document
 
+    @api.model
+    def search(self, args, offset=0, limit=None, order=None, count=False):
+        self = self.sudo()
+        search_res = super().search(args, offset=0, limit=None, order=None, count=count)
+        _logger.warning(f"{search_res=}")
+        return search_res
+
     def write(self, vals):
         if vals.get('matter_id'):
             vals['document_no'] = ''
