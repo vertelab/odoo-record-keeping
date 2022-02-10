@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20220205\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-09 13:51+0000\n"
-"PO-Revision-Date: 2022-02-09 14:52+0100\n"
+"POT-Creation-Date: 2022-02-10 11:45+0000\n"
+"PO-Revision-Date: 2022-02-10 12:45+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -766,6 +766,11 @@ msgid "Matters not done before default date"
 msgstr "Ärenden som inte är klara före 2021-07-01"
 
 #. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_search
+msgid "Matters where state is not done"
+msgstr "Ärenden som inte är klara"
+
+#. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mail__mail_message_id
 msgid "Message"
 msgstr "Meddelande"
@@ -1148,6 +1153,11 @@ msgstr "Källa"
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_search
 msgid "State"
 msgstr "Status"
+
+#. module: record_keeping
+#: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_search
+msgid "State is not \"Done\""
+msgstr "Status är inte \"Klar\""
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__state
