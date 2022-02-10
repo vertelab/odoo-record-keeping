@@ -46,4 +46,12 @@
         <field name="groups_id" eval="[(4, ref('group_rk_manager')), (4, ref('group_rk_law_section_manager'))]"/>
     </record>
 
+    <record id="base.group_allow_export" model="res.groups">
+        <field name="name">Access to export feature</field>
+        <field
+            name="implied_ids"
+            eval="[(4, ref('record_keeping.group_rk_manager'))]"
+        />
+    </record>
+
 </odoo>
