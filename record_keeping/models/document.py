@@ -85,14 +85,15 @@ class Document(models.Model):
         if kwargs:
             res = super(Document, self)._message_log(**kwargs)
         if self.matter_id:
-            kwargs['body'] = _('<p>Document (%s):</p>') % self.name.split(' ')[0]
+            kwargs['body'] = _(
+                '<p>Document (%s):</p>') % self.name.split(' ')[0]
             self.matter_id._message_log(**kwargs)
         return res
 
-    def _message_log_batch(self, bodies, author_id=None, email_from=None, 
+    def _message_log_batch(self, bodies, author_id=None, email_from=None,
                            subject=False, message_type='notification'):
-        res = super()._message_log_batch(bodies, author_id=None, 
-                                         email_from=None, subject=False, 
+        res = super()._message_log_batch(bodies, author_id=None,
+                                         email_from=None, subject=False,
                                          message_type='notification')
         if res and self.matter_id and message_type in ['notification']:
             self._next_document_no()
@@ -100,7 +101,7 @@ class Document(models.Model):
                 name = f"{self.matter_id.reg_no}-{self.document_no}"
                 body = _('<p>Document (%s) created</p>') % name
                 self.matter_id._message_log(body=body)
-       
+
         return res
 
     def _next_document_no(self):
@@ -123,10 +124,10 @@ class Document(models.Model):
         return document
 
     @api.model
-    def search(self, args, offset=0, limit=None, order=None, count=False):
+    def search(self, args, offset=0, limit=80, order='id', count=False):
         self = self.sudo()
-        search_res = super().search(args, offset=0, limit=None, order=None, count=count)
-        _logger.warning(f"{search_res=}")
+        search_res = super().search(args, offset=offset,
+                                    limit=limit, order=order, count=count)
         return search_res
 
     def write(self, vals):
