@@ -155,11 +155,18 @@
         <field name="arch" type="xml">
             <search string="Matter">
                 <field name="name" />
+                <!-- 
                 <field name="description" />
                 <field name="latest_change" />
                 <separator />
                 <field name="is_official" />
-                <field name="state" />
+                <field name="state" /> -->
+                <filter 
+                    string="State is not Done" 
+                    domain="[('state', '!=', 'done')]" 
+                    help="Matters where state is not done"
+                    name="state_not_done" 
+                />
                 <separator />
                 <field name="create_date" />
                 <field name="draw_up_date" />
@@ -184,6 +191,9 @@
                         context="{'group_by': 'classification_id'}" 
                     />
                 </group>
+                <searchpanel class="account_root">
+                    <field name="name" icon="fa-filter" limit="0"/>
+                </searchpanel>
             </search>
         </field>
     </record>
