@@ -125,10 +125,17 @@ class Document(models.Model):
 
     @api.model
     def search(self, args, offset=0, limit=80, order='id', count=False):
-        self = self.sudo()
-        search_res = super().search(args, offset=offset,
-                                    limit=limit, order=order, count=count)
-        return search_res
+        """Override to be able to search old_value_char in mail.tracking.value"""
+        dotted_field = 'message_ids.tracking_value_ids.old_value_char'
+        if any(filter(lambda arg: dotted_field in arg, args)):
+            self = self.sudo()
+        return super().search(
+            args,
+            offset=offset,
+            limit=limit,
+            order=order,
+            count=count
+        )
 
     def write(self, vals):
         if vals.get('matter_id'):
