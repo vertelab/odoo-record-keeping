@@ -127,8 +127,9 @@ class Mail(models.Model):
                     else:
                         values[key] = mail[key]
             if (model := mail.model) and (res_id := mail.res_id):
-                if (matter_id := self.env[model].browse(res_id).matter_id):
-                    values['matter_id'] = matter_id.id
-                    values['is_official'] = True
+                if (rec := self.env[model].browse(res_id)):
+                    if hasattr(rec, 'matter_id'):
+                        values['matter_id'] = rec.matter_id.id
+                        values['is_official'] = True
             self.env['rk.mail'].create(values)
         return res
