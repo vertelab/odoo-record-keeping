@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="action_law_section_view" model="ir.actions.act_window">
         <field name="name">Law Section</field>
         <field name="res_model">rk.law.section</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Create a Law Section</p>
+            <p class="o_view_nocontent_smiling_face">
+                Create a Law Section
+            </p>
         </field>
     </record>
 
@@ -17,12 +20,50 @@
                     <group>
                         <field name="name" />
                         <field name="description" />
-                        <field name="url" widget="url"/>
+                        <field name="url" widget="url" />
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
+
+    <record id="view_law_section_kanban" model="ir.ui.view">
+        <field name="model">rk.law.section</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_background_grey o_kanban_dashboard o_emphasize_colors" sample="1">
+                <field name="url" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_details oe_kanban_card oe_kanban_global_click o_has_icon">
+                            <strong>
+                                <field name="name" />
+                            </strong>
+                            <div t-if="record.url">
+                                <a 
+                                    t-att-href="record.url.raw_value"  
+                                    class="btn btn-sm btn-secondary float-right o-hidden-ios" 
+                                    role="button"
+                                    target="_blank" 
+                                >
+                                    Source
+                                </a>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
     
-    <menuitem action="action_law_section_view" id="menu_law_section" parent="record_keeping.menu_record_keeping" sequence="90" />
+     <record id="view_law_section_tree" model="ir.ui.view">
+        <field name="model">rk.law.section</field>
+        <field name="arch" type="xml">
+            <tree sample="1">
+                <field name="name" />
+                <field name="description" widget="html" />
+                <field name="url" widget="url" />
+            </tree>
+        </field>
+    </record>
+
 </odoo>

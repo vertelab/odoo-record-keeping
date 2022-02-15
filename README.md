@@ -13,12 +13,15 @@ Available addons
 addon
 --- |
 [record_keeping](record_keeping) |
+[record_keeping_account](record_keeping_account) |
 [record_keeping_attachment](record_keeping_attachment) |
 [record_keeping_event](record_keeping_event) |
 [record_keeping_hr](record_keeping_hr) |
 [record_keeping_project](record_keeping_project) |
 [record_keeping_property_mgmt](record_keeping_property_mgmt) |
 [record_keeping_sale](record_keeping_sale) |
+[record_keeping_sale_project](record_keeping_sale_project) |
+[record_keeping_sale_wizard](record_keeping_wizard) |
 
 [//]: # (end addons)
 
@@ -32,3 +35,8 @@ addon
 
 * Han Wong <<han.wong@vertel.se>>
 * Anders Wallenquist <<anders.wallenquist@vertel.se>>
+* Jakob Krabbe <<jakob.krabbe@vertel.se>>
+* Fredrik Arvas <<fredrik.arvas@vertel.se>>
+* Miracle Ayodele <<miracle.ayodele@vertel.se>>
+* Robin Calvin <<robin.calvin@vertel.se>>
+* Emanuel Bergsten <<emanuel.bergsten@vertel.se>>

@@ -7,10 +7,9 @@ class Mixin(models.AbstractModel):
     _name = 'rk.mixin'
     _description = 'Mixin'
 
-    classification_id = fields.Many2one(
-        comodel_name='rk.classification',
-        string='Classification',
-        default=lambda self: self._default_classification(),
+    active = fields.Boolean(
+        default=True,
+        string='Archived',
         tracking=True,
     )
     document_type_id = fields.Many2one(
@@ -19,8 +18,9 @@ class Mixin(models.AbstractModel):
         tracking=True,
     )
     draw_up_date = fields.Date(
-        default=False,
+        default=lambda self: fields.Date.today(),
         help='The date when the document is ready to be used or sent',
+        index=True,
         string='Drawn up',
         tracking=True,
     )
@@ -44,8 +44,9 @@ class Mixin(models.AbstractModel):
         tracking=True,
     )
     receive_date = fields.Date(
-        default=False,
+        default=lambda self: fields.Date.today(),
         help='The date when the document has been received by a competent person.',
+        index=True,
         string='Received',
         tracking=True,
     )
@@ -74,9 +75,9 @@ class Mixin(models.AbstractModel):
          #  "CHECK(is_secret IS NOT TRUE OR (law_section_id IS NOT NULL AND secrecy_grounds IS NOT NULL))",
          'Please provide legal provision')]
 
-    def _default_classification(self):
-        ParameterSudo = self.env['ir.config_parameter'].sudo()
-        return int(ParameterSudo.get_param('record_keeping.default_classification'))
+    def _get_default_classification(self):
+        param = 'record_keeping.matter_default_classification_id'
+        return int(self.env['ir.config_parameter'].sudo().get_param(param))
 
     @api.onchange('is_official')
     def _onchange_is_official(self):

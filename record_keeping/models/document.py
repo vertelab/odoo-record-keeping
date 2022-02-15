@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import logging
 from odoo import _, api, fields, models
 
+import logging
 _logger = logging.getLogger(__name__)
 
 
@@ -12,13 +12,32 @@ class Document(models.Model):
     _inherit = ['mail.activity.mixin', 'mail.thread', 'rk.mixin']
 
     name = fields.Char(
-        help='The format is [current year]/[sequence] if this document is belongs to a matter',
+        help='The format is [current year]/[sequence] if this document is '
+             'belongs to a matter',
+        readonly=True,
         string='Name',
+        tracking=True,
+    )
+    classification_id = fields.Many2one(
+        comodel_name='rk.classification',
+        string='Classification',
+        tracking=True,
+    )
+    description = fields.Char(
+        help='The description of this document',
+        string='Description',
+        tracking=True,
     )
     document_no = fields.Char(
         help='The number assigned to this document',
         readonly=True,
         string='Document number',
+        tracking=True,
+    )
+    document_type_id = fields.Many2one(
+        comodel_name='rk.document.type',
+        string='Document Type',
+        tracking=True,
     )
     matter_id = fields.Many2one(
         comodel_name='rk.matter',
@@ -43,7 +62,7 @@ class Document(models.Model):
         string='Resource Reference',
     )
 
-    @api.depends('res_model', 'res_id')
+    @api.depends('name', 'res_model', 'res_id')
     def _compute_res_ref(self):
         self = self.sudo()
         for document in self:
@@ -62,6 +81,29 @@ class Document(models.Model):
             else:
                 document.res_ref = None
 
+    def _message_log(self, **kwargs):
+        if kwargs:
+            res = super(Document, self)._message_log(**kwargs)
+        if self.matter_id:
+            kwargs['body'] = _(
+                '<p>Document (%s):</p>') % self.name.split(' ')[0]
+            self.matter_id._message_log(**kwargs)
+        return res
+
+    def _message_log_batch(self, bodies, author_id=None, email_from=None,
+                           subject=False, message_type='notification'):
+        res = super()._message_log_batch(bodies, author_id=None,
+                                         email_from=None, subject=False,
+                                         message_type='notification')
+        if res and self.matter_id and message_type in ['notification']:
+            self._next_document_no()
+            for b in bodies.values():
+                name = f"{self.matter_id.reg_no}-{self.document_no}"
+                body = _('<p>Document (%s) created</p>') % name
+                self.matter_id._message_log(body=body)
+
+        return res
+
     def _next_document_no(self):
         self.ensure_one()
         if self.matter_id and not self.document_no:
@@ -76,15 +118,29 @@ class Document(models.Model):
 
     @api.model
     def create(self, vals):
-        document = super(Document, self).create(vals)
-        if 'matter_id' in vals:
-            document._next_document_no()
+        document = super().create(vals)
+        _logger.warning(f"{vals=}")
+        document._next_document_no()
         return document
 
+    @api.model
+    def search(self, args, offset=0, limit=80, order='id', count=False):
+        """Override to be able to search old_value_char in mail.tracking.value"""
+        dotted_field = 'message_ids.tracking_value_ids.old_value_char'
+        if any(filter(lambda arg: dotted_field in arg, args)):
+            self = self.sudo()
+        return super().search(
+            args,
+            offset=offset,
+            limit=limit,
+            order=order,
+            count=count
+        )
+
     def write(self, vals):
-        if vals.get('matter_id', ):
+        if vals.get('matter_id'):
             vals['document_no'] = ''
-        res = super(Document, self).write(vals)
+        res = super().write(vals)
         for document in self:
             document._next_document_no()
         return res

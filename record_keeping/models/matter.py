@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, api, fields, models, tools
+from datetime import timedelta
+from odoo import _, api, fields, models
 
 
 class Matter(models.Model):
@@ -11,16 +12,28 @@ class Matter(models.Model):
 
     administrator_id = fields.Many2one(
         comodel_name='res.users',
+        copy=False,
         string='Administrator',
         tracking=True,
     )
+    classification_id = fields.Many2one(
+        comodel_name='rk.classification',
+        copy=False,
+        string='Classification',
+        default=lambda self: int(self._get_default_param('classification_id')) or 0,
+        tracking=True,
+    )
+
     department_id = fields.Many2one(
-        index=True,
-        # related='administrator_id.department_id',
+        copy=False,
+        related='administrator_id.department_id',
         store=True,
         string='Department',
+        tracking=True,
     )
+
     description = fields.Char(
+        copy=False,
         help='The description of this matter',
         string='Description',
         tracking=True,
@@ -31,6 +44,7 @@ class Matter(models.Model):
     )
     document_ids = fields.One2many(
         comodel_name='rk.document',
+        copy=False,
         inverse_name='matter_id',
         string='Documents',
         tracking=True,
@@ -39,13 +53,29 @@ class Matter(models.Model):
         copy=False,
         default=1,
         help='Counter used to assign to the next document',
+        readonly=True,
         string='The next document number',
+    )
+    close_date = fields.Date(
+        copy=False,
+        help='Date when matter is closed',
+        readonly=1,
+        string='Closed',
+        tracking=True,
     )
     latest_change = fields.Char(
         compute='_compute_latest_change',
         string='Latest change',
+        tracking=True,
+    )
+    legacy_reg_no = fields.Char(
+        copy=False,
+        help='From other sources',
+        string='Legacy registration number',
+        tracking=True,
     )
     matter_name = fields.Char(
+        copy=False,
         help='The name of this matter',
         string='Matter Name',
         tracking=True,
@@ -56,6 +86,7 @@ class Matter(models.Model):
               'the matter is created'),
         string='Matter Number',
         store=True,
+        tracking=True,
     )
     partner_id = fields.Many2one(
         comodel_name='res.partner',
@@ -66,12 +97,19 @@ class Matter(models.Model):
         compute='_compute_partner_name',
         help='Name of partner',
         string='Partner Name',
+        tracking=True,
     )
     reg_no = fields.Char(
+        copy=False,
         help='The format is [current year]/[sequence]',
         readonly=True,
         string='Registration number',
-        store=True,
+        tracking=True,
+    )
+    sorting_out_date = fields.Date(
+        help='The date this matter should be archived or moved out',
+        index=True,
+        tracking=True,
     )
     state = fields.Selection(
         [
@@ -82,12 +120,12 @@ class Matter(models.Model):
         ],
         copy=False,
         default='draft',
+        group_expand='_expand_states',
         string='Status',
         tracking=True,
     )
 
     def _compute_document_count(self):
-        # total number of documents linked to the rk matter
         for matter in self:
             matter.document_count = self.env['rk.document'].search_count([
                 ('matter_id', '=', matter.id),
@@ -98,44 +136,70 @@ class Matter(models.Model):
         self = self.sudo()
         for record in self:
             if record.message_ids:
-                description = record.message_ids[0].description
-                tracking_values = record.message_ids[0].tracking_value_ids
+                description = record.message_ids[-1].description
+                tracking_values = record.message_ids[-1].tracking_value_ids
                 if description:
                     record.latest_change = description
                 elif tracking_values:
                     record.latest_change = (
-                        f"{tracking_values[0].field_desc} -> {tracking_values[0].get_new_display_value()[0]}")
+                        f"{tracking_values[-1].field_desc} -> "
+                        f"{tracking_values[-1].get_new_display_value()[-1]}")
             else:
                 record.latest_change = ''
 
     @api.depends('matter_name', 'reg_no')
     def _compute_name(self):
         for record in self:
-            record.name = f'{record.reg_no or ""} {record.matter_name or ""}'
+            record.name = f"{record.reg_no or ''} {record.matter_name or ''}"
 
     @api.depends('is_secret', 'partner_id')
     def _compute_partner_name(self):
         for record in self:
             if record.is_secret:
                 record.partner_name = _('Confidential')
-            elif record.partner_id:
-                record.partner_name = record.partner_id.name
             else:
-                record.partner_name = ''
+                record.partner_name = record.partner_id.name or ''
+            
+    def _expand_states(self, states, domain, order):
+        return [key for key, val in type(self).state.selection]
+
+    def _get_default_param(self, field):
+        param = f"record_keeping.{self._name.replace('.', '_')}_default_{field}"
+        return self.env['ir.config_parameter'].sudo().get_param(param)
+
+    def action_archive_after_sorting_date(self):
+        if self.state in ['done']:
+            if self.sorting_out_date < fields.Date.today():
+                self.write(dict(active=False))
+
+    def action_archive_documents(self):
+        for document in self.document_ids:
+            document.write(dict(active=False))
 
     def action_done(self):
-        self.write({'state': 'done'})
+        self.write(dict(state='done'))
 
     @api.model
     def create(self, vals):
-        vals.update(
-            {'reg_no': self.env['ir.sequence'].next_by_code('rk.matter')})
+        vals['reg_no'] = self.env['ir.sequence'].next_by_code('rk.matter')
         return super(Matter, self).create(vals)
 
     def document_tree_view(self):
         # shows the tree view of the documents linked to rk.matter
-        action = self.env['ir.actions.act_window']._for_xml_id(
-            'record_keeping.action_document_view')
+        action_xmlid = 'record_keeping.action_document_view'
+        action = self.env['ir.actions.act_window']._for_xml_id(action_xmlid)
         action['domain'] = str([('matter_id', 'in', self.ids)])
         action['context'] = "{'matter_id': '%d'}" % (self.id)
         return action
+    
+    def write(self, vals):
+        if vals.get('state') == 'done':
+            vals['close_date'] = fields.Date.today()
+            if (days := int(self._get_default_param('sorting_out_days')) or 0):
+                vals['sorting_out_date'] = fields.Date.today() + timedelta(days=days)
+        if vals.get('active', True) == False:
+            if not self.state in ['done']:
+                vals.pop('active')
+            else:
+                self.action_archive_documents()
+        return super().write(vals)

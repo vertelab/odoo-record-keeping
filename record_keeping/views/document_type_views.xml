@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="action_type_view" model="ir.actions.act_window">
+
+    <record id="action_document_type_view" model="ir.actions.act_window">
         <field name="name">Document Types</field>
         <field name="res_model">rk.document.type</field>
         <field name="view_mode">tree,kanban,form</field>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Create a Document Type</p>
+            <p class="o_view_nocontent_smiling_face">
+                Create a Document Type
+            </p>
         </field>
     </record>
 
-    <record id="view_type_form" model="ir.ui.view">
+    <record id="view_document_type_form" model="ir.ui.view">
         <field name="model">rk.document.type</field>
         <field name="arch" type="xml">
             <form string="Document Types">
@@ -17,17 +20,21 @@
                     <group>
                         <field name="name" />
                         <field name="description" />
-                        <field name="classification_id" domain="[('has_types', '=', True)]" options="{'no_create': True}" />
+                        <field 
+                            name="classification_id" 
+                            domain="[('has_types', '=', True)]" 
+                            options="{'no_create': True}" 
+                        />
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="view_type_kanban" model="ir.ui.view">
+    <record id="view_document_type_kanban" model="ir.ui.view">
         <field name="model">rk.document.type</field>
         <field name="arch" type="xml">
-            <kanban>
+            <kanban default_group_by="classification_id">
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_details oe_kanban_global_click">
@@ -39,29 +46,34 @@
         </field>
     </record>
 
-    <record id="view_type_search" model="ir.ui.view">
+    <record id="view_document_type_search" model="ir.ui.view">
         <field name="model">rk.document.type</field>
         <field name="arch" type="xml">
             <search string="Document Type">
-                <field name="name" string="Name" />
+                <field name="name" />
                 <group expand="0" string="Group By">
-                    <filter string="Classification" name="classification" context="{'group_by': 'classification_id'}" />
+                    <filter 
+                        name="classification" 
+                        context="{'group_by': 'classification_id'}" 
+                        string="Classification" 
+                    />
                 </group>
             </search>
         </field>
     </record>
 
-
-    <record id="view_type_tree" model="ir.ui.view">
+    <record id="view_document_type_tree" model="ir.ui.view">
         <field name="model">rk.document.type</field>
         <field name="arch" type="xml">
             <tree string="Classification" delete="0" sample="1">
                 <field name="name" />
                 <field name="description" />
-                <field name="classification_id" domain="[('has_types', '=', True)]" />
+                <field 
+                    name="classification_id" 
+                    domain="[('has_types', '=', True)]" 
+                />
             </tree>
         </field>
     </record>
 
-    <menuitem action="action_type_view" id="menu_type_view" parent="record_keeping.menu_record_keeping_configuration" />
 </odoo>

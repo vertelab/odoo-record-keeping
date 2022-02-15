@@ -27,7 +27,7 @@
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
     'category': 'Administration',
-    'version': '14.0.2.1.0',
+    'version': '14.0.2.2.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
     'website': 'https://vertel.se/record-keeping',
@@ -35,12 +35,12 @@
 This module extends projects with record-keeping fields\n
 v14.1.1.0 added new version number.   \n
 v14.0.2.1.0 added wizard to link to record
+v14.0.2.2.0 refactored classes
 """,
     'depends': ['mail', 'project', 'record_keeping', 'record_keeping_wizard'],
     'data': [
         'views/project_views.xml',
         'views/task_views.xml',
-        'security/ir.model.access.csv',
+        'views/res_config_settings_views.xml',
     ],
-    # 'post_init_hook': 'post_init_hook',
 }

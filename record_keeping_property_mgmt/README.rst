@@ -47,7 +47,10 @@ Contributors
 ~~~~~~~~~~~~
 
 * Han Wong <han.wong@vertel.se>
-* Anders Wallenquist <anders.wallenquist@vertel.se>
+* Jakob Krabbe <jakob.krabbe@vertel.se>
+* Miracle Ayodele <miracle.ayodele@vertel.se>
+* Fredrik Arvas <fredrik.arvas@vertel.se>
+* Emanuel Bergsten <emanuel.bergsten@vertel.se>
 
 Maintainers
 ~~~~~~~~~~~

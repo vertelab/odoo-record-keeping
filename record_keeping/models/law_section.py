@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import _, fields, models
 
 
 class LawSection(models.Model):
@@ -26,6 +25,7 @@ class LawSection(models.Model):
     )
     description = fields.Html(
         help='The description of this secrecy provision',
+        required=True,
         string='Description',
         tracking=True,
     )

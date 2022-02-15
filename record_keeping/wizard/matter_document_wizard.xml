@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="view_attachment_form" model="ir.ui.view">
         <field name="model">rk.matter.document.wizard</field>
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="name" />
-                    <field name="type" />
-                    <field name="datas" attrs="{'invisible':[('type', '=', 'url')]}" filename="name" />
-                    <field name="url" attrs="{'invisible':[('type', '=', 'binary')]}" widget="url" />
-                    <field name="description" />
+                    <field 
+                        name="datas" 
+                        filename="name" 
+                        required="1"
+                    />
+                    <field 
+                        name="name" 
+                        attrs="{'invisible': [('datas', '=', False)], }"
+                    />
+                    <field 
+                        name="description"
+                        attrs="{'invisible': [('datas', '=', False)], }"
+                    />
                 </group>
                 <footer>
-                    <button name="save_button" class="btn btn-primary" string="Save" type="object" />
-                    <button name="cancel_button" class="btn btn-secondary" special="cancel" string="Cancel" type="object" />
+                    <button 
+                        name="save_button" 
+                        class="btn btn-primary" 
+                        string="Save" 
+                        type="object" 
+                    />
+                    <button 
+                        name="cancel_button" 
+                        class="btn btn-secondary" 
+                        special="cancel" 
+                        string="Cancel" 
+                        type="object" 
+                    />
                 </footer>
             </form>
         </field>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
-        <record model="ir.config_parameter" id="record_keeping_default_classification">
-            <field name="key">record_keeping.default_classification</field>
-            <field name="value" ref="record_keeping.classification_3_12_2aa"/>
-        </record>
-    </data>
-</odoo>

@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="view_matter_form" model="ir.ui.view">
         <field name="model">rk.matter</field>
         <field name="arch" type="xml">
             <form string="Record-keeping">
                 <header>
-                    <button name="%(action_attachment_form)d" string="Add document" type="action" />
-                    <field name="state" options="{'clickable': '1'}" statusbar_visible="draft,pending,done,cancel" widget="statusbar" />
+                    <button 
+                        name="%(action_attachment_form)d" 
+                        string="Add document" 
+                        type="action" 
+                    />
+                    <field 
+                        name="state"
+                        options="{'clickable': '1'}" 
+                        statusbar_visible="draft,pending,done,cancel" 
+                        widget="statusbar"
+                    />
                 </header>
                 <sheet>
-                    <div class="oe_button_box" name="button_box" groups="base.group_user">
-                        <button class="oe_stat_button" name="document_tree_view" type="object" icon="fa-file-text-o">
-                            <field string="Documents" name="document_count" widget="statinfo"/>
+                    <div 
+                        name="button_box" 
+                        class="oe_button_box" 
+                        groups="base.group_user"
+                    >
+                        <button 
+                            name="document_tree_view" 
+                            class="oe_stat_button" 
+                            icon="fa-file-text-o"
+                            type="object" 
+                        >
+                            <field 
+                                name="document_count" 
+                                string="Documents" 
+                                widget="statinfo" 
+                            />
                         </button>
                     </div>
-                    <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
+                    <widget 
+                        name="web_ribbon" 
+                        attrs="{'invisible': [('is_secret', '=', False)]}" 
+                        bg_color="bg-danger" 
+                        title="Confidential" 
+                    />
                     <h1>
                         <field name="name" class="oe_read_only" />
                         <field name="matter_name" class="oe_edit_only" />
@@ -22,17 +50,38 @@
                     <group>
                         <group>
                             <field name="reg_no" />
+                            <field name="legacy_reg_no" class="oe_edit_only" />
+                            <field 
+                                name="legacy_reg_no"
+                                attrs="{'invisible': [('legacy_reg_no', '=', False)]}" 
+                                class="oe_read_only" />
                             <field name="description" />
-                            <field name="classification_id" domain="[('has_types', '=', True)]" />
+                            <field 
+                                name="classification_id" 
+                                domain="[('has_types', '=', True)]" 
+                            />
                             <field name="partner_id" />
                             <field name="administrator_id" />
                             <field name="department_id" />
                         </group>
                         <group>
-                            <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
-                            <field name="is_secret" attrs="{'invisible': [('is_official', '=', False)]}" />
-                            <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
-                            <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
+                            <field 
+                                name="is_official" 
+                                attrs="{'required': [('is_secret', '=', True)]}" 
+                            />
+                            <field 
+                                name="is_secret" 
+                                attrs="{'invisible': [('is_official', '=', False)]}" 
+                            />
+                            <field 
+                                name="law_section_id"
+                                attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 
+                                        'required': [('is_secret', '=', True)]}" 
+                            />
+                            <field 
+                                name="secrecy_grounds"
+                                attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}"
+                            />
                         </group>
                     </group>
                     <notebook>
@@ -51,10 +100,31 @@
                         <page name="documents" string="Documents">
                             <field name="document_ids" />
                         </page>
+                        <page name="dates" string="Dates" groups="base.group_no_one">
+                            <group>
+                                <group>
+                                    <field name="receive_date" />
+                                    <field name="draw_up_date" />
+                                    <field 
+                                        name="close_date" 
+                                        attrs="{'invisible': [('state', 'not in', ['done'])]}"
+                                    />
+                                    <field 
+                                        name="sorting_out_date" 
+                                        attrs="{'invisible': [('state', 'not in', ['done'])]}"
+                                    />
+                                </group>
+                                <group />
+                            </group>
+                        </page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" options="{'post_refresh': True}" groups="base.group_user" />
+                    <field 
+                        name="message_follower_ids" 
+                        options="{'post_refresh': True}" 
+                        groups="base.group_user" 
+                    />
                     <field name="activity_ids" />
                     <field name="message_ids" />
                 </div>
@@ -69,14 +139,10 @@
                 <field name="name" />
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_global_click o_has_icon">
-                            <div class="row">
-                                <div class="col-12">
-                                    <strong>
-                                        <t t-esc="record.name.value" />
-                                    </strong>
-                                </div>
-                            </div>
+                        <div t-attf-class="oe_kanban_card oe_kanban_details oe_kanban_global_click o_has_icon">
+                            <strong>
+                                <field name="name" />
+                            </strong>
                         </div>
                     </t>
                 </templates>
@@ -90,12 +156,40 @@
             <search string="Matter">
                 <field name="name" />
                 <field name="description" />
+                <field name="latest_change" />
+                <separator />
                 <field name="is_official" />
+                <field name="state" />
+                <filter 
+                    string='State is not "Done"' 
+                    domain="[('state', '!=', 'done')]" 
+                    help="Matters where state is not done"
+                    name="state_not_done" 
+                />
+                <separator />
                 <field name="create_date" />
                 <field name="draw_up_date" />
                 <field name="receive_date" />
                 <field name="write_date" />
-                <field name="latest_change" />
+                <group expand="1" string="Group By">
+                    <filter 
+                        name="administrator" 
+                        string="Administrator" 
+                        context="{'group_by': 'administrator_id'}" 
+                    />
+                    <separator orientation="vertical" />
+                    <filter 
+                        name="state" 
+                        context="{'group_by': 'state'}" 
+                        string="State" 
+                    />
+                    <separator orientation="vertical" />
+                    <filter 
+                        name="classification" 
+                        string="Classification" 
+                        context="{'group_by': 'classification_id'}" 
+                    />
+                </group>
             </search>
         </field>
     </record>
@@ -105,11 +199,13 @@
         <field name="arch" type="xml">
             <tree string="Record-keeping">
                 <field name="name" />
+                <field name="receive_date" />
                 <field name="draw_up_date" />
                 <field name="description" />
                 <field name="partner_name" />
                 <field name="write_date" />
                 <field name="latest_change" />
+                <field name="state" />
                 <field name="administrator_id" />
             </tree>
         </field>
@@ -139,20 +235,31 @@
         <field name="code">action = record.action_done()</field>
     </record>
 
-    <record id="action_matter_form" model="ir.actions.act_window.view">
-        <field name="view_mode">form</field>
-        <field name="act_window_id" ref="action_matter_view" />
+    <record id="action_archive_after_sorting_date" model="ir.actions.server">
+        <field name="name">Archive matters after sorting out date</field>
+        <field name="model_id" ref="record_keeping.model_rk_matter" />
+        <field name="binding_model_id" ref="record_keeping.model_rk_matter"/>
+        <field name="binding_view_types">form,list</field>
+        <field name="state">code</field>
+        <field name="code">action = record.action_archive_after_sorting_date()</field>
     </record>
 
-    <record id="action_matter_kanban" model="ir.actions.act_window.view">
-        <field name="view_mode">kanban</field>
-        <field name="act_window_id" ref="action_matter_view" />
-    </record>
+    <data noupdate="1">
+        <record id="filter_matters_not_done_before_default_date" model="ir.filters">
+            <field name="name">Matters not done before default date</field>
+            <field name="model_id">rk.matter</field>
+            <field name="domain">
+                [('state', 'not in', ['done']), 
+                    '|', 
+                        ('draw_up_date', '&lt;', '2021-07-01'), 
+                        ('draw_up_date', '=', False), 
+                    '|',
+                        ('receive_date', '&lt;', '2021-07-01'), 
+                        ('receive_date', '=', False), 
+                ]
+            </field>
+            <field name="user_id" eval="False"/>
+        </record>
+    </data>
 
-    <record id="action_matter_tree" model="ir.actions.act_window.view">
-        <field name="view_mode">tree</field>
-        <field name="act_window_id" ref="action_matter_view" />
-    </record>
-
-    <menuitem action="action_matter_view" id="menu_record_keeping_matter" name="Matters" parent="menu_record_keeping" sequence="1" />
 </odoo>

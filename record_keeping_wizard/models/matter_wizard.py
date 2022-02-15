@@ -58,5 +58,7 @@ class MatterWizard(models.TransientModel):
             data['is_secret'] = self.is_secret
             data['law_section_id'] = self.law_section_id
             data['secrecy_grounds'] = self.secrecy_grounds
-
-        self.model.write(data)
+        
+        ctx = self.env.context.get
+        self.env[ctx('active_model')].browse(ctx('active_id')).write(data)
+        

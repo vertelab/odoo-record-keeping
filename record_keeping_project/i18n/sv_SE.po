@@ -4,22 +4,68 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20211230\n"
+"Project-Id-Version: Odoo Server 14.0-20220205\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-10 08:08+0000\n"
-"PO-Revision-Date: 2022-01-10 09:08+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2022-02-07 08:45+0000\n"
+"PO-Revision-Date: 2022-02-07 09:46+0100\n"
+"Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"Language: sv\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__is_secret
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__is_secret
+#: model_terms:ir.ui.view,arch_db:record_keeping_project.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Projects</span>"
+msgstr "<span class=\"o_form_label\">Uppdrag</span>"
+
+#. module: record_keeping_project
+#: model_terms:ir.ui.view,arch_db:record_keeping_project.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Tasks</span>"
+msgstr "<span class=\"o_form_label\">Arbetsuppgifter</span>"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_needaction
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_needaction
+msgid "Action Needed"
+msgstr "Åtgärd krävs"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_ids
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_ids
+msgid "Activities"
+msgstr "Aktiviteter"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_exception_decoration
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Dekoration för aktivitetsundantag"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_state
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_state
+msgid "Activity State"
+msgstr "Aktivitetsstatus"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_type_icon
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Aktivitetstypsikon"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_attachment_count
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_attachment_count
+msgid "Attachment Count"
+msgstr "Antal Bilagor"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__is_secret
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__is_secret
 msgid ""
 "Check this option if it can be assumed that information contained in this "
 "document should not be disclosed on grounds of secrecy."
@@ -28,10 +74,18 @@ msgstr ""
 "ut på grund av säkerhetsbestämmelse."
 
 #. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__is_official
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__is_official
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__is_official
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__is_official
 msgid "Check this option if this document is an official document"
 msgstr "Markera om detta dokument är en allmän handling"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__classification_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__classification_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__project_default_classification_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__task_default_classification_id
+msgid "Classification"
+msgstr "Klassificering"
 
 #. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
@@ -40,27 +94,61 @@ msgid "Confidential"
 msgstr "Sekretess"
 
 #. module: record_keeping_project
+#: model:ir.model,name:record_keeping_project.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfigurationsinställningar"
+
+#. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.view_task_form2
 msgid "Create Matter"
 msgstr "Skapa ärende"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__create_uid
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__create_uid
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__create_date
+msgid "Created On"
+msgstr "Skapad Den"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__create_uid
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__create_uid
 msgid "Created by"
 msgstr "Skapad av"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__create_date
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__create_date
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__create_date
 msgid "Created on"
 msgstr "Skapad den"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_res_config_settings__project_default_classification_id
+msgid "Default classification used for projects"
+msgstr "Förvald klassificering för uppdrag"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_res_config_settings__task_default_classification_id
+msgid "Default classification used for tasks"
+msgstr "Förvald klassificering för arbetsuppgifter"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_res_config_settings__project_default_document_type_id
+msgid "Default document type used for projects"
+msgstr "Förvald handlingstyp för uppdrag"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_res_config_settings__task_default_document_type_id
+msgid "Default document type used for tasks"
+msgstr "Förvald handlingstyp för arbetsuppgifter"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__description
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__description
+msgid "Description"
+msgstr "Beskrivning"
+
+#. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__display_name
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__display_name
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__display_name
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__display_name
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr "Visningsnamn"
 
@@ -77,6 +165,26 @@ msgid "Document Reference"
 msgstr "Handlingsreferens"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__document_type_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__document_type_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__project_default_document_type_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__task_default_document_type_id
+msgid "Document Type"
+msgstr "Handlingstyp"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__document_no
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__document_no
+msgid "Document number"
+msgstr "Löpnummer"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__draw_up_date
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__draw_up_date
+msgid "Drawn up"
+msgstr "Upprättad"
+
+#. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
 msgid ""
 "Follow this project to automatically track the events associated to tasks "
@@ -86,36 +194,95 @@ msgstr ""
 "aktiviteter och ärenden som berör detta projekt."
 
 #. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_follower_ids
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_follower_ids
+msgid "Followers"
+msgstr "Följare"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_channel_ids
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Följare (Kanaler)"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_partner_ids
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Följare (kontakter)"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__activity_type_icon
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Font awesomeikon t.ex fa-tasks"
+
+#. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__id
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__id
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__id
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__id
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__id
 msgid "ID"
 msgstr "ID"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__secrecy_grounds
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__secrecy_grounds
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_exception_icon
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_exception_icon
+msgid "Icon"
+msgstr "Ikon"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__activity_exception_icon
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ikon för att indikera en undantagsaktivitet."
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__message_needaction
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__message_unread
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__message_needaction
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+"Om den är markerad så finns det meddelanden som kräver din uppmärksamhet."
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__message_has_error
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Om markerad har det uppstått leveransfel för vissa meddelanden."
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__secrecy_grounds
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__secrecy_grounds
 msgid "If marked as secret, please provide more information"
 msgstr "Om märkt med sekretess, uppge mer information"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_is_follower
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_is_follower
+msgid "Is Follower"
+msgstr "Är följare"
+
+#. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project____last_update
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task____last_update
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project____last_update
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task____last_update
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings____last_update
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__write_uid
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__write_uid
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__write_date
+msgid "Last Updated On"
+msgstr "Senast uppdaterad"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__write_uid
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__write_uid
 msgid "Last Updated by"
 msgstr "Senast uppdaterad av"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__write_date
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__write_date
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__write_date
 msgid "Last Updated on"
 msgstr "Senast uppdaterad"
 
@@ -126,10 +293,28 @@ msgid "Link to record"
 msgstr "Koppla till ärende"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__matter_id
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__matter_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_main_attachment_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Huvudbilaga"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__matter_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__matter_id
 msgid "Matter"
 msgstr "Ärende"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_has_error
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_has_error
+msgid "Message Delivery error"
+msgstr "Fel vid meddelandeleverans"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_ids
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_ids
+msgid "Messages"
+msgstr "Meddelanden"
 
 #. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
@@ -138,21 +323,86 @@ msgid "Meta Information"
 msgstr "Meta information"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__model
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__model
-msgid "Model"
-msgstr "Modell"
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__my_activity_date_deadline
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Min aktivitets slutdatum"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__is_official
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__is_official
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__name
+msgid "Name"
+msgstr "Namn"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_date_deadline
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Nästa slutdatum för aktivitet"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_summary
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_summary
+msgid "Next Activity Summary"
+msgstr "Nästa aktivitetssummering"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_type_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_type_id
+msgid "Next Activity Type"
+msgstr "Nästa aktivitetstyp"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_needaction_counter
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Antal åtgärder"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_has_error_counter
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_has_error_counter
+msgid "Number of errors"
+msgstr "Antal fel"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__message_needaction_counter
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Antal meddelanden som kräver en åtgärd"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__message_has_error_counter
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Antal meddelanden med leveransfel"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__message_unread_counter
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Antal olästa meddelanden"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__is_official
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__is_official
 msgid "Official document"
-msgstr "Allmän Handling"
+msgstr "Allmän handling"
 
 #. module: record_keeping_project
 #: model:ir.model,name:record_keeping_project.model_project_project
 msgid "Project"
-msgstr "Uppdrag"
+msgstr "Projekt"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__receive_date
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__receive_date
+msgid "Received"
+msgstr "Inkommen"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__receiver_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__receiver_id
+msgid "Receiver"
+msgstr "Mottagare"
 
 #. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
@@ -167,22 +417,66 @@ msgid "Registration number"
 msgstr "Registreringsnummer"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__secrecy_grounds
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__secrecy_grounds
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__res_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__res_id
+msgid "Resource ID"
+msgstr "Resurs-ID"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__res_model
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__res_model
+msgid "Resource Model"
+msgstr "Resursmodell"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__res_ref
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__res_ref
+msgid "Resource Reference"
+msgstr "Dokument"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_user_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_user_id
+msgid "Responsible User"
+msgstr "Ansvarig användare"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__secrecy_grounds
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__secrecy_grounds
 msgid "Secrecy grounds"
 msgstr "Motivering"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__is_secret
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__is_secret
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__is_secret
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__is_secret
 msgid "Secrecy marker"
 msgstr "Sekretessmarkering"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project__law_section_id
-#: model:ir.model.fields,field_description:record_keeping_project.field_rk_wizard_project_task__law_section_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__law_section_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__law_section_id
 msgid "Secrecy provision"
 msgstr "Sekretessbestämmelse"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__sender_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__sender_id
+msgid "Sender"
+msgstr "Avsändare"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__activity_state
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status baserad på aktiviteter\n"
+"Försenade: Förfallodagen har passerat\n"
+"Idag: Aktivitetsdatum är idag\n"
+"Kommande: Framtida aktiviteter."
 
 #. module: record_keeping_project
 #: model:ir.model,name:record_keeping_project.model_project_task
@@ -190,10 +484,58 @@ msgid "Task"
 msgstr "Aktivitet"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__matter_id
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__matter_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__receiver_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__receiver_id
+msgid "The competent person who received the document"
+msgstr "Behörig person som har mottagit handlingen"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__receive_date
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__receive_date
+msgid "The date when the document has been received by a competent person."
+msgstr "Datumet då handlingen har mottagits av behörig person."
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__draw_up_date
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__draw_up_date
+msgid "The date when the document is ready to be used or sent"
+msgstr "Datumet handlingen är klar att användas eller skickas"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__matter_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__matter_id
 msgid "The matter this document belongs to"
-msgstr "Ärendet som handling hör till"
+msgstr "Ärendet som handlingen hör till"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__document_no
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__document_no
+msgid "The number assigned to this document"
+msgstr "Numret som tilldelats den här handlingen"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__sender_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__sender_id
+msgid "The person who sent this document"
+msgstr "Personen som skickat handlingen"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__res_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__res_id
+msgid "The record id this document is attached to."
+msgstr "Post-Id som den här handlingen är knuten till."
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__res_model
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__res_model
+msgid "The record model this document is attached to."
+msgstr "Postmodellen som handlingen är knuten till."
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__res_ref
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__res_ref
+msgid "The record this document is attached to."
+msgstr "Posten som handling är knuten till."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__document_id
@@ -208,24 +550,43 @@ msgid "The record-keeping document reference"
 msgstr "Referens till handlingen"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project__law_section_id
-#: model:ir.model.fields,help:record_keeping_project.field_rk_wizard_project_task__law_section_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__law_section_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__law_section_id
 msgid "The specified secrecy provision when the document has a secrecy marker"
 msgstr ""
 "Den angivna sekretessbestämmelsen när dokumentet har en sekretessmarkering"
 
 #. module: record_keeping_project
-#: model:ir.actions.act_window,name:record_keeping_project.open_link_to_project_record_wizard
-#: model:ir.actions.act_window,name:record_keeping_project.open_link_to_task_record_wizard
-msgid "open.link.to.record.wizard"
-msgstr "Koppla till ärende"
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__name
+msgid "Title"
+msgstr "Titel"
 
 #. module: record_keeping_project
-#: model:ir.model,name:record_keeping_project.model_rk_wizard_project
-msgid "rk.wizard.project"
-msgstr ""
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__activity_exception_decoration
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Typ av undantagsaktivitet i posten."
 
 #. module: record_keeping_project
-#: model:ir.model,name:record_keeping_project.model_rk_wizard_project_task
-msgid "rk.wizard.project.task"
-msgstr ""
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_unread
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_unread
+msgid "Unread Messages"
+msgstr "Olästa meddelanden"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_unread_counter
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Räknare olästa meddelanden"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__website_message_ids
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__website_message_ids
+msgid "Website Messages"
+msgstr "Webbplatsmeddelanden"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__website_message_ids
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__website_message_ids
+msgid "Website communication history"
+msgstr "Webbplatsens kommunikationshistorik"

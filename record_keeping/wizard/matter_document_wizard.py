@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import logging
-from odoo import _, api, fields, models
-
-_logger = logging.getLogger(__name__)
+from odoo import _, fields, models
 
 
 class MatterDocumentWizard(models.TransientModel):
@@ -23,35 +20,27 @@ class MatterDocumentWizard(models.TransientModel):
     type = fields.Selection(
         [
             ('binary', 'File'),
-            ('url', 'URL'), 
         ],
-        change_default=True,
         default='binary',
-        help='You can either upload a file from your computer or copy/paste '
-             'an internet link to your file.',
         required=True,
         string='Type',
-    )
-    url = fields.Char(
-        index=True,
-        size=1024,
-        string='Url',
     )
 
     def save_button(self):
         attachment_vals = {
-            'name': self.name,
-            'description': self.description,
             'datas': self.datas,
+            'description': self.description,
+            'name': self.name,
             'type': self.type,
-            'url': self.url,
         }
         attachment = self.env['ir.attachment'].create(attachment_vals)
 
-        ctx = self.env.context
-        if attachment and 'rk.matter' in ctx['active_model']:
+        ctx = self.env.context.get
+        if attachment and 'rk.matter' in ctx('active_model'):
             document_vals = {
-                'matter_id': ctx.get('active_id', 0),
+                'description': self.description,
+                'is_official': True,
+                'matter_id': ctx('active_id', 0),
                 'res_id': attachment.id,
                 'res_model': 'ir.attachment',
             }

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="action_classification_view" model="ir.actions.act_window">
         <field name="name">Classification</field>
         <field name="res_model">rk.classification</field>
         <field name="view_mode">tree,kanban,form</field>
         <field name="context">{'search_default_parent': 1}</field>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Create a Classification</p>
+            <p class="o_view_nocontent_smiling_face">
+                Create a Classification
+            </p>
         </field>
     </record>
 
@@ -18,17 +21,27 @@
                     <div class="oe_title">
                         <h1>
                             <field name="name" class="oe_read_only"/>
-                            <field name="classification_name" class="oe_edit_only"/>
+                            <field 
+                                name="classification_name" 
+                                class="oe_edit_only" 
+                            />
                         </h1>
                         <group>
                             <field name="description" />
-                            <field name="parent_id" class="oe_edit_only" widget="many2one" />
-                            <field name="sequence" class="oe_edit_only"/>
+                            <field 
+                                name="parent_id" 
+                                class="oe_edit_only" 
+                                widget="many2one" 
+                            />
+                            <field 
+                                name="sequence" 
+                                class="oe_edit_only"
+                            />
                             <field name="has_types" />
                         </group>
                         <notebook attrs="{'invisible': [('has_types', '=', False)]}">
-                            <page string="Document Types" name="document_types">
-                                <field name="type_ids"/>
+                            <page name="document_types" string="Document Types">
+                                <field name="type_ids" />
                             </page>
                         </notebook>
                     </div>
@@ -40,7 +53,7 @@
     <record id="view_classification_kanban" model="ir.ui.view">
         <field name="model">rk.classification</field>
         <field name="arch" type="xml">
-            <kanban>
+            <kanban default_group_by="parent_id">
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_details oe_kanban_global_click">
@@ -58,7 +71,11 @@
             <search string="Classification">
                 <field name="name" />
                 <group expand="0" string="Group By">
-                    <filter string="Parent" name="parent" context="{'group_by': 'parent_id'}"/>
+                    <filter 
+                        name="parent" 
+                        context="{'group_by': 'parent_id'}"
+                        string="Parent" 
+                    />
                 </group>
             </search>
         </field>
@@ -71,10 +88,12 @@
                 <field name="name" />
                 <field name="description" />
                 <field name="has_types" />
-                <field name="type_ids" attrs="{'invisible': [('has_types', '=', False)]}" />
+                <field 
+                    name="type_ids" 
+                    attrs="{'invisible': [('has_types', '=', False)]}" 
+                />
             </tree>
         </field>
     </record>
 
-    <menuitem action="action_classification_view" id="menu_classification_view" parent="record_keeping.menu_record_keeping_configuration" />
 </odoo>
