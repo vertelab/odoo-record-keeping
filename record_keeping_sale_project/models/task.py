@@ -25,7 +25,7 @@ class ProjectTask(models.Model):
                 ))
             stage = self.env['project.task.type'].search([('name','=','Offert')])
             self.stage_id=stage
-            self.date_deadline=date.today().strftime('%Y-%m-%d') + timedelta(days=7)
+            self.date_deadline=date.today() + timedelta(days=7)
             
     def create_matter(self):
         self.ensure_one()
