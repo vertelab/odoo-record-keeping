@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from datetime import date, datetime 
+from datetime import date, timedelta 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
@@ -25,7 +25,7 @@ class ProjectTask(models.Model):
                 ))
             stage = self.env['project.task.type'].search([('name','=','Offert')])
             self.stage_id=stage
-            self.date_deadline=date.today().strftime('%Y-%m-%d') + datetime.timedelta(days=7)
+            self.date_deadline=date.today().strftime('%Y-%m-%d') + timedelta(days=7)
             
     def create_matter(self):
         self.ensure_one()
