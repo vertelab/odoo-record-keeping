@@ -22,6 +22,8 @@ class ProjectTask(models.Model):
                     partner_id=self.partner_id.id,
                     project_id=False,
                 ))
+            stage = self.env['project.task.type'].search([('name','=','Offert')])
+            self.stage_id=stage
             
     def create_matter(self):
         self.ensure_one()
