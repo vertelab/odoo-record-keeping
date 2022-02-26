@@ -27,7 +27,7 @@ class ProjectTask(models.Model):
                 }
                 if SaleOrder.fields_get().get('name_description'):
                     vals['name_description'] = self.name
-                self.sale_order_id = self.env['sale.order'].create(vals)
+                self.sale_order_id = SaleOrder.create(vals)
 
     def create_matter(self):
         self.ensure_one()
