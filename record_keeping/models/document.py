@@ -67,26 +67,21 @@ class Document(models.Model):
         self = self.sudo()
         for document in self:
             if document.res_model and document.res_id:
+                name = document.get_name()
                 document.res_ref = f"{document.res_model},{document.res_id}"
-                name = ''
-                if document.matter_id:
-                    name += document.matter_id.reg_no
-                    if document.document_no:
-                        name += '-' + document.document_no + ' '
-                    else:
-                        name += ' '
                 if document.res_ref:
-                    name += document.res_ref.name
+                    name += ' ' + document.res_ref.name
                 document.name = name
             else:
                 document.res_ref = None
 
     def _message_log(self, **kwargs):
+        _logger.error(f"{self.name=}")
         if kwargs:
             res = super(Document, self)._message_log(**kwargs)
         if self.matter_id:
             kwargs['body'] = _(
-                '<p>Document (%s):</p>') % self.name.split(' ')[0]
+                '<p>Document (%s):</p>') % self.get_name()
             self.matter_id._message_log(**kwargs)
         return res
 
@@ -122,6 +117,15 @@ class Document(models.Model):
         _logger.warning(f"{vals=}")
         document._next_document_no()
         return document
+    
+    def get_name(self):
+        for document in self:
+            name = ''
+            if document.matter_id:
+                name += document.matter_id.reg_no
+                if document.document_no:
+                    name += '-' + document.document_no
+            return name
 
     @api.model
     def search(self, args, offset=0, limit=80, order='id', count=False):
