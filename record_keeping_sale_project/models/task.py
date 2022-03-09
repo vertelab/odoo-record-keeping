@@ -28,6 +28,8 @@ class ProjectTask(models.Model):
                 if SaleOrder.fields_get().get('name_description'):
                     vals['name_description'] = self.name
                 self.sale_order_id = SaleOrder.create(vals)
+            if (stage:= self.env.ref('record_keeping_sale_project.stage_quote_sent')):
+                self.stage_id= stage.id
 
     def create_matter(self):
         self.ensure_one()
