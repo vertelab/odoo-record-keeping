@@ -4,24 +4,26 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20211214\n"
+"Project-Id-Version: Odoo Server 14.0-20220317\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-05 09:58+0000\n"
-"PO-Revision-Date: 2022-01-05 11:01+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2022-03-18 08:09+0000\n"
+"PO-Revision-Date: 2022-03-18 09:17+0100\n"
+"Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"Language: sv\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping_event
 #: model:ir.model.fields,help:record_keeping_event.field_rk_wizard_event__is_secret
-msgid "Check this option if it can be assumed that information contained in this "
+msgid ""
+"Check this option if it can be assumed that information contained in this "
 "document should not be disclosed on grounds of secrecy."
-msgstr "Markera om det kan antas att informationen i detta dokument inte ska lämnas "
+msgstr ""
+"Markera om det kan antas att informationen i detta dokument inte ska lämnas "
 "ut på grund av säkerhetsbestämmelse."
 
 #. module: record_keeping_event
@@ -50,6 +52,11 @@ msgid "Created on"
 msgstr "Skapad den"
 
 #. module: record_keeping_event
+#: model_terms:ir.ui.view,arch_db:record_keeping_event.view_event_form
+msgid "Debug info"
+msgstr "Information"
+
+#. module: record_keeping_event
 #: model:ir.model.fields,field_description:record_keeping_event.field_event_event__display_name
 #: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__display_name
 msgid "Display Name"
@@ -67,9 +74,8 @@ msgstr "Handlingsreferens"
 
 #. module: record_keeping_event
 #: model:ir.model,name:record_keeping_event.model_event_event
-#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__model
 msgid "Event"
-msgstr "Utbildningen"
+msgstr "Evenemang"
 
 #. module: record_keeping_event
 #: model:ir.model.fields,field_description:record_keeping_event.field_event_event__id
@@ -96,7 +102,7 @@ msgstr "Senast uppdaterad av"
 #. module: record_keeping_event
 #: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__write_date
 msgid "Last Updated on"
-msgstr "Senast uppdaterad"
+msgstr "Senast uppdaterad den"
 
 #. module: record_keeping_event
 #: model_terms:ir.ui.view,arch_db:record_keeping_event.view_event_form
@@ -114,9 +120,14 @@ msgid "Meta Information"
 msgstr "Meta information"
 
 #. module: record_keeping_event
+#: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__model
+msgid "Model"
+msgstr "Modell"
+
+#. module: record_keeping_event
 #: model:ir.model.fields,field_description:record_keeping_event.field_rk_wizard_event__is_official
 msgid "Official document"
-msgstr "Allmän Handling"
+msgstr "Allmän handling"
 
 #. module: record_keeping_event
 #: model_terms:ir.ui.view,arch_db:record_keeping_event.view_event_form
@@ -141,7 +152,7 @@ msgstr "Sekretessbestämmelse"
 #. module: record_keeping_event
 #: model:ir.model.fields,help:record_keeping_event.field_rk_wizard_event__matter_id
 msgid "The matter this document belongs to"
-msgstr "Ärendet som handling hör till"
+msgstr "Ärendet som handlingen hör till"
 
 #. module: record_keeping_event
 #: model:ir.model.fields,help:record_keeping_event.field_event_event__document_id
@@ -156,14 +167,15 @@ msgstr "Referens till handlingen"
 #. module: record_keeping_event
 #: model:ir.model.fields,help:record_keeping_event.field_rk_wizard_event__law_section_id
 msgid "The specified secrecy provision when the document has a secrecy marker"
-msgstr "Den angivna sekretessbestämmelsen när dokumentet har en sekretessmarkering"
+msgstr ""
+"Den angivna sekretessbestämmelsen när dokumentet har en sekretessmarkering"
+
+#. module: record_keeping_event
+#: model:ir.model,name:record_keeping_event.model_rk_wizard_event
+msgid "Wizard for attaching an event to a Record-keeping Matter"
+msgstr "Hjälpreda för att koppla ett utbildningstillfälle till en handling"
 
 #. module: record_keeping_event
 #: model:ir.actions.act_window,name:record_keeping_event.open_link_to_record_wizard
 msgid "open.link.to.record.wizard"
-msgstr "Koppla till ärende"
-
-#. module: record_keeping_event
-#: model:ir.model,name:record_keeping_event.model_rk_wizard_event
-msgid "rk.wizard.event"
-msgstr ""
+msgstr "Hjälpreda för att koppla en faktura till en handling"

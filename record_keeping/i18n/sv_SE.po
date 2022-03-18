@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20220205\n"
+"Project-Id-Version: Odoo Server 14.0-20220317\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 11:45+0000\n"
-"PO-Revision-Date: 2022-02-10 12:45+0100\n"
+"POT-Creation-Date: 2022-03-17 15:22+0000\n"
+"PO-Revision-Date: 2022-03-17 16:24+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -491,7 +491,7 @@ msgstr "Fil"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter_document_wizard__datas
 msgid "File Content (base64)"
-msgstr "Filinnehåll (bas64)"
+msgstr "Filinnehåll"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_follower_ids
@@ -610,10 +610,15 @@ msgstr ""
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_document__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_law_section__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_mail__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_mail__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_error
+#: model:ir.model.fields,help:record_keeping.field_rk_matter__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Om markerad så har det blivit ett leveransfel för några meddelanden."
 
@@ -763,7 +768,7 @@ msgstr "Ärenden som inte är klara före %s"
 #. module: record_keeping
 #: model:ir.filters,name:record_keeping.filter_matters_not_done_before_default_date
 msgid "Matters not done before default date"
-msgstr "Ärenden som inte är klara före 2021-07-01"
+msgstr "Ärenden som inte är klara före standard datum"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_search
@@ -1069,6 +1074,15 @@ msgstr "Ansvarig användare"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mail__body_html
 msgid "Rich-text Contents"
 msgstr "Utsmyckat innehåll"
+
+#. module: record_keeping
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__message_has_sms_error
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__message_has_sms_error
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__message_has_sms_error
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__message_has_sms_error
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_attachment_form

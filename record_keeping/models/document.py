@@ -87,9 +87,11 @@ class Document(models.Model):
 
     def _message_log_batch(self, bodies, author_id=None, email_from=None,
                            subject=False, message_type='notification'):
-        res = super()._message_log_batch(bodies, author_id=None,
-                                         email_from=None, subject=False,
-                                         message_type='notification')
+        res = super()._message_log_batch(bodies,
+                                         author_id,
+                                         email_from,
+                                         subject,
+                                         message_type)
         if res and self.matter_id and message_type in ['notification']:
             self._next_document_no()
             for b in bodies.values():
@@ -117,7 +119,7 @@ class Document(models.Model):
         _logger.warning(f"{vals=}")
         document._next_document_no()
         return document
-    
+
     def get_name(self):
         for document in self:
             name = ''

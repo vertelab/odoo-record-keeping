@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20211230\n"
+"Project-Id-Version: Odoo Server 14.0-20220317\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-01 12:58+0000\n"
-"PO-Revision-Date: 2022-02-01 13:59+0100\n"
+"POT-Creation-Date: 2022-03-18 08:28+0000\n"
+"PO-Revision-Date: 2022-03-18 09:31+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: sv_SE\n"
 "X-Generator: Poedit 2.3\n"
+
+#. module: record_keeping_sale_project
+#: model:project.task.type,legend_blocked:record_keeping_sale_project.stage_quote_sent
+msgid "Blockerad"
+msgstr "Blockerad"
 
 #. module: record_keeping_sale_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_sale_project.view_task_form2
@@ -28,27 +33,34 @@ msgid "Create Sale Order"
 msgstr "Skapa offert"
 
 #. module: record_keeping_sale_project
-#: model:ir.model.fields,field_description:record_keeping_sale_project.field_mail_mail__display_name
 #: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task__display_name
 msgid "Display Name"
 msgstr "Visningsnamn"
 
 #. module: record_keeping_sale_project
-#: model:ir.model.fields,field_description:record_keeping_sale_project.field_mail_mail__id
 #: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task__id
 msgid "ID"
 msgstr "ID"
 
 #. module: record_keeping_sale_project
-#: model:ir.model.fields,field_description:record_keeping_sale_project.field_mail_mail____last_update
 #: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task____last_update
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 
 #. module: record_keeping_sale_project
-#: model:ir.model,name:record_keeping_sale_project.model_mail_mail
-msgid "Outgoing Mails"
-msgstr "Utgående e-post"
+#: model:project.task.type,legend_normal:record_keeping_sale_project.stage_quote_sent
+msgid "Pågående"
+msgstr "Pågående"
+
+#. module: record_keeping_sale_project
+#: model:project.task.type,name:record_keeping_sale_project.stage_quote_sent
+msgid "Quote Sent"
+msgstr "Offert skickad"
+
+#. module: record_keeping_sale_project
+#: model:project.task.type,legend_done:record_keeping_sale_project.stage_quote_sent
+msgid "Redo"
+msgstr "Redo"
 
 #. module: record_keeping_sale_project
 #: model:ir.model,name:record_keeping_sale_project.model_project_task
