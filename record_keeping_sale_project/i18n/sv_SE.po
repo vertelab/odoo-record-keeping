@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping_sale_project
-#: model:project.task.type,legend_blocked:record_keeping_sale_project.stage_quote_created
-#: model:project.task.type,legend_blocked:record_keeping_sale_project.stage_quote_sent
+#: model:project.task.type,legend_blocked:record_keeping_sale_project.project_stage_quote_created
+#: model:project.task.type,legend_blocked:record_keeping_sale_project.project_stage_quote_sent
 msgid "Blockerad"
 msgstr ""
 
@@ -55,24 +55,24 @@ msgid "Please assign a customer to this task"
 msgstr "Ange en kund för den här uppgiften"
 
 #. module: record_keeping_sale_project
-#: model:project.task.type,legend_normal:record_keeping_sale_project.stage_quote_created
-#: model:project.task.type,legend_normal:record_keeping_sale_project.stage_quote_sent
+#: model:project.task.type,legend_normal:record_keeping_sale_project.project_stage_quote_created
+#: model:project.task.type,legend_normal:record_keeping_sale_project.project_stage_quote_sent
 msgid "Pågående"
 msgstr ""
 
 #. module: record_keeping_sale_project
-#: model:project.task.type,name:record_keeping_sale_project.stage_quote_created
+#: model:project.task.type,name:record_keeping_sale_project.project_stage_quote_created
 msgid "Quote Created"
 msgstr "Offert skapad"
 
 #. module: record_keeping_sale_project
-#: model:project.task.type,name:record_keeping_sale_project.stage_quote_sent
+#: model:project.task.type,name:record_keeping_sale_project.project_stage_quote_sent
 msgid "Quote Sent"
 msgstr "Offert skickad"
 
 #. module: record_keeping_sale_project
-#: model:project.task.type,legend_done:record_keeping_sale_project.stage_quote_created
-#: model:project.task.type,legend_done:record_keeping_sale_project.stage_quote_sent
+#: model:project.task.type,legend_done:record_keeping_sale_project.project_stage_quote_created
+#: model:project.task.type,legend_done:record_keeping_sale_project.project_stage_quote_sent
 msgid "Redo"
 msgstr ""
 

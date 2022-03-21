@@ -5,6 +5,7 @@
             <field name="name">Quote Created</field>
             <field name="sequence">7</field>
         </record>
+
         <record id="project_stage_quote_sent" model="project.task.type">
             <field name="name">Quote Sent</field>
             <field name="sequence">8</field>
