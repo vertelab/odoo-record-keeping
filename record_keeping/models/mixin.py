@@ -8,16 +8,19 @@ class Mixin(models.AbstractModel):
     _description = 'Mixin'
 
     active = fields.Boolean(
+        copy=False,
         default=True,
         string='Archived',
         tracking=True,
     )
     document_type_id = fields.Many2one(
         comodel_name='rk.document.type',
+        copy=False,
         string='Document Type',
         tracking=True,
     )
     draw_up_date = fields.Date(
+        copy=False,
         default=lambda self: fields.Date.today(),
         help='The date when the document is ready to be used or sent',
         index=True,
@@ -25,12 +28,14 @@ class Mixin(models.AbstractModel):
         tracking=True,
     )
     is_official = fields.Boolean(
+        copy=False,
         default=False,
         help='Check this option if this document is an official document',
         string='Official document',
         tracking=True,
     )
     is_secret = fields.Boolean(
+        copy=False,
         default=False,
         help='Check this option if it can be assumed that information contained '
              'in this document should not be disclosed on grounds of secrecy.',
@@ -39,11 +44,13 @@ class Mixin(models.AbstractModel):
     )
     law_section_id = fields.Many2one(
         comodel_name='rk.law.section',
+        copy=False,
         help='The specified secrecy provision when the document has a secrecy marker',
         string='Secrecy provision',
         tracking=True,
     )
     receive_date = fields.Date(
+        copy=False,
         default=lambda self: fields.Date.today(),
         help='The date when the document has been received by a competent person.',
         index=True,
@@ -52,11 +59,13 @@ class Mixin(models.AbstractModel):
     )
     receiver_id = fields.Many2one(
         comodel_name='res.partner',
+        copy=False,
         help='The competent person who received the document',
         string='Receiver',
         tracking=True,
     )
     secrecy_grounds = fields.Char(
+        copy=False,
         default=False,
         help='If marked as secret, please provide more information',
         string='Secrecy grounds',
@@ -64,6 +73,7 @@ class Mixin(models.AbstractModel):
     )
     sender_id = fields.Many2one(
         comodel_name='res.partner',
+        copy=False,
         help='The person who sent this document',
         string='Sender',
         tracking=True,

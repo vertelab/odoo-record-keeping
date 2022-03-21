@@ -12,6 +12,7 @@ class Document(models.Model):
     _inherit = ['mail.activity.mixin', 'mail.thread', 'rk.mixin']
 
     name = fields.Char(
+        copy=False,
         help='The format is [current year]/[sequence] if this document is '
              'belongs to a matter',
         readonly=True,
@@ -20,15 +21,18 @@ class Document(models.Model):
     )
     classification_id = fields.Many2one(
         comodel_name='rk.classification',
+        copy=False,
         string='Classification',
         tracking=True,
     )
     description = fields.Char(
+        copy=False,
         help='The description of this document',
         string='Description',
         tracking=True,
     )
     document_no = fields.Char(
+        copy=False,
         help='The number assigned to this document',
         readonly=True,
         string='Document number',
@@ -36,27 +40,32 @@ class Document(models.Model):
     )
     document_type_id = fields.Many2one(
         comodel_name='rk.document.type',
+        copy=False,
         string='Document Type',
         tracking=True,
     )
     matter_id = fields.Many2one(
         comodel_name='rk.matter',
+        copy=False,
         help='The matter this document belongs to',
         string='Matter',
         tracking=True,
     )
     res_id = fields.Integer(
+        copy=False,
         help='The record id this document is attached to.',
         readonly=True,
         string='Resource ID',
     )
     res_model = fields.Char(
+        copy=False,
         help='The record model this document is attached to.',
         readonly=True,
         string='Resource Model',
     )
     res_ref = fields.Reference(
         compute='_compute_res_ref',
+        copy=False,
         help='The record this document is attached to.',
         selection='_selection_target_model',
         string='Resource Reference',
