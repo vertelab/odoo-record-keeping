@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20220317\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-18 08:28+0000\n"
-"PO-Revision-Date: 2022-03-18 09:31+0100\n"
+"POT-Creation-Date: 2022-03-21 12:52+0000\n"
+"PO-Revision-Date: 2022-03-21 13:52+0100\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,9 +18,10 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping_sale_project
+#: model:project.task.type,legend_blocked:record_keeping_sale_project.stage_quote_created
 #: model:project.task.type,legend_blocked:record_keeping_sale_project.stage_quote_sent
 msgid "Blockerad"
-msgstr "Blockerad"
+msgstr ""
 
 #. module: record_keeping_sale_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_sale_project.view_task_form2
@@ -40,7 +41,7 @@ msgstr "Visningsnamn"
 #. module: record_keeping_sale_project
 #: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: record_keeping_sale_project
 #: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task____last_update
@@ -48,9 +49,21 @@ msgid "Last Modified on"
 msgstr "Senast redigerad"
 
 #. module: record_keeping_sale_project
+#: code:addons/record_keeping_sale_project/models/task.py:0
+#, python-format
+msgid "Please assign a customer to this task"
+msgstr "Ange en kund för den här uppgiften"
+
+#. module: record_keeping_sale_project
+#: model:project.task.type,legend_normal:record_keeping_sale_project.stage_quote_created
 #: model:project.task.type,legend_normal:record_keeping_sale_project.stage_quote_sent
 msgid "Pågående"
-msgstr "Pågående"
+msgstr ""
+
+#. module: record_keeping_sale_project
+#: model:project.task.type,name:record_keeping_sale_project.stage_quote_created
+msgid "Quote Created"
+msgstr "Offert skapad"
 
 #. module: record_keeping_sale_project
 #: model:project.task.type,name:record_keeping_sale_project.stage_quote_sent
@@ -58,9 +71,10 @@ msgid "Quote Sent"
 msgstr "Offert skickad"
 
 #. module: record_keeping_sale_project
+#: model:project.task.type,legend_done:record_keeping_sale_project.stage_quote_created
 #: model:project.task.type,legend_done:record_keeping_sale_project.stage_quote_sent
 msgid "Redo"
-msgstr "Redo"
+msgstr ""
 
 #. module: record_keeping_sale_project
 #: model:ir.model,name:record_keeping_sale_project.model_project_task

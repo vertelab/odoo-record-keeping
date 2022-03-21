@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from datetime import date, timedelta 
+from datetime import date, timedelta
+from xml.dom import ValidationErr 
 from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from odoo.exceptions import ValidationError
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -14,21 +15,21 @@ class ProjectTask(models.Model):
     def create_sale(self):
         self.ensure_one()
         if not self.partner_id:
-            raise UserError('Please assign a customer to this task')
+            raise ValidationError(_('Please assign a customer to this task'))
         else:
             self.create_matter()
             if not self.sale_order_id:
                 SaleOrder= self.env['sale.order']
                 vals = {
-                    'matter_id': self.matter_id.id,
                     'is_official': True,
+                    'matter_id': self.matter_id.id,
                     'partner_id': self.partner_id.id,
                     'project_id': False,
                 }
                 if SaleOrder.fields_get().get('name_description'):
                     vals['name_description'] = self.name
                 self.sale_order_id = SaleOrder.create(vals)
-            if (stage:= self.env.ref('record_keeping_sale_project.stage_quote_sent')):
+            if (stage:= self.env.ref('record_keeping_sale_project.stage_quote_created')):
                 self.stage_id= stage.id
 
     def create_matter(self):
