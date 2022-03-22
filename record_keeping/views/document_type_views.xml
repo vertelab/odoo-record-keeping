@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <record id="action_document_type_view" model="ir.actions.act_window">
         <field name="name">Document Types</field>
         <field name="res_model">rk.document.type</field>
@@ -20,11 +19,7 @@
                     <group>
                         <field name="name" />
                         <field name="description" />
-                        <field 
-                            name="classification_id" 
-                            domain="[('has_types', '=', True)]" 
-                            options="{'no_create': True}" 
-                        />
+                        <field name="classification_id" domain="[('has_types', '=', True)]" options="{'no_create': True}" />
                     </group>
                 </sheet>
             </form>
@@ -52,11 +47,7 @@
             <search string="Document Type">
                 <field name="name" />
                 <group expand="0" string="Group By">
-                    <filter 
-                        name="classification" 
-                        context="{'group_by': 'classification_id'}" 
-                        string="Classification" 
-                    />
+                    <filter name="classification" context="{'group_by': 'classification_id'}" string="Classification" />
                 </group>
             </search>
         </field>
@@ -68,12 +59,8 @@
             <tree string="Classification" delete="0" sample="1">
                 <field name="name" />
                 <field name="description" />
-                <field 
-                    name="classification_id" 
-                    domain="[('has_types', '=', True)]" 
-                />
+                <field name="classification_id" domain="[('has_types', '=', True)]" />
             </tree>
         </field>
     </record>
-
 </odoo>

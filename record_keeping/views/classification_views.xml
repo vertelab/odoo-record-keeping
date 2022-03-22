@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <record id="action_classification_view" model="ir.actions.act_window">
         <field name="name">Classification</field>
         <field name="res_model">rk.classification</field>
@@ -95,5 +94,4 @@
             </tree>
         </field>
     </record>
-
 </odoo>
