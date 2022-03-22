@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-
 from odoo import _, api, fields, models
 
 
-class Mixin(models.AbstractModel):
+class DocumentMixin(models.AbstractModel):
     _name = 'rk.document.mixin'
     _description = 'Document Mixin'
     _inherits = {'rk.document': 'document_id'}
 
     document_id = fields.Many2one(
         comodel_name='rk.document',
+        copy=False,
         help='The record-keeping document id',
         ondelete='restrict',
         required=True,
@@ -17,6 +17,7 @@ class Mixin(models.AbstractModel):
     )
     document_ref = fields.Reference(
         compute='_compute_document_ref',
+        copy=False,
         help='The record-keeping document reference',
         selection='_selection_target_model',
         string='Document Reference',
@@ -50,15 +51,13 @@ class Mixin(models.AbstractModel):
             if not field in vals:
                 vals[field] = self._get_default_param(field)
         record = super().create(vals)
-        document_vals = record._get_document_link()
-        if document_vals:
+        if (document_vals := record._get_document_link()):
             record.document_id.write(document_vals)
         return record
 
     def write(self, vals):
         for record in self:
-            document_vals = record._get_document_link()
-            if document_vals:
+            if (document_vals := record._get_document_link()):
                 if record.document_id:
                     vals.update(document_vals)
                 else:
