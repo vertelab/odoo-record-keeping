@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.actions.act_window" id="open_link_to_record_wizard">
+    <!-- <record model="ir.actions.act_window" id="open_link_to_record_wizard">
         <field name="name">open.link.to.record.wizard</field>
         <field name="res_model">rk.wizard.account</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="view_id" ref="record_keeping_wizard.link_to_record_view"/>
-    </record>
+        <field name="view_id" ref="record_keeping_wizard.link_to_record_view" />
+    </record> -->
 
     <record id="view_move_form" model="ir.ui.view">
         <field name="model">account.move</field>
-        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="inherit_id" ref="account.view_move_form" />
         <field name="arch" type="xml">
             <header position="inside">
-                <button name="%(open_link_to_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}"  string="Link to record" type="action" />
+                <button name="%(record_keeping.action_add_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}" string="Link to record" type="action" />
             </header>
             <widget position="before">
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
@@ -36,8 +36,13 @@
                             <field name="document_ref" attrs="{'invisible':[('is_official', '=', False)]}" class="oe_read_only" />
                             <field name="is_official" />
                             <field name="is_secret" attrs="{'invisible':[('is_official', '=', False)]}" />
-                            <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
-                            <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
+                            <field name="law_section_id" attrs="{
+                                'invisible': ['|', 
+                                    ('is_official', '=', False), 
+                                    ('is_secret', '=', False)], 
+                                'required': [('is_secret', '=', True)]}" />
+                            <field name="secrecy_grounds" attrs="{
+                                'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
                         </group>
                     </group>
                 </page>
@@ -56,9 +61,9 @@
             </notebook>
             <sheet position="after">
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids"/>
+                    <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
                 </div>
             </sheet>
         </field>

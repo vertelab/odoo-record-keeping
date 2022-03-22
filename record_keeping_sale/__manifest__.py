@@ -34,9 +34,9 @@
     'description': """
 This module extends Sale Orders with record-keeping fields
 """,
-    'depends': ['record_keeping', 'sale_management', 'record_keeping_wizard'],
+    'depends': ['record_keeping', 'sale_management'],
     'data': [
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
         'views/sale_views.xml',
     ],
     # 'post_init_hook': 'post_init_hook',
