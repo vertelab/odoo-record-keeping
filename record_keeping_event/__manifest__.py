@@ -34,7 +34,7 @@
     'description': """
 This module extends Events with record-keeping fields
 """,
-    'depends': ['event','event_template', 'record_keeping', 'record_keeping_wizard'],
+    'depends': ['event', 'record_keeping', 'record_keeping_wizard'],
     'data': [
         'views/event_views.xml',
         'security/ir.model.access.csv',
