@@ -1,74 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <menuitem id="menu_record_keeping" name="Record-keeping" sequence="50" />
 
-    <menuitem 
-        id="menu_record_keeping"
-        name="Record-keeping"
-        sequence="50"
-    />
-        
-    <menuitem 
-        id="menu_matter"
-        action="action_matter_view"
-        name="Matters" 
-        parent="menu_record_keeping"
-        sequence="10"
-    />
-    
-    <menuitem 
-        id="menu_document"
-        action="action_document_view"
-        name="Documents" 
-        parent="menu_record_keeping"
-        sequence="20" 
-    />
-    
-    <menuitem 
-        id="menu_mail"
-        action="action_mail_view"
-        groups="base.group_no_one"
-        name="Emails" 
-        parent="record_keeping.menu_record_keeping"
-        sequence="30" 
-    />
-    
-    <menuitem 
-        id="menu_configuration" 
-        name="Configuration" 
-        parent="menu_record_keeping" 
-        sequence="100"
-    />
+    <menuitem id="menu_matter" action="action_matter_view" name="Matters" parent="menu_record_keeping" sequence="10" />
 
-    <menuitem 
-        id="menu_settings"
-        action="action_settings_view"
-        name="Settings"
-        parent="menu_configuration"
-        sequence="10"
-    />
+    <menuitem id="menu_document" action="action_document_view" name="Documents" parent="menu_record_keeping" sequence="20" />
 
-    <menuitem 
-        id="menu_law_section"
-        action="action_law_section_view"
-        name="Law Section"
-        parent="menu_configuration"
-        sequence="20"
-    />
+    <menuitem id="menu_mail" action="action_mail_view" groups="base.group_no_one" name="Emails" parent="record_keeping.menu_record_keeping" sequence="30" />
 
-    <menuitem 
-        id="menu_classification"
-        action="action_classification_view"
-        name="Classification"
-        parent="menu_configuration"
-        sequence="30"
-    />
+    <menuitem id="menu_configuration" name="Configuration" parent="menu_record_keeping" sequence="100" />
 
-    <menuitem 
-        id="menu_document_type"
-        action="action_document_type_view"
-        name="Document Types"
-        parent="menu_configuration"
-        sequence="40"
-    />
+    <menuitem id="menu_settings" action="action_settings_view" name="Settings" parent="menu_configuration" sequence="10" />
 
+    <menuitem id="menu_law_section" action="action_law_section_view" name="Law Section" parent="menu_configuration" sequence="20" />
+
+    <menuitem id="menu_classification" action="action_classification_view" name="Classification" parent="menu_configuration" sequence="30" />
+
+    <menuitem id="menu_document_type" action="action_document_type_view" name="Document Types" parent="menu_configuration" sequence="40" />
 </odoo>

@@ -43,11 +43,6 @@ class RecordKeepingMail(models.Model):
     headers = fields.Text(
         readonly=1,
     )
-    mail_message_id = fields.Many2one(
-        comodel_name='mail.message',
-        readonly=1,
-        string='Message',
-    )
     mail_server_id = fields.Many2one(
         comodel_name='ir.mail_server',
         readonly=1,

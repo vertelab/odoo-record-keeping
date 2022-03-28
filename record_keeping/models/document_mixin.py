@@ -55,6 +55,12 @@ class DocumentMixin(models.AbstractModel):
             record.document_id.write(document_vals)
         return record
 
+    def create_matter(self):
+        self.ensure_one()
+        if not self.matter_id:
+            self.is_official = True
+            self.matter_id = self.env['rk.matter'].create({})
+
     def write(self, vals):
         for record in self:
             if (document_vals := record._get_document_link()):

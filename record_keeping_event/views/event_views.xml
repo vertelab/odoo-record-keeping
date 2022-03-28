@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.actions.act_window" id="open_link_to_record_wizard">
+    <!-- <record model="ir.actions.act_window" id="open_link_to_record_wizard">
         <field name="name">open.link.to.record.wizard</field>
         <field name="res_model">rk.wizard.event</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="view_id" ref="record_keeping_wizard.link_to_record_view"/>
-    </record>
+        <field name="view_id" ref="record_keeping_wizard.link_to_record_view" />
+    </record> -->
+
     <record id="view_event_form" model="ir.ui.view">
         <field name="model">event.event</field>
-        <field name="inherit_id" ref="event.view_event_form"/>
+        <field name="inherit_id" ref="event.view_event_form" />
         <field name="arch" type="xml">
             <header position="inside">
-                <button attrs="{'invisible': [('matter_id', '!=', False)]}" class="oe_highlight" name="create_matter" string="Create Matter" type="object" />
-                <button name="%(open_link_to_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}"  string="Link to record" type="action" />
+                <button name="create_matter" attrs="{'invisible': [('matter_id', '!=', False)]}" class="oe_highlight" string="Create Matter" type="object" />
+                <button name="%(record_keeping.action_add_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}" string="Link to record" type="action" />
             </header>
             <widget position="replace" />
             <div name="button_box" position="after">
@@ -37,13 +38,20 @@
                             <field name="document_ref" attrs="{'invisible':[('is_official', '=', False)]}" class="oe_read_only" />
                             <field name="is_official" />
                             <field name="is_secret" attrs="{'invisible':[('is_official', '=', False)]}" />
-                            <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
-                            <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
+                            <field name="law_section_id" attrs="{
+                                'invisible': ['|', 
+                                    ('is_official', '=', False), 
+                                    ('is_secret', '=', False)], 
+                                'required': [('is_secret', '=', True)]}" />
+                            <field name="secrecy_grounds" attrs="{
+                                'invisible': ['|', 
+                                    ('is_official', '=', False), 
+                                    ('is_secret', '=', False)]}" />
                         </group>
                     </group>
                     <group string="Debug info" groups="base.group_no_one">
                         <field name="res_model" />
-                        <field name="res_id" />                    
+                        <field name="res_id" />
                     </group>
                 </page>
                 <page name="meta_information" string="Meta Information">

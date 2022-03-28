@@ -37,7 +37,7 @@ This module extends Events with record-keeping fields
     'depends': ['event', 'record_keeping', 'record_keeping_wizard'],
     'data': [
         'views/event_views.xml',
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
     ],
     # 'post_init_hook': 'post_init_hook',
 }

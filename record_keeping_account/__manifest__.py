@@ -37,7 +37,7 @@
     'depends': ['account', 'record_keeping', 'sale', 'record_keeping_wizard'],
     'data': [
         'views/account_views.xml',
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
     ],
     'application': True,
 }

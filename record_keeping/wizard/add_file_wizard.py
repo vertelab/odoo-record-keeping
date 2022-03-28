@@ -1,26 +1,23 @@
 # -*- coding: utf-8 -*-
-
 from odoo import _, fields, models
 
 
-class MatterDocumentWizard(models.TransientModel):
-    _name = 'rk.matter.document.wizard'
-    _description = 'Wizard for attaching an attachment to a document'
+class AddFileWizard(models.TransientModel):
+    _name = 'rk.add.file.wizard'
+    _description = 'Wizard for adding a file to a matter'
 
     name = fields.Char(
         required=True,
         string='Name',
     )
     datas = fields.Binary(
-        string='File Content (base64)',
+        string='File Content',
     )
     description = fields.Text(
         string='Description',
     )
-    type = fields.Selection(
-        [
-            ('binary', 'File'),
-        ],
+    file_type = fields.Selection(
+        [('binary', 'File')],
         default='binary',
         required=True,
         string='Type',
@@ -31,7 +28,7 @@ class MatterDocumentWizard(models.TransientModel):
             'datas': self.datas,
             'description': self.description,
             'name': self.name,
-            'type': self.type,
+            'type': self.file_type,
         }
         attachment = self.env['ir.attachment'].create(attachment_vals)
 
