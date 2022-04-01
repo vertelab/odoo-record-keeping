@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20220205\n"
+"Project-Id-Version: Odoo Server 14.0-20220317\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-07 08:45+0000\n"
-"PO-Revision-Date: 2022-02-07 09:46+0100\n"
+"POT-Creation-Date: 2022-04-01 06:54+0000\n"
+"PO-Revision-Date: 2022-04-01 08:54+0200\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -34,6 +34,12 @@ msgid "Action Needed"
 msgstr "Åtgärd krävs"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__active
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_ids
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_ids
 msgid "Activities"
@@ -56,6 +62,12 @@ msgstr "Aktivitetsstatus"
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_type_icon
 msgid "Activity Type Icon"
 msgstr "Aktivitetstypsikon"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__allow_record_keeping
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__allow_record_keeping
+msgid "Allow Record Keeping"
+msgstr "Tillåt diarieföring"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_attachment_count
@@ -247,7 +259,9 @@ msgstr ""
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__message_has_error
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__message_has_sms_error
 #: model:ir.model.fields,help:record_keeping_project.field_project_task__message_has_error
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Om markerad har det uppstått leveransfel för vissa meddelanden."
 
@@ -256,6 +270,14 @@ msgstr "Om markerad har det uppstått leveransfel för vissa meddelanden."
 #: model:ir.model.fields,help:record_keeping_project.field_project_task__secrecy_grounds
 msgid "If marked as secret, please provide more information"
 msgstr "Om märkt med sekretess, uppge mer information"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__active
+msgid ""
+"If the active field is set to False, it will allow you to hide the project "
+"without removing it."
+msgstr ""
+"Om det aktiva fältet är Falskt, kan du gömma projektet utan att radera det."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_is_follower
@@ -439,6 +461,12 @@ msgstr "Dokument"
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__activity_user_id
 msgid "Responsible User"
 msgstr "Ansvarig användare"
+
+#. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_has_sms_error
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS leveransfel"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__secrecy_grounds
