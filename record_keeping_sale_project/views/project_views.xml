@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="record_keeping_project.edit_project" />
         <field name="arch" type="xml">
             <field name="matter_id" position="before">
-                <field name="allow_sale_project" />
+                <field name="allow_create_sale" />
             </field>
         </field>
     </record>

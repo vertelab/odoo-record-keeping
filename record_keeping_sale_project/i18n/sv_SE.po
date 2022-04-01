@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20220401\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-01 11:09+0000\n"
-"PO-Revision-Date: 2022-04-01 13:12+0200\n"
+"POT-Creation-Date: 2022-04-01 12:00+0000\n"
+"PO-Revision-Date: 2022-04-01 14:02+0200\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,8 +18,14 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping_sale_project
-#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_project__allow_sale_project
-#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task__allow_sale_project
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_project__allow_create_sale
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task__allow_create_sale
+msgid "Allow Create Sale"
+msgstr "Tillåt skapa offert"
+
+#. module: record_keeping_sale_project
+#: model:ir.model.fields,help:record_keeping_sale_project.field_project_project__allow_create_sale
+#: model:ir.model.fields,help:record_keeping_sale_project.field_project_task__allow_create_sale
 msgid "Allow Sale Order creation"
 msgstr "Tillåt skapa offert"
 

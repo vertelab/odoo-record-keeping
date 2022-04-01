@@ -6,12 +6,12 @@
         <field name="arch" type="xml">
             <button name="create_matter" position="replace">
                 <button name="create_sale" class="oe_highlight" string="Create Sale Order" type="object" attrs="{
-                    'invisible': ['|', ('sale_order_id', '!=', False), ('allow_sale_project', '=', False)]}" />
+                    'invisible': ['|', ('sale_order_id', '!=', False), ('allow_create_sale', '=', False)]}" />
                 <button name="create_matter" string="Create Matter" type="object" attrs="{
                     'invisible': [('matter_id', '!=', False)]}" />
             </button>
             <field name="matter_id" position="before">
-                <field name="allow_sale_project" />
+                <field name="allow_create_sale" invisible="1" />
             </field>
         </field>
     </record>
