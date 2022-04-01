@@ -38,6 +38,7 @@ v14.0.0.0.1 Stage Quote Sent added
     'depends': ['record_keeping_sale', 'record_keeping_project', 'sale_project'],
     'data': [
         'data/project_task_type.xml',
+        'views/project_views.xml',
         'views/task_views.xml',
     ],
 }

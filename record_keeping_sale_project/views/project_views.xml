@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="edit_project" model="ir.ui.view">
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="record_keeping_project.edit_project" />
+        <field name="arch" type="xml">
+            <field name="matter_id" position="before">
+                <field name="allow_sale_project" />
+            </field>
+        </field>
+    </record>
+</odoo>

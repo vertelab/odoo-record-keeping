@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
-
-from datetime import date, timedelta
-from xml.dom import ValidationErr 
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
-
-import logging
-_logger = logging.getLogger(__name__)
+from odoo.exceptions import ValidationError, UserError
 
 
 class ProjectTask(models.Model):
     _inherit = 'project.task'
 
+    allow_sale_project = fields.Boolean(default=True, string='Allow Sale Order creation')
+
     def create_sale(self):
         self.ensure_one()
+        if not self.allow_sale_project:
+            raise UserError(_('Allow sale order creation on the project first'))
         if not self.partner_id:
             raise ValidationError(_('Please assign a customer to this task'))
         else:
