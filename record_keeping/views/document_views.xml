@@ -114,8 +114,8 @@
                 <field name="create_date" />
                 <field name="res_ref" />
                 <field name="classification_id" />
-                <field name="sender_id" />
-                <field name="receiver_id" />
+                <field name="sender" />
+                <field name="receiver" />
             </tree>
         </field>
     </record>

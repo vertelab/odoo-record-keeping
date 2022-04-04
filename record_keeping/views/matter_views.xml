@@ -23,9 +23,10 @@
                         <group>
                             <field name="reg_no" />
                             <field name="legacy_reg_no" class="oe_edit_only" />
-                            <field name="legacy_reg_no" class="oe_read_only" attrs="{
-                                'invisible': [('legacy_reg_no', '=', False)]}" />
+                            <field name="legacy_reg_no" class="oe_read_only" attrs="{'invisible': [('legacy_reg_no', '=', False)]}" />
                             <field name="description" />
+                            <field name="receiver" />
+                            <field name="sender" />
                             <field name="classification_id" domain="[('has_types', '=', True)]" />
                             <field name="partner_id" />
                             <field name="administrator_id" />
@@ -34,11 +35,8 @@
                         <group>
                             <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
                             <field name="is_secret" attrs="{'invisible': [('is_official', '=', False)]}" />
-                            <field name="law_section_id" attrs="{
-                                'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 
-                                'required': [('is_secret', '=', True)]}" />
-                            <field name="secrecy_grounds" attrs="{
-                                'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
+                            <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
+                            <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
                         </group>
                     </group>
                     <notebook>
@@ -60,8 +58,8 @@
                         <page name="dates" string="Dates" groups="base.group_no_one">
                             <group>
                                 <group>
-                                    <field name="receive_date" />
-                                    <field name="draw_up_date" />
+                                    <!-- <field name="receive_date" /> -->
+                                    <field name="draw_up_receive_date" />
                                     <field name="close_date" attrs="{'invisible': [('state', 'not in', ['done'])]}" />
                                     <field name="sorting_out_date" attrs="{'invisible': [('state', 'not in', ['done'])]}" />
                                 </group>
@@ -110,8 +108,8 @@
                 <filter string='State is not "Done"' domain="[('state', '!=', 'done')]" help="Matters where state is not done" name="state_not_done" />
                 <separator />
                 <field name="create_date" />
-                <field name="draw_up_date" />
-                <field name="receive_date" />
+                <field name="draw_up_receive_date" />
+                <!-- <field name="receive_date" /> -->
                 <field name="write_date" />
                 <group expand="1" string="Group By">
                     <filter name="administrator" string="Administrator" context="{'group_by': 'administrator_id'}" />
@@ -129,8 +127,8 @@
         <field name="arch" type="xml">
             <tree string="Record-keeping">
                 <field name="name" />
-                <field name="receive_date" />
-                <field name="draw_up_date" />
+                <!-- <field name="receive_date" /> -->
+                <field name="draw_up_receive_date" />
                 <field name="description" />
                 <field name="partner_name" />
                 <field name="write_date" />
@@ -181,11 +179,11 @@
             <field name="domain">
                 [('state', 'not in', ['done']), 
                     '|', 
-                        ('draw_up_date', '&lt;', '2021-07-01'), 
-                        ('draw_up_date', '=', False), 
-                    '|',
+                        ('draw_up_receive_date', '&lt;', '2021-07-01'), 
+                        ('draw_up_receive_date', '=', False), 
+                    <!-- '|',
                         ('receive_date', '&lt;', '2021-07-01'), 
-                        ('receive_date', '=', False), 
+                        ('receive_date', '=', False),  -->
                 ]
             </field>
             <field name="user_id" eval="False" />

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from odoo import _, api, fields, models
 
 
@@ -25,6 +24,14 @@ class Mixin(models.AbstractModel):
         help='The date when the document is ready to be used or sent',
         index=True,
         string='Drawn up',
+        tracking=True,
+    )
+    draw_up_receive_date = fields.Date(
+        copy=False,
+        default=lambda self: fields.Date.today(),
+        help='The date when the document is ready to be used or sent',
+        index=True,
+        string='Drawn up/Received',
         tracking=True,
     )
     is_official = fields.Boolean(
@@ -57,6 +64,12 @@ class Mixin(models.AbstractModel):
         string='Received',
         tracking=True,
     )
+    receiver = fields.Char(
+        copy=False,
+        help='The competent person who received the document',
+        string='Receiver',
+        tracking=True,
+    )
     receiver_id = fields.Many2one(
         comodel_name='res.partner',
         copy=False,
@@ -69,6 +82,12 @@ class Mixin(models.AbstractModel):
         default=False,
         help='If marked as secret, please provide more information',
         string='Secrecy grounds',
+        tracking=True,
+    )
+    sender = fields.Char(
+        copy=False,
+        help='The person who sent this document',
+        string='Sender',
         tracking=True,
     )
     sender_id = fields.Many2one(

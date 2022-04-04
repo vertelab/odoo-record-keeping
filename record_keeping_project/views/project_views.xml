@@ -5,10 +5,11 @@
         <field name="inherit_id" ref="project.edit_project" />
         <field name="arch" type="xml">
             <header position="inside">
-                <button name="%(record_keeping.action_add_record_wizard)d" attrs="{'invisible': [('matter_id', '!=', False)]}" string="Link to record" type="action" />
+                <button name="%(record_keeping.action_add_record_wizard)d" string="Link to record" type="action" attrs="{
+                    'invisible': [('matter_id', '!=', False)]}" />
             </header>
             <widget position="replace">
-                <widget name="web_ribbon" attrs="{'invisible': [('is_secret', '=', False)]}" bg_color="bg-danger" title="Confidential" />
+                <widget name="web_ribbon" bg_color="bg-danger" title="Confidential" attrs="{'invisible': [('is_secret', '=', False)]}" />
             </widget>
             <div class="oe_title" position="after">
                 <group>
@@ -23,10 +24,10 @@
                 <page name="record_keeping" string="Record-keeping">
                     <group>
                         <group>
-                            <field name="draw_up_date" widget="date" />
-                            <field name="receive_date" widget="date" />
-                            <field name="receiver_id" />
-                            <field name="sender_id" />
+                            <field name="draw_up_receive_date" widget="date" />
+                            <!-- <field name="receive_date" widget="date" /> -->
+                            <field name="receiver" />
+                            <field name="sender" />
                         </group>
                         <group>
                             <field name="document_ref" attrs="{'invisible': [('is_official', '=', False)]}" class="oe_read_only" />

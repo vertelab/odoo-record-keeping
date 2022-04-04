@@ -29,10 +29,10 @@
                 <page name="record_keeping" string="Record-keeping">
                     <group>
                         <group>
-                            <field name="draw_up_date" widget="date" />
-                            <field name="receive_date" widget="date" />
-                            <field name="receiver_id" />
-                            <field name="sender_id" />
+                            <field name="draw_up_receive_date" widget="date" />
+                            <!-- <field name="receive_date" widget="date" /> -->
+                            <field name="receiver" />
+                            <field name="sender" />
                         </group>
                         <group>
                             <field name="document_ref" attrs="{'invisible':[('is_official', '=', False)]}" class="oe_read_only" />
