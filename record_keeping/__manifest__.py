@@ -30,14 +30,14 @@
     'version': '14.0.2.4.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'license': 'AGPL-3',
-    'website': 'https://vertel.se/record-keeping',   
+    'website': 'https://vertel.se/record-keeping',
     'description': """
     This module is the base module for Record-keeping \n 
     14.0.2.3.0 - Added new class for mails
     14.0.2.0.4 - Added relationship to ir.attachments
     14.0.2.0.4 - Added button to res.partner
     """,
-    'depends': ['hr', 'mail'],
+    'depends': ['base', 'hr', 'mail'],
     'data': [
         'data/rk.classification.csv',
         'data/rk.document.type.csv',
@@ -45,7 +45,6 @@
         'data/law_section_data.xml',
         'security/rk_security.xml',
         'security/ir.model.access.csv',
-        'wizard/add_file_wizard.xml',
         'wizard/add_record_wizard.xml',
         'views/classification_views.xml',
         'views/document_type_views.xml',

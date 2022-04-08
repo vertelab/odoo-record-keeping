@@ -5,7 +5,6 @@
         <field name="arch" type="xml">
             <form string="Record-keeping">
                 <header>
-                    <button name="%(action_add_file_wizard)d" string="Add document" type="action" />
                     <field name="state" options="{'clickable': '1'}" statusbar_visible="draft,pending,done,cancel" widget="statusbar" />
                 </header>
                 <sheet>
@@ -58,7 +57,6 @@
                         <page name="dates" string="Dates" groups="base.group_no_one">
                             <group>
                                 <group>
-                                    <!-- <field name="receive_date" /> -->
                                     <field name="draw_up_receive_date" />
                                     <field name="close_date" attrs="{'invisible': [('state', 'not in', ['done'])]}" />
                                     <field name="sorting_out_date" attrs="{'invisible': [('state', 'not in', ['done'])]}" />
@@ -109,7 +107,6 @@
                 <separator />
                 <field name="create_date" />
                 <field name="draw_up_receive_date" />
-                <!-- <field name="receive_date" /> -->
                 <field name="write_date" />
                 <group expand="1" string="Group By">
                     <filter name="administrator" string="Administrator" context="{'group_by': 'administrator_id'}" />
@@ -127,7 +124,6 @@
         <field name="arch" type="xml">
             <tree string="Record-keeping">
                 <field name="name" />
-                <!-- <field name="receive_date" /> -->
                 <field name="draw_up_receive_date" />
                 <field name="description" />
                 <field name="partner_name" />
@@ -177,13 +173,11 @@
             <field name="name">Matters not done before default date</field>
             <field name="model_id">rk.matter</field>
             <field name="domain">
-                [('state', 'not in', ['done']), 
+                [
+                    ('state', 'not in', ['done']), 
                     '|', 
                         ('draw_up_receive_date', '&lt;', '2021-07-01'), 
                         ('draw_up_receive_date', '=', False), 
-                    <!-- '|',
-                        ('receive_date', '&lt;', '2021-07-01'), 
-                        ('receive_date', '=', False),  -->
                 ]
             </field>
             <field name="user_id" eval="False" />

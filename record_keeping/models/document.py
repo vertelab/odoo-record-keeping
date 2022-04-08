@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-
 from odoo import _, api, fields, models
-
-import logging
-_logger = logging.getLogger(__name__)
 
 
 class Document(models.Model):
@@ -85,7 +81,6 @@ class Document(models.Model):
                 document.res_ref = None
 
     def _message_log(self, **kwargs):
-        _logger.error(f"{self.name=}")
         if kwargs:
             res = super(Document, self)._message_log(**kwargs)
         if self.matter_id:
@@ -125,7 +120,6 @@ class Document(models.Model):
     @api.model
     def create(self, vals):
         document = super().create(vals)
-        _logger.warning(f"{vals=}")
         document._next_document_no()
         return document
 

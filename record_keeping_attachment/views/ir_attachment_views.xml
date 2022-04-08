@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.actions.act_window" id="open_link_to_record_wizard">
-        <field name="name">open.link.to.record.wizard</field>
-        <field name="res_model">rk.wizard.attachment</field>
-        <field name="view_mode">form</field>
-        <field name="target">new</field>
-        <field name="view_id" ref="record_keeping_wizard.link_to_record_view"/>
-
-    </record>
     <record id="view_attachment_form" model="ir.ui.view">
         <field name="model">ir.attachment</field>
-        <field name="inherit_id" ref="base.view_attachment_form"/>
+        <field name="inherit_id" ref="base.view_attachment_form" />
         <field name="arch" type="xml">
             <label for="name" position="before">
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" attrs="{'invisible': [('is_secret', '=', False)]}" />
@@ -22,7 +14,7 @@
             </field>
             <sheet position="before">
                 <header>
-                    <button name="%(open_link_to_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}"  string="Link to record" type="action" />
+                    <button name="%(record_keeping.action_add_record_wizard)d" string="Link to record" type="action" attrs="{'invisible': [('matter_id', '!=', False)]}" />
                 </header>
             </sheet>
             <notebook position="inside">
@@ -30,7 +22,6 @@
                     <group>
                         <group>
                             <field name="draw_up_receive_date" widget="date" />
-                            <!-- <field name="receive_date" widget="date" /> -->
                             <field name="receiver" />
                             <field name="sender" />
                         </group>
@@ -58,9 +49,9 @@
             </notebook>
             <sheet position="after">
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids"/>
+                    <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
                 </div>
             </sheet>
         </field>

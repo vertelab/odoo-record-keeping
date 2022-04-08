@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from odoo import _, api, fields, models
 
 
@@ -21,8 +20,8 @@ class RecordKeepingSettings(models.TransientModel):
     )
     matter_default_date_str = fields.Char(
         config_parameter='record_keeping.rk_matter_default_date',
-        help='Default date used for filtering matters not done',    
-        string='Date (str)', 
+        help='Default date used for filtering matters not done',
+        string='Date (str)',
     )
     matter_default_sorting_out_days = fields.Integer(
         config_parameter=(
@@ -30,7 +29,6 @@ class RecordKeepingSettings(models.TransientModel):
         help='Default number of sorting out days',
         string='Sorting out days',
     )
-
 
     @api.depends('matter_default_date_str')
     def _compute_matter_default_date(self):
@@ -51,10 +49,10 @@ class RecordKeepingSettings(models.TransientModel):
                 new_date = fields.Date.to_string(setting.matter_default_date)
                 if new_date != setting.matter_default_date_str:
                     setting.matter_default_date_str = new_date
-                    domain = (f"['&', '&', ('state', '!=', 'done'), '|', "
-                              f"('receive_date', '<', '{new_date}'), "
-                              f"('receive_date', '=', False), "
-                              f"'|', ('draw_up_date', '<', '{new_date}'), "
-                              f"('draw_up_date', '=', False)]")
+                    domain = (f"['&', '&', ('state', '!=', 'done'), "
+                              #   f"'|', ('receive_date', '<', '{new_date}'), "
+                              #   f"('receive_date', '=', False), "
+                              f"'|', ('draw_up_receive_date', '<', '{new_date}'), "
+                              f"('draw_up_receive_date', '=', False)]")
                     name = _('Matters not done before %s') % new_date
                     self.env.ref(xmlid).write(dict(domain=domain, name=name))

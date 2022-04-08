@@ -7,12 +7,8 @@
                 <group>
                     <field name="matter_id" attrs="{'required': True}" />
                     <field name="is_secret" />
-                    <field name="law_section_id" attrs="{
-                        'invisible':[('is_secret', '=', False)], 
-                        'required':[('is_secret', '=', True)]}" />
-                    <field name="secrecy_grounds" attrs="{
-                        'invisible':[('is_secret', '=', False)], 
-                        'required':[('is_secret', '=', True)]}" />
+                    <field name="law_section_id" attrs="{'invisible': [('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
+                    <field name="secrecy_grounds" attrs="{'invisible': [('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
                 </group>
                 <footer>
                     <button name="save_button" type="object" string="Save" class="btn-primary" />

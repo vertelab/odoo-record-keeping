@@ -34,10 +34,11 @@
     'description': """
         This module extends Attachments with record-keeping fields
     """,
-    'depends': ['attachment_notebook', 'mail', 'record_keeping', 'record_keeping_wizard'],
+    'depends': ['attachment_notebook', 'mail', 'record_keeping'],
     'data': [
-        'views/ir_attachment_views.xml',
         'security/ir.model.access.csv',
+        'wizard/add_file_wizard.xml',
+        'views/ir_attachment_views.xml',
+        'views/matter_views.xml',
     ],
-    # 'post_init_hook': 'post_init_hook',
 }
