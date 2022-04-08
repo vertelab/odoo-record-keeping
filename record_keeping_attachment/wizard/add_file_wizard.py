@@ -27,8 +27,8 @@ class AddFileWizard(models.TransientModel):
             'type': 'binary',
         }
 
-        if 'rk.matter' in ctx('active_model' and (
-                matter_id := ctx('active_id'))):
+        if 'rk.matter' in ctx('active_model') and (
+                matter_id := ctx('active_id')):
             attachment_vals['matter_id'] = matter_id
             attachment_vals['is_official'] = True
 
