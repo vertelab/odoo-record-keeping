@@ -19,23 +19,13 @@
                 <sheet string="Classification">
                     <div class="oe_title">
                         <h1>
-                            <field name="name" class="oe_read_only"/>
-                            <field 
-                                name="classification_name" 
-                                class="oe_edit_only" 
-                            />
+                            <field name="name" class="oe_read_only" />
+                            <field name="classification_name" class="oe_edit_only" />
                         </h1>
                         <group>
                             <field name="description" />
-                            <field 
-                                name="parent_id" 
-                                class="oe_edit_only" 
-                                widget="many2one" 
-                            />
-                            <field 
-                                name="sequence" 
-                                class="oe_edit_only"
-                            />
+                            <field name="parent_id" class="oe_edit_only" widget="many2one" />
+                            <field name="sequence" class="oe_edit_only" />
                             <field name="has_types" />
                         </group>
                         <notebook attrs="{'invisible': [('has_types', '=', False)]}">
@@ -70,11 +60,7 @@
             <search string="Classification">
                 <field name="name" />
                 <group expand="0" string="Group By">
-                    <filter 
-                        name="parent" 
-                        context="{'group_by': 'parent_id'}"
-                        string="Parent" 
-                    />
+                    <filter name="parent" context="{'group_by': 'parent_id'}" string="Parent" />
                 </group>
             </search>
         </field>
@@ -87,10 +73,7 @@
                 <field name="name" />
                 <field name="description" />
                 <field name="has_types" />
-                <field 
-                    name="type_ids" 
-                    attrs="{'invisible': [('has_types', '=', False)]}" 
-                />
+                <field name="type_ids" attrs="{'invisible': [('has_types', '=', False)]}" />
             </tree>
         </field>
     </record>

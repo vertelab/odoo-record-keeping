@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20220401\n"
+"Project-Id-Version: Odoo Server 14.0-20220408\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-08 09:18+0000\n"
-"PO-Revision-Date: 2022-04-08 11:22+0200\n"
+"POT-Creation-Date: 2022-04-11 14:23+0000\n"
+"PO-Revision-Date: 2022-04-11 16:35+0200\n"
 "Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -249,7 +249,7 @@ msgstr "Konfigurationsinställningar"
 #. module: record_keeping
 #: model:ir.ui.menu,name:record_keeping.menu_configuration
 msgid "Configuration"
-msgstr "Konfiguration"
+msgstr "Inställningar"
 
 #. module: record_keeping
 #: model:ir.model,name:record_keeping.model_res_partner
@@ -756,6 +756,11 @@ msgstr "Ärenden"
 #, python-format
 msgid "Matters not done before %s"
 msgstr "Ärenden som inte är klara före %s"
+
+#. module: record_keeping
+#: model:ir.filters,name:record_keeping.filter_matters_not_done_before_default_date
+msgid "Matters not done before default date"
+msgstr "Ärenden som inte är klara före standard datum"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_matter_search
@@ -1269,9 +1274,10 @@ msgstr ""
 #: model:ir.model.fields,help:record_keeping.field_rk_document__name
 #: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__name
 msgid ""
-"The format is [current year]/[sequence] if this document is belongs to a "
-"matter"
-msgstr "Formatet är [nuvarande år]/[sekvens] om handlingen tillhör ett ärende"
+"The format is [year]/[sequence]-[document_no] if this document is belongs "
+"to a matter"
+msgstr ""
+"Formatet är [år]/[sekvens]-[löpnummer] om handlingen tillhör ett ärende"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_add_record_wizard__matter_id
@@ -1445,7 +1451,7 @@ msgstr "Webbplatsens kommunikationshistorik"
 #: model:ir.actions.act_window,name:record_keeping.action_add_record_wizard
 #: model:ir.model,name:record_keeping.model_rk_add_record_wizard
 msgid "Wizard for attaching a record to a Record-keeping Matter"
-msgstr "Hjälpreda för att koppla en post till ett ärende"
+msgstr "Guide för att koppla en post till ett ärende"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
@@ -1456,8 +1462,3 @@ msgstr "av"
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_mail_form
 msgid "on"
 msgstr "på"
-
-#. module: record_keeping
-#: model:ir.filters,name:record_keeping.filter_matters_not_done_before_default_date
-msgid ""
-msgstr ""

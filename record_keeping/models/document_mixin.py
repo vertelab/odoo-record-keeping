@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import _, api, fields, models
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class DocumentMixin(models.AbstractModel):
@@ -8,6 +10,7 @@ class DocumentMixin(models.AbstractModel):
     _inherits = {'rk.document': 'document_id'}
 
     document_id = fields.Many2one(
+        auto_join=True,
         comodel_name='rk.document',
         copy=False,
         help='The record-keeping document id',
@@ -27,6 +30,7 @@ class DocumentMixin(models.AbstractModel):
     def _compute_document_ref(self):
         for record in self:
             record.document_ref = f"rk.document,{record.document_id.id or 0}"
+            record._get_document_link()
 
     def _get_default_param(self, field):
         param = f"record_keeping.{self._name.replace('.', '_')}_default_{field}"
@@ -36,9 +40,12 @@ class DocumentMixin(models.AbstractModel):
 
     def _get_document_link(self):
         self.ensure_one()
-        document = self.document_id
-        if not document.res_model or not document.res_id:
-            return dict(res_model=self._name, res_id=self.id)
+        vals = dict(res_model=self._name, res_id=self.id)
+        if (document := self.document_id):
+            if document.res_model != self._name or document.res_id != self.id:
+                document.write(vals)
+        else:
+            return vals
 
     @api.model
     def _selection_target_model(self):
@@ -51,8 +58,7 @@ class DocumentMixin(models.AbstractModel):
             if not field in vals:
                 vals[field] = self._get_default_param(field)
         record = super().create(vals)
-        if (document_vals := record._get_document_link()):
-            record.document_id.write(document_vals)
+        record._get_document_link()
         return record
 
     def create_matter(self):
@@ -64,10 +70,9 @@ class DocumentMixin(models.AbstractModel):
     def write(self, vals):
         for record in self:
             if (document_vals := record._get_document_link()):
-                if record.document_id:
-                    vals.update(document_vals)
-                else:
-                    vals['document_id'] = self.env['rk.document'].create(
-                        document_vals)
+                vals['document_id'] = self.env['rk.document'].create(
+                    document_vals)
+            # if (name := vals.get('name')):
+            #     record.document_id._compute_name(name)
         result = super().write(vals)
         return result

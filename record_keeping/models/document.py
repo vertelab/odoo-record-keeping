@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import _, api, fields, models
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class Document(models.Model):
@@ -9,8 +11,8 @@ class Document(models.Model):
 
     name = fields.Char(
         copy=False,
-        help='The format is [current year]/[sequence] if this document is '
-             'belongs to a matter',
+        help='The format is [year]/[sequence]-[document_no] if this '
+             'document is belongs to a matter',
         readonly=True,
         string='Name',
         tracking=True,
@@ -71,14 +73,14 @@ class Document(models.Model):
     def _compute_res_ref(self):
         self = self.sudo()
         for document in self:
+            name = document.get_name()
             if document.res_model and document.res_id:
-                name = document.get_name()
                 document.res_ref = f"{document.res_model},{document.res_id}"
-                if document.res_ref:
-                    name += ' ' + document.res_ref.name
-                document.name = name
+                if (res_ref := document.res_ref):
+                    name += ' ' + res_ref.name or ''
             else:
                 document.res_ref = None
+            document.name = name
 
     def _message_log(self, **kwargs):
         if kwargs:
@@ -125,12 +127,8 @@ class Document(models.Model):
 
     def get_name(self):
         for document in self:
-            name = ''
-            if document.matter_id:
-                name += document.matter_id.reg_no
-                if document.document_no:
-                    name += '-' + document.document_no
-            return name
+            return (f"{document.matter_id.reg_no}-{document.document_no}"
+                    if document.matter_id else '')
 
     @api.model
     def search(self, args, offset=0, limit=80, order='id', count=False):

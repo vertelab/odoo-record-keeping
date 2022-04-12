@@ -38,12 +38,7 @@
                                 <field name="name" />
                             </strong>
                             <div t-if="record.url">
-                                <a 
-                                    t-att-href="record.url.raw_value"  
-                                    class="btn btn-sm btn-secondary float-right o-hidden-ios" 
-                                    role="button"
-                                    target="_blank" 
-                                >
+                                <a t-att-href="record.url.raw_value" class="btn btn-sm btn-secondary float-right o-hidden-ios" role="button" target="_blank">
                                     Source
                                 </a>
                             </div>
@@ -53,8 +48,8 @@
             </kanban>
         </field>
     </record>
-    
-     <record id="view_law_section_tree" model="ir.ui.view">
+
+    <record id="view_law_section_tree" model="ir.ui.view">
         <field name="model">rk.law.section</field>
         <field name="arch" type="xml">
             <tree sample="1">

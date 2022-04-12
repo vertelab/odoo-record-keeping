@@ -16,11 +16,7 @@
                     <h2>
                         <field name="subject" />
                     </h2>
-                    <div style="vertical-align: top;">
-                        by
-                        <field name="author_id" class="oe_inline" string="User" />
-                        on
-                        <field name="date" readonly="1" class="oe_inline" />
+                    <div style="vertical-align: top;"> by <field name="author_id" class="oe_inline" string="User" /> on <field name="date" readonly="1" class="oe_inline" />
                     </div>
                     <group>
                         <group>
@@ -65,7 +61,6 @@
                             <group>
                                 <group>
                                     <field name="draw_up_receive_date" widget="date" />
-                                    <!-- <field name="receive_date" widget="date" /> -->
                                     <field name="receiver" />
                                     <field name="sender" />
                                 </group>
