@@ -33,15 +33,8 @@
                             <field name="document_ref" attrs="{'invisible': [('is_official', '=', False)]}" class="oe_read_only" />
                             <field name="is_official" />
                             <field name="is_secret" attrs="{'invisible': [('is_official', '=', False)]}" />
-                            <field name="law_section_id" attrs="{
-                                'invisible': ['|', 
-                                    ('is_official', '=', False), 
-                                    ('is_secret', '=', False)], 
-                                'required': [('is_secret', '=', True)]}" />
-                            <field name="secrecy_grounds" attrs="{
-                                'invisible': ['|', 
-                                    ('is_official', '=', False), 
-                                    ('is_secret', '=', False)]}" />
+                            <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
+                            <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
                         </group>
                     </group>
                 </page>
@@ -75,7 +68,7 @@
         <field name="arch" type="xml">
             <div class="o_kanban_card_content" position="after">
                 <field name="is_official" invisible="1" />
-                <field name="document_id" attrs="{'invisible':[('is_official', '=', False)]}" decoration-success="1" widget="badge" />
+                <field name="document_id" attrs="{'invisible': [('is_official', '=', False)]}" decoration-success="1" widget="badge" />
             </div>
         </field>
     </record>
@@ -85,10 +78,7 @@
         <field name="inherit_id" ref="project.view_project_project_filter" />
         <field name="arch" type="xml">
             <search position="inside">
-                <field name="document_id" filter_domain="[
-                    ('is_official', '=', True), 
-                    ('document_id', 'like', self)
-                ]" string="Registration number" />
+                <field name="document_id" filter_domain="['is_official', '=', True), ('document_id', 'like', self)]" string="Registration number" />
             </search>
         </field>
     </record>
