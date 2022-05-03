@@ -121,6 +121,11 @@ class Mail(models.Model):
                         values[key] = mail[key].id
                     else:
                         values[key] = mail[key]
+            values['sender'] = mail.email_from
+            receivers = [mail.email_to] if mail.email_to else []
+            recipients = [recipient_id.email_formatted for recipient_id in mail.recipient_ids]
+            values['receiver'] = ', '.join(receivers + recipients)
+
             if (model := mail.model) and (res_id := mail.res_id):
                 if (rec := self.env[model].browse(res_id)):
                     if hasattr(rec, 'matter_id'):
