@@ -11,7 +11,7 @@ class Attachment(models.Model):
         _id = values.get('active_id') or values.get('res_id')
         if _model and _id and (record := self.env[_model].browse(_id)):
             if hasattr(record, 'matter_id'):
-                return record.matter_id
+                return record.matter_id.id
 
     def _prepare_values(self, vals):
         matter_id = self.env.context.get('active_matter')
