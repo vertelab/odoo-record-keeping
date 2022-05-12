@@ -144,6 +144,11 @@ class Document(models.Model):
             count=count
         )
 
+    def unlink(self):
+        for document in self:
+            document.active = False
+        return True
+
     def write(self, vals):
         if vals.get('matter_id'):
             vals['document_no'] = ''
