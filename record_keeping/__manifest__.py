@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-################################################################################
+##############################################################################
 #
-#    Odoo, Open Source Management Solution, third party addon
-#    Copyright (C) 2004-2017 Vertel AB (<https://vertel.se>).
+#    Odoo SA, Open Source Management Solution, third party addon
+#    Copyright (C) 2022- Vertel AB (<https://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,26 +17,28 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
-################################################################################
+##############################################################################
 
 {
-    'name': 'Record-keeping',
-    'summary': 'Record-keeping for Odoo',
-    'author': 'Vertel AB',
-    'contributor': '',
-    'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
-    'category': 'Administration',
+    'name': 'Record-keeping: Record-keeping',
     'version': '14.0.2.4.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'license': 'AGPL-3',
-    'website': 'https://vertel.se/record-keeping',
+    'summary': 'Record-keeping for Odoo',
+    'category': 'Administration',
     'description': """
     This module is the base module for Record-keeping \n 
     14.0.2.3.0 - Added new class for mails
     14.0.2.0.4 - Added relationship to ir.attachments
     14.0.2.0.4 - Added button to res.partner
     """,
+    #'sequence': '1'
+    'author': 'Vertel AB',
+    'website': 'https://vertel.se/apps/record-keeping/record-keeping',
+    'images': ['/static/description/banner.png'], # 560x280 px.
+    'license': 'AGPL-3',
+    'contributor': '',
+    'maintainer': 'Vertel AB',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['base', 'hr', 'mail'],
     'data': [
         'data/rk.classification.csv',
