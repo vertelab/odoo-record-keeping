@@ -31,7 +31,7 @@ v14.0.0.0.1 Stage Quote Sent added
 """,
     #'sequence': '1'
     'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/record-keeping/record-keeping-sale-project',
+    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_sale_project',
     'images': ['/static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
