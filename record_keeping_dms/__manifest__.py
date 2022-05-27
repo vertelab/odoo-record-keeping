@@ -31,7 +31,7 @@ v14.0.0.0.1 New module
 """,
     #'sequence': '1'
     'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/record-keeping/record-keeping-dms',
+    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_dms',
     'images': ['/static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
