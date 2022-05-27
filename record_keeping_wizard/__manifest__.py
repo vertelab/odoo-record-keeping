@@ -28,9 +28,9 @@
     'description': """
 This module extends multiple modules with a button and a wizard to link actions to matter
 """,
-    #'sequence': '1'
+    #'sequence': '1',
     'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/record-keeping/record-keeping-wizard',
+    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_wizard',
     'images': ['/static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
