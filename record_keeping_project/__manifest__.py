@@ -31,9 +31,9 @@ v14.1.1.0 added new version number.   \n
 v14.0.2.1.0 added wizard to link to record
 v14.0.2.2.0 refactored classes
 """,
-    #'sequence': '1'
+    #'sequence': '1',
     'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/record-keeping/record-keeping-project',
+    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_project',
     'images': ['/static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
