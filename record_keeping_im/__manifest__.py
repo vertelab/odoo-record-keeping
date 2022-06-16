@@ -27,7 +27,7 @@
     'category': 'Administration',
     #'sequence': '1'
     'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/record-keeping/record-keeping-im',
+    'website': 'https://vertel.se/apps/record-keeping/record_keeping_im',
     'images': ['/static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
