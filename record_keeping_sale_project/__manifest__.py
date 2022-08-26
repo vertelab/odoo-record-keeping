@@ -32,7 +32,7 @@ v14.0.0.0.1 Stage Quote Sent added
     #'sequence': '1'
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_sale_project',
-    'images': ['/static/description/banner.png'], # 560x280 px.
+    'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
@@ -44,3 +44,4 @@ v14.0.0.0.1 Stage Quote Sent added
         'views/task_views.xml',
     ],
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
