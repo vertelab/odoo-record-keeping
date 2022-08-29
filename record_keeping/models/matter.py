@@ -23,7 +23,6 @@ class Matter(models.Model):
         default=lambda self: int(self._get_default_param('classification_id')) or 0,
         tracking=True,
     )
-
     department_id = fields.Many2one(
         copy=False,
         related='administrator_id.department_id',
@@ -31,7 +30,6 @@ class Matter(models.Model):
         string='Department',
         tracking=True,
     )
-
     description = fields.Char(
         copy=False,
         help='The description of this matter',
@@ -181,6 +179,8 @@ class Matter(models.Model):
 
     @api.model
     def create(self, vals):
+        if not 'description' in vals:
+            vals['description'] = vals.get('name')
         vals['reg_no'] = self.env['ir.sequence'].next_by_code('rk.matter')
         return super(Matter, self).create(vals)
 
