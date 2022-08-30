@@ -78,7 +78,7 @@
         <field name="inherit_id" ref="project.view_project_project_filter" />
         <field name="arch" type="xml">
             <search position="inside">
-                <field name="document_id" filter_domain="['is_official', '=', True), ('document_id', 'like', self)]" string="Registration number" />
+                <field name="document_id" filter_domain="[('is_official', '=', True), ('document_id', 'like', self)]" string="Registration number" />
             </search>
         </field>
     </record>

@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import _, api, fields, models
-import logging
-_logger = logging.getLogger(__name__)
 
 
 class Document(models.Model):
@@ -69,7 +67,7 @@ class Document(models.Model):
         string='Resource Reference',
     )
 
-    @api.depends('name', 'res_model', 'res_id')
+    @api.depends('name', 'res_id', 'res_model')
     def _compute_res_ref(self):
         self = self.sudo()
         for document in self:
