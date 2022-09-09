@@ -24,7 +24,7 @@
     'version': '14.0.2.1.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Record-keeping Attachment for Odoo',
-    'category': 'Administration',
+    'category': 'Government',
     'description': """
         This module extends Attachments with record-keeping fields
     """,
