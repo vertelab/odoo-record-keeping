@@ -24,7 +24,7 @@
     'version': '14.0.2.4.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Record-keeping for Odoo',
-    'category': 'Administration',
+    'category': 'Government',
     'description': """
     This module is the base module for Record-keeping \n 
     14.0.2.3.0 - Added new class for mails
