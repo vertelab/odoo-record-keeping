@@ -24,7 +24,7 @@
     'version': '14.0.2.1.2',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Record-keeping for Odoo Account',
-    'category': 'Administration',
+    'category': 'Government',
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_account',
