@@ -24,7 +24,7 @@
     'version': '14.0.2.0.1',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Record-keeping  Wizard for Odoo',
-    'category': 'Administration',
+    'category': 'Government',
     'description': """
 This module extends multiple modules with a button and a wizard to link actions to matter
 """,
