@@ -24,7 +24,7 @@
     'version': '14.0.0.0.1',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Record-keeping  Sale Project for Odoo',
-    'category': 'Administration',
+    'category': 'Government',
     'description': """
 This module extends projects and sales with record-keeping buttons\n
 v14.0.0.0.1 Stage Quote Sent added
