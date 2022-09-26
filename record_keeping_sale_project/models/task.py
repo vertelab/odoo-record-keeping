@@ -49,3 +49,4 @@ class ProjectTask(models.Model):
             super().create_matter()
             if self.sale_order_id and not self.sale_order_id.matter_id:
                 self.sale_order_id.matter_id = self.matter_id
+        self.matter_id.partner_id = self.partner_id.id
