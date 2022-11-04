@@ -365,7 +365,7 @@ msgstr "Standardvärden"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__department_id
 msgid "Department"
-msgstr "Kontor"
+msgstr "Distrikt"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__description
