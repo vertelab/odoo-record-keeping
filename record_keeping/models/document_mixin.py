@@ -17,6 +17,7 @@ class DocumentMixin(models.AbstractModel):
         ondelete='restrict',
         required=True,
         string='Document',
+        index=True
     )
     document_ref = fields.Reference(
         compute='_compute_document_ref',
