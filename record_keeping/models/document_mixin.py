@@ -34,14 +34,14 @@ class DocumentMixin(models.AbstractModel):
 
     def _get_default_param(self, field):
         param = f"record_keeping.{self._name.replace('.', '_')}_default_{field}"
-        if (res := self.env['ir.config_parameter'].sudo().get_param(param)):
+        if res := self.env['ir.config_parameter'].sudo().get_param(param):
             res = int(res)
         return res
 
     def _get_document_link(self):
         self.ensure_one()
         vals = dict(res_model=self._name, res_id=self.id)
-        if (document := self.document_id):
+        if document := self.document_id:
             if document.res_model != self._name or document.res_id != self.id:
                 document.write(vals)
         else:
@@ -69,7 +69,7 @@ class DocumentMixin(models.AbstractModel):
 
     def write(self, vals):
         for record in self:
-            if (document_vals := record._get_document_link()):
+            if document_vals := record._get_document_link():
                 vals['document_id'] = self.env['rk.document'].create(
                     document_vals)
             # if (name := vals.get('name')):

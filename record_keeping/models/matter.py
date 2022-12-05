@@ -157,7 +157,7 @@ class Matter(models.Model):
                 record.partner_name = _('Confidential')
             else:
                 record.partner_name = record.partner_id.name or ''
-            
+
     def _expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
 
@@ -191,14 +191,14 @@ class Matter(models.Model):
         action['domain'] = str([('matter_id', 'in', self.ids)])
         action['context'] = "{'matter_id': '%d'}" % (self.id)
         return action
-    
+
     def write(self, vals):
         if vals.get('state') == 'done':
             vals['close_date'] = fields.Date.today()
-            if (days := int(self._get_default_param('sorting_out_days')) or 0):
+            if days := int(self._get_default_param('sorting_out_days')) or 0:
                 vals['sorting_out_date'] = fields.Date.today() + timedelta(days=days)
-        if vals.get('active', True) == False:
-            if not self.state in ['done']:
+        if not vals.get('active', True):
+            if self.state not in ['done']:
                 vals.pop('active')
             else:
                 self.action_archive_documents()
