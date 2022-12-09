@@ -15,6 +15,7 @@ class Matter(models.Model):
         copy=False,
         string='Administrator',
         tracking=True,
+        index=True
     )
     classification_id = fields.Many2one(
         comodel_name='rk.classification',
@@ -22,6 +23,7 @@ class Matter(models.Model):
         string='Classification',
         default=lambda self: int(self._get_default_param('classification_id')) or 0,
         tracking=True,
+        index=True
     )
     department_id = fields.Many2one(
         copy=False,
@@ -29,6 +31,7 @@ class Matter(models.Model):
         store=True,
         string='Department',
         tracking=True,
+        index=True
     )
     description = fields.Char(
         copy=False,
@@ -90,6 +93,7 @@ class Matter(models.Model):
         comodel_name='res.partner',
         string='Customer',
         tracking=True,
+        index=True
     )
     partner_name = fields.Char(
         compute='_compute_partner_name',
@@ -189,7 +193,7 @@ class Matter(models.Model):
         action_xmlid = 'record_keeping.action_document_view'
         action = self.env['ir.actions.act_window']._for_xml_id(action_xmlid)
         action['domain'] = str([('matter_id', 'in', self.ids)])
-        action['context'] = "{'matter_id': '%d'}" % (self.id)
+        action['context'] = "{'matter_id': '%d'}" % self.id
         return action
 
     def write(self, vals):

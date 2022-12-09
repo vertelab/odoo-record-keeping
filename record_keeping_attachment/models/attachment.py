@@ -36,5 +36,4 @@ class Attachment(models.Model):
         for rec in self:
             if hasattr(rec, 'matter_id') and not rec.matter_id and not vals.get('matter_id'):
                 vals = self._prepare_values(vals)
-
             return super().write(vals)

@@ -59,7 +59,7 @@ class DocumentMixin(models.AbstractModel):
             if not field in vals:
                 vals[field] = self._get_default_param(field)
         record = super().create(vals)
-        record._get_document_link()
+    #     record._get_document_link()
         return record
 
     def create_matter(self):
@@ -71,9 +71,6 @@ class DocumentMixin(models.AbstractModel):
     def write(self, vals):
         for record in self:
             if document_vals := record._get_document_link():
-                vals['document_id'] = self.env['rk.document'].create(
-                    document_vals)
-            # if (name := vals.get('name')):
-            #     record.document_id._compute_name(name)
+                vals['document_id'] = self.env['rk.document'].create(document_vals)
         result = super().write(vals)
         return result
