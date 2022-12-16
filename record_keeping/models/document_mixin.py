@@ -41,6 +41,7 @@ class DocumentMixin(models.AbstractModel):
     def _get_document_link(self):
         self.ensure_one()
         vals = dict(res_model=self._name, res_id=self.id)
+#        _logger.warning(f"{self.document_id}")
         if (document := self.document_id):
             if document.res_model != self._name or document.res_id != self.id:
                 document.write(vals)
@@ -54,12 +55,16 @@ class DocumentMixin(models.AbstractModel):
 
     @api.model
     def create(self, vals):
-        for field in ['classification_id', 'document_type_id']:
-            if not field in vals:
-                vals[field] = self._get_default_param(field)
-        record = super().create(vals)
-        record._get_document_link()
-        return record
+        if self._context.get('create_rk_matter', True):  
+            for field in ['classification_id', 'document_type_id']:
+                if not field in vals:
+                    vals[field] = self._get_default_param(field)
+            record = super().create(vals)
+            record._get_document_link()
+            return record
+        else:
+            record = super().create(vals)
+            return record
 
     def create_matter(self):
         self.ensure_one()
@@ -68,11 +73,12 @@ class DocumentMixin(models.AbstractModel):
             self.matter_id = self.env['rk.matter'].create({})
 
     def write(self, vals):
-        for record in self:
-            if (document_vals := record._get_document_link()):
-                vals['document_id'] = self.env['rk.document'].create(
-                    document_vals)
-            # if (name := vals.get('name')):
-            #     record.document_id._compute_name(name)
+        if self._context.get('create_rk_matter', True):     
+            for record in self:
+                if (document_vals := record._get_document_link()):
+                    vals['document_id'] = self.env['rk.document'].create(
+                        document_vals)
+                # if (name := vals.get('name')):
+                #     record.document_id._compute_name(name)
         result = super().write(vals)
         return result

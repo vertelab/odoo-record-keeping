@@ -70,13 +70,14 @@ class Mixin(models.AbstractModel):
         string='Receiver',
         tracking=True,
     )
-    receiver_id = fields.Many2one(
-        comodel_name='res.partner',
-        copy=False,
-        help='The competent person who received the document',
-        string='Receiver',
-        tracking=True,
-    )
+    # THIS FIELD WAS BELIVED TO BE REDUNDANT AND THUS COMMENTED OUT
+    # receiver_id = fields.Many2one(
+    #     comodel_name='res.partner',
+    #     copy=False,
+    #     help='The competent person who received the document',
+    #     string='Receiver',
+    #     tracking=True,
+    # )
     secrecy_grounds = fields.Char(
         copy=False,
         default=False,
@@ -90,13 +91,14 @@ class Mixin(models.AbstractModel):
         string='Sender',
         tracking=True,
     )
-    sender_id = fields.Many2one(
-        comodel_name='res.partner',
-        copy=False,
-        help='The person who sent this document',
-        string='Sender',
-        tracking=True,
-    )
+    # THIS FIELD WAS BELIVED TO BE REDUNDANT AND THUS COMMENTED OUT
+    # sender_id = fields.Many2one(
+    #     comodel_name='res.partner',
+    #     copy=False,
+    #     help='The person who sent this document',
+    #     string='Sender',
+    #     tracking=True,
+    # )
 
     _sql_constraints = [
         ('is_secret_requires_provision',

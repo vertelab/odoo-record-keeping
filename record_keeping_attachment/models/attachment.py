@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from odoo import _, api, fields, models
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 class Attachment(models.Model):
@@ -11,6 +14,7 @@ class Attachment(models.Model):
         _id = values.get('active_id') or values.get('res_id')
         if _model and _id and (record := self.env[_model].browse(_id)):
             if hasattr(record, 'matter_id'):
+                
                 return record.matter_id.id
 
     def _prepare_values(self, vals):
@@ -23,7 +27,7 @@ class Attachment(models.Model):
         if matter_id:
             vals['matter_id'] = matter_id
             vals['is_official'] = True
-
+        
         return vals
 
     @api.model
@@ -34,7 +38,7 @@ class Attachment(models.Model):
 
     def write(self, vals):
         for rec in self:
-            if hasattr(rec, 'matter_id') and not rec.matter_id and not vals.get('matter_id'):
-                vals = self._prepare_values(vals)
-
+            #if hasattr(rec, 'matter_id') and not rec.matter_id and not vals.get('matter_id'):
+                #vals = self._prepare_values(vals)
+            
             return super().write(vals)

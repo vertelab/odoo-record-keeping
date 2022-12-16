@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from odoo import SUPERUSER_ID, api
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 def post_init_hook(cr, registry):
@@ -16,3 +19,5 @@ def post_init_hook(cr, registry):
             if not record.document_id:
                 vals = {'res_model': model, 'res_id': record.id}
                 record.document_id = env['rk.document'].create(vals)
+                _logger.warning("hook created matter"*99)
+
