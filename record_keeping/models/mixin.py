@@ -67,7 +67,7 @@ class Mixin(models.AbstractModel):
     receiver = fields.Char(
         copy=False,
         help='The competent person who received the document',
-        string='Receiver',
+        string='Receiver ',
         tracking=True,
     )
     # THIS FIELD WAS BELIVED TO BE REDUNDANT AND THUS COMMENTED OUT
@@ -88,7 +88,7 @@ class Mixin(models.AbstractModel):
     sender = fields.Char(
         copy=False,
         help='The person who sent this document',
-        string='Sender',
+        string='Sender ',
         tracking=True,
     )
     # THIS FIELD WAS BELIVED TO BE REDUNDANT AND THUS COMMENTED OUT

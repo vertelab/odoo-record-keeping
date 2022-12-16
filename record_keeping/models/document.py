@@ -46,6 +46,7 @@ class Document(models.Model):
         help='The matter this document belongs to',
         string='Matter',
         tracking=True,
+        index=True
     )
     res_id = fields.Integer(
         copy=False,
@@ -74,7 +75,7 @@ class Document(models.Model):
             name = document.get_name()
             if document.res_model and document.res_id:
                 document.res_ref = f"{document.res_model},{document.res_id}"
-                if (res_ref := document.res_ref):
+                if res_ref := document.res_ref:
                     name += ' ' + res_ref.name or ''
             else:
                 document.res_ref = None

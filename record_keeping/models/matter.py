@@ -15,6 +15,7 @@ class Matter(models.Model):
         copy=False,
         string='Administrator',
         tracking=True,
+        index=True
     )
     classification_id = fields.Many2one(
         comodel_name='rk.classification',
@@ -22,6 +23,7 @@ class Matter(models.Model):
         string='Classification',
         default=lambda self: int(self._get_default_param('classification_id')) or 0,
         tracking=True,
+        index=True
     )
     department_id = fields.Many2one(
         copy=False,
@@ -29,6 +31,7 @@ class Matter(models.Model):
         store=True,
         string='Department',
         tracking=True,
+        index=True
     )
     description = fields.Char(
         copy=False,
@@ -90,6 +93,7 @@ class Matter(models.Model):
         comodel_name='res.partner',
         string='Customer',
         tracking=True,
+        index=True
     )
     partner_name = fields.Char(
         compute='_compute_partner_name',
@@ -157,7 +161,7 @@ class Matter(models.Model):
                 record.partner_name = _('Confidential')
             else:
                 record.partner_name = record.partner_id.name or ''
-            
+
     def _expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
 
@@ -189,16 +193,16 @@ class Matter(models.Model):
         action_xmlid = 'record_keeping.action_document_view'
         action = self.env['ir.actions.act_window']._for_xml_id(action_xmlid)
         action['domain'] = str([('matter_id', 'in', self.ids)])
-        action['context'] = "{'matter_id': '%d'}" % (self.id)
+        action['context'] = "{'matter_id': '%d'}" % self.id
         return action
-    
+
     def write(self, vals):
         if vals.get('state') == 'done':
             vals['close_date'] = fields.Date.today()
-            if (days := int(self._get_default_param('sorting_out_days')) or 0):
+            if days := int(self._get_default_param('sorting_out_days')) or 0:
                 vals['sorting_out_date'] = fields.Date.today() + timedelta(days=days)
-        if vals.get('active', True) == False:
-            if not self.state in ['done']:
+        if not vals.get('active', True):
+            if self.state not in ['done']:
                 vals.pop('active')
             else:
                 self.action_archive_documents()

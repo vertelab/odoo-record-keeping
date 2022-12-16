@@ -10,7 +10,7 @@ class RecordKeepingSettings(models.TransientModel):
         config_parameter=(
             'record_keeping.rk_matter_default_classification_id'),
         help='Default classification used for matters',
-        string='Classification',
+        string='Matter Classification',
     )
     matter_default_date = fields.Date(
         compute="_compute_matter_default_date",

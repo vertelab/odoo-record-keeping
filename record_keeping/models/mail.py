@@ -67,7 +67,7 @@ class RecordKeepingMail(models.Model):
     )
     name = fields.Char(
         readonly=1,
-        string='Subject'
+        string='Name'
     )
     notification = fields.Boolean(
         readonly=1,
@@ -127,7 +127,7 @@ class Mail(models.Model):
             values['receiver'] = ', '.join(receivers + recipients)
 
             if (model := mail.model) and (res_id := mail.res_id):
-                if (rec := self.env[model].browse(res_id)):
+                if rec := self.env[model].browse(res_id):
                     if hasattr(rec, 'matter_id'):
                         values['matter_id'] = rec.matter_id.id
                         values['is_official'] = True

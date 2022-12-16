@@ -17,6 +17,7 @@ class DocumentMixin(models.AbstractModel):
         ondelete='restrict',
         required=True,
         string='Document',
+        index=True
     )
     document_ref = fields.Reference(
         compute='_compute_document_ref',
@@ -34,15 +35,19 @@ class DocumentMixin(models.AbstractModel):
 
     def _get_default_param(self, field):
         param = f"record_keeping.{self._name.replace('.', '_')}_default_{field}"
-        if (res := self.env['ir.config_parameter'].sudo().get_param(param)):
+        if res := self.env['ir.config_parameter'].sudo().get_param(param):
             res = int(res)
         return res
 
     def _get_document_link(self):
         self.ensure_one()
         vals = dict(res_model=self._name, res_id=self.id)
+<<<<<<< HEAD
 #        _logger.warning(f"{self.document_id}")
         if (document := self.document_id):
+=======
+        if document := self.document_id:
+>>>>>>> 08ec7fea9b38f28288efbe786373642cc017b758
             if document.res_model != self._name or document.res_id != self.id:
                 document.write(vals)
         else:
@@ -55,6 +60,7 @@ class DocumentMixin(models.AbstractModel):
 
     @api.model
     def create(self, vals):
+<<<<<<< HEAD
         if self._context.get('create_rk_matter', True):  
             for field in ['classification_id', 'document_type_id']:
                 if not field in vals:
@@ -65,6 +71,14 @@ class DocumentMixin(models.AbstractModel):
         else:
             record = super().create(vals)
             return record
+=======
+        for field in ['classification_id', 'document_type_id']:
+            if not field in vals:
+                vals[field] = self._get_default_param(field)
+        record = super().create(vals)
+    #     record._get_document_link()
+        return record
+>>>>>>> 08ec7fea9b38f28288efbe786373642cc017b758
 
     def create_matter(self):
         self.ensure_one()
@@ -73,6 +87,7 @@ class DocumentMixin(models.AbstractModel):
             self.matter_id = self.env['rk.matter'].create({})
 
     def write(self, vals):
+<<<<<<< HEAD
         if self._context.get('create_rk_matter', True):     
             for record in self:
                 if (document_vals := record._get_document_link()):
@@ -80,5 +95,10 @@ class DocumentMixin(models.AbstractModel):
                         document_vals)
                 # if (name := vals.get('name')):
                 #     record.document_id._compute_name(name)
+=======
+        for record in self:
+            if document_vals := record._get_document_link():
+                vals['document_id'] = self.env['rk.document'].create(document_vals)
+>>>>>>> 08ec7fea9b38f28288efbe786373642cc017b758
         result = super().write(vals)
         return result

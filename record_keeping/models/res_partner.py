@@ -22,6 +22,6 @@ class ResPartner(models.Model):
         action_xmlid = 'record_keeping.action_matter_view'
         action = self.env['ir.actions.act_window']._for_xml_id(action_xmlid)
         action['domain'] = str([('partner_id', 'in', self.ids)])
-        action['context'] = "{'partner_id': '%d'}" % (self.id)
+        action['context'] = "{'partner_id': '%d'}" % self.id
         return action
 
