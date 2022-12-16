@@ -67,7 +67,7 @@ class Mixin(models.AbstractModel):
     receiver = fields.Char(
         copy=False,
         help='The competent person who received the document',
-        string='Receiver',
+        string='Receiver ',
         tracking=True,
     )
     receiver_id = fields.Many2one(
@@ -87,7 +87,7 @@ class Mixin(models.AbstractModel):
     sender = fields.Char(
         copy=False,
         help='The person who sent this document',
-        string='Sender',
+        string='Sender ',
         tracking=True,
     )
     sender_id = fields.Many2one(

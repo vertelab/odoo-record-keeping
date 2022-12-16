@@ -67,7 +67,7 @@ class RecordKeepingMail(models.Model):
     )
     name = fields.Char(
         readonly=1,
-        string='Subject'
+        string='Name'
     )
     notification = fields.Boolean(
         readonly=1,
