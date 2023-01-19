@@ -16,6 +16,10 @@ class AddFileWizard(models.TransientModel):
     description = fields.Text(
         string='Description',
     )
+    datas_name = fields.Char(
+        required=True,
+        string='Matter Name',
+    )
 
     def save_button(self):
         ctx = self.env.context.get
@@ -23,8 +27,9 @@ class AddFileWizard(models.TransientModel):
         attachment_vals = {
             'datas': self.datas,
             'description': self.description,
-            'name': self.name,
+            'name': self.datas_name,
             'type': 'binary',
+            'rk_file_name': self.name
         }
 
         if 'rk.matter' in ctx('active_model') and (

@@ -6,6 +6,8 @@ class Attachment(models.Model):
     _name = 'ir.attachment'
     _inherit = ['ir.attachment', 'mail.thread', 'rk.document.mixin']
 
+    rk_file_name = fields.Char(string="Original file Name", readonly=True)
+
     def _find_matter(self, values):
         _model = values.get('active_model') or values.get('res_model')
         _id = values.get('active_id') or values.get('res_id')
