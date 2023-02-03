@@ -76,8 +76,8 @@ class Document(models.Model):
             if document.res_model and document.res_id:
                 document.res_ref = f"{document.res_model},{document.res_id}"
                 if res_ref := document.res_ref:
-                    if res_ref.rk_file_name:
-                        name += ' ' + res_ref.rk_file_name
+                    if document.res_model == 'ir.attachment':
+                        name += ' ' + res_ref.rk_file_name if res_ref.rk_file_name else res_ref.name
                     else:
                         name += ' ' + res_ref.name
             else:
