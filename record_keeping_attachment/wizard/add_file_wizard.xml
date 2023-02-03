@@ -6,7 +6,8 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="datas" filename="name" required="1" />
+                    <field name="datas" filename="datas_name" required="1" />
+                    <field name="datas_name" invisible="1" />
                     <field name="name" attrs="{'invisible': [('datas', '=', False)], }" />
                     <field name="description" attrs="{'invisible': [('datas', '=', False)], }" />
                 </group>

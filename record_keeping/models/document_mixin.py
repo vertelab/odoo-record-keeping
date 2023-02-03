@@ -60,7 +60,7 @@ class DocumentMixin(models.AbstractModel):
             if not field in vals:
                 vals[field] = self._get_default_param(field)
         record = super().create(vals)
-    #     record._get_document_link()
+        record._get_document_link()
         return record
 
     def create_matter(self):
