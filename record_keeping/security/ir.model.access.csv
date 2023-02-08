@@ -4,6 +4,7 @@ access_rk_classification_manager,rk.classification manager,model_rk_classificati
 access_rk_classification_user,rk.classification.user,model_rk_classification,base.group_user,1,0,0,0
 access_rk_document_manager,rk.document.manager,model_rk_document,group_rk_manager,1,1,1,1
 access_rk_document_user,rk.document.user,model_rk_document,base.group_user,1,1,1,0
+access_rk_document_portal,rk.document.portal,model_rk_document,,1,0,0,0
 access_rk_law_section_manager,rk.law.section.manager,model_rk_law_section,group_rk_law_section_manager,1,1,1,1
 access_rk_law_section_user,rk.law.section.user,model_rk_law_section,base.group_user,1,0,0,0
 access_rk_mail_manager,access.rk.mail.manager,model_rk_mail,record_keeping.group_rk_manager,1,0,1,1
