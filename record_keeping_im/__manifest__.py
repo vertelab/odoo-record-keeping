@@ -32,9 +32,9 @@
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'description': """
-        This module extends IM Live Chat with record-keeping fields
+    This module extends IM Live Chat with record-keeping fields
     """,
     'depends': ['im_livechat', 'record_keeping'],
     'data': [
