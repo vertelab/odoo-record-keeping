@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'name': 'Record-keeping: Record-keeping Account',
+    'name': 'Record-keeping: Account',
     'version': '14.0.2.1.2',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Record-keeping for Odoo Account',
@@ -32,7 +32,7 @@
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'description': """
         This module extends Account with record-keeping fields
     """,
