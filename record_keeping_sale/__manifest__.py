@@ -35,7 +35,7 @@ This module extends Sale Orders with record-keeping fields
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['record_keeping', 'sale_management'],
     'data': [
         # 'security/ir.model.access.csv',
