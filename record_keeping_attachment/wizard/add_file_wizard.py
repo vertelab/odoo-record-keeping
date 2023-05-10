@@ -37,4 +37,5 @@ class AddFileWizard(models.TransientModel):
             attachment_vals['matter_id'] = matter_id
             attachment_vals['is_official'] = True
 
-        self.env['ir.attachment'].create(attachment_vals)
+        file = self.env['ir.attachment'].create(attachment_vals)
+        file.document_id.description = self.description

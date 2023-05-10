@@ -21,7 +21,7 @@
 
 {
     'name': 'Record-keeping: Attachment',
-    'version': '14.0.2.1.0',
+    'version': '14.0.2.1.1',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Record-keeping Attachment for Odoo',
     'category': 'Government',
