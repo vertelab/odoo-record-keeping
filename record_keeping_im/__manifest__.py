@@ -20,21 +20,21 @@
 ##############################################################################
 
 {
-    'name': 'Record-keeping: Record-keeping IM Live Chat',
+    'name': 'Record-keeping: IM Live Chat',
     'version': '14.0.0.0.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Record-keeping for Odoo IM Live Chat',
     'category': 'Government',
     #'sequence': '1'
     'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/record-keeping/record_keeping_im',
+    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_im',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'description': """
-        This module extends IM Live Chat with record-keeping fields
+    This module extends IM Live Chat with record-keeping fields
     """,
     'depends': ['im_livechat', 'record_keeping'],
     'data': [

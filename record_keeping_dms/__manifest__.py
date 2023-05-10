@@ -36,7 +36,7 @@ v14.0.0.0.1 New module
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['dms', 'record_keeping', 'record_keeping_wizard'],
     'data': [
         'views/dms_file_views.xml',

@@ -26,8 +26,8 @@
     'summary': 'Record-keeping Property Management for Odoo',
     'category': 'Government',
     'description': """
-This module extends Properties with record-keeping fields
-""",
+    This module extends Properties with record-keeping fields
+    """,
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_property_mgmt',
@@ -35,7 +35,7 @@ This module extends Properties with record-keeping fields
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keepin.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['property_mgmt', 'record_keeping'],
     'data': [
         'views/property_views.xml',

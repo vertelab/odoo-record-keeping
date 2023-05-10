@@ -23,11 +23,11 @@
     'name': 'Record-keeping: Wizard',
     'version': '14.0.2.0.1',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping  Wizard for Odoo',
+    'summary': 'Record-keeping Wizard for Odoo',
     'category': 'Government',
     'description': """
-This module extends multiple modules with a button and a wizard to link actions to matter
-""",
+    This module extends multiple modules with a button and a wizard to link actions to matter
+    """,
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_wizard',
@@ -35,7 +35,7 @@ This module extends multiple modules with a button and a wizard to link actions 
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['record_keeping'],
     'data': [
         'views/matter_wizard.xml',

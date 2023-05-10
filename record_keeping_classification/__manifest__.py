@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'name': 'Record-keeping Classification',
+    'name': 'Record-keeping: Classification',
     'version': '14.0.0.1',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Adds a relation between classification_id on rk.matter and rk.document',
@@ -30,7 +30,7 @@
     """,
     #'sequence': '1'
     'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/record-keeping/record_keeping',
+    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_classification',
     #'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
@@ -41,3 +41,4 @@
     ],
     'auto_install': True,
 }
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

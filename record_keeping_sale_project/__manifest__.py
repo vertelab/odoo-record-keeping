@@ -36,7 +36,7 @@ v14.0.0.0.1 Stage Quote Sent added
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['record_keeping_sale', 'record_keeping_project', 'sale_project'],
     'data': [
         'data/project_task_type.xml',

@@ -38,7 +38,7 @@ v14.0.2.2.0 refactored classes
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['mail', 'project', 'record_keeping', 'record_keeping_wizard'],
     'data': [
         'views/project_views.xml',

@@ -35,7 +35,7 @@ This module extends Events with record-keeping fields
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['event', 'record_keeping', 'record_keeping_wizard'],
     'data': [
         'views/event_views.xml',
