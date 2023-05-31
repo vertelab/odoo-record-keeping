@@ -40,9 +40,12 @@ class DocumentMixin(models.AbstractModel):
         return res
 
     def _get_document_link(self):
+        _logger.warning("_get_document_link"*100)
         self.ensure_one()
         vals = dict(res_model=self._name, res_id=self.id)
+        _logger.warning(f"{vals=}")
         if document := self.document_id:
+            _logger.warning(f"{document=} {document.res_model=} {self._name=} {document.res_id=} {self.id=}")
             if document.res_model != self._name or document.res_id != self.id:
                 document.write(vals)
         else:
