@@ -42,4 +42,6 @@ class Attachment(models.Model):
         for rec in self:
             if hasattr(rec, 'matter_id') and not rec.matter_id and not vals.get('matter_id'):
                 vals = self._prepare_values(vals)
+            if 'is_official' in vals.keys():
+                vals['public'] = vals['is_official']
             return super().write(vals)
