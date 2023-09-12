@@ -16,7 +16,6 @@ class Attachment(models.Model):
         _id = values.get('active_id') or values.get('res_id')
         if _model and _id and (record := self.env[_model].browse(_id)):
             if hasattr(record, 'matter_id'):
-                
                 return record.matter_id.id
 
     def _prepare_values(self, vals):
@@ -29,13 +28,16 @@ class Attachment(models.Model):
         if matter_id:
             vals['matter_id'] = matter_id
             vals['is_official'] = True
-        
         return vals
 
     @api.model
     def create(self, vals):
         if not vals.get('matter_id'):
             vals = self._prepare_values(vals)
+        if 'is_official' in vals.keys():
+            vals['public'] = vals['is_official']
+        elif hasattr(self, 'is_official'):
+            vals['public'] = self.is_official
         return super().create(vals)
 
     def write(self, vals):

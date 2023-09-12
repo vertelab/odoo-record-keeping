@@ -3,6 +3,8 @@
 from datetime import timedelta
 from odoo import _, api, fields, models
 
+import logging
+_logger = logging.getLogger(__name__)
 
 class Matter(models.Model):
     _name = 'rk.matter'
@@ -186,6 +188,9 @@ class Matter(models.Model):
         if not 'description' in vals:
             vals['description'] = vals.get('name')
         vals['reg_no'] = self.env['ir.sequence'].next_by_code('rk.matter')
+        if 'is_official' not in vals.keys():
+            vals['is_official'] = True
+        _logger.info(f"{vals=}")
         return super(Matter, self).create(vals)
 
     def document_tree_view(self):

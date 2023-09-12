@@ -29,7 +29,13 @@ class RecordKeepingSettings(models.TransientModel):
         help='Default number of sorting out days',
         string='Sorting out days',
     )
-
+    
+    matter_default_official = fields.Boolean(
+        config_parameter=(
+            'record_keeping.matter_default_official'),
+        help='Default state of it this matter is public',
+        string='Official',
+    )
     @api.depends('matter_default_date_str')
     def _compute_matter_default_date(self):
         to_date = fields.Date.to_date

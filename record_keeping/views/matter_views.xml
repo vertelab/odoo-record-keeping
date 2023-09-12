@@ -127,6 +127,8 @@
                 <field name="draw_up_receive_date" />
                 <field name="description" />
                 <field name="partner_name" />
+                <field name="is_official"/>
+                <field name="is_secret"/>
                 <field name="write_date" />
                 <field name="latest_change" />
                 <field name="state" />

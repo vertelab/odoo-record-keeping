@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from odoo import _, api, fields, models
 
+import logging
+_logger = logging.getLogger(__name__)
 
 class Document(models.Model):
     _name = 'rk.document'
@@ -123,8 +125,11 @@ class Document(models.Model):
 
     @api.model
     def create(self, vals):
+        _logger.warning(f"C1 {vals=}")
         document = super().create(vals)
         document._next_document_no()
+        _logger.warning(f"C2 {vals=}")
+        _logger.warning(f"C3 {document=}")
         return document
 
     def get_name(self):
@@ -152,9 +157,14 @@ class Document(models.Model):
         return True
 
     def write(self, vals):
+        _logger.warning(f"W1 {vals=}")
         if vals.get('matter_id'):
             vals['document_no'] = ''
         res = super().write(vals)
         for document in self:
             document._next_document_no()
+        _logger.warning(f"W2 {vals=}")
+        if 'is_official' in vals.keys():
+            if self.res_model == 'ir.attachment':
+                self.res_ref.public = vals['is_official']
         return res

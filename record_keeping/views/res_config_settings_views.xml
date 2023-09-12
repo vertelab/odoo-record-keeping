@@ -18,6 +18,8 @@
                                     <div class="row mt8">
                                         <label for="matter_default_classification_id" class="col-lg-4 o_light_label" />
                                         <field name="matter_default_classification_id" domain="[('has_types', '=', True)]" options="{'no_create': True, 'no_open': True}" />
+                                        <label for="matter_default_official" class="col-lg-4 o_light_label" />
+                                        <field name="matter_default_official"/>
                                     </div>
                                 </div>
                             </div>

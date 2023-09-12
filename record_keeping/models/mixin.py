@@ -6,6 +6,10 @@ class Mixin(models.AbstractModel):
     _name = 'rk.mixin'
     _description = 'Mixin'
 
+    def _get_default_official(self):
+        param = 'record_keeping.matter_default_official'
+        return self.env['ir.config_parameter'].sudo().get_param(param)
+
     active = fields.Boolean(
         copy=False,
         default=True,
@@ -36,7 +40,7 @@ class Mixin(models.AbstractModel):
     )
     is_official = fields.Boolean(
         copy=False,
-        default=False,
+        default=lambda self:self._get_default_official(),
         help='Check this option if this document is an official document',
         string='Official document',
         tracking=True,
@@ -109,7 +113,7 @@ class Mixin(models.AbstractModel):
     def _get_default_classification(self):
         param = 'record_keeping.matter_default_classification_id'
         return int(self.env['ir.config_parameter'].sudo().get_param(param))
-
+        
     @api.onchange('is_official')
     def _onchange_is_official(self):
         if not self.is_official:
