@@ -27,7 +27,7 @@ class Attachment(models.Model):
 
         if matter_id:
             vals['matter_id'] = matter_id
-            vals['is_official'] = True
+            vals['public'] = self.env['rk.matter'].browse(matter_id).is_official
         return vals
 
     @api.model
@@ -36,8 +36,8 @@ class Attachment(models.Model):
             vals = self._prepare_values(vals)
         if 'is_official' in vals.keys():
             vals['public'] = vals['is_official']
-        elif hasattr(self, 'is_official'):
-            vals['public'] = self.is_official
+        elif 'matter_id' in vals.keys():
+            vals['public'] = self.env['rk.matter'].browse(vals['matter_id']).is_official
         return super().create(vals)
 
     def write(self, vals):
