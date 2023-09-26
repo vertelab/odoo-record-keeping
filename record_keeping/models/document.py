@@ -162,6 +162,6 @@ class Document(models.Model):
         for document in self:
             document._next_document_no()
         if 'is_official' in vals.keys():
-            if self.res_model == 'ir.attachment':
+            if self.res_model == 'ir.attachment' and self.res_ref:
                 self.res_ref.public = vals['is_official']
         return res

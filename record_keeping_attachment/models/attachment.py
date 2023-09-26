@@ -27,6 +27,7 @@ class Attachment(models.Model):
 
         if matter_id:
             vals['matter_id'] = matter_id
+            _logger.warning(f"TEST 1 {vals}")
             vals['public'] = self.env['rk.matter'].browse(matter_id).is_official
         return vals
 
@@ -35,8 +36,10 @@ class Attachment(models.Model):
         if not vals.get('matter_id'):
             vals = self._prepare_values(vals)
         if 'is_official' in vals.keys():
+            _logger.warning(f"TEST 2 {vals}")
             vals['public'] = vals['is_official']
         elif 'matter_id' in vals.keys():
+            _logger.warning(f"TEST 3 {vals}")
             vals['public'] = self.env['rk.matter'].browse(vals['matter_id']).is_official
         return super().create(vals)
 
@@ -45,5 +48,7 @@ class Attachment(models.Model):
             if hasattr(rec, 'matter_id') and not rec.matter_id and not vals.get('matter_id'):
                 vals = self._prepare_values(vals)
             if 'is_official' in vals.keys():
+                _logger.warning(f"TEST 4 {vals}")
                 vals['public'] = vals['is_official']
+                _logger.warning(f"TEST 5")
             return super().write(vals)
