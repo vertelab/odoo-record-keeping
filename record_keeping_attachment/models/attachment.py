@@ -38,6 +38,8 @@ class Attachment(models.Model):
             vals['public'] = vals['is_official']
         elif 'matter_id' in vals.keys():
             vals['public'] = self.env['rk.matter'].browse(vals['matter_id']).is_official
+        if not vals.get('matter_id') and vals.get('res_model') == 'rk.matter':
+            vals['matter_id'] = vals.get('res_id')
         return super().create(vals)
 
     def write(self, vals):
