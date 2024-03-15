@@ -99,7 +99,7 @@ msgstr "Information"
 #. module: record_keeping_event
 #: model:ir.model.fields,field_description:record_keeping_event.field_event_event__description
 msgid "Description"
-msgstr "Notering"
+msgstr "Beskrivning"
 
 #. module: record_keeping_event
 #: model:ir.model.fields,field_description:record_keeping_event.field_event_event__display_name

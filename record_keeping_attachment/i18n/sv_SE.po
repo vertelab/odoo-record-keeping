@@ -107,7 +107,7 @@ msgstr "Skapad"
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__description
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_add_file_wizard__description
 msgid "Description"
-msgstr "Notering"
+msgstr "Beskrivning"
 
 #. module: record_keeping_attachment
 #: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__display_name

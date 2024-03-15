@@ -155,7 +155,7 @@ msgstr "Förvald handlingstyp för arbetsuppgifter"
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__description
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__description
 msgid "Description"
-msgstr "Notering"
+msgstr "Beskrivning"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__display_name

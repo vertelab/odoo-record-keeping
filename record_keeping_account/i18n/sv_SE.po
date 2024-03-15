@@ -89,7 +89,7 @@ msgstr "Skapad den"
 #. module: record_keeping_account
 #: model:ir.model.fields,field_description:record_keeping_account.field_account_move__description
 msgid "Description"
-msgstr "Notering"
+msgstr "Beskrivning"
 
 #. module: record_keeping_account
 #: model:ir.model.fields,field_description:record_keeping_account.field_account_move__display_name
@@ -375,7 +375,7 @@ msgstr "Datumet handlingen är klar att användas eller skickas"
 #. module: record_keeping_account
 #: model:ir.model.fields,help:record_keeping_account.field_account_move__description
 msgid "The description of this document"
-msgstr "Noteringen av detta dokument"
+msgstr "Beskrivningen av detta dokument"
 
 #. module: record_keeping_account
 #: model:ir.model.fields,help:record_keeping_account.field_account_move__matter_id
