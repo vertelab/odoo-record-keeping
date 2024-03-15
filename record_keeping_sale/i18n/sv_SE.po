@@ -94,7 +94,7 @@ msgstr "Datum då kundordern skapades."
 #. module: record_keeping_sale
 #: model:ir.model.fields,field_description:record_keeping_sale.field_sale_order__description
 msgid "Description"
-msgstr "Beskrivning"
+msgstr "Notering"
 
 #. module: record_keeping_sale
 #: model:ir.model.fields,field_description:record_keeping_sale.field_sale_order__display_name

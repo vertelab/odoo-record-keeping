@@ -1246,17 +1246,17 @@ msgstr "Datumet handlingen är klar att användas eller skickas"
 #: model:ir.model.fields,help:record_keeping.field_rk_document_mixin__description
 #: model:ir.model.fields,help:record_keeping.field_rk_mail__description
 msgid "The description of this document"
-msgstr "Beskrivningen av detta dokument"
+msgstr "Noteringen av detta dokument"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__description
 msgid "The description of this matter"
-msgstr "Beskrivning på ärendet"
+msgstr "Notering på ärendet"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__description
 msgid "The description of this secrecy provision"
-msgstr "Beskrivning på säkerhetsbestämmelsen"
+msgstr "Notering på säkerhetsbestämmelsen"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__reg_no

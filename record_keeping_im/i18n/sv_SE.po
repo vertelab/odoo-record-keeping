@@ -89,7 +89,7 @@ msgstr "Skapad den"
 #. module: record_keeping_im
 #: model:ir.model.fields,field_description:record_keeping_im.field_mail_channel__description
 msgid "Description"
-msgstr "Beskrivning"
+msgstr "Notering"
 
 #. module: record_keeping_im
 #: model:ir.model,name:record_keeping_im.model_mail_channel
