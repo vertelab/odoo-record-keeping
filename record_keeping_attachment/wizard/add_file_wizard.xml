@@ -8,6 +8,7 @@
                 <group>
                     <field name="datas" filename="datas_name" required="1" />
                     <field name="datas_name" invisible="1" />
+                    <field name="rk_matter_id" attrs="{'invisible': [('rk_matter_id', '!=', False)]}"/>
                     <field name="name" attrs="{'invisible': [('datas', '=', False)], }" />
                     <field name="description" attrs="{'invisible': [('datas', '=', False)], }" />
                 </group>
@@ -24,5 +25,6 @@
         <field name="target">new</field>
         <field name="view_id" ref="view_add_file_wizard_form" />
         <field name="view_mode">form</field>
+        <field name="context">{'default_rk_matter_id': active_id}</field>
     </record>
 </odoo>

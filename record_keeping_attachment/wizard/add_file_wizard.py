@@ -20,9 +20,10 @@ class AddFileWizard(models.TransientModel):
         required=True,
         string='Matter Name',
     )
+    rk_matter_id = fields.Many2one('rk.matter', string="Matter")
 
     def save_button(self):
-        ctx = self.env.context.get
+        ctx = self.env.context.copy()
 
         attachment_vals = {
             'datas': self.datas,
@@ -32,9 +33,13 @@ class AddFileWizard(models.TransientModel):
             'rk_file_name': self.name
         }
 
-        if 'rk.matter' in ctx('active_model') and (
-                matter_id := ctx('active_id')):
-            attachment_vals['matter_id'] = matter_id
+        if self.rk_matter_id.id:
+            ctx['active_id'] = self.rk_matter_id.id
+            ctx['active_model'] = 'rk.matter'
+
+        if 'rk.matter' == ctx.get('active_model') and (
+                matter_id := ctx.get('active_id')):
+            attachment_vals['matter_id'] = matter_id or self.rk_matter_id.id
             attachment_vals['is_official'] = True
 
         file = self.env['ir.attachment'].create(attachment_vals)
