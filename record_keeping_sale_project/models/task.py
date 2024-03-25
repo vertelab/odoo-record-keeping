@@ -50,3 +50,4 @@ class ProjectTask(models.Model):
             if self.sale_order_id and not self.sale_order_id.matter_id:
                 self.sale_order_id.matter_id = self.matter_id
         self.matter_id.partner_id = self.partner_id.id
+        self.matter_id.name = self.display_name
