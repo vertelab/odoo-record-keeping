@@ -25,6 +25,6 @@
         <field name="target">new</field>
         <field name="view_id" ref="view_add_file_wizard_form" />
         <field name="view_mode">form</field>
-        <field name="context">{'default_rk_matter_id': active_id}</field>
+        <field name="context">{'default_rk_matter_id': rk_matter_id, 'default_classification_id': classification_id}</field>
     </record>
 </odoo>

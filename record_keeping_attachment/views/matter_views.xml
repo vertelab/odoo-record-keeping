@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="record_keeping.view_matter_form"/>
         <field name="arch" type="xml">
             <header position="inside">
-                <button name="%(action_add_file_wizard)d" string="Add document" type="action" />
+                <button name="action_add_file_wizard" string="Add Document" type="object" class="btn bt-primary" />
             </header>
         </field>
     </record>
