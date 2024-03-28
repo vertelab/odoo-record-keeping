@@ -4,7 +4,9 @@ from datetime import timedelta
 from odoo import _, api, fields, models
 
 import logging
+
 _logger = logging.getLogger(__name__)
+
 
 class Matter(models.Model):
     _name = 'rk.matter'
@@ -115,13 +117,12 @@ class Matter(models.Model):
         index=True,
         tracking=True,
     )
+
+    def _get_rk_matter_states(self):
+        return [('draft', 'Draft'), ('pending', 'Pending'), ('done', 'Done'), ('cancel', 'Cancelled')]
+
     state = fields.Selection(
-        [
-            ('draft', 'Draft'),
-            ('pending', 'Pending'),
-            ('done', 'Done'),
-            ('cancel', 'Cancelled'),
-        ],
+        selection=_get_rk_matter_states,
         copy=False,
         default='draft',
         group_expand='_expand_states',
@@ -212,3 +213,5 @@ class Matter(models.Model):
             else:
                 self.action_archive_documents()
         return super().write(vals)
+
+
