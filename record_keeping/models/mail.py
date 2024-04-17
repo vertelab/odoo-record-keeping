@@ -109,6 +109,8 @@ class Mail(models.Model):
 
     @api.model
     def create(self, vals):
+        rk_mail_val_list = []
+
         res = super().create(vals)
         fields = self.env['rk.mail'].fields_get()
         for mail in res.mail_ids:
@@ -131,5 +133,9 @@ class Mail(models.Model):
                     if hasattr(rec, 'matter_id'):
                         values['matter_id'] = rec.matter_id.id
                         values['is_official'] = True
-            self.env['rk.mail'].create(values)
+            rk_mail_val_list.append(values)
+
+        # for rk_vals in rk_mail_val_list:
+        self.env['rk.mail'].create(rk_mail_val_list[0])
         return res
+

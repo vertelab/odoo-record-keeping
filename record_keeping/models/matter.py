@@ -186,7 +186,7 @@ class Matter(models.Model):
 
     @api.model
     def create(self, vals):
-        if not 'description' in vals:
+        if 'description' not in vals:
             vals['description'] = vals.get('name')
         vals['reg_no'] = self.env['ir.sequence'].next_by_code('rk.matter')
         if 'is_official' not in vals.keys():
@@ -213,5 +213,3 @@ class Matter(models.Model):
             else:
                 self.action_archive_documents()
         return super().write(vals)
-
-
