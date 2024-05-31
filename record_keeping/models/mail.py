@@ -134,8 +134,7 @@ class Mail(models.Model):
                         values['matter_id'] = rec.matter_id.id
                         values['is_official'] = True
             rk_mail_val_list.append(values)
-
-        # for rk_vals in rk_mail_val_list:
-        self.env['rk.mail'].create(rk_mail_val_list[0])
+        for rk_vals in rk_mail_val_list[1:]:
+            self.env['rk.mail'].create(rk_vals)
         return res
 
