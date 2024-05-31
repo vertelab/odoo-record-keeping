@@ -41,8 +41,8 @@
     'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['base', 'hr', 'mail'],
     'data': [
-        'data/rk.classification.csv',
-        'data/rk.document.type.csv',
+        # 'data/rk.classification.csv',
+        # 'data/rk.document.type.csv',
         'data/ir_sequence_data.xml',
         'data/law_section_data.xml',
         'security/rk_security.xml',
