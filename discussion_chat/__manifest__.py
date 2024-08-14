@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'name': 'record-keeping: Discussion Chat',
+    'name': 'Record-Keeping: Discussion Chat',
     'version': '0.1',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Add chat to chat',
