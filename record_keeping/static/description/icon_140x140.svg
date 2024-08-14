@@ -8,7 +8,7 @@
    version="1.1"
    id="SVGRoot"
    sodipodi:docname="icon_140x140.svg"
-   inkscape:export-filename="/usr/share/odoo-record-keeping/record_keeping/static/description/icon.png"
+   inkscape:export-filename="/home/jakob/Dokument/Odoo16/odoo-record-keeping/record_keeping/static/description/icon.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
@@ -37,7 +37,7 @@
      showgrid="false"
      inkscape:window-width="1870"
      inkscape:window-height="962"
-     inkscape:window-x="152"
+     inkscape:window-x="50"
      inkscape:window-y="76"
      inkscape:window-maximized="0"
      inkscape:pagecheckerboard="0" />
@@ -81,16 +81,31 @@
          y="109.59499"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke-width:1px"
          id="tspan882">Keeping</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:44.831px;line-height:1.25;font-family:'Futura PT';-inkscape-font-specification:'Futura PT, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.999999"
-       x="7.6728535"
-       y="44.257442"
-       id="text893"><tspan
-         sodipodi:role="line"
-         id="tspan891"
-         x="7.6728535"
-         y="44.257442"
-         style="fill:#ffffff;stroke-width:0.999999"></tspan></text>
+    <image
+       width="50"
+       height="38"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAmCAYAAACGeMg8AAAABHNCSVQICAgIfAhkiAAAA3JJREFU
+WIXVmL1PIkEYxt/ZhQYOQ4AEIkdC4CAcCR9SnIQOGlobW2IilJhrrGz4BzgbG8/Ehs7yBLzC0oTE
+AljWiFeYIySEiLtcxWpgP664rMFlPQSVdX/VzLzD8Dw77zuZXQRTiEQiEZfL5ZKLDYfDYaVSqdze
+3t5OW0cxtFqt9ujo6EiYwv39/f329va20nqfZG9vb2+aiXE2NjY2lNSL5AYTiUTi9PT0FCGE2u12
+O5vNZvv9fl86z+FwOPb3978bDIYPFEVRPp/vM03T1NvLnkQDAGCz2WypVCrldrs/aTQaPJlMJhFC
+iOM4bn19ff38/Pz8qQWsVqt1d3d312KxWI6Pj380m83mWwjt9Xq9UqlUOjs7O5OdEA6HwxRF0XLp
+ks/n89P+QKvVagmCaMyShvPC8zy/s7OzI6cDVSqVSjQajQIAMAzD8DzPMwzDHBwcHORyuRzLsuw0
+M3a73X54eHgYi8VigiAICKGHlJ3Wf+48nU6nwzAMY1mW9Xg8nlar1Xq0AMdxnCAIQrlcLmMYhk0T
+rRSZTCYj7sza2tqaNI6J4mmapnme5xcv8XnQNE3/L655KoAQQpubm5uBQCDw+rJmx+v1esX21tbW
+13g8HgcAYFmWLRQKBRC3q1AoFMZ/mM/nvy2igF+Dbrfbla0JHMfxdDqdfttn/HrodDqdrBGXy+Ve
+WloyLFrQvNRqtZqskVAoFFy0mJfQaDTIp4yEFi3mJRAEUZc18l5OqudCEASh+h0ZjUajZrPZnDBi
+NBqNTqfTqYCmubi+vv49GAwGE0aCwaDaCp0AAJgwosL6qAPIGAkGg6qpDwCARqPRAJAxsrKyEl68
+nPkhCGIytXAcx/1+v18ZSbNDURTd6XQ6ABIjbrf7k16v1ysja3YuLi5I8dXjkRG1XU1IkiTF9iMj
+4XBYlfUBIDGitqO3Xq/XxbY0tVRz9HIcx11eXl6K/QcjJpPJbLfbPyoja3aurq5+3d3d3Yn9ByOr
+q6tfcBx/t19RpIwXOsCYEbPZbF68nPkR71giqtkBKeLVRES1RsaPXgAAJAiCoJSYeaFp+o/FYjGN
+j2HD4XColKB5IUmSkI5hJycnP5UQ8xKq1Wp1YnB5eXm5Wq3WlP5a+Fx6vV7P4/F4pD4QwL/reyKR
+SPh8Pt8CHujcMAzDFIvF4s3NzY009hfEKXu4KT6OgwAAAABJRU5ErkJggg==
+"
+       id="image21"
+       x="7"
+       y="8" />
   </g>
 </svg>

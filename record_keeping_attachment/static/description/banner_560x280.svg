@@ -9,11 +9,12 @@
    id="SVGRoot"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="banner_560x280.svg"
-   inkscape:export-filename="/usr/share/odoo-record-keeping/record_keeping_attachment/static/description/banner.png"
+   inkscape:export-filename="/home/jakob/Dokument/Odoo16/odoo-record-keeping/record_keeping_attachment/static/description/banner.png"
    inkscape:export-xdpi="92.61972"
    inkscape:export-ydpi="92.61972"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -39,7 +40,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1"
      inkscape:cx="178"
-     inkscape:cy="86"
+     inkscape:cy="56"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -119,19 +120,19 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="524.43958"
-       y="66.822594"
+       x="522.25299"
+       y="72.822594"
        id="text2035"><tspan
          sodipodi:role="line"
-         x="524.43958"
-         y="66.822594"
+         x="522.25299"
+         y="72.822594"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;stroke-width:1px"
          id="tspan2047">Record Keeping</tspan><tspan
          sodipodi:role="line"
-         x="524.43958"
-         y="89.160011"
+         x="522.25299"
+         y="95.160011"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;stroke-width:1px"
-         id="tspan285">Attachment</tspan></text>
+         id="tspan284">Attachment</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot892"
@@ -145,29 +146,27 @@
          id="flowPara898"></flowPara></flowRoot>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:39.0462px;line-height:1.25;font-family:'Futura PT';-inkscape-font-specification:'Futura PT, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.999998"
-       x="291.09418"
-       y="155"
-       id="text893"><tspan
-         sodipodi:role="line"
-         id="tspan891"
-         x="291.09418"
-         y="155"
-         style="stroke-width:0.999998"></tspan></text>
-    <text
-       xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="334.03513"
+       x="332.03513"
        y="154.41"
        id="text2039"><tspan
          sodipodi:role="line"
          id="tspan2037"
-         x="334.03513"
+         x="332.03513"
          y="154.41"
          style="stroke-width:1px">odoo-record-keeping</tspan><tspan
          sodipodi:role="line"
-         x="334.03513"
+         x="332.03513"
          y="173.16"
          id="tspan2041" /></text>
+    <image
+       width="40.466549"
+       height="30.754578"
+       preserveAspectRatio="none"
+       style="stroke-width:1.23559;image-rendering:optimizeQuality"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAmCAYAAACGeMg8AAAABHNCSVQICAgIfAhkiAAAAu5JREFU WIXVmL+LXFUUx7/fc859OyQKYgRFExBNRAPGYCFiZxrbNGlFiJaCjZWN/4DaWBmwSZcyqKRIKQQs THYDhlQRQSQ/NlbOZmfuPcdiZ8LkzUtmZzYzb98HLtyfb77fd++5984jZpBSejciXouIqTYRGZRS rrj73VnPaZNkZhcAxJOSiDyoqurL9mTOwMy+xwwTkyml9Ek7SndgU6WZnco5XwZAVf2L5Oc55/v1 fiJyJCJ+iIhnROQeybdKKfeWrroBGwl6ieTHa2trR0nq1tbWR9gxWQCcyTn/1jTY3WFmL+acv3P3 F6qqutjr9W4sQ+j29vYdAD/nnH9t7CAiJ0luonm5fDPrB0gmEdloGr+E5Gb2VaOOlNKV4XD4/qjc B+Cq2id5rpTydUTkXZh5RVV/dPcP3D3w6JKdVd5VP5IHIkIAZFU9Vkr585HRZlYAhKr+QlJmiW6L Xq/3GUYzQ/J0vV1yzmPxmxHhK1U3B6q6Oc43nWn2hLGsqursYDB4exnC5qXf778xzqvqF6WUDwGA ZCZ5HhhNl6qenxxoZt9ieUH7VFNK6Z/GmCCpEfHp3K+tPQ40GjGz10spz65azaK4+9VGIxFxYtVi 9gLJ64/bbt9ZqZK9c+1xM7IvdqrdEhHrnZ8RkkMAN6aMqOpz7v7q6iUthpndKqX8N2WE5Immk3O/ EhHrADBlpGvxAeAa0GCEZGfiY8QG0Gzk5Oq1LE7j0iKppZTj7UiaH1XddPe/gZoRVT3q7gfbkTU/ JK+P/3rUl1bnribjfN1IJ+MDqBnp6tYLTAd7Z7ZeESnu/sfD8jhjZodyzofbkTU/JG+6+9a4/NDI YDB4Dw3nyn5lMtCBCeERcWj1cvbE+mShMzNQh+TGZLmzRia3XmDnk2R37uwjUkr/DofD5yfrxMwG bQlalPpsAICIyKU2xOyR36dqRORlEbmKffDFcDdJVe+Y2bG6DwI713dVPRURby78jlaAiPTd/adS yu162/+kaY3VhUmoBgAAAABJRU5ErkJggg== "
+       id="image2331"
+       x="289.58923"
+       y="124.85302" />
   </g>
 </svg>
