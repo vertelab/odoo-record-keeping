@@ -28,6 +28,10 @@
     'description': """
 This module extends DMS with record-keeping fields\n
 v14.0.0.0.1 New module
+
+This module depends:
+OCA DMS, git@github.com:OCA/dms.git
+
 """,
     #'sequence': '1'
     'author': 'Vertel AB',
