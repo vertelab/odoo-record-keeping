@@ -33,3 +33,10 @@ class RecordKeepingSettings(models.TransientModel):
         help='Default document type used for tasks',
         string='Task Document Type',
     )
+
+    task_default_automatic_matter_connection = fields.Boolean(
+        string="Automatic Matter Connection",
+        config_parameter="record_keeping.project_task_default_automatic_matter_connection",
+        help='Automaticly creates a connection to a sale order matter on a project.',
+        )
+

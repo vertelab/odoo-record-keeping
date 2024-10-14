@@ -14,6 +14,8 @@
                             <div class="row mt8">
                                 <label class="col-lg-4 o_light_label" for="project_default_classification_id" />
                                 <field name="project_default_classification_id" domain="[('has_types', '=', True)]" options="{'no_create': True, 'no_open': True}" />
+                                <label class="col-lg-4 o_light_label" for="task_default_automatic_matter_connection" />
+                                <field name="task_default_automatic_matter_connection" />
                             </div>
                         </div>
                     </div>

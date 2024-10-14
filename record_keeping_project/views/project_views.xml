@@ -5,8 +5,7 @@
         <field name="inherit_id" ref="project.edit_project" />
         <field name="arch" type="xml">
             <header position="inside">
-                <button name="%(record_keeping.action_add_record_wizard)d" string="Link to record" type="action" attrs="{
-                    'invisible': [('matter_id', '!=', False)]}" />
+                <button name="%(record_keeping.action_add_record_wizard)d" string="Link to record" type="action" attrs="{'invisible': [('matter_id', '!=', False)]}" />
             </header>
             <widget position="replace">
                 <widget name="web_ribbon" bg_color="bg-danger" title="Confidential" attrs="{'invisible': [('is_secret', '=', False)]}" />
@@ -35,6 +34,7 @@
                             <field name="is_secret" attrs="{'invisible': [('is_official', '=', False)]}" />
                             <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
                             <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
+                            <field name="automatic_matter_connection_task" />
                         </group>
                     </group>
                 </page>
