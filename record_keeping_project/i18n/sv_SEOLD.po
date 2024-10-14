@@ -4,17 +4,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20231205\n"
+"Project-Id-Version: Odoo Server 14.0-20220317\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-14 14:00+0000\n"
-"PO-Revision-Date: 2024-10-14 16:02+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2022-04-01 06:54+0000\n"
+"PO-Revision-Date: 2022-04-01 08:54+0200\n"
+"Last-Translator: Han Wong <han.wong@vertel.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
 "X-Generator: Poedit 2.3\n"
 
 #. module: record_keeping_project
@@ -64,25 +64,16 @@ msgid "Activity Type Icon"
 msgstr "Aktivitetstypsikon"
 
 #. module: record_keeping_project
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__allow_record_keeping
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__allow_record_keeping
+msgid "Allow Record Keeping"
+msgstr "Tillåt diarieföring"
+
+#. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_attachment_count
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__message_attachment_count
 msgid "Attachment Count"
 msgstr "Antal Bilagor"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__task_default_automatic_matter_connection
-msgid "Automatic Matter Connection"
-msgstr "Automatiskt ärende koppling"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__automatic_matter_connection_task
-msgid "Automatic Matter Connection on Tasks"
-msgstr "Automatiskt ärende koppling på aktivteter"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_res_config_settings__task_default_automatic_matter_connection
-msgid "Automaticly creates a connection to a sale order matter on a project."
-msgstr ""
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__is_secret
@@ -103,6 +94,8 @@ msgstr "Markera om detta dokument är en allmän handling"
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__classification_id
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__classification_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__project_default_classification_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__task_default_classification_id
 msgid "Classification"
 msgstr "Klassificering"
 
@@ -137,18 +130,6 @@ msgstr "Skapad av"
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__create_date
 msgid "Created on"
 msgstr "Skapad den"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__partner_id
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__partner_id
-msgid "Customer"
-msgstr "Kund"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__datas
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__datas
-msgid "Datas"
-msgstr ""
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_res_config_settings__project_default_classification_id
@@ -198,6 +179,8 @@ msgstr "Handlingsreferens"
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__document_type_id
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__document_type_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__project_default_document_type_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__task_default_document_type_id
 msgid "Document Type"
 msgstr "Handlingstyp"
 
@@ -212,12 +195,6 @@ msgstr "Löpnummer"
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__draw_up_date
 msgid "Drawn up"
 msgstr "Upprättad"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__draw_up_receive_date
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__draw_up_receive_date
-msgid "Drawn up/Received"
-msgstr ""
 
 #. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
@@ -257,7 +234,7 @@ msgstr "Font awesomeikon t.ex fa-tasks"
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_task__id
 #: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__activity_exception_icon
@@ -300,7 +277,7 @@ msgid ""
 "If the active field is set to False, it will allow you to hide the project "
 "without removing it."
 msgstr ""
-"Om det aktiva fältet är Falskt, kan du gömma uppdraget utan att radera det."
+"Om det aktiva fältet är Falskt, kan du gömma projektet utan att radera det."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__message_is_follower
@@ -366,12 +343,6 @@ msgstr "Meddelanden"
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.view_task_form2
 msgid "Meta Information"
 msgstr "Meta information"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__mimetype
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__mimetype
-msgid "Mimetype"
-msgstr ""
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__my_activity_date_deadline
@@ -441,17 +412,7 @@ msgstr "Allmän handling"
 #. module: record_keeping_project
 #: model:ir.model,name:record_keeping_project.model_project_project
 msgid "Project"
-msgstr "Uppdrag"
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__project_default_classification_id
-msgid "Project Classification"
-msgstr ""
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__project_default_document_type_id
-msgid "Project Document Type"
-msgstr ""
+msgstr "Projekt"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,field_description:record_keeping_project.field_project_project__receive_date
@@ -460,10 +421,10 @@ msgid "Received"
 msgstr "Inkommen"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__receiver
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__receiver
-msgid "Receiver "
-msgstr ""
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__receiver_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__receiver_id
+msgid "Receiver"
+msgstr "Mottagare"
 
 #. module: record_keeping_project
 #: model_terms:ir.ui.view,arch_db:record_keeping_project.edit_project
@@ -526,10 +487,10 @@ msgid "Secrecy provision"
 msgstr "Sekretessbestämmelse"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__sender
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__sender
-msgid "Sender "
-msgstr ""
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__sender_id
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__sender_id
+msgid "Sender"
+msgstr "Avsändare"
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__activity_state
@@ -551,18 +512,8 @@ msgid "Task"
 msgstr "Aktivitet"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__task_default_classification_id
-msgid "Task Classification"
-msgstr ""
-
-#. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__task_default_document_type_id
-msgid "Task Document Type"
-msgstr ""
-
-#. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__receiver
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__receiver
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__receiver_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__receiver_id
 msgid "The competent person who received the document"
 msgstr "Behörig person som har mottagit handlingen"
 
@@ -574,9 +525,7 @@ msgstr "Datumet då handlingen har mottagits av behörig person."
 
 #. module: record_keeping_project
 #: model:ir.model.fields,help:record_keeping_project.field_project_project__draw_up_date
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__draw_up_receive_date
 #: model:ir.model.fields,help:record_keeping_project.field_project_task__draw_up_date
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__draw_up_receive_date
 msgid "The date when the document is ready to be used or sent"
 msgstr "Datumet handlingen är klar att användas eller skickas"
 
@@ -593,8 +542,8 @@ msgid "The number assigned to this document"
 msgstr "Numret som tilldelats den här handlingen"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,help:record_keeping_project.field_project_project__sender
-#: model:ir.model.fields,help:record_keeping_project.field_project_task__sender
+#: model:ir.model.fields,help:record_keeping_project.field_project_project__sender_id
+#: model:ir.model.fields,help:record_keeping_project.field_project_task__sender_id
 msgid "The person who sent this document"
 msgstr "Personen som skickat handlingen"
 
