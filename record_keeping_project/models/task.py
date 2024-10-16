@@ -12,7 +12,7 @@ class Task(models.Model):
     @api.model
     def create(self, vals):
         res = super(Task,self).create(vals)
-        if not res.matter_id and res.project_id.automatic_matter_connection_task and res.order_id and res.order_id.matter_id:
-            res.matter_id = res.order_id.matter_id
+        if not res.matter_id and res.project_id.automatic_matter_connection_task and res.sale_order_id and res.sale_order_id.matter_id:
+            res.matter_id = res.sale_order_id.matter_id
         return res
 
