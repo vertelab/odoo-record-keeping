@@ -12,10 +12,10 @@ class EventMatterWizard(models.TransientModel):
     _inherit = ['rk.wizard']
 
     def _get_model(self):
-        return self.env['mail.channel'].browse(self.env.context.get('active_ids'))
+        return self.env['discuss.channel'].browse(self.env.context.get('active_ids'))
 
     model = fields.Many2one(
-        comodel_name='mail.channel',
+        comodel_name='discuss.channel',
         default=_get_model,
         readonly=True,
     )

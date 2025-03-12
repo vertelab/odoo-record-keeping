@@ -1,17 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <record id="view_task_form2" model="ir.ui.view">
         <field name="model">project.task</field>
-        <field name="inherit_id" ref="record_keeping_project.view_task_form2" />
+        <field name="inherit_id" ref="record_keeping_project.view_task_form2"/>
         <field name="arch" type="xml">
             <button name="create_matter" position="replace">
-                <button name="create_sale" class="oe_highlight" string="Create Sale Order" type="object" attrs="{
-                    'invisible': ['|', ('sale_order_id', '!=', False), ('allow_create_sale', '=', False)]}" />
-                <button name="create_matter" string="Create Matter" type="object" attrs="{
-                    'invisible': [('matter_id', '!=', False)]}" />
+                <button name="create_sale" class="oe_highlight" string="Create Sale Order" type="object" invisible="sale_order_id or not allow_create_sale"/>
+                <button name="create_matter" string="Create Matter" type="object" invisible="matter_id"/>
             </button>
             <field name="matter_id" position="before">
-                <field name="allow_create_sale" invisible="1" />
+                <field name="allow_create_sale" invisible="1"/>
             </field>
         </field>
     </record>

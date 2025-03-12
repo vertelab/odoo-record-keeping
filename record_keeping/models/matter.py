@@ -138,7 +138,7 @@ class Matter(models.Model):
         self = self.sudo()
         for record in self:
             if record.message_ids:
-                description = record.message_ids[-1].description
+                description = record.message_ids[-1]._description
                 tracking_values = record.message_ids[-1].tracking_value_ids
                 if description:
                     record.latest_change = description
@@ -189,7 +189,7 @@ class Matter(models.Model):
         return super(Matter, self).create(vals)
 
     def document_tree_view(self):
-        # shows the tree view of the documents linked to rk.matter
+        # shows the list view of the documents linked to rk.matter
         action_xmlid = 'record_keeping.action_document_view'
         action = self.env['ir.actions.act_window']._for_xml_id(action_xmlid)
         action['domain'] = str([('matter_id', 'in', self.ids)])

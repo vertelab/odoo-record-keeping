@@ -185,7 +185,7 @@ msgid "Is Follower"
 msgstr "Är följare"
 
 #. module: record_keeping_sale
-#: model:ir.model.fields,field_description:record_keeping_sale.field_sale_order____last_update
+#: model:ir.model.fields,field_description:record_keeping_sale.field_sale_order__write_date
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 

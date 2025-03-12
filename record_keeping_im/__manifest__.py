@@ -38,7 +38,7 @@
     """,
     'depends': ['im_livechat', 'record_keeping'],
     'data': [
-        'views/mail_channel_views.xml',
+        'views/discuss_channel_views.xml',
     ],
     'application': True,
 }

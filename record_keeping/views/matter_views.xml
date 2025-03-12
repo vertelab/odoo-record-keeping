@@ -1,76 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <record id="view_matter_form" model="ir.ui.view">
         <field name="model">rk.matter</field>
         <field name="arch" type="xml">
             <form string="Record-keeping">
                 <header>
-                    <field name="state" options="{'clickable': '1'}" statusbar_visible="draft,pending,done,cancel" widget="statusbar" />
+                    <field name="state" options="{'clickable': '1'}" statusbar_visible="draft,pending,done,cancel" widget="statusbar"/>
                 </header>
                 <sheet>
                     <div name="button_box" class="oe_button_box" groups="base.group_user">
                         <button name="document_tree_view" class="oe_stat_button" icon="fa-file-text-o" type="object">
-                            <field name="document_count" string="Documents" widget="statinfo" />
+                            <field name="document_count" string="Documents" widget="statinfo"/>
                         </button>
                     </div>
-                    <widget name="web_ribbon" attrs="{'invisible': [('is_secret', '=', False)]}" bg_color="bg-danger" title="Confidential" />
+                    <widget name="web_ribbon" invisible="not is_secret" bg_color="bg-danger" title="Confidential"/>
                     <h1>
-                        <field name="name" class="oe_read_only" />
-                        <field name="matter_name" class="oe_edit_only" />
+                        <field name="name" class="oe_read_only"/>
+                        <field name="matter_name" class="oe_edit_only"/>
                     </h1>
                     <group>
                         <group>
-                            <field name="reg_no" />
-                            <field name="legacy_reg_no" class="oe_edit_only" />
-                            <field name="legacy_reg_no" class="oe_read_only" attrs="{'invisible': [('legacy_reg_no', '=', False)]}" />
-                            <field name="description" />
-                            <field name="receiver" />
-                            <field name="sender" />
-                            <field name="classification_id" domain="[('has_types', '=', True)]" />
-                            <field name="partner_id" />
-                            <field name="administrator_id" />
-                            <field name="department_id" />
+                            <field name="reg_no"/>
+                            <field name="legacy_reg_no" class="oe_edit_only"/>
+                            <field name="legacy_reg_no" class="oe_read_only" invisible="not legacy_reg_no"/>
+                            <field name="description"/>
+                            <field name="receiver"/>
+                            <field name="sender"/>
+                            <field name="classification_id" domain="[('has_types', '=', True)]"/>
+                            <field name="partner_id"/>
+                            <field name="administrator_id"/>
+                            <field name="department_id"/>
                         </group>
                         <group>
-                            <field name="is_official" attrs="{'required': [('is_secret', '=', True)]}" />
-                            <field name="is_secret" attrs="{'invisible': [('is_official', '=', False)]}" />
-                            <field name="law_section_id" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)], 'required': [('is_secret', '=', True)]}" />
-                            <field name="secrecy_grounds" attrs="{'invisible': ['|', ('is_official', '=', False), ('is_secret', '=', False)]}" />
+                            <field name="is_official" required="is_secret"/>
+                            <field name="is_secret" invisible="not is_official"/>
+                            <field name="law_section_id" invisible="not is_official or not is_secret" required="is_secret"/>
+                            <field name="secrecy_grounds" invisible="not is_official or not is_secret"/>
                         </group>
                     </group>
                     <notebook>
                         <page name="meta_information" string="Meta Information">
                             <group>
                                 <group>
-                                    <field name="create_date" widget="date" />
-                                    <field name="create_uid" />
+                                    <field name="create_date" widget="date"/>
+                                    <field name="create_uid"/>
                                 </group>
                                 <group class="text-nowrap">
-                                    <field name="__last_update" widget="date" />
-                                    <field name="write_uid" />
+                                    <field name="write_date" widget="date"/>
+                                    <field name="write_uid"/>
                                 </group>
                             </group>
                         </page>
                         <page name="documents" string="Documents">
-                            <field name="document_ids" />
+                            <field name="document_ids"/>
                         </page>
                         <page name="dates" string="Dates" groups="base.group_no_one">
                             <group>
                                 <group>
-                                    <field name="draw_up_receive_date" />
-                                    <field name="close_date" attrs="{'invisible': [('state', 'not in', ['done'])]}" />
-                                    <field name="sorting_out_date" attrs="{'invisible': [('state', 'not in', ['done'])]}" />
+                                    <field name="draw_up_receive_date"/>
+                                    <field name="close_date" invisible="state not in ['done']"/>
+                                    <field name="sorting_out_date" invisible="state not in ['done']"/>
                                 </group>
-                                <group />
+                                <group/>
                             </group>
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" options="{'post_refresh': True}" groups="base.group_user" />
-                    <field name="activity_ids" />
-                    <field name="message_ids" />
-                </div>
+                <chatter/>
             </form>
         </field>
     </record>
@@ -79,12 +75,12 @@
         <field name="model">rk.matter</field>
         <field name="arch" type="xml">
             <kanban class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors" sample="1">
-                <field name="name" />
+                <field name="name"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_card oe_kanban_details oe_kanban_global_click o_has_icon">
                             <strong>
-                                <field name="name" />
+                                <field name="name"/>
                             </strong>
                         </div>
                     </t>
@@ -97,23 +93,23 @@
         <field name="model">rk.matter</field>
         <field name="arch" type="xml">
             <search string="Matter">
-                <field name="name" />
-                <field name="description" />
-                <field name="latest_change" />
-                <separator />
-                <field name="is_official" />
-                <field name="state" />
-                <filter string='State is not "Done"' domain="[('state', '!=', 'done')]" help="Matters where state is not done" name="state_not_done" />
-                <separator />
-                <field name="create_date" />
-                <field name="draw_up_receive_date" />
-                <field name="write_date" />
+                <field name="name"/>
+                <field name="description"/>
+                <field name="latest_change"/>
+                <separator/>
+                <field name="is_official"/>
+                <field name="state"/>
+                <filter string="State is not &quot;Done&quot;" domain="[('state', '!=', 'done')]" help="Matters where state is not done" name="state_not_done"/>
+                <separator/>
+                <field name="create_date"/>
+                <field name="draw_up_receive_date"/>
+                <field name="write_date"/>
                 <group expand="1" string="Group By">
-                    <filter name="administrator" string="Administrator" context="{'group_by': 'administrator_id'}" />
-                    <separator orientation="vertical" />
-                    <filter name="state" context="{'group_by': 'state'}" string="State" />
-                    <separator orientation="vertical" />
-                    <filter name="classification" string="Classification" context="{'group_by': 'classification_id'}" />
+                    <filter name="administrator" string="Administrator" context="{'group_by': 'administrator_id'}"/>
+                    <separator orientation="vertical"/>
+                    <filter name="state" context="{'group_by': 'state'}" string="State"/>
+                    <separator orientation="vertical"/>
+                    <filter name="classification" string="Classification" context="{'group_by': 'classification_id'}"/>
                 </group>
             </search>
         </field>
@@ -122,16 +118,16 @@
     <record id="view_matter_tree" model="ir.ui.view">
         <field name="model">rk.matter</field>
         <field name="arch" type="xml">
-            <tree string="Record-keeping">
-                <field name="name" />
-                <field name="draw_up_receive_date" />
-                <field name="description" />
-                <field name="partner_name" />
-                <field name="write_date" />
-                <field name="latest_change" />
-                <field name="state" />
-                <field name="administrator_id" />
-            </tree>
+            <list string="Record-keeping">
+                <field name="name"/>
+                <field name="draw_up_receive_date"/>
+                <field name="description"/>
+                <field name="partner_name"/>
+                <field name="write_date"/>
+                <field name="latest_change"/>
+                <field name="state"/>
+                <field name="administrator_id"/>
+            </list>
         </field>
     </record>
 
@@ -139,10 +135,10 @@
         <field name="name">Matters</field>
         <field name="res_model">rk.matter</field>
         <field name="domain">[]</field>
-        <field name="view_mode">tree,kanban,form</field>
-        <field name="view_id" eval="False" />
+        <field name="view_mode">list,kanban,form</field>
+        <field name="view_id" eval="False"/>
         <field name="context">{'search_default_filter_id':1}</field>
-        <field name="search_view_id" ref="view_matter_search" />
+        <field name="search_view_id" ref="view_matter_search"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create Matter
@@ -152,8 +148,8 @@
 
     <record id="action_done" model="ir.actions.server">
         <field name="name">Close</field>
-        <field name="model_id" ref="record_keeping.model_rk_matter" />
-        <field name="binding_model_id" ref="record_keeping.model_rk_matter" />
+        <field name="model_id" ref="record_keeping.model_rk_matter"/>
+        <field name="binding_model_id" ref="record_keeping.model_rk_matter"/>
         <field name="binding_view_types">form,list</field>
         <field name="state">code</field>
         <field name="code">action = record.action_done()</field>
@@ -161,8 +157,8 @@
 
     <record id="action_archive_after_sorting_date" model="ir.actions.server">
         <field name="name">Archive matters after sorting out date</field>
-        <field name="model_id" ref="record_keeping.model_rk_matter" />
-        <field name="binding_model_id" ref="record_keeping.model_rk_matter" />
+        <field name="model_id" ref="record_keeping.model_rk_matter"/>
+        <field name="binding_model_id" ref="record_keeping.model_rk_matter"/>
         <field name="binding_view_types">form,list</field>
         <field name="state">code</field>
         <field name="code">action = record.action_archive_after_sorting_date()</field>
@@ -180,7 +176,7 @@
                         ('draw_up_receive_date', '=', False), 
                 ]
             </field>
-            <field name="user_id" eval="False" />
+            <field name="user_id" eval="False"/>
         </record>
     </data>
 </odoo>

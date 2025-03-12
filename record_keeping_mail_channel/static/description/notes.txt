@@ -1,4 +1,4 @@
-odoo-record_keeping / record_keeping_mail_channel
+odoo-record_keeping / record_keeping_discuss_channel
 2024-08-14
 
 Be aware of these!

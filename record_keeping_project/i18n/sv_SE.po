@@ -286,9 +286,9 @@ msgid "Is Follower"
 msgstr "Är följare"
 
 #. module: record_keeping_project
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_project____last_update
-#: model:ir.model.fields,field_description:record_keeping_project.field_project_task____last_update
-#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_project__write_date
+#: model:ir.model.fields,field_description:record_keeping_project.field_project_task__write_date
+#: model:ir.model.fields,field_description:record_keeping_project.field_res_config_settings__write_date
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 

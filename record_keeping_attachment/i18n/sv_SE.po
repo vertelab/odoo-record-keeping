@@ -210,8 +210,8 @@ msgid "Is Follower"
 msgstr "Är följare"
 
 #. module: record_keeping_attachment
-#: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment____last_update
-#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_add_file_wizard____last_update
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_ir_attachment__write_date
+#: model:ir.model.fields,field_description:record_keeping_attachment.field_rk_add_file_wizard__write_date
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 

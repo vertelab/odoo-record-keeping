@@ -93,13 +93,20 @@ class Document(models.Model):
             self.matter_id._message_log(**kwargs)
         return res
 
+                           
+                            
     def _message_log_batch(self, bodies, author_id=None, email_from=None,
-                           subject=False, message_type='notification'):
+                           subject=False, message_type='notification', 
+                           partner_ids=False, attachment_ids=False, 
+                           tracking_value_ids=False):
         res = super()._message_log_batch(bodies,
                                          author_id,
                                          email_from,
                                          subject,
-                                         message_type)
+                                         message_type,
+                                         partner_ids,
+                                         attachment_ids,
+                                         tracking_value_ids)
         if res and self.matter_id and message_type in ['notification']:
             self._next_document_no()
             for b in bodies.values():

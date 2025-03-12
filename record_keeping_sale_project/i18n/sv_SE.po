@@ -64,8 +64,8 @@ msgid "ID"
 msgstr "ID"
 
 #. module: record_keeping_sale_project
-#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_project____last_update
-#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task____last_update
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_project__write_date
+#: model:ir.model.fields,field_description:record_keeping_sale_project.field_project_task__write_date
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 

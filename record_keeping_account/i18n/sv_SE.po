@@ -185,7 +185,7 @@ msgid "Journal Entry"
 msgstr "Verifikat"
 
 #. module: record_keeping_account
-#: model:ir.model.fields,field_description:record_keeping_account.field_account_move____last_update
+#: model:ir.model.fields,field_description:record_keeping_account.field_account_move__write_date
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 

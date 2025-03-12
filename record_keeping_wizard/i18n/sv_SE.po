@@ -62,7 +62,7 @@ msgid "If marked as secret, please provide more information"
 msgstr "Om märkt med sekretess, uppge mer information"
 
 #. module: record_keeping_wizard
-#: model:ir.model.fields,field_description:record_keeping_wizard.field_rk_wizard____last_update
+#: model:ir.model.fields,field_description:record_keeping_wizard.field_rk_wizard__write_date
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 

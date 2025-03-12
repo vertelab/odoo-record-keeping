@@ -637,18 +637,18 @@ msgid "Is Notification"
 msgstr "Är en avisering"
 
 #. module: record_keeping
-#: model:ir.model.fields,field_description:record_keeping.field_mail_mail____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_res_partner____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_add_record_wizard____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_classification____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_document_type____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_mail____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_matter____last_update
-#: model:ir.model.fields,field_description:record_keeping.field_rk_mixin____last_update
+#: model:ir.model.fields,field_description:record_keeping.field_mail_mail__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_res_config_settings__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_res_partner__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_add_record_wizard__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_classification__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_document_type__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_law_section__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mail__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_matter__write_date
+#: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__write_date
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 

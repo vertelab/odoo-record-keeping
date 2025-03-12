@@ -1,17 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <record id="view_task_form2" model="ir.ui.view">
-        <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_form2"/>
+    <!-- <record model="ir.actions.act_window" id="open_link_to_record_wizard">
+        <field name="name">open.link.to.record.wizard</field>
+        <field name="res_model">rk.wizard.event</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="record_keeping_wizard.link_to_record_view" />
+    </record> -->
+
+    <record id="discuss_channel_view_form" model="ir.ui.view">
+        <field name="model">discuss.channel</field>
+        <field name="inherit_id" ref="mail.discuss_channel_view_form"/>
         <field name="arch" type="xml">
-            <header position="inside">
-                <button name="create_matter" class="oe_highlight" string="Create Matter" type="object" invisible="matter_id"/>
-                <button name="%(record_keeping.action_add_record_wizard)d" string="Link to record" type="action" invisible="matter_id"/>
-            </header>
-            <widget position="replace">
-                <widget name="web_ribbon" invisible="not is_secret" bg_color="bg-danger" title="Confidential"/>
-            </widget>
-            <field name="partner_id" position="before">
+            <sheet position="before">
+               <header>
+                   <button name="create_matter" invisible="matter_id" class="oe_highlight" string="Create Matter" type="object"/>
+                   <button name="%(record_keeping.action_add_record_wizard)d" invisible="matter_id" string="Link to record" type="action"/>
+               </header>
+            </sheet>        
+            <!--<widget position="replace" />-->
+            <div name="button_box" position="after">
+                <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" invisible="not is_secret"/>
+            </div>
+            <field name="description" position="after">
                 <field name="matter_id" invisible="not document_ref"/>
                 <field name="classification_id" domain="[('has_types', '=', True)]"/>
                 <field name="document_type_id" domain="[('classification_id', '=', classification_id)]"/>
@@ -33,6 +44,10 @@
                             <field name="secrecy_grounds" invisible="not is_official or not is_secret"/>
                         </group>
                     </group>
+                    <group string="Debug info" groups="base.group_no_one">
+                        <field name="res_model"/>
+                        <field name="res_id"/>
+                    </group>
                 </page>
                 <page name="meta_information" string="Meta Information">
                     <group>
@@ -47,27 +62,6 @@
                     </group>
                 </page>
             </notebook>
-        </field>
-    </record>
-
-    <record id="view_task_kanban" model="ir.ui.view">
-        <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_kanban"/>
-        <field name="arch" type="xml">
-            <field name="milestone_id" position="after">
-                <field name="is_official" invisible="1"/>
-                <field name="document_id" invisible="not is_official" decoration-success="1" widget="badge"/>
-            </field>
-        </field>
-    </record>
-
-    <record id="view_task_search_form" model="ir.ui.view">
-        <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_search_form"/>
-        <field name="arch" type="xml">
-            <search position="inside">
-                <field name="document_id" filter_domain="[('is_official', '=', True), ('document_id', 'like', self)]" string="Registration number"/>
-            </search>
         </field>
     </record>
 </odoo>

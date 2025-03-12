@@ -85,7 +85,7 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: record_keeping_property_mgmt
-#: model:ir.model.fields,field_description:record_keeping_property_mgmt.field_property_property____last_update
+#: model:ir.model.fields,field_description:record_keeping_property_mgmt.field_property_property__write_date
 msgid "Last Modified on"
 msgstr ""
 

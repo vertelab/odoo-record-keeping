@@ -18,7 +18,7 @@ class ResPartner(models.Model):
             ])
 
     def matter_tree_view(self):
-        # shows the tree view of rk.matter record linked to this res.partner
+        # shows the list view of rk.matter record linked to this res.partner
         action_xmlid = 'record_keeping.action_matter_view'
         action = self.env['ir.actions.act_window']._for_xml_id(action_xmlid)
         action['domain'] = str([('partner_id', 'in', self.ids)])

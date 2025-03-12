@@ -196,7 +196,7 @@ msgid "Is Follower"
 msgstr "Är följare"
 
 #. module: record_keeping_event
-#: model:ir.model.fields,field_description:record_keeping_event.field_event_event____last_update
+#: model:ir.model.fields,field_description:record_keeping_event.field_event_event__write_date
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 

@@ -48,7 +48,7 @@ msgid "ID"
 msgstr "ID"
 
 #. module: record_keeping_hr
-#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:record_keeping_hr.field_hr_employee__write_date
 msgid "Last Modified on"
 msgstr "Senast redigerad"
 
