@@ -13,7 +13,7 @@
             <xpath expr="//div[hasclass('float-end')]" position="before">
                 <widget name="web_ribbon" title="Confidential" bg_color="bg-danger" invisible="not is_secret"/>
             </xpath>
-            <xpath expr="//group[hasclass('o_history_container')]" position="after">
+            <group position="after">
                 <notebook>
                     <page name="record_keeping" string="Record-keeping">
                         <group>
@@ -45,7 +45,7 @@
                         </group>
                     </page>
                 </notebook>
-            </xpath>
+            </group>
         </field>
     </record>
 
