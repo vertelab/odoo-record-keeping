@@ -17,7 +17,8 @@
                     <button name="%(record_keeping.action_add_record_wizard)d" string="Link to record" type="action" invisible="matter_id"/>
                 </header>
             </sheet>
-            <notebook position="inside">
+            <group groups="base.group_no_one" position="after">
+              <notebook>
                 <page name="record_keeping" string="Record-keeping">
                     <group>
                         <group>
@@ -47,7 +48,8 @@
                         </group>
                     </group>
                 </page>
-            </notebook>
+              </notebook>
+            </group>
             <sheet position="after">
                 <chatter/>
             </sheet>

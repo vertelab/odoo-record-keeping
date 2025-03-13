@@ -60,7 +60,7 @@ class Matter(models.Model):
     close_date = fields.Date(
         copy=False,
         help='Date when matter is closed',
-        readonly=1,
+        readonly=True,
         string='Closed',
         tracking=True,
     )

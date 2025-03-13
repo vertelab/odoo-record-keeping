@@ -14,42 +14,42 @@ class RecordKeepingMail(models.Model):
     )
     author_id = fields.Many2one(
         comodel_name='res.partner',
-        readonly=1,
+        readonly=True,
     )
     auto_delete = fields.Boolean(
-        readonly=1,
+        readonly=True,
         string='Auto Delete',
     )
     body_html = fields.Text(
-        readonly=1,
+        readonly=True,
         string='Rich-text Contents',
     )
     date = fields.Datetime(
         default=fields.Datetime.now,
-        readonly=1,
+        readonly=True,
     )
     email_cc = fields.Char(
-        readonly=1,
+        readonly=True,
         string='Cc',
     )
     email_from = fields.Char(
-        readonly=1,
+        readonly=True,
         string='From',
     )
     email_to = fields.Text(
-        readonly=1,
+        readonly=True,
         string='To',
     )
     headers = fields.Text(
-        readonly=1,
+        readonly=True,
     )
     mail_server_id = fields.Many2one(
         comodel_name='ir.mail_server',
-        readonly=1,
+        readonly=True,
         string='Outgoing mail server',
     )
     message_id = fields.Char(
-        readonly=1,
+        readonly=True,
         string='Message-Id',
     )
     message_type = fields.Selection([
@@ -59,49 +59,49 @@ class RecordKeepingMail(models.Model):
         ('user_notification', 'User Specific Notification'),
         ('email_outgoing', 'Outgoing Email')],
         default='email',
-        readonly=1,
+        readonly=True,
         string='Type',
     )
     model = fields.Char(
-        readonly=1,
+        readonly=True,
         string='Related Document Model',
     )
     name = fields.Char(
-        readonly=1,
+        readonly=True,
         string='Name'
     )
     notification = fields.Boolean(
-        readonly=1,
+        readonly=True,
         string='Is Notification',
     )
     recipient_ids = fields.Many2many(
         comodel_name='res.partner',
         context={'active_test': False},
-        readonly=1,
+        readonly=True,
         string='To (Partners)',
     )
     record_name = fields.Char(
-        readonly=1,
+        readonly=True,
         string='Message Record Name',
     )
     references = fields.Text(
-        readonly=1,
+        readonly=True,
     )
     reply_to = fields.Char(
-        readonly=1,
+        readonly=True,
         string='Reply-To',
     )
     res_id = fields.Many2oneReference(
         model_field='model',
-        readonly=1,
+        readonly=True,
         string='Related Document ID',
     )
     scheduled_date = fields.Char(
-        readonly=1,
+        readonly=True,
         string='Scheduled Send Date',
     )
     subject = fields.Char(
-        readonly=1,
+        readonly=True,
     )
 
 
