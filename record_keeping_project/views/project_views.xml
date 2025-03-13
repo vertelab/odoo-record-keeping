@@ -50,7 +50,14 @@
                     </group>
                 </page>
             </notebook>
-            <chatter/>
+             <div class="oe_chatter" position="replace" />
+            <sheet position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" help="Follow this project to automatically track the events associated to tasks and issues of this project." options="{'post_refresh': True}" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </sheet>
         </field>
     </record>
 
@@ -58,10 +65,10 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.view_project_kanban"/>
         <field name="arch" type="xml">
-            <span name="partner_name" position="after">
+            <field name="user_id" position="before">
                 <field name="is_official" invisible="1"/>
                 <field name="document_id" invisible="not is_official" decoration-success="1" widget="badge"/>
-            </span>
+            </field>
         </field>
     </record>
 

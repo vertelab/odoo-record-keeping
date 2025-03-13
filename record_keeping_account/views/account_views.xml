@@ -55,7 +55,11 @@
                 </page>
             </notebook>
             <sheet position="after">
-                <chatter/>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" help="Follow this project to automatically track the events associated to tasks and issues of this project." options="{'post_refresh': True}" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
             </sheet>
         </field>
     </record>

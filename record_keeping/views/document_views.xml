@@ -53,7 +53,11 @@
                         </page>
                     </notebook>
                 </sheet>
-                <chatter/>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" help="Follow this project to automatically track the events associated to tasks and issues of this project." options="{'post_refresh': True}" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
             </form>
         </field>
     </record>
@@ -103,7 +107,7 @@
     <record id="view_document_tree" model="ir.ui.view">
         <field name="model">rk.document</field>
         <field name="arch" type="xml">
-            <list create="false" string="Record-keeping" sample="1">
+            <tree create="false" string="Record-keeping" sample="1">
                 <field name="name"/>
                 <field name="sender"/>
                 <field name="receiver"/>
@@ -114,7 +118,7 @@
                 <field name="create_date"/>
                 <field name="res_ref"/>
                 <field name="classification_id"/>
-            </list>
+            </tree>
         </field>
     </record>
 
@@ -122,7 +126,7 @@
         <field name="name">Documents</field>
         <field name="res_model">rk.document</field>
         <field name="domain">[('is_official','=',True)]</field>
-        <field name="view_mode">list,kanban,form</field>
+        <field name="view_mode">tree,kanban,form</field>
         <field name="view_id" eval="False"/>
         <field name="context">{'search_default_filter_id': 1}</field>
         <field name="search_view_id" ref="view_document_search"/>

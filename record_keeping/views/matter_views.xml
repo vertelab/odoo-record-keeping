@@ -66,7 +66,11 @@
                         </page>
                     </notebook>
                 </sheet>
-                <chatter/>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" help="Follow this project to automatically track the events associated to tasks and issues of this project." options="{'post_refresh': True}" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
             </form>
         </field>
     </record>
@@ -118,7 +122,7 @@
     <record id="view_matter_tree" model="ir.ui.view">
         <field name="model">rk.matter</field>
         <field name="arch" type="xml">
-            <list string="Record-keeping">
+            <tree string="Record-keeping">
                 <field name="name"/>
                 <field name="draw_up_receive_date"/>
                 <field name="description"/>
@@ -127,7 +131,7 @@
                 <field name="latest_change"/>
                 <field name="state"/>
                 <field name="administrator_id"/>
-            </list>
+            </tree>
         </field>
     </record>
 
@@ -135,7 +139,7 @@
         <field name="name">Matters</field>
         <field name="res_model">rk.matter</field>
         <field name="domain">[]</field>
-        <field name="view_mode">list,kanban,form</field>
+        <field name="view_mode">tree,kanban,form</field>
         <field name="view_id" eval="False"/>
         <field name="context">{'search_default_filter_id':1}</field>
         <field name="search_view_id" ref="view_matter_search"/>
@@ -150,7 +154,7 @@
         <field name="name">Close</field>
         <field name="model_id" ref="record_keeping.model_rk_matter"/>
         <field name="binding_model_id" ref="record_keeping.model_rk_matter"/>
-        <field name="binding_view_types">form,list</field>
+        <field name="binding_view_types">form,tree</field>
         <field name="state">code</field>
         <field name="code">action = record.action_done()</field>
     </record>
@@ -159,7 +163,7 @@
         <field name="name">Archive matters after sorting out date</field>
         <field name="model_id" ref="record_keeping.model_rk_matter"/>
         <field name="binding_model_id" ref="record_keeping.model_rk_matter"/>
-        <field name="binding_view_types">form,list</field>
+        <field name="binding_view_types">form,tree</field>
         <field name="state">code</field>
         <field name="code">action = record.action_archive_after_sorting_date()</field>
     </record>
