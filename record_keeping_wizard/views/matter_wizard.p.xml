@@ -6,10 +6,17 @@
         <field name="arch" type="xml">
             <form>
                 <group>
+                    <!-- #if VERSION <= "16.0" -->
                     <field name="matter_id" attrs="{'required': True}"/>
                     <field name="is_secret" />
                     <field name="law_section_id" attrs="{'invisible':[('is_secret', '=', False)], 'required':[('is_secret', '=', True)]}"/>
                     <field name="secrecy_grounds"  attrs="{'invisible':[('is_secret', '=', False)], 'required':[('is_secret', '=', True)]}"/>
+                    <!-- #elif VERSION >= "17.0" -->
+                    <field name="matter_id" required="True"/>
+                    <field name="is_secret"/>
+                    <field name="law_section_id" invisible="not is_secret" required="is_secret"/>
+                    <field name="secrecy_grounds" invisible="not is_secret" required="is_secret"/>
+                    <!-- #endif -->
                 </group>
                 <footer>
                     <button name="save_button" type="object" string="Save" class="btn-primary"/>

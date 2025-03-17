@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- <record model="ir.actions.act_window" id="open_link_to_record_wizard">
         <field name="name">open.link.to.record.wizard</field>
@@ -10,7 +9,7 @@
 
     <record id="view_move_form" model="ir.ui.view">
         <field name="model">account.move</field>
-        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
             <header position="inside">
                 <button name="%(record_keeping.action_add_record_wizard)d" attrs="{'invisible':[('matter_id', '!=', False)]}" string="Link to record" type="action" />
@@ -20,17 +19,17 @@
             </widget>
             <group id="header_right_group" position="inside">
                 <field name="matter_id" attrs="{'invisible':[('document_ref', '=', False)]}" />
-                <field name="classification_id" domain="[('has_types', '=', True)]" />
-                <field name="document_type_id" domain="[('classification_id', '=', classification_id)]" />
+                <field name="classification_id" domain="[('has_types', '=', True)]"/>
+                <field name="document_type_id" domain="[('classification_id', '=', classification_id)]"/>
             </group>
             <notebook position="inside">
                 <page name="record_keeping" string="Record-keeping">
                     <group>
                         <group>
-                            <field name="draw_up_receive_date" widget="date" />
+                            <field name="draw_up_receive_date" widget="date"/>
                             <!-- <field name="receive_date" widget="date" /> -->
-                            <field name="receiver" />
-                            <field name="sender" />
+                            <field name="receiver"/>
+                            <field name="sender"/>
                         </group>
                         <group>
                             <field name="document_ref" attrs="{'invisible':[('is_official', '=', False)]}" class="oe_read_only" />
@@ -49,12 +48,12 @@
                 <page name="meta_information" string="Meta Information">
                     <group>
                         <group>
-                            <field name="create_date" widget="date" />
-                            <field name="create_uid" />
+                            <field name="create_date" widget="date"/>
+                            <field name="create_uid"/>
                         </group>
                         <group>
-                            <field name="__last_update" widget="date" />
-                            <field name="write_uid" />
+                            <field name="write_date" widget="date"/>
+                            <field name="write_uid"/>
                         </group>
                     </group>
                 </page>
