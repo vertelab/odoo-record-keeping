@@ -7,6 +7,7 @@
     <field name="inherit_id" ref="base.res_config_settings_view_form" />
     <field name="arch" type="xml">
 
+      <!-- #if VERSION <= "16.0" -->
       <xpath expr="//div[hasclass('settings')]" position="inside">
         <div class="app_settings_block" data-key="record_keeping" data-string="Record Keeping" groups="record_keeping.group_rk_manager" string="Record Keeping">
           <h2>Defaults</h2>
@@ -51,6 +52,35 @@
           </div>
         </div>
       </xpath>
+      <!-- #elif VERSION >= "17.0" -->
+      <xpath expr="//form" position="inside">
+        <app data-string="Record Keeping" string="Record Keeping" name="record_keeping" logo="/record_keeping/static/description/icon.png">
+          <div id="matter">
+            <block title="Defaults" name="matter_setting_container">
+              <setting>
+                <span class="o_form_label">Matters</span>
+                <br/>
+                <br/>
+                <label for="matter_default_classification_id" class="col-lg-4 o_light_label" />
+                <field name="matter_default_classification_id" domain="[('has_types', '=', True)]" options="{'no_create': True, 'no_open': True}" />
+                <br/>
+                <br/>
+                <label for="matter_default_sorting_out_days" class="col-lg-4 o_light_label" />
+                <field name="matter_default_sorting_out_days" />
+              </setting>
+              <setting>
+                <span class="o_form_label">Matter filter</span>
+                <br/>
+                <br/>
+                <label for="matter_default_date" class="col-lg-4 o_light_label" />
+                <field name="matter_default_date" />
+                <field name="matter_default_date_str" invisible="1" />
+              </setting>
+            </block>
+          </div>
+        </app>
+      </xpath>
+      <!-- #endif -->
 
     </field>
   </record>
