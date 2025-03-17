@@ -94,12 +94,25 @@ class Document(models.Model):
                             
                              
     def _message_log_batch(self, bodies, author_id=None, email_from=None,
+                            # #if VERSION <= "16.0"
                             subject=False, message_type='notification'):
+                            # #elif VERSION >= "17.0"
+                            subject=False, message_type='notification', 
+                            partner_ids=False, attachment_ids=False, 
+                            tracking_value_ids=False):
+                            # #endif
         res = super()._message_log_batch(bodies,
                                         author_id,
                                         email_from,
                                         subject,
+                                        # #if VERSION <= "16.0"
                                         message_type)
+                                        # #elif VERSION >= "17.0"
+                                        message_type,
+                                        partner_ids,
+                                        attachment_ids,
+                                        tracking_value_ids)
+                                        # #endif
         if res and self.matter_id and message_type in ['notification']:
             self._next_document_no()
             for b in bodies.values():
