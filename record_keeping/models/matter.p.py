@@ -135,7 +135,11 @@ class Matter(models.Model):
         self = self.sudo()
         for record in self:
             if record.message_ids:
+                # #if VERSION <= "17.0"
                 description = record.message_ids[-1].description
+                # #elif VERSION >= "18.0"
+                description = record.message_ids[-1].subtype_id.description
+                # #endif
                 tracking_values = record.message_ids[-1].tracking_value_ids
                 if description:
                     record.latest_change = description

@@ -53,8 +53,12 @@ class RecordKeepingMail(models.Model):
         ('email', 'Email'),
         ('comment', 'Comment'),
         ('notification', 'System notification'),
+        # #if VERSION <= "16.0"
+         ('user_notification', 'User Specific Notification')],
+        # #elif VERSION >= "17.0"
          ('user_notification', 'User Specific Notification'),
          ('email_outgoing', 'Outgoing Email')],
+        # #endif 
         default='email',
          readonly=True,
         string='Type',
