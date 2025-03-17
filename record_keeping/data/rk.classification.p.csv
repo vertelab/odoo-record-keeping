@@ -1,0 +1,11 @@
+id,sequence,parent_id:id,has_types,classification_name
+classification_1,1,False,False,"Styrande verksamhet"
+classification_2,2,False,False,"Stödjande verksamhet"
+classification_3,3,False,False,"Kärnverksamhet"
+classification_3_12,12,classification_3,False,"Uppdragsverksamhet"
+classification_3_12_1,1,classification_3_12,False,"Planera och följ upp uppdragsverksamheten"
+classification_3_12_2a,2,classification_3_12,False,"Hantera uppdrag"
+classification_3_12_2b,2,classification_3_12,False,"Uppdragsärenden"
+classification_3_12_2aa,0,classification_3_12_2a,True,"Skapa uppdrag"
+classification_3_12_2ab,0,classification_3_12_2a,True,"Genomföra uppdrag"
+classification_3_12_2ac,0,classification_3_12_2a,True,"Avsluta uppdrag"
