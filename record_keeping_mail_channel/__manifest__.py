@@ -38,7 +38,7 @@ This module extends Chat with record-keeping fields
     'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['event', 'record_keeping', 'record_keeping_wizard'],
     'data': [
-        'views/discuss_channel.xml',
+        'views/mail_channel.xml',
         # 'security/ir.model.access.csv',
     ],
     # 'post_init_hook': 'post_init_hook',
