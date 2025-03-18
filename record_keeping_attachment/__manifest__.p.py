@@ -35,7 +35,11 @@
     'contributor': '',
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping',
+    # #if VERSION <= "16.0"
+    'depends': ['attachment_notebook', 'mail', 'record_keeping'],
+    # #elif VERSION >= "17.0"
     'depends': ['mail', 'record_keeping'],
+    # #endif
     'data': [
         'security/ir.model.access.csv',
         'wizard/add_file_wizard.xml',
