@@ -7,8 +7,13 @@
                 <group>
                     <field name="datas" filename="datas_name" required="1"/>
                     <field name="datas_name" invisible="1"/>
+                    <!-- #if VERSION <= "16.0" -->
+                    <field name="name" attrs="{'invisible': [('datas', '=', False)], }" />
+                    <field name="description" attrs="{'invisible': [('datas', '=', False)], }" />
+                    <!-- #elif VERSION >= "17.0" -->
                     <field name="name" invisible="not datas"/>
                     <field name="description" invisible="not datas"/>
+                    <!-- #endif -->
                 </group>
                 <footer>
                     <button name="save_button" class="btn btn-primary" string="Save" type="object"/>
