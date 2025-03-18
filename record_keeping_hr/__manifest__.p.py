@@ -20,26 +20,26 @@
 ##############################################################################
 
 {
-    'name': 'Record-keeping: IM Live Chat',
-    'version': '0.0',
-    # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping for Odoo IM Live Chat',
+    'name': 'Record-keeping: HR',
+    'version': '2.0.3',
+    # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
+    'summary': 'Record-keeping HR for Odoo',
     'category': 'Government',
-    #'sequence': '1'
+    'description': """
+This module extends Employees with record-keeping fields
+""",
+    #'sequence': '1',
     'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_im',
+    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_hr',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    'repository': 'https://github.com/vertelab/odoo-record-keeping',
-    'description': """
-    This module extends IM Live Chat with record-keeping fields
-    """,
-    'depends': ['im_livechat', 'record_keeping'],
+    'repository': 'https://github.com/vertelab/odoo-record-keeping.git',
+    'depends': ['hr', 'record_keeping'],
     'data': [
-        'views/mail_channel_views.xml',
+        'views/hr_views.xml',
     ],
-    'application': True,
+    # 'post_init_hook': 'post_init_hook',
 }
 # vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
