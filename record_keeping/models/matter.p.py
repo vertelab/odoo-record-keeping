@@ -147,6 +147,8 @@ class Matter(models.Model):
                     record.latest_change = (
                         f"{tracking_values[-1].field_desc} -> "
                         f"{tracking_values[-1].get_new_display_value()[-1]}")
+                else:
+                    record.latest_change = ''
             else:
                 record.latest_change = ''
 
