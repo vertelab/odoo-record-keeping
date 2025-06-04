@@ -56,12 +56,13 @@ class DocumentMixin(models.AbstractModel):
         models = self.env['ir.model'].search([('model', '=', 'rk.document')])
         return [(model.model, model.name) for model in models]
 
-    @api.model
-    def create(self, vals):
-        for field in ['classification_id', 'document_type_id']:
-            if not field in vals:
-                vals[field] = self._get_default_param(field)
-        record = super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            for field in ['classification_id', 'document_type_id']:
+                if not field in vals:
+                    vals[field] = self._get_default_param(field)
+        record = super().create(vals_list)
         record._get_document_link()
         return record
 

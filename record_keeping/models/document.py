@@ -127,7 +127,7 @@ class Document(models.Model):
         models = self.env['ir.model'].search([])
         return [(model.model, model.name) for model in models]
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         document = super().create(vals)
         document._next_document_no()
