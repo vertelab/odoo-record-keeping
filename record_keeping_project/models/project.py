@@ -24,3 +24,4 @@ class Project(models.Model):
                 if matter_id := self.env['sale.order'].browse(sale_order_id).matter_id:
                     vals['matter_id'] = matter_id.id
         return super().create(vals_list)
+
