@@ -39,7 +39,7 @@
     'data': [
         'security/ir.model.access.csv',
         'wizard/add_file_wizard.xml',
-        'views/ir_attachment_views.xml',
+        # 'views/ir_attachment_views.xml',
         'views/matter_views.xml',
     ],
 }
