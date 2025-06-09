@@ -28,11 +28,24 @@ class Attachment(models.Model):
 
         return vals
 
+    # #if VERSION <= "17.0"
     @api.model
     def create(self, vals):
         if not vals.get('matter_id'):
             vals = self._prepare_values(vals)
         return super().create(vals)
+
+    # #elif VERSION >= "18.0"
+
+    @api.model_create_multi
+    def create(self, vals):
+        for val in vals:
+            if not val.get('matter_id'):
+                val.update(**self._prepare_values(val))
+                # val = self._prepare_values(vals)
+        return super().create(vals)
+
+    # #endif
 
     def write(self, vals):
         for rec in self:

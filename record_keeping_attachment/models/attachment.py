@@ -28,10 +28,12 @@ class Attachment(models.Model):
 
         return vals
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
-        if not vals.get('matter_id'):
-            vals = self._prepare_values(vals)
+        for val in vals:
+            if not val.get('matter_id'):
+                val.update(**self._prepare_values(val))
+                # val = self._prepare_values(vals)
         return super().create(vals)
 
     def write(self, vals):

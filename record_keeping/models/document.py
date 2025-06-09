@@ -130,16 +130,18 @@ class Document(models.Model):
     @api.model_create_multi
     def create(self, vals):
         document = super().create(vals)
-        document._next_document_no()
+        for doc in document:
+            doc._next_document_no()
         return document
 
     def get_name(self):
         for document in self:
             return (f"{document.matter_id.reg_no}-{document.document_no}"
                     if document.matter_id else '')
+        return None
 
     @api.model
-    def search(self, args, offset=0, limit=80, order='id', count=False):
+    def search(self, args, offset=0, limit=80, order='id'):
         """Override to be able to search old_value_char in mail.tracking.value"""
         dotted_field = 'message_ids.tracking_value_ids.old_value_char'
         if any(filter(lambda arg: dotted_field in arg, args)):
@@ -149,7 +151,6 @@ class Document(models.Model):
             offset=offset,
             limit=limit,
             order=order,
-            count=count
         )
 
     def unlink(self):

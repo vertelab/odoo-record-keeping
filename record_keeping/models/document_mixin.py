@@ -40,7 +40,6 @@ class DocumentMixin(models.AbstractModel):
         return res
 
     def _get_document_link(self):
-        _logger.warning("_get_document_link"*100)
         self.ensure_one()
         vals = dict(res_model=self._name, res_id=self.id)
         _logger.warning(f"{vals=}")
@@ -63,7 +62,8 @@ class DocumentMixin(models.AbstractModel):
                 if not field in vals:
                     vals[field] = self._get_default_param(field)
         record = super().create(vals_list)
-        record._get_document_link()
+        for rec in record:
+            rec._get_document_link()
         return record
 
     def create_matter(self):

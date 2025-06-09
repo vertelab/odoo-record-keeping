@@ -52,9 +52,11 @@ class RecordKeepingMail(models.Model):
     message_type = fields.Selection([
         ('email', 'Email'),
         ('comment', 'Comment'),
+        ('auto_comment', 'Comment'),
+        # added this instead of replacing the above (reason: it might affect data that already uses comment)
         ('notification', 'System notification'),
         # #if VERSION <= "16.0"
-         ('user_notification', 'User Specific Notification')],
+         ('user_notification', 'User Specific Notification'),
         # #elif VERSION >= "17.0"
          ('user_notification', 'User Specific Notification'),
          ('email_outgoing', 'Outgoing Email')],
@@ -109,6 +111,7 @@ class RecordKeepingMail(models.Model):
 class Mail(models.Model):
     _inherit = 'mail.mail'
 
+    # #if VERSION <= "17.0"
     @api.model
     def create(self, vals):
         res = super().create(vals)
@@ -135,3 +138,32 @@ class Mail(models.Model):
                         values['is_official'] = True
             self.env['rk.mail'].create(values)
         return res
+
+    # #elif VERSION >= "18.0"
+    @api.model_create_multi
+    def create(self, vals):
+        res = super().create(vals)
+        fields = self.env['rk.mail'].fields_get()
+        for mail in res.mail_ids:
+            values = {'name': mail['subject']}
+            for key in fields.keys():
+                if hasattr(mail, key):
+                    if fields[key]['type'] in ['many2many']:
+                        values[key] = mail[key].ids
+                    elif fields[key]['type'] in ['many2one']:
+                        values[key] = mail[key].id
+                    else:
+                        values[key] = mail[key]
+            values['sender'] = mail.email_from
+            receivers = [mail.email_to] if mail.email_to else []
+            recipients = [recipient_id.email_formatted for recipient_id in mail.recipient_ids]
+            values['receiver'] = ', '.join(receivers + recipients)
+
+            if (model := mail.model) and (res_id := mail.res_id):
+                if rec := self.env[model].browse(res_id):
+                    if hasattr(rec, 'matter_id'):
+                        values['matter_id'] = rec.matter_id.id
+                        values['is_official'] = True
+            self.env['rk.mail'].create(values)
+        return res
+    # #endif
