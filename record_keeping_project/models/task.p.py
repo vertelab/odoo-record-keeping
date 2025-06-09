@@ -6,7 +6,7 @@ class Task(models.Model):
     _name = 'project.task'
     _inherit = ['project.task', 'rk.document.mixin']
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         if not 'matter_id' in vals and (sale_order_id := vals.get('sale_order_id')):
             if matter_id := self.env['sale.order'].browse(sale_order_id).matter_id:
