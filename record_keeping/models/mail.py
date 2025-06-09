@@ -52,8 +52,10 @@ class RecordKeepingMail(models.Model):
     message_type = fields.Selection([
         ('email', 'Email'),
         ('comment', 'Comment'),
+        ('auto_comment', 'Comment'),
+        # added this instead of replacing the above (reason: it might affect data that already uses comment)
         ('notification', 'System notification'),
-         ('user_notification', 'User Specific Notification')],
+         ('user_notification', 'User Specific Notification'),
         default='email',
          readonly=True,
         string='Type',
@@ -130,3 +132,4 @@ class Mail(models.Model):
                         values['is_official'] = True
             self.env['rk.mail'].create(values)
         return res
+

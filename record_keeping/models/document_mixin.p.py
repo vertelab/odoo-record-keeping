@@ -40,7 +40,6 @@ class DocumentMixin(models.AbstractModel):
         return res
 
     def _get_document_link(self):
-        _logger.warning("_get_document_link"*100)
         self.ensure_one()
         vals = dict(res_model=self._name, res_id=self.id)
         _logger.warning(f"{vals=}")
@@ -56,6 +55,7 @@ class DocumentMixin(models.AbstractModel):
         models = self.env['ir.model'].search([('model', '=', 'rk.document')])
         return [(model.model, model.name) for model in models]
 
+    # #if VERSION <= "17.0"
     @api.model
     def create(self, vals):
         for field in ['classification_id', 'document_type_id']:
@@ -64,6 +64,20 @@ class DocumentMixin(models.AbstractModel):
         record = super().create(vals)
         record._get_document_link()
         return record
+
+    # #elif VERSION >= "18.0"
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            for field in ['classification_id', 'document_type_id']:
+                if not field in vals:
+                    vals[field] = self._get_default_param(field)
+        record = super().create(vals_list)
+        for rec in record:
+            rec._get_document_link()
+        return record
+
+    # #endif
 
     def create_matter(self):
         self.ensure_one()

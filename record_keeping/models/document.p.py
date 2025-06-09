@@ -77,7 +77,8 @@ class Document(models.Model):
                     if document.res_model == 'ir.attachment':
                         name += ' ' + res_ref.rk_file_name if res_ref.rk_file_name else res_ref.name
                     else:
-                        name += ' ' + res_ref.name
+                        # name += ' ' + res_ref.name
+                        name += f" {res_ref.name}"
             else:
                 document.res_ref = None
             document.name = name
@@ -91,28 +92,14 @@ class Document(models.Model):
             self.matter_id._message_log(**kwargs)
         return res
 
-                            
-                             
+    # #if VERSION <= "16.0"
     def _message_log_batch(self, bodies, author_id=None, email_from=None,
-                            # #if VERSION <= "16.0"
-                            subject=False, message_type='notification'):
-                            # #elif VERSION >= "17.0"
-                            subject=False, message_type='notification', 
-                            partner_ids=False, attachment_ids=False, 
-                            tracking_value_ids=False):
-                            # #endif
+                           subject=False, message_type='notification'):
         res = super()._message_log_batch(bodies,
-                                        author_id,
-                                        email_from,
-                                        subject,
-                                        # #if VERSION <= "16.0"
-                                        message_type)
-                                        # #elif VERSION >= "17.0"
-                                        message_type,
-                                        partner_ids,
-                                        attachment_ids,
-                                        tracking_value_ids)
-                                        # #endif
+                                         author_id,
+                                         email_from,
+                                         subject,
+                                         message_type)
         if res and self.matter_id and message_type in ['notification']:
             self._next_document_no()
             for b in bodies.values():
@@ -121,6 +108,30 @@ class Document(models.Model):
                 self.matter_id._message_log(body=body)
 
         return res
+
+    # #elif VERSION >= "17.0"
+    def _message_log_batch(self, bodies, author_id=None, email_from=None,
+                           subject=False, message_type='notification',
+                           partner_ids=False, attachment_ids=False,
+                           tracking_value_ids=False):
+        res = super()._message_log_batch(bodies,
+                                         author_id,
+                                         email_from,
+                                         subject,
+                                         message_type,
+                                         partner_ids,
+                                         attachment_ids,
+                                         tracking_value_ids)
+        if res and self.matter_id and message_type in ['notification']:
+            self._next_document_no()
+            for b in bodies.values():
+                name = f"{self.matter_id.reg_no}-{self.document_no}"
+                body = _('<p>Document (%s) created</p>') % name
+                self.matter_id._message_log(body=body)
+
+        return res
+
+    # #endif
 
     def _next_document_no(self):
         self.ensure_one()
@@ -134,19 +145,65 @@ class Document(models.Model):
         models = self.env['ir.model'].search([])
         return [(model.model, model.name) for model in models]
 
+    # #if VERSION <= "17.0"
     @api.model
     def create(self, vals):
         document = super().create(vals)
         document._next_document_no()
         return document
 
+    # #elif VERSION >= "18.0"
+
+    @api.model_create_multi
+    def create(self, vals):
+        document = super().create(vals)
+        for doc in document:
+            doc._next_document_no()
+        return document
+
+    # #endif
+
+
     def get_name(self):
         for document in self:
             return (f"{document.matter_id.reg_no}-{document.document_no}"
                     if document.matter_id else '')
+        return None
 
+
+    # #if VERSION <= "17.0"
     @api.model
     def search(self, args, offset=0, limit=80, order='id', count=False):
+        """Override to be able to search old_value_char in mail.tracking.value"""
+        dotted_field = 'message_ids.tracking_value_ids.old_value_char'
+        if any(filter(lambda arg: dotted_field in arg, args)):
+            self = self.sudo()
+        return super().search(
+            args,
+            offset=offset,
+            limit=limit,
+            order=order,
+            count=count
+        )
+
+    # #elif VERSION >= "18.0"
+    @api.model
+    def search(self, args, offset=0, limit=80, order='id'):
+        """Override to be able to search old_value_char in mail.tracking.value"""
+        dotted_field = 'message_ids.tracking_value_ids.old_value_char'
+        if any(filter(lambda arg: dotted_field in arg, args)):
+            self = self.sudo()
+        return super().search(
+            args,
+            offset=offset,
+            limit=limit,
+            order=order,
+        )
+
+    # #endif
+
+    @api.model
+    def search(self, args, offset=0, limit=80, order='id'):
         """Override to be able to search old_value_char in mail.tracking.value"""
         dotted_field = 'message_ids.tracking_value_ids.old_value_char'
         if any(filter(lambda arg: dotted_field in arg, args)):
