@@ -28,6 +28,7 @@ class Attachment(models.Model):
 
         return vals
 
+
     @api.model_create_multi
     def create(self, vals):
         for val in vals:
@@ -35,6 +36,7 @@ class Attachment(models.Model):
                 val.update(**self._prepare_values(val))
                 # val = self._prepare_values(vals)
         return super().create(vals)
+
 
     def write(self, vals):
         for rec in self:

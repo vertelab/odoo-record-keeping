@@ -77,7 +77,8 @@ class Document(models.Model):
                     if document.res_model == 'ir.attachment':
                         name += ' ' + res_ref.rk_file_name if res_ref.rk_file_name else res_ref.name
                     else:
-                        name += ' ' + res_ref.name
+                        # name += ' ' + res_ref.name
+                        name += f" {res_ref.name}"
             else:
                 document.res_ref = None
             document.name = name
@@ -91,20 +92,18 @@ class Document(models.Model):
             self.matter_id._message_log(**kwargs)
         return res
 
-                            
-                             
     def _message_log_batch(self, bodies, author_id=None, email_from=None,
-                            subject=False, message_type='notification', 
-                            partner_ids=False, attachment_ids=False, 
-                            tracking_value_ids=False):
+                           subject=False, message_type='notification',
+                           partner_ids=False, attachment_ids=False,
+                           tracking_value_ids=False):
         res = super()._message_log_batch(bodies,
-                                        author_id,
-                                        email_from,
-                                        subject,
-                                        message_type,
-                                        partner_ids,
-                                        attachment_ids,
-                                        tracking_value_ids)
+                                         author_id,
+                                         email_from,
+                                         subject,
+                                         message_type,
+                                         partner_ids,
+                                         attachment_ids,
+                                         tracking_value_ids)
         if res and self.matter_id and message_type in ['notification']:
             self._next_document_no()
             for b in bodies.values():
@@ -113,6 +112,7 @@ class Document(models.Model):
                 self.matter_id._message_log(body=body)
 
         return res
+
 
     def _next_document_no(self):
         self.ensure_one()
@@ -126,18 +126,22 @@ class Document(models.Model):
         models = self.env['ir.model'].search([])
         return [(model.model, model.name) for model in models]
 
-    @api.model
+
+    @api.model_create_multi
     def create(self, vals):
         document = super().create(vals)
         for doc in document:
             doc._next_document_no()
         return document
 
+
+
     def get_name(self):
         for document in self:
             return (f"{document.matter_id.reg_no}-{document.document_no}"
                     if document.matter_id else '')
         return None
+
 
     @api.model
     def search(self, args, offset=0, limit=80, order='id'):
@@ -150,6 +154,21 @@ class Document(models.Model):
             offset=offset,
             limit=limit,
             order=order,
+        )
+
+
+    @api.model
+    def search(self, args, offset=0, limit=80, order='id'):
+        """Override to be able to search old_value_char in mail.tracking.value"""
+        dotted_field = 'message_ids.tracking_value_ids.old_value_char'
+        if any(filter(lambda arg: dotted_field in arg, args)):
+            self = self.sudo()
+        return super().search(
+            args,
+            offset=offset,
+            limit=limit,
+            order=order,
+            count=count
         )
 
     def unlink(self):
