@@ -77,7 +77,8 @@ class Document(models.Model):
                     if document.res_model == 'ir.attachment':
                         name += ' ' + res_ref.rk_file_name if res_ref.rk_file_name else res_ref.name
                     else:
-                        name += ' ' + res_ref.name
+                        # name += ' ' + res_ref.name
+                        name += f" {res_ref.name}"
             else:
                 document.res_ref = None
             document.name = name
@@ -126,7 +127,7 @@ class Document(models.Model):
         models = self.env['ir.model'].search([])
         return [(model.model, model.name) for model in models]
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         document = super().create(vals)
         for doc in document:

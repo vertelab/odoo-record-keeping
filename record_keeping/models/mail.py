@@ -106,7 +106,7 @@ class RecordKeepingMail(models.Model):
 class Mail(models.Model):
     _inherit = 'mail.mail'
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         res = super().create(vals)
         fields = self.env['rk.mail'].fields_get()
