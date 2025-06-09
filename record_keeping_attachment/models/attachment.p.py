@@ -28,14 +28,14 @@ class Attachment(models.Model):
 
         return vals
 
-    # #if VERSION <= "17.0"
+    # #if VERSION <= "16.0"
     @api.model
     def create(self, vals):
         if not vals.get('matter_id'):
             vals = self._prepare_values(vals)
         return super().create(vals)
 
-    # #elif VERSION >= "18.0"
+    # #elif VERSION >= "17.0"
 
     @api.model_create_multi
     def create(self, vals):
