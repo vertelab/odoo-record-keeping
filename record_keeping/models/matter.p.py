@@ -18,7 +18,9 @@ class Matter(models.Model):
         comodel_name='rk.classification',
         copy=False,
         string='Classification',
+        # #if VERSION <= "17.0"
         default=lambda self: int(self._get_default_param('classification_id')) or 0,
+        # #endif
         tracking=True,
         index=True
     )
@@ -184,12 +186,24 @@ class Matter(models.Model):
     def action_done(self):
         self.write(dict(state='done'))
 
+    # #if VERSION <= "17.0"
     @api.model
     def create(self, vals):
         if not 'description' in vals:
             vals['description'] = vals.get('name')
         vals['reg_no'] = self.env['ir.sequence'].next_by_code('rk.matter')
         return super(Matter, self).create(vals)
+
+    # #elif VERSION >= "18.0"
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not 'description' in vals:
+                vals['description'] = vals.get('name')
+            vals['reg_no'] = self.env['ir.sequence'].next_by_code('rk.matter')
+        return super(Matter, self).create(vals_list)
+    # #endif
 
     def document_tree_view(self):
         # shows the list view of the documents linked to rk.matter
