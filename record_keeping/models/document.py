@@ -92,20 +92,18 @@ class Document(models.Model):
             self.matter_id._message_log(**kwargs)
         return res
 
-                            
-                             
     def _message_log_batch(self, bodies, author_id=None, email_from=None,
-                            subject=False, message_type='notification', 
-                            partner_ids=False, attachment_ids=False, 
-                            tracking_value_ids=False):
+                           subject=False, message_type='notification',
+                           partner_ids=False, attachment_ids=False,
+                           tracking_value_ids=False):
         res = super()._message_log_batch(bodies,
-                                        author_id,
-                                        email_from,
-                                        subject,
-                                        message_type,
-                                        partner_ids,
-                                        attachment_ids,
-                                        tracking_value_ids)
+                                         author_id,
+                                         email_from,
+                                         subject,
+                                         message_type,
+                                         partner_ids,
+                                         attachment_ids,
+                                         tracking_value_ids)
         if res and self.matter_id and message_type in ['notification']:
             self._next_document_no()
             for b in bodies.values():
@@ -114,6 +112,7 @@ class Document(models.Model):
                 self.matter_id._message_log(body=body)
 
         return res
+
 
     def _next_document_no(self):
         self.ensure_one()
@@ -134,11 +133,28 @@ class Document(models.Model):
             doc._next_document_no()
         return document
 
+
+
     def get_name(self):
         for document in self:
             return (f"{document.matter_id.reg_no}-{document.document_no}"
                     if document.matter_id else '')
         return None
+
+
+    @api.model
+    def search(self, args, offset=0, limit=80, order='id'):
+        """Override to be able to search old_value_char in mail.tracking.value"""
+        dotted_field = 'message_ids.tracking_value_ids.old_value_char'
+        if any(filter(lambda arg: dotted_field in arg, args)):
+            self = self.sudo()
+        return super().search(
+            args,
+            offset=offset,
+            limit=limit,
+            order=order,
+        )
+
 
     @api.model
     def search(self, args, offset=0, limit=80, order='id'):

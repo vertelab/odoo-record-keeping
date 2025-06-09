@@ -18,7 +18,6 @@ class Matter(models.Model):
         comodel_name='rk.classification',
         copy=False,
         string='Classification',
-        # default=lambda self: int(self._get_default_param('classification_id')) or 0,
         tracking=True,
         index=True
     )

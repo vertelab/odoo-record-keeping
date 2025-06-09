@@ -64,6 +64,8 @@ class DocumentMixin(models.AbstractModel):
         record = super().create(vals_list)
         for rec in record:
             rec._get_document_link()
+        return record
+
 
     def create_matter(self):
         self.ensure_one()
