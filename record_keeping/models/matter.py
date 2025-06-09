@@ -187,6 +187,7 @@ class Matter(models.Model):
         vals['reg_no'] = self.env['ir.sequence'].next_by_code('rk.matter')
         return super(Matter, self).create(vals)
 
+
     def document_tree_view(self):
         # shows the list view of the documents linked to rk.matter
         action_xmlid = 'record_keeping.action_document_view'

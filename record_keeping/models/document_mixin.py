@@ -40,7 +40,6 @@ class DocumentMixin(models.AbstractModel):
         return res
 
     def _get_document_link(self):
-        _logger.warning("_get_document_link"*100)
         self.ensure_one()
         vals = dict(res_model=self._name, res_id=self.id)
         _logger.warning(f"{vals=}")
@@ -64,6 +63,7 @@ class DocumentMixin(models.AbstractModel):
         record = super().create(vals)
         record._get_document_link()
         return record
+
 
     def create_matter(self):
         self.ensure_one()
