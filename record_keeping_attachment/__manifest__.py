@@ -42,5 +42,6 @@
         # 'views/ir_attachment_views.xml',
         #'views/matter_views.xml',
     ],
+    #'post_init_hook': 'post_init_hook',
 }
 # vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
