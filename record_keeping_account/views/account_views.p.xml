@@ -85,8 +85,6 @@
                     <field name="activity_ids" />
                     <field name="message_ids" />
                 </div>
-                <!-- #elif VERSION >= "18.0" -->
-                <chatter/>
                 <!-- #endif -->
             </sheet>
         </field>
