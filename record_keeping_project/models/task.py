@@ -8,8 +8,7 @@ class Task(models.Model):
 
     @api.model_create_multi
     def create(self, vals):
-        for val in vals:
-          if not 'matter_id' in val and (sale_order_id := val.get('sale_order_id')):
-              if matter_id := self.env['sale.order'].browse(sale_order_id).matter_id:
-                 val['matter_id'] = matter_id.id
+        if not 'matter_id' in vals and (sale_order_id := vals.get('sale_order_id')):
+            if matter_id := self.env['sale.order'].browse(sale_order_id).matter_id:
+                vals['matter_id'] = matter_id.id
         return super().create(vals)

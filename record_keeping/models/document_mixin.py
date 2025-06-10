@@ -61,7 +61,6 @@ class DocumentMixin(models.AbstractModel):
             for field in ['classification_id', 'document_type_id']:
                 if not field in vals:
                     vals[field] = self._get_default_param(field)
-        logging.warning(f"{vals_list=} look here !!!!!!!!!!!!!!!!!!")
         record = super().create(vals_list)
         for rec in record:
             rec._get_document_link()

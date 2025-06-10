@@ -5,7 +5,6 @@ from odoo import _, api, fields, models
 class Attachment(models.Model):
     _name = 'ir.attachment'
     _inherit = ['ir.attachment', 'mail.thread', 'rk.document.mixin']
-    #_inherit = ['ir.attachment', 'mail.thread']
 
     rk_file_name = fields.Char(string="Original file Name", readonly=True)
 
