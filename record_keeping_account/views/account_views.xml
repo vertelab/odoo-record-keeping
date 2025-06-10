@@ -53,9 +53,9 @@
                     </group>
                 </page>
             </notebook>
-            <sheet position="after">
+            <!--<sheet position="after">
                 <chatter/>
-            </sheet>
+            </sheet>-->
         </field>
     </record>
 </odoo>
