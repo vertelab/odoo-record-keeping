@@ -124,7 +124,15 @@ class Mail(models.Model):
             values['sender'] = mail.email_from
             receivers = [mail.email_to] if mail.email_to else []
             recipients = [recipient_id.email_formatted for recipient_id in mail.recipient_ids]
-            values['receiver'] = ', '.join(receivers + recipients)
+            #values['receiver'] = ', '.join(receivers if receivers else [] + recipients if recipients else [])
+            all_receivers = []
+            if receivers:
+                all_receivers.extend(receivers)
+            if recipients:
+               all_receivers.extend(recipients)
+            values['receiver'] = ', '.join(str(r) for r in all_receivers if r)
+
+
 
             if (model := mail.model) and (res_id := mail.res_id):
                 if rec := self.env[model].browse(res_id):
