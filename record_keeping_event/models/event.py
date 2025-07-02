@@ -6,7 +6,6 @@ class Event(models.Model):
     _name = 'event.event'
     _inherit = ['event.event', 'rk.document.mixin']
 
-
     def create_matter(self):
         self.ensure_one()
         super().create_matter()
