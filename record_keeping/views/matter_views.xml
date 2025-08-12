@@ -15,9 +15,6 @@
                     <widget name="web_ribbon" invisible="not is_secret" bg_color="bg-danger" title="Confidential"/>
                     <h1>
                             <field name="name"/>
-
-                        <field name="name" class="oe_read_only"/>
-                        <field name="matter_name" class="oe_edit_only"/>
                     </h1>
                     <group>
                         <group>
