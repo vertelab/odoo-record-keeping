@@ -30,7 +30,7 @@
                     </h1>
                     <group>
                         <group>
-                            <!-- #elif VERSION >= "17.0" -->
+                            <!-- #if VERSION >= "17.0" -->
                             <field name="matter_name"/>
                             <!-- #endif -->
                             <field name="reg_no"/>
