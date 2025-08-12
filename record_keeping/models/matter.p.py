@@ -18,7 +18,7 @@ class Matter(models.Model):
         comodel_name='rk.classification',
         copy=False,
         string='Classification',
-        # #if VERSION <= "17.0"
+        # #if VERSION <= "18.0"
         default=lambda self: int(self._get_default_param('classification_id')) or 0,
         # #endif
         tracking=True,

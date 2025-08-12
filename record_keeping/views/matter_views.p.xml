@@ -18,11 +18,21 @@
                     <widget name="web_ribbon" invisible="not is_secret" bg_color="bg-danger" title="Confidential"/>
                     <!-- #endif -->
                     <h1>
+                            <!-- #if VERSION <= "16.0" -->
+                            <field name="name" class="oe_read_only"/>
+                            <field name="matter_name" class="oe_edit_only"/>
+                            <!-- #elif VERSION >= "17.0" -->
+                            <field name="name"/>
+                            <!-- #endif -->
+
                         <field name="name" class="oe_read_only"/>
                         <field name="matter_name" class="oe_edit_only"/>
                     </h1>
                     <group>
                         <group>
+                            <!-- #elif VERSION >= "17.0" -->
+                            <field name="matter_name"/>
+                            <!-- #endif -->
                             <field name="reg_no"/>
                             <field name="legacy_reg_no" class="oe_edit_only"/>
                             <!-- #if VERSION <= "16.0" -->
