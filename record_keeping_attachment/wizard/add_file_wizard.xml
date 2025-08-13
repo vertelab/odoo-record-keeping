@@ -7,8 +7,10 @@
                 <group>
                     <field name="datas" filename="datas_name" required="1"/>
                     <field name="datas_name" invisible="1"/>
-                    <field name="name" attrs="{'invisible': [('datas', '=', False)], }" />
-                    <field name="description" attrs="{'invisible': [('datas', '=', False)], }" />
+                    <field name="rk_matter_id" invisible="rk_matter_id != False"/>
+                    <field name="rk_matter_id" attrs="{'invisible': [('rk_matter_id', '!=', False)]}"/>
+                    <field name="name" attrs="{'invisible': [('datas', '=', False)]}" />
+                    <field name="description" attrs="{'invisible': [('datas', '=', False)]}" />
                 </group>
                 <footer>
                     <button name="save_button" class="btn btn-primary" string="Save" type="object"/>

@@ -5,7 +5,7 @@ class Matter(models.Model):
     _name = 'rk.matter'
     _description = 'Matter'
     _inherit = ['mail.activity.mixin', 'mail.thread', 'rk.mixin']
-    _order = 'id'
+    _order = 'id desc'
 
     administrator_id = fields.Many2one(
         comodel_name='res.users',
