@@ -21,6 +21,8 @@ class AddFileWizard(models.TransientModel):
         string='Matter Name',
     )
 
+    rk_matter_id = fields.Many2one('rk.matter', string="Matter")
+
     def save_button(self):
         ctx = self.env.context.get
 
