@@ -7,6 +7,8 @@
                 <group>
                     <field name="datas" filename="datas_name" required="1"/>
                     <field name="datas_name" invisible="1"/>
+                    <field name="rk_matter_id" invisible="rk_matter_id != False"/>
+                    <field name="rk_matter_id" invisible="rk_matter_id != False"/>
                     <field name="name" invisible="not datas"/>
                     <field name="description" invisible="not datas"/>
                 </group>
