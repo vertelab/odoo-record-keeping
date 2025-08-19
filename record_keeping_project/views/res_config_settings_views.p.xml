@@ -90,6 +90,8 @@
                     <field name="task_default_document_type_id" domain="[('classification_id', '=', task_default_classification_id)]" options="{'no_create': True, 'no_open': True}"/>
                     <br/>
                     <br/>
+                     <label class="col-lg-4 o_light_label" for="task_default_automatic_matter_connection"/>
+                    <field name="task_default_automatic_matter_connection"/>
                 </setting>
             </block>
             <!-- #endif -->
