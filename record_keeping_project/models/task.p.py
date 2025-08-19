@@ -4,11 +4,8 @@ class Task(models.Model):
     _name = 'project.task'
     _inherit = ['project.task', 'rk.document.mixin']
     
-    ##if VERSION <= "17.0"
-    @api.model
-    ##else
+
     @api.model_create_multi
-    ##endif
     def create(self, vals):
       connect_task_to_matter = self.env['ir.config_parameter'].sudo().get_param('record_keeping.project_task_default_automatic_matter_connection')
       if connect_task_to_matter:
