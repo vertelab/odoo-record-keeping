@@ -17,23 +17,28 @@ class ProjectTask(models.Model):
         for task in self:
             task.allow_create_sale = task.project_id.allow_create_sale
 
+    def get_vals(self):
+        vals = {
+            'is_official': True,
+            'matter_id': self.matter_id.id,
+            'partner_id': self.partner_id.id,
+            'project_id': False,
+            }
+        return vals
+
     def create_sale(self):
         self.ensure_one()
         if not self.allow_create_sale:
             raise UserError(
-                _('Allow sale order creation on the project first'))
+                _('Allow sale order creation on the project first')
+            )
         if not self.partner_id:
             raise ValidationError(_('Please assign a customer to this task'))
         else:
             self.create_matter()
             if not self.sale_order_id:
                 SaleOrder = self.env['sale.order']
-                vals = {
-                    'is_official': True,
-                    'matter_id': self.matter_id.id,
-                    'partner_id': self.partner_id.id,
-                    'project_id': False,
-                }
+                vals = self.get_vals()
                 if SaleOrder.fields_get().get('name_description'):
                     vals['name_description'] = self.name
                 self.sale_order_id = SaleOrder.create(vals)
