@@ -40,3 +40,8 @@ class AddFileWizard(models.TransientModel):
 
         file = self.env['ir.attachment'].create(attachment_vals)
         file.document_id.description = self.description
+
+        if not file.res_model and file.res_field and file.res_id == 0:
+           file.res_model = "rk.matter"
+           file.res_id = matter_id
+        file.public = False
