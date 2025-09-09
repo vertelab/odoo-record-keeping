@@ -44,3 +44,4 @@ class AddFileWizard(models.TransientModel):
         if not file.res_model and file.res_field and file.res_id == 0:
            file.res_model = "rk.matter"
            file.res_id = matter_id
+        file.public = False
