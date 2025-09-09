@@ -32,6 +32,9 @@ class Attachment(models.Model):
     def create(self, vals):
         if not vals.get('matter_id'):
             vals = self._prepare_values(vals)
+        if not vals.get('matter_id') and vals.get('res_model') == 'rk.matter':
+            vals['matter_id'] = vals.get('res_id')
+
         return super().create(vals)
 
 
@@ -40,3 +43,13 @@ class Attachment(models.Model):
             if hasattr(rec, 'matter_id') and not rec.matter_id and not vals.get('matter_id'):
                 vals = self._prepare_values(vals)
             return super().write(vals)
+
+    def unlink(self):
+        _logger.warning(f"{self=}")
+        _logger.warning(f"{self.name=}")
+        if self.document_id.matter_id:
+            raise UserError(_("You are not authorized to delete a document linked to a matter"))
+        if not self.env.user.has_group('record_keeping.group_rk_manager') and self.document_id.matter_id:
+            raise UserError(_("You are not authorized to delete a document linked to a matter"))
+        return super(Attachment, self).unlink()
+
