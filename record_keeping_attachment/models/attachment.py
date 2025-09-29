@@ -4,46 +4,7 @@ from odoo import _, api, fields, models
 
 class Attachment(models.Model):
     _name = 'ir.attachment'
-    _inherit = ['ir.attachment', 'mail.thread']  # 'rk.document.mixin'
-
-    # Add document_id directly without the mixin
-    document_id = fields.Many2one(
-        'rk.document',
-        string='Document',
-        help='The record-keeping document id',
-        ondelete='restrict',
-        auto_join=True,
-        copy=False,
-        index=True
-    )
-    
-    # Related fields from document
-    classification_id = fields.Many2one(
-        'rk.classification',
-        related='document_id.classification_id',
-        store=True,
-        readonly=False
-    )
-    
-    document_type_id = fields.Many2one(
-        'rk.document.type',
-        related='document_id.document_type_id',
-        store=True,
-        readonly=False
-    )
-    
-    matter_id = fields.Many2one(
-        'rk.matter',
-        related='document_id.matter_id',
-        store=True,
-        readonly=False
-    )
-    
-    is_official = fields.Boolean(
-        related='document_id.is_official',
-        store=True,
-        readonly=False
-    )
+    _inherit = ['ir.attachment', 'mail.thread', 'rk.document.mixin']
 
     rk_file_name = fields.Char(string="Original file Name", readonly=True)
 
