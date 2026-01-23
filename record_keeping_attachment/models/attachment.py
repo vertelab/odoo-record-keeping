@@ -36,7 +36,7 @@ class Attachment(models.Model):
         for val in vals:
             if not val.get('matter_id'):
                 val.update(**self._prepare_values(val))
-            if not val.get('matter_id') and vals.get('res_model') == 'rk.matter':
+            if not val.get('matter_id') and val.get('res_model') == 'rk.matter':
                val['matter_id'] = val.get('res_id')
                 # val = self._prepare_values(vals)
         return super().create(vals)
