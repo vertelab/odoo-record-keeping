@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from odoo import _, api, fields, models
 
+import logging
+_logger = logging.getLogger(__name__)
 
 class Attachment(models.Model):
     _name = 'ir.attachment'
