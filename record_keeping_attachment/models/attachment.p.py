@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
+import logging
 from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError, UserError
+
+_logger = logging.getLogger(__name__)
 
 
 class Attachment(models.Model):
@@ -28,29 +32,15 @@ class Attachment(models.Model):
 
         return vals
 
-    # #if VERSION <= "16.0"
-    @api.model
-    def create(self, vals):
-        if not vals.get('matter_id'):
-            vals = self._prepare_values(vals)
-        if not vals.get('matter_id') and vals.get('res_model') == 'rk.matter':
-            vals['matter_id'] = vals.get('res_id')
-
-        return super().create(vals)
-
-    # #elif VERSION >= "17.0"
-
     @api.model_create_multi
     def create(self, vals):
         for val in vals:
             if not val.get('matter_id'):
                 val.update(**self._prepare_values(val))
-            if not val.get('matter_id') and vals.get('res_model') == 'rk.matter':
-               val['matter_id'] = val.get('res_id')
+            if not val.get('matter_id') and val.get('res_model') == 'rk.matter':
+                val['matter_id'] = val.get('res_id')
                 # val = self._prepare_values(vals)
         return super().create(vals)
-
-    # #endif
 
     def write(self, vals):
         for rec in self:
@@ -59,10 +49,6 @@ class Attachment(models.Model):
             return super().write(vals)
 
     def unlink(self):
-        _logger.warning(f"{self=}")
-        _logger.warning(f"{self.name=}")
-        if self.document_id.matter_id:
-            raise UserError(_("You are not authorized to delete a document linked to a matter"))
         if not self.env.user.has_group('record_keeping.group_rk_manager') and self.document_id.matter_id:
             raise UserError(_("You are not authorized to delete a document linked to a matter"))
         return super(Attachment, self).unlink()
