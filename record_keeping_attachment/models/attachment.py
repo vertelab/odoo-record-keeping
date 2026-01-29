@@ -5,6 +5,7 @@ from odoo.exceptions import ValidationError, UserError
 
 _logger = logging.getLogger(__name__)
 
+
 class Attachment(models.Model):
     _name = 'ir.attachment'
     _inherit = ['ir.attachment', 'mail.thread', 'rk.document.mixin']
@@ -37,10 +38,9 @@ class Attachment(models.Model):
             if not val.get('matter_id'):
                 val.update(**self._prepare_values(val))
             if not val.get('matter_id') and val.get('res_model') == 'rk.matter':
-               val['matter_id'] = val.get('res_id')
+                val['matter_id'] = val.get('res_id')
                 # val = self._prepare_values(vals)
         return super().create(vals)
-
 
     def write(self, vals):
         for rec in self:
