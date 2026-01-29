@@ -159,7 +159,10 @@ class Document(models.Model):
 
     def unlink(self):
         for document in self:
-            document.active = False
+            if document.matter_id:
+               document.active = False
+            else:
+                super(Document, document).unlink()
         return True
 
     def write(self, vals):
