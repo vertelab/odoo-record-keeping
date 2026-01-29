@@ -38,13 +38,12 @@ class Property(models.Model):
         if not document.res_model or not document.res_id:
             return {'res_model': self._name, 'res_id': self.id}
 
-    @api.model_create_multi
-    def create(self, vals_list):
-        record = super(Property, self).create(vals_list)
-        for rec in record:
-            document_vals = rec._set_document_link()
-            if document_vals:
-                rec.document_id.write(document_vals)
+    @api.model
+    def create(self, vals):
+        record = super(Property, self).create(vals)
+        document_vals = record._set_document_link()
+        if document_vals:
+            record.document_id.write(document_vals)
         return record
 
     def write(self, vals):

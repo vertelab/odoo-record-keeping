@@ -941,12 +941,12 @@ msgstr "Utgående e-postserver"
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_classification_search
 msgid "Parent"
-msgstr "Förälder"
+msgstr "Överliggande"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__parent_path
 msgid "Parent Path"
-msgstr "Överliggande led"
+msgstr "Överliggande sökväg"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_classification__parent_id
@@ -1052,7 +1052,7 @@ msgstr "Resursmodell"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document_mixin__res_ref
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mail__res_ref
 msgid "Resource Reference"
-msgstr "Dokument"
+msgstr "Resursreferens"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_document__activity_user_id
@@ -1066,7 +1066,7 @@ msgstr "Ansvarig användare"
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mail__body_html
 msgid "Rich-text Contents"
-msgstr "Utsmyckat innehåll"
+msgstr "Rich-text innehåll"
 
 #. module: record_keeping
 #: model_terms:ir.ui.view,arch_db:record_keeping.view_add_record_wizard_form
@@ -1091,7 +1091,7 @@ msgstr "Planerat sändningsdatum"
 #: model:ir.model.fields,field_description:record_keeping.field_rk_matter__secrecy_grounds
 #: model:ir.model.fields,field_description:record_keeping.field_rk_mixin__secrecy_grounds
 msgid "Secrecy grounds"
-msgstr "Motivering"
+msgstr "Sekretessgrunder"
 
 #. module: record_keeping
 #: model:ir.model.fields,field_description:record_keeping.field_rk_add_record_wizard__is_secret
@@ -1291,7 +1291,7 @@ msgstr "Ärendet som handling hör till"
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_matter__matter_name
 msgid "The name of this matter"
-msgstr "Namnet på ärendet"
+msgstr "Namnet på detta ärendet"
 
 #. module: record_keeping
 #: model:ir.model.fields,help:record_keeping.field_rk_law_section__name
