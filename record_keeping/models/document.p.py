@@ -92,24 +92,6 @@ class Document(models.Model):
             self.matter_id._message_log(**kwargs)
         return res
 
-    # #if VERSION <= "16.0"
-    def _message_log_batch(self, bodies, author_id=None, email_from=None,
-                           subject=False, message_type='notification'):
-        res = super()._message_log_batch(bodies,
-                                         author_id,
-                                         email_from,
-                                         subject,
-                                         message_type)
-        if res and self.matter_id and message_type in ['notification']:
-            self._next_document_no()
-            for b in bodies.values():
-                name = f"{self.matter_id.reg_no}-{self.document_no}"
-                body = _('<p>Document (%s) created</p>') % name
-                self.matter_id._message_log(body=body)
-
-        return res
-
-    # #elif VERSION >= "17.0"
     def _message_log_batch(self, bodies, author_id=None, email_from=None,
                            subject=False, message_type='notification',
                            partner_ids=False, attachment_ids=False,
@@ -131,7 +113,6 @@ class Document(models.Model):
 
         return res
 
-    # #endif
 
     def _next_document_no(self):
         self.ensure_one()
@@ -145,14 +126,6 @@ class Document(models.Model):
         models = self.env['ir.model'].search([])
         return [(model.model, model.name) for model in models]
 
-    # #if VERSION <= "17.0"
-    @api.model
-    def create(self, vals):
-        document = super().create(vals)
-        document._next_document_no()
-        return document
-
-    # #elif VERSION >= "18.0"
 
     @api.model_create_multi
     def create(self, vals):
@@ -161,7 +134,6 @@ class Document(models.Model):
             doc._next_document_no()
         return document
 
-    # #endif
 
 
     def get_name(self):
@@ -171,22 +143,6 @@ class Document(models.Model):
         return None
 
 
-    # #if VERSION <= "17.0"
-    @api.model
-    def search(self, args, offset=0, limit=80, order='id', count=False):
-        """Override to be able to search old_value_char in mail.tracking.value"""
-        dotted_field = 'message_ids.tracking_value_ids.old_value_char'
-        if any(filter(lambda arg: dotted_field in arg, args)):
-            self = self.sudo()
-        return super().search(
-            args,
-            offset=offset,
-            limit=limit,
-            order=order,
-            count=count
-        )
-
-    # #elif VERSION >= "18.0"
     @api.model
     def search(self, args, offset=0, limit=80, order='id'):
         """Override to be able to search old_value_char in mail.tracking.value"""
@@ -200,11 +156,13 @@ class Document(models.Model):
             order=order,
         )
 
-    # #endif
 
     def unlink(self):
         for document in self:
-            document.active = False
+            if document.matter_id:
+               document.active = False
+            else:
+                super(Document, document).unlink()
         return True
 
     def write(self, vals):
