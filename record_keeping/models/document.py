@@ -93,12 +93,17 @@ class Document(models.Model):
         return res
 
     def _message_log_batch(self, bodies, author_id=None, email_from=None,
-                           subject=False, message_type='notification'):
+                           subject=False, message_type='notification',
+                           partner_ids=False, attachment_ids=False,
+                           tracking_value_ids=False):
         res = super()._message_log_batch(bodies,
                                          author_id,
                                          email_from,
                                          subject,
-                                         message_type)
+                                         message_type,
+                                         partner_ids,
+                                         attachment_ids,
+                                         tracking_value_ids)
         if res and self.matter_id and message_type in ['notification']:
             self._next_document_no()
             for b in bodies.values():
@@ -121,10 +126,12 @@ class Document(models.Model):
         models = self.env['ir.model'].search([])
         return [(model.model, model.name) for model in models]
 
-    @api.model
+
+    @api.model_create_multi
     def create(self, vals):
         document = super().create(vals)
-        document._next_document_no()
+        for doc in document:
+            doc._next_document_no()
         return document
 
 
@@ -137,7 +144,7 @@ class Document(models.Model):
 
 
     @api.model
-    def search(self, args, offset=0, limit=80, order='id', count=False):
+    def search(self, args, offset=0, limit=80, order='id'):
         """Override to be able to search old_value_char in mail.tracking.value"""
         dotted_field = 'message_ids.tracking_value_ids.old_value_char'
         if any(filter(lambda arg: dotted_field in arg, args)):
@@ -147,13 +154,15 @@ class Document(models.Model):
             offset=offset,
             limit=limit,
             order=order,
-            count=count
         )
 
 
     def unlink(self):
         for document in self:
-            document.active = False
+            if document.matter_id:
+               document.active = False
+            else:
+                super(Document, document).unlink()
         return True
 
     def write(self, vals):
