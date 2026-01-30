@@ -9,7 +9,7 @@ class Mixin(models.AbstractModel):
     active = fields.Boolean(
         copy=False,
         default=True,
-        string='Archived',
+        string='Active',
         tracking=True,
     )
     document_type_id = fields.Many2one(
