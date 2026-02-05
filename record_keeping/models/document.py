@@ -123,7 +123,7 @@ class Document(models.Model):
 
     @api.model
     def _selection_target_model(self):
-        models = self.env['ir.model'].search([])
+        models = self.env['ir.model'].sudo().search([])
         return [(model.model, model.name) for model in models]
 
 
