@@ -52,7 +52,7 @@ class DocumentMixin(models.AbstractModel):
 
     @api.model
     def _selection_target_model(self):
-        models = self.env['ir.model'].search([('model', '=', 'rk.document')])
+        models = self.env['ir.model'].sudo().search([('model', '=', 'rk.document')])
         return [(model.model, model.name) for model in models]
 
     @api.model
