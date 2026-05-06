@@ -21,7 +21,6 @@
                             <field name="matter_name"/>
                             <field name="reg_no"/>
                             <field name="legacy_reg_no" class="oe_edit_only"/>
-                            <field name="legacy_reg_no" class="oe_read_only" invisible="not legacy_reg_no"/>
                             <field name="description"/>
                             <field name="receiver"/>
                             <field name="sender"/>
