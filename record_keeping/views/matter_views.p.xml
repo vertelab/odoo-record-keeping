@@ -34,8 +34,6 @@
                             <field name="legacy_reg_no" class="oe_edit_only"/>
                             <!-- #if VERSION <= "16.0" -->
                             <field name="legacy_reg_no" class="oe_read_only" attrs="{'invisible': [('legacy_reg_no', '=', False)]}" />
-                            <!-- #elif VERSION >= "17.0" -->
-                            <field name="legacy_reg_no" class="oe_read_only" invisible="not legacy_reg_no"/>
                             <!-- #endif -->
                             <field name="description"/>
                             <field name="receiver"/>
