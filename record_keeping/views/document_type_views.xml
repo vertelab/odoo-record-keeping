@@ -31,7 +31,7 @@
         <field name="arch" type="xml">
             <kanban default_group_by="classification_id">
                 <templates>
-                    <t t-name="kanban-box">
+                    <t t-name="card">
                         <div class="oe_kanban_details oe_kanban_global_click">
                             <field name="name" />
                         </div>
