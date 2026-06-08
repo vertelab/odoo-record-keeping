@@ -29,7 +29,7 @@
 This module extends Helpdesk with record-keeping fields
 """,
     #'sequence': '1',
-    'author': 'Vertel Sverige AB',
+    'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_helpdesk',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',

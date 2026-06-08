@@ -38,14 +38,13 @@ class Employee(models.Model):
         if not document.res_model or not document.res_id:
             return {'res_model': self._name, 'res_id': self.id}
 
-    @api.model_create_multi
-    def create(self, vals_list):
-        records = super(Employee, self).create(vals_list)
-        for record in records:
-            document_vals = record._set_document_link()
-            if document_vals:
-                record.document_id.write(document_vals)
-        return records
+    @api.model
+    def create(self, vals):
+        record = super(Employee, self).create(vals)
+        document_vals = record._set_document_link()
+        if document_vals:
+            record.document_id.write(document_vals)
+        return record
 
     def write(self, vals):
         for record in self:
