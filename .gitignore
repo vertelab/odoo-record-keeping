@@ -88,4 +88,4 @@ ENV/
 .ropeproject
 
 # VSCODE
-.vscode
+.vscodegraphify-out/
