@@ -98,7 +98,7 @@
             <kanban class="oe_background_grey o_kanban_dashboard o_emphasize_colors" create="false" sample="1">
                 <field name="name"/>
                 <templates>
-                    <t t-name="kanban-box">
+                    <t t-name="card">
                         <div t-attf-class="oe_kanban_card oe_kanban_global_click o_has_icon">
                             <div class="row">
                                 <div class="col-12">
