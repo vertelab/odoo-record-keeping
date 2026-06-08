@@ -29,7 +29,7 @@
 This module extends Employees with record-keeping fields
 """,
     #'sequence': '1',
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_hr',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',

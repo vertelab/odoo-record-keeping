@@ -43,10 +43,11 @@ class Attachment(models.Model):
         return super().create(vals)
 
     def write(self, vals):
-        for rec in self:
-            if hasattr(rec, 'matter_id') and not rec.matter_id and not vals.get('matter_id'):
+        if not vals.get('matter_id'):
+            need_prepare = self.filtered(lambda r: hasattr(r, 'matter_id') and not r.matter_id)
+            if need_prepare:
                 vals = self._prepare_values(vals)
-            return super().write(vals)
+        return super().write(vals)
 
     def unlink(self):
         for record in self:

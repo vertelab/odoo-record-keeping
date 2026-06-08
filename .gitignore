@@ -89,3 +89,4 @@ ENV/
 
 # VSCODE
 .vscodegraphify-out/
+graphify-out/

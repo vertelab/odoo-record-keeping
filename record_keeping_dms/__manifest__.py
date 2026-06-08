@@ -34,7 +34,7 @@ OCA DMS, git@github.com:OCA/dms.git
 
 """,
     #'sequence': '1'
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_dms',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',

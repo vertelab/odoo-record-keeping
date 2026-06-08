@@ -30,7 +30,7 @@ This module extends projects and sales with record-keeping buttons\n
 v14.0.0.0.1 Stage Quote Sent added
 """,
     #'sequence': '1'
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_sale_project',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
