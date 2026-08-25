@@ -21,7 +21,7 @@
 
 {
     'name': 'Record-keeping: Sale',
-    'version': '2.1.5',
+    'version': '2.1.6',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'Record-keeping  Sale for Odoo',
     'category': 'Government',
