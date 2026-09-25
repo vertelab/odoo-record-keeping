@@ -21,13 +21,21 @@
 
 {
     'name': 'Record-keeping: HR',
-    'version': '2.0.3',
+    'version': '18.0.2.0.3',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping HR for Odoo',
+    'summary': 'Record-keeping HR for Odoo.',
     'category': 'Government',
-    'description': """
-This module extends Employees with record-keeping fields
-""",
+    'description': '''
+HR
+==
+
+    Record-keeping HR for Odoo.
+
+    Features:
+
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on hr.employee, rk.document.
+    ''',
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_hr',

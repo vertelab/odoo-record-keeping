@@ -21,9 +21,9 @@
 
 {
     'name': 'Record-keeping: Account',
-    'version': '2.1.2',
+    'version': '18.0.2.1.2',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping for Odoo Account',
+    'summary': 'Record-keeping for Odoo Account.',
     'category': 'Government',
     #'sequence': '1',
     'author': 'Vertel AB',
@@ -33,9 +33,18 @@
     'contributor': '',
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping',
-    'description': """
-        This module extends Account with record-keeping fields
-    """,
+    'description': '''
+Account
+=======
+
+    Record-keeping for Odoo Account.
+
+    Features:
+
+        - Guided Wizards: Step-by-step dialogs for data entry.
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on account.move, rk.wizard, rk.wizard.account.
+    ''',
     'depends': ['account', 'record_keeping', 'sale', 'record_keeping_wizard'],
     'data': [
         'views/account_views.xml',

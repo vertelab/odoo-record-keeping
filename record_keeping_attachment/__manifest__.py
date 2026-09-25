@@ -20,13 +20,22 @@
 
 {
     'name': 'Record-keeping: Attachment',
-    'version': '2.1.1',
+    'version': '18.0.2.1.1',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping Attachment for Odoo',
+    'summary': 'Record-keeping Attachment for Odoo.',
     'category': 'Government',
-    'description': """
-        This module extends Attachments with record-keeping fields
-    """,
+    'description': '''
+Attachment
+==========
+
+    Record-keeping Attachment for Odoo.
+
+    Features:
+
+        - Guided Wizards: Step-by-step dialogs for data entry.
+        - UI Integration: Extends 4 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on mail.compose.message, rk.matter, rk.wizard, rk.wizard.attachment.
+    ''',
     #'sequence': '1'
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_attachment',

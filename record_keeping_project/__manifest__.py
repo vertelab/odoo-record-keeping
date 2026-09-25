@@ -21,16 +21,24 @@
 
 {
     'name': 'Record-keeping: Project',
-    'version': '2.2.0',
+    'version': '18.0.2.2.0',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping Project for Odoo',
+    'summary': 'Record-keeping Project for Odoo.',
     'category': 'Government',
-    'description': """
-This module extends projects with record-keeping fields\n
-v14.1.1.0 added new version number.   \n
-v14.0.2.1.0 added wizard to link to record
-v14.0.2.2.0 refactored classes
-""",
+    'description': '''
+Project
+=======
+
+    This module extends projects with record-keeping fields\n
+    v14.1.1.0 added new version number.   \n
+    v14.0.2.1.0 added wizard to link to record
+    v14.0.2.2.0 refactored classes
+
+    Features:
+
+        - UI Integration: Extends 6 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on project.project, project.task, rk.classification, rk.document.type.
+    ''',
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_project',

@@ -21,18 +21,22 @@
 
 {
     'name': 'Record-keeping: DMS',
-    'version': '0.1',
+    'version': '18.0.1.0.0',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping DMS for Odoo',
+    'summary': 'Record-keeping DMS for Odoo.',
     'category': 'Government',
-    'description': """
-This module extends DMS with record-keeping fields\n
-v14.0.0.0.1 New module
+    'description': '''
+DMS
+===
 
-This module depends:
-OCA DMS, git@github.com:OCA/dms.git
+    This module extends DMS with record-keeping fields\n
+    v14.0.0.0.1 New module
 
-""",
+    Features:
+
+        - UI Integration: Extends 1 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on dms.file.
+    ''',
     #'sequence': '1'
     'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_dms',

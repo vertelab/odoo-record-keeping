@@ -21,13 +21,21 @@
 
 {
     'name': 'Record-keeping: Property Management',
-    'version': '2.0.3',
+    'version': '18.0.2.0.3',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping Property Management for Odoo',
+    'summary': 'Record-keeping Property Management for Odoo.',
     'category': 'Government',
-    'description': """
-    This module extends Properties with record-keeping fields
-    """,
+    'description': '''
+Property Management
+===================
+
+    Record-keeping Property Management for Odoo.
+
+    Features:
+
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on mail.thread, property.property, rk.document.
+    ''',
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_property_mgmt',

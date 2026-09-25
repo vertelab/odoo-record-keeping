@@ -21,13 +21,21 @@
 
 {
     'name': 'Record-keeping: Chat',
-    'version': '2.1.1',
+    'version': '18.0.2.1.1',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping Chat for Odoo',
+    'summary': 'Record-keeping Chat for Odoo.',
     'category': 'Government',
-    'description': """
-This module extends Chat with record-keeping fields
-""",
+    'description': '''
+Chat
+====
+
+    Record-keeping Chat for Odoo.
+
+    Features:
+
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on discuss.channel, mail.channel, rk.wizard, rk.wizard.mailchannel.
+    ''',
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_mail_channel',
