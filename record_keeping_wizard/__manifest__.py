@@ -50,4 +50,3 @@ Wizard
         'security/ir.model.access.csv',
     ],
 }
-# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

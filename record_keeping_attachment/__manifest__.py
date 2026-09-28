@@ -52,4 +52,3 @@ Attachment
         'views/matter_views.xml',
     ],
 }
-# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

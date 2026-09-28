@@ -54,4 +54,3 @@ Project
         'views/res_config_settings_views.xml',
     ],
 }
-# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

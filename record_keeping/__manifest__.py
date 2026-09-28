@@ -69,4 +69,3 @@ Record Keeping
     ],
     'application': True,
 }
-# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
