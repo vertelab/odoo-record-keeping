@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Odoo SA, Open Source Management Solution, third party addon
-#    Copyright (C) 2024- Vertel AB (<https://vertel.se>).
+#    Copyright (C) 2024- Vertel Sverige AB (<https://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,30 +21,21 @@
 
 {
     'name': 'Record-keeping: Account',
-    'version': '18.0.2.1.2',
+    'version': '2.1.2',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping for Odoo Account.',
+    'summary': 'Record-keeping for Odoo Account',
     'category': 'Government',
     #'sequence': '1',
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_account',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
-    'maintainer': 'Vertel AB',
+    'maintainer': 'Vertel Sverige AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping',
-    'description': '''
-Account
-=======
-
-    Record-keeping for Odoo Account.
-
-    Features:
-
-        - Guided Wizards: Step-by-step dialogs for data entry.
-        - UI Integration: Extends 2 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on account.move, rk.wizard, rk.wizard.account.
-    ''',
+    'description': """
+        This module extends Account with record-keeping fields
+    """,
     'depends': ['account', 'record_keeping', 'sale', 'record_keeping_wizard'],
     'data': [
         'views/account_views.xml',
@@ -52,3 +43,4 @@ Account
     ],
     'application': True,
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

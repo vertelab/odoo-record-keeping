@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Odoo SA, Open Source Management Solution, third party addon
-#    Copyright (C) 2024- Vertel AB (<https://vertel.se>).
+#    Copyright (C) 2024- Vertel Sverige AB (<https://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,28 +21,20 @@
 
 {
     'name': 'Record-keeping: Chat',
-    'version': '18.0.2.1.1',
+    'version': '2.1.1',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping Chat for Odoo.',
+    'summary': 'Record-keeping Chat for Odoo',
     'category': 'Government',
-    'description': '''
-Chat
-====
-
-    Record-keeping Chat for Odoo.
-
-    Features:
-
-        - UI Integration: Extends 2 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on discuss.channel, mail.channel, rk.wizard, rk.wizard.mailchannel.
-    ''',
+    'description': """
+This module extends Chat with record-keeping fields
+""",
     #'sequence': '1',
-    'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_mail_channel',
+    'author': 'Vertel Sverige AB',
+    'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_chat',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
-    'maintainer': 'Vertel AB',
+    'maintainer': 'Vertel Sverige AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['event', 'record_keeping', 'record_keeping_wizard'],
     'data': [
@@ -51,3 +43,4 @@ Chat
     ],
     # 'post_init_hook': 'post_init_hook',
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

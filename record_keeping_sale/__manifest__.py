@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Odoo SA, Open Source Management Solution, third party addon
-#    Copyright (C) 2024- Vertel AB (<https://vertel.se>).
+#    Copyright (C) 2024- Vertel Sverige AB (<https://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,28 +21,20 @@
 
 {
     'name': 'Record-keeping: Sale',
-    'version': '18.0.2.1.6',
+    'version': '2.1.5',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping Sale for Odoo.',
+    'summary': 'Record-keeping  Sale for Odoo',
     'category': 'Government',
-    'description': '''
-Sale
-====
-
-    Record-keeping Sale for Odoo.
-
-    Features:
-
-        - UI Integration: Extends 2 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on crm.team, rk.wizard, rk.wizard.sale, sale.order.
-    ''',
+    'description': """
+This module extends Sale Orders with record-keeping fields
+""",
     #'sequence': '1',
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_sale',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
-    'maintainer': 'Vertel AB',
+    'maintainer': 'Vertel Sverige AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['record_keeping', 'sale_management'],
     'data': [
@@ -51,3 +43,4 @@ Sale
     ],
     # 'post_init_hook': 'post_init_hook',
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
