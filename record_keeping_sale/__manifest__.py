@@ -21,21 +21,13 @@
 
 {
     'name': 'Record-keeping: Sale',
-    'version': '18.0.2.1.6',
+    'version': '2.1.5',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping Sale for Odoo.',
+    'summary': 'Record-keeping  Sale for Odoo',
     'category': 'Government',
-    'description': '''
-Sale
-====
-
-    Record-keeping Sale for Odoo.
-
-    Features:
-
-        - UI Integration: Extends 2 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on crm.team, rk.wizard, rk.wizard.sale, sale.order.
-    ''',
+    'description': """
+This module extends Sale Orders with record-keeping fields
+""",
     #'sequence': '1',
     'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_sale',
@@ -51,3 +43,4 @@ Sale
     ],
     # 'post_init_hook': 'post_init_hook',
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

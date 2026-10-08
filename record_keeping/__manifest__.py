@@ -21,25 +21,16 @@
 
 {
     'name': 'Record-keeping: Record Keeping',
-    'version': '18.0.2.4.0',
+    'version': '2.4.0',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping for Odoo.',
+    'summary': 'Record-keeping for Odoo',
     'category': 'Government',
-    'description': '''
-Record Keeping
-==============
-
+    'description': """
     This module is the base module for Record-keeping \n 
-        2.3.0 - Added new class for mails
-        2.0.4 - Added relationship to ir.attachments
-        2.0.4 - Added button to res.partner
-
-    Features:
-
-        - Guided Wizards: Step-by-step dialogs for data entry.
-        - UI Integration: Extends 18 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on classification_id, mail.activity.mixin, mail.mail, matter_id.
-    ''',
+    2.3.0 - Added new class for mails
+    2.0.4 - Added relationship to ir.attachments
+    2.0.4 - Added button to res.partner
+    """,
     #'sequence': '1'
     'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping',
@@ -69,3 +60,4 @@ Record Keeping
     ],
     'application': True,
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

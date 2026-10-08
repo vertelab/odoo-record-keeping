@@ -21,9 +21,9 @@
 
 {
     'name': 'Record-keeping: IM Live Chat',
-    'version': '18.0.1.0.0',
+    'version': '0.0',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping for Odoo IM Live Chat.',
+    'summary': 'Record-keeping for Odoo IM Live Chat',
     'category': 'Government',
     #'sequence': '1'
     'author': 'Vertel Sverige AB',
@@ -33,20 +33,13 @@
     'contributor': '',
     'maintainer': 'Vertel Sverige AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping',
-    'description': '''
-IM Live Chat
-============
-
-    Record-keeping for Odoo IM Live Chat.
-
-    Features:
-
-        - UI Integration: Extends 2 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on discuss.channel.
-    ''',
+    'description': """
+    This module extends IM Live Chat with record-keeping fields
+    """,
     'depends': ['im_livechat', 'record_keeping'],
     'data': [
         'views/mail_channel_views.xml',
     ],
     'application': True,
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

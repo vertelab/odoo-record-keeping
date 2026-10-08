@@ -21,21 +21,13 @@
 
 {
     'name': 'Record-keeping: Helpdesk',
-    'version': '18.0.2.1.1',
+    'version': '2.1.1',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping Helpdesk for Odoo.',
+    'summary': 'Record-keeping Helpdesk for Odoo',
     'category': 'Government',
-    'description': '''
-Helpdesk
-========
-
-    Record-keeping Helpdesk for Odoo.
-
-    Features:
-
-        - UI Integration: Extends 2 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on helpdesk.ticket, rk.wizard, rk.wizard.helpdeskticket.
-    ''',
+    'description': """
+This module extends Helpdesk with record-keeping fields
+""",
     #'sequence': '1',
     'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_helpdesk',
@@ -51,3 +43,4 @@ Helpdesk
     ],
     # 'post_init_hook': 'post_init_hook',
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

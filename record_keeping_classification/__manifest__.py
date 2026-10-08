@@ -21,20 +21,13 @@
 
 {
     'name': 'Record-keeping: Classification',
-    'version': '18.0.1.0.0',
+    'version': '0.1',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Adds a relation between classification_id on rk.matter and rk.document.',
+    'summary': 'Adds a relation between classification_id on rk.matter and rk.document',
     'category': 'Government',
-    'description': '''
-Classification
-==============
-
-    Adds a relation between classification_id on rk.matter and rk.document \n
-
-    Features:
-
-        - Extends Odoo: Builds on rk.document.
-    ''',
+    'description': """
+    Adds a relation between classification_id on rk.matter and rk.document \n 
+    """,
     #'sequence': '1'
     'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_classification',
@@ -48,3 +41,4 @@ Classification
     ],
     'auto_install': True,
 }
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

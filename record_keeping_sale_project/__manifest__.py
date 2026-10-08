@@ -21,22 +21,14 @@
 
 {
     'name': 'Record-keeping: Sale Project',
-    'version': '18.0.1.0.0',
+    'version': '0.1',
     # Version ledger: XX.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
-    'summary': 'Record-keeping Sale Project for Odoo.',
+    'summary': 'Record-keeping  Sale Project for Odoo',
     'category': 'Government',
-    'description': '''
-Sale Project
-============
-
-    This module extends projects and sales with record-keeping buttons\n
-    v14.0.0.0.1 Stage Quote Sent added
-
-    Features:
-
-        - UI Integration: Extends 4 view(s) in the Odoo interface.
-        - Extends Odoo: Builds on project.project, project.task.
-    ''',
+    'description': """
+This module extends projects and sales with record-keeping buttons\n
+v14.0.0.0.1 Stage Quote Sent added
+""",
     #'sequence': '1'
     'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_sale_project',
@@ -52,3 +44,4 @@ Sale Project
         'views/task_views.xml',
     ],
 }
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
