@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Odoo SA, Open Source Management Solution, third party addon
-#    Copyright (C) 2024- Vertel AB (<https://vertel.se>).
+#    Copyright (C) 2024- Vertel Sverige AB (<https://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -30,12 +30,12 @@ This module extends projects and sales with record-keeping buttons\n
 v14.0.0.0.1 Stage Quote Sent added
 """,
     #'sequence': '1'
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-record-keeping/record_keeping_sale_project',
     'images': ['static/description/banner.png'], # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
-    'maintainer': 'Vertel AB',
+    'maintainer': 'Vertel Sverige AB',
     'repository': 'https://github.com/vertelab/odoo-record-keeping',
     'depends': ['record_keeping_sale', 'record_keeping_project', 'sale_project'],
     'data': [
