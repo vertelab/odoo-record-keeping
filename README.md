@@ -29,7 +29,7 @@ addon
 
 ### Author
 
-* Vertel AB
+* Vertel Sverige AB
 
 ### Contributors
 

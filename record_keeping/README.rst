@@ -5,7 +5,7 @@ Record-keeping
 
 .. |badge1| image:: https://i.ibb.co/Bc4qsYT/vertel.jpg
     :target: https://vertel.se/
-    :alt: Vertel AB
+    :alt: Vertel Sverige AB
 .. |badge2| image:: https://www.gnu.org/graphics/agplv3-88x31.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
@@ -42,7 +42,7 @@ Credits
 Authors
 ~~~~~~~
 
-* Vertel AB
+* Vertel Sverige AB
 
 Contributors
 ~~~~~~~~~~~~
@@ -58,6 +58,6 @@ Contributors
 Maintainers
 ~~~~~~~~~~~
 
-This module is maintained by Vertel AB.
+This module is maintained by Vertel Sverige AB.
 
 |badge1|
